@@ -1,6 +1,11 @@
 // SPDX-License-Identifier: MIT
 extern crate bindgen;
 
+use std::fs;
+use std::fs::File;
+use std::path::Path;
+use std::io::Write;
+
 fn link_lib(lib: &str) {
     println!("cargo:rustc-link-lib={}", lib);
 }
@@ -31,11 +36,51 @@ fn gen_bindings(nxdk_dir: &str, lib_path: &str, header: &str) {
         .expect("Unable to generate bindings");
 
     println!("cargo:rerun-if-changed={}/lib/{}/{}/h", nxdk_dir, lib_path, header);
-    let out_path = std::path::PathBuf::from(std::env::var("OUT_DIR").unwrap());
+
+    let manifest_dir = std::env::var("CARGO_MANIFEST_DIR")
+        .expect("CARGO_MANIFEST_DIR environment variable is not set");
+    
+    let mut out_path = std::path::PathBuf::from(&manifest_dir);
+    out_path.push("src");
+    out_path.push("bindings");
+
     bindings.write_to_file(out_path.join(format!("bindings_{}.rs", header))).expect("Unable to write bindings");
 }
 
+
+fn generate_mod_rs() -> std::io::Result<()> {
+    let manifest_dir = std::env::var("CARGO_MANIFEST_DIR")
+        .expect("CARGO_MANIFEST_DIR environment variable is not set");
+
+    let bindings_dir = Path::new(&manifest_dir).join("src/bindings");
+    let mut mod_rs_file = File::create(bindings_dir.join("mod.rs"))?;
+
+    // Write the imports for each bindings file
+    let bindings_files = fs::read_dir(bindings_dir)?
+        .filter_map(Result::ok)
+        .filter(|entry| entry.path().extension().map_or(false, |ext| ext == "rs"))
+        .filter(|entry| entry.file_name() != "mod.rs")
+        .collect::<Vec<_>>();
+
+    // Write the `mod.rs` content
+    for entry in bindings_files {
+        if let Some(file_name) = entry.path().file_stem() {
+            let module_name = file_name.to_string_lossy();
+            writeln!(mod_rs_file, "pub mod {};", module_name)?;
+        }
+    }
+
+    Ok(())
+}
+
 fn main() {
+    // TODO: Document this. This is here to prevent the IDE from building this file, as it will fail.
+    let build_bindings = std::env::var("BUILD_BINDINGS").unwrap_or_else(|_| "false".to_string());
+
+    if build_bindings != "true" {
+        return;
+    }
+
     let nxdk_dir;
     match std::env::var("NXDK_DIR") {
         Ok(v) => {
@@ -108,4 +153,8 @@ fn main() {
     gen_bindings(&nxdk_dir, "nxdk", "net");
     gen_bindings(&nxdk_dir, "nxdk", "path");
     gen_bindings(&nxdk_dir, "nxdk", "xbe");
+
+    if let Err(e) = generate_mod_rs() {
+        eprintln!("Error generating mod.rs: {}", e);
+    }
 }

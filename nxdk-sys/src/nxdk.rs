@@ -1,27 +1,7 @@
-pub mod config_sector{
-    include!(concat!(env!("OUT_DIR"), "/bindings_configsector.rs"));
-}
-
-pub mod fatx{
-    include!(concat!(env!("OUT_DIR"), "/bindings_fatx.rs"));
-}
-
-pub mod format{
-    include!(concat!(env!("OUT_DIR"), "/bindings_format.rs"));
-}
-
-pub mod mount{
-    include!(concat!(env!("OUT_DIR"), "/bindings_mount.rs"));
-}
-
-pub mod net{
-    include!(concat!(env!("OUT_DIR"), "/bindings_net.rs"));
-}
-
-pub mod path{
-    include!(concat!(env!("OUT_DIR"), "/bindings_path.rs"));
-}
-
-pub mod xbe{
-    include!(concat!(env!("OUT_DIR"), "/bindings_xbe.rs"));
-}
+pub use bindings::bindings_configsector as config_sector;
+pub use bindings::bindings_fatx as fatx;
+pub use bindings::bindings_format as format;
+pub use bindings::bindings_mount as mount;
+pub use bindings::bindings_net as net;
+pub use bindings::bindings_path as path;
+pub use bindings::bindings_xbe as xbe;

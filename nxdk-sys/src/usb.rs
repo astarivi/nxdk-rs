@@ -1,11 +1,3 @@
-pub mod usbh_lib {
-    include!(concat!(env!("OUT_DIR"), "/bindings_usbh_lib.rs"));
-}
-
-pub mod usbh_hid {
-    include!(concat!(env!("OUT_DIR"), "/bindings_usbh_hid.rs"));
-}
-
-pub mod xid_driver {
-    include!(concat!(env!("OUT_DIR"), "/bindings_xid_driver.rs"));
-}
+pub use bindings::bindings_usbh_lib as usbh_lib;
+pub use bindings::bindings_usbh_hid as usbh_hid;
+pub use bindings::bindings_xid_driver as xid_driver;
