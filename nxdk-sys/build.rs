@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: MIT
-
 extern crate bindgen;
 
 fn link_lib(lib: &str) {
@@ -13,10 +12,18 @@ fn gen_bindings(nxdk_dir: &str, lib_path: &str, header: &str) {
         .clang_arg(format!("-I{}/lib/xboxrt/libc_extensions", nxdk_dir))
         .clang_arg(format!("-I{}/lib/pdclib/include", nxdk_dir))
         .clang_arg(format!("-I{}/lib/pdclib/platform/xbox/include", nxdk_dir))
+        .clang_arg(format!("-I{}/lib/usb/libusbohci/inc", nxdk_dir))
+        .clang_arg(format!("-I{}/lib/usb/libusbohci_xbox/", nxdk_dir))
+        .clang_arg(format!("-I{}/lib/sdl/SDL2/include", nxdk_dir))
         .clang_arg(format!("-I{}/lib/winapi", nxdk_dir))
         .clang_arg(format!("-I{}/lib/xboxrt/vcruntime", nxdk_dir))
+        .clang_arg(format!("-I{}/lib/net/lwip/src/include", nxdk_dir))
+        .clang_arg(format!("-I{}/lib/net/nforceif/include", nxdk_dir))
+        .clang_arg(format!("-I{}/lib/net/nvnetdrv", nxdk_dir))
         .clang_arg("-D__STDC__=1")
         .clang_arg("-DNXDK")
+        .clang_arg("-DXBOX")
+        .clang_arg("-DUSBH_USE_EXTERNAL_CONFIG=\"usbh_config_xbox.h\"")
         .parse_callbacks(Box::new(bindgen::CargoCallbacks))
         .use_core()
         .ctypes_prefix("libc")
@@ -46,9 +53,11 @@ fn main() {
     link_lib("libwinapi");
     link_lib("libnxdk");
     link_lib("libnxdk_hal");
+    link_lib("libnxdk_net");
     link_lib("libnxdk_automount_d");
     link_lib("libzlib");
     link_lib("libxboxrt");
+    link_lib("nxdk_usb");
     link_lib("libSDL2");
     link_lib("libSDL2_image");
     link_lib("libSDL_ttf");
@@ -75,5 +84,28 @@ fn main() {
     gen_bindings(&nxdk_dir, "pdclib/include", "stdio");
     gen_bindings(&nxdk_dir, "pdclib/include", "time");
 
+    // USB
+    gen_bindings(&nxdk_dir, "usb/libusbohci/inc", "usbh_lib");
+    gen_bindings(&nxdk_dir, "usb/libusbohci/inc", "usbh_hid");
+    gen_bindings(&nxdk_dir, "usb/libusbohci_xbox", "xid_driver");
+
+    // SDL
+    gen_bindings(&nxdk_dir, "sdl/SDL2/include", "SDL");
+
     gen_bindings(&nxdk_dir, "winapi", "windows");
+
+    // Networking
+    gen_bindings(&nxdk_dir, "net/lwip/src/include/lwip", "opt");
+    gen_bindings(&nxdk_dir, "net/lwip/src/include/lwip", "api");
+    gen_bindings(&nxdk_dir, "net/lwip/src/include/lwip", "netif");
+    gen_bindings(&nxdk_dir, "net/lwip/src/include/lwip", "tcpip");
+
+    // NXDK general helper functions
+    gen_bindings(&nxdk_dir, "nxdk", "configsector");
+    gen_bindings(&nxdk_dir, "nxdk", "fatx");
+    gen_bindings(&nxdk_dir, "nxdk", "format");
+    gen_bindings(&nxdk_dir, "nxdk", "mount");
+    gen_bindings(&nxdk_dir, "nxdk", "net");
+    gen_bindings(&nxdk_dir, "nxdk", "path");
+    gen_bindings(&nxdk_dir, "nxdk", "xbe");
 }

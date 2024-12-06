@@ -1,9 +1,12 @@
 [package]
 name = "helloworld"
 version = "0.1.0"
+edition = "2021"
 resolver = "2"
 
 [build-dependencies]
+
+[workspace]
 
 [dependencies]
 nxdk-rs = { path = "../.." }
