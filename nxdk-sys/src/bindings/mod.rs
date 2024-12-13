@@ -16,6 +16,7 @@ pub mod bindings_SDL;
 pub mod bindings_stdio;
 pub mod bindings_stdlib;
 pub mod bindings_string;
+pub mod bindings_tcp;
 pub mod bindings_tcpip;
 pub mod bindings_time;
 pub mod bindings_usbh_hid;

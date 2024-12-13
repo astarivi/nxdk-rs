@@ -144,6 +144,7 @@ fn main() {
     gen_bindings(&nxdk_dir, "net/lwip/src/include/lwip", "api");
     gen_bindings(&nxdk_dir, "net/lwip/src/include/lwip", "netif");
     gen_bindings(&nxdk_dir, "net/lwip/src/include/lwip", "tcpip");
+    gen_bindings(&nxdk_dir, "net/lwip/src/include/lwip", "tcp");
 
     // NXDK general helper functions
     gen_bindings(&nxdk_dir, "nxdk", "configsector");

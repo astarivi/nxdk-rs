@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MIT
+extern crate alloc;
 
 use alloc::format;
 use nxdk_sys::hal::debug::*;
