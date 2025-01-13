@@ -1,12 +1,12 @@
 [package]
 name = "nxdk-rs"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 
 [dependencies]
 nxdk-sys = { path = "nxdk-sys" }
-libc = "0.2.119"
-cstr_core = "0.2.5"
+libc = "0.2.169"
+cstr_core = "0.2.6"
 
 [profile.dev]
 panic = "abort"

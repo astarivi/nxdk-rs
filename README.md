@@ -16,8 +16,8 @@ git clone https://github.com/antangelo/nxdk-rs
 You'll also need Rust nightly installed:
 
 ```sh
-rustup install nightly-2024-02-16-x86_64
-rustup component add rust-src --toolchain nightly-2024-02-16-x86_64
+rustup install nightly-2025-01-13-x86_64
+rustup component add rust-src --toolchain nightly-2025-01-13-x86_64
 ```
 
 Ensure that you follow the nxdk installation instructions. In particular, you'll need to run the activation script:

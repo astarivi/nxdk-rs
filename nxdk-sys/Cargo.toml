@@ -4,7 +4,7 @@ version = "0.1.0"
 build = "build.rs"
 
 [build-dependencies]
-bindgen = "0.64.0"
+bindgen = "0.69.5"
 
 [dependencies]
-libc = { version = "0.2.140", default-features = false }
+libc = { version = "0.2.169", default-features = false }
