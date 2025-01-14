@@ -6,6 +6,24 @@ use std::fs::File;
 use std::path::Path;
 use std::io::Write;
 
+const LWIP_UMBRELLA: &str = r#"
+#ifndef LWIP_UMBRELLA_H
+#define LWIP_UMBRELLA_H
+
+#include "lwip/opt.h"
+#include "lwip/api.h"
+#include "lwip/netif.h"
+#include "lwip/tcpip.h"
+#include "lwip/tcp.h"
+#include "lwip/udp.h"
+#include "lwip/dns.h"
+#include "lwip/init.h"
+#include "lwip/apps/sntp.h"  // For SNTP (NTP-like functionality)
+
+#endif // LWIP_UMBRELLA_H
+"#;
+
+
 fn link_lib(lib: &str) {
     println!("cargo:rustc-link-lib={}", lib);
 }
@@ -29,7 +47,7 @@ fn gen_bindings(nxdk_dir: &str, lib_path: &str, header: &str) {
         .clang_arg("-DNXDK")
         .clang_arg("-DXBOX")
         .clang_arg("-DUSBH_USE_EXTERNAL_CONFIG=\"usbh_config_xbox.h\"")
-        .parse_callbacks(Box::new(bindgen::CargoCallbacks))
+        .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
         .use_core()
         .ctypes_prefix("libc")
         .generate()
@@ -39,12 +57,48 @@ fn gen_bindings(nxdk_dir: &str, lib_path: &str, header: &str) {
 
     let manifest_dir = std::env::var("CARGO_MANIFEST_DIR")
         .expect("CARGO_MANIFEST_DIR environment variable is not set");
-    
+
     let mut out_path = std::path::PathBuf::from(&manifest_dir);
     out_path.push("src");
     out_path.push("bindings");
 
     bindings.write_to_file(out_path.join(format!("bindings_{}.rs", header))).expect("Unable to write bindings");
+}
+
+
+fn gen_bindings_lwip(nxdk_dir: &str) {
+    let bindings = bindgen::builder()
+        .header_contents("lwip_umbrella.h", LWIP_UMBRELLA)
+        .clang_arg(format!("-I{}/lib", nxdk_dir))
+        .clang_arg(format!("-I{}/lib/xboxrt/libc_extensions", nxdk_dir))
+        .clang_arg(format!("-I{}/lib/pdclib/include", nxdk_dir))
+        .clang_arg(format!("-I{}/lib/pdclib/platform/xbox/include", nxdk_dir))
+        .clang_arg(format!("-I{}/lib/usb/libusbohci/inc", nxdk_dir))
+        .clang_arg(format!("-I{}/lib/usb/libusbohci_xbox/", nxdk_dir))
+        .clang_arg(format!("-I{}/lib/sdl/SDL2/include", nxdk_dir))
+        .clang_arg(format!("-I{}/lib/winapi", nxdk_dir))
+        .clang_arg(format!("-I{}/lib/xboxrt/vcruntime", nxdk_dir))
+        .clang_arg(format!("-I{}/lib/net/lwip/src/include", nxdk_dir))
+        .clang_arg(format!("-I{}/lib/net/nforceif/include", nxdk_dir))
+        .clang_arg(format!("-I{}/lib/net/nvnetdrv", nxdk_dir))
+        .clang_arg("-D__STDC__=1")
+        .clang_arg("-DNXDK")
+        .clang_arg("-DXBOX")
+        .clang_arg("-DUSBH_USE_EXTERNAL_CONFIG=\"usbh_config_xbox.h\"")
+        .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
+        .use_core()
+        .ctypes_prefix("libc")
+        .generate()
+        .expect("Unable to generate bindings");
+
+    let manifest_dir = std::env::var("CARGO_MANIFEST_DIR")
+        .expect("CARGO_MANIFEST_DIR environment variable is not set");
+
+    let mut out_path = std::path::PathBuf::from(&manifest_dir);
+    out_path.push("src");
+    out_path.push("bindings");
+
+    bindings.write_to_file(out_path.join("bindings_lwip.rs")).expect("Unable to write bindings");
 }
 
 
@@ -140,13 +194,7 @@ fn main() {
     gen_bindings(&nxdk_dir, "winapi", "windows");
 
     // Networking
-    gen_bindings(&nxdk_dir, "net/lwip/src/include/lwip", "opt");
-    gen_bindings(&nxdk_dir, "net/lwip/src/include/lwip", "api");
-    gen_bindings(&nxdk_dir, "net/lwip/src/include/lwip", "netif");
-    gen_bindings(&nxdk_dir, "net/lwip/src/include/lwip", "tcpip");
-    gen_bindings(&nxdk_dir, "net/lwip/src/include/lwip", "tcp");
-    gen_bindings(&nxdk_dir, "net/lwip/src/include/lwip", "udp");
-    gen_bindings(&nxdk_dir, "net/lwip/src/include/lwip", "dns");
+    gen_bindings_lwip(&nxdk_dir);
 
     // NXDK general helper functions
     gen_bindings(&nxdk_dir, "nxdk", "configsector");

@@ -12,9 +12,9 @@ pub use bindings::bindings_xboxkrnl as kernel;
 pub use bindings::bindings_pbkit as pbkit;
 pub use bindings::bindings_SDL as sdl;
 pub use bindings::bindings_windows as winapi;
+pub use bindings::bindings_lwip as lwip;
 
 pub mod hal;
 pub mod clib;
-pub mod lwip;
 pub mod nxdk;
 pub mod usb;

@@ -2783,6 +2783,233 @@ pub const IP6_DEBUG: u32 = 0;
 pub const DHCP6_DEBUG: u32 = 0;
 pub const LWIP_TESTMODE: u32 = 0;
 pub const LWIP_PERF: u32 = 0;
+pub const PBUF_TRANSPORT_HLEN: u32 = 20;
+pub const PBUF_IP_HLEN: u32 = 40;
+pub const PBUF_TYPE_FLAG_STRUCT_DATA_CONTIGUOUS: u32 = 128;
+pub const PBUF_TYPE_FLAG_DATA_VOLATILE: u32 = 64;
+pub const PBUF_TYPE_ALLOC_SRC_MASK: u32 = 15;
+pub const PBUF_ALLOC_FLAG_RX: u32 = 256;
+pub const PBUF_ALLOC_FLAG_DATA_CONTIGUOUS: u32 = 512;
+pub const PBUF_TYPE_ALLOC_SRC_MASK_STD_HEAP: u32 = 0;
+pub const PBUF_TYPE_ALLOC_SRC_MASK_STD_MEMP_PBUF: u32 = 1;
+pub const PBUF_TYPE_ALLOC_SRC_MASK_STD_MEMP_PBUF_POOL: u32 = 2;
+pub const PBUF_TYPE_ALLOC_SRC_MASK_APP_MIN: u32 = 3;
+pub const PBUF_TYPE_ALLOC_SRC_MASK_APP_MAX: u32 = 15;
+pub const PBUF_FLAG_PUSH: u32 = 1;
+pub const PBUF_FLAG_IS_CUSTOM: u32 = 2;
+pub const PBUF_FLAG_MCASTLOOP: u32 = 4;
+pub const PBUF_FLAG_LLBCAST: u32 = 8;
+pub const PBUF_FLAG_LLMCAST: u32 = 16;
+pub const PBUF_FLAG_TCP_FIN: u32 = 32;
+pub const PBUF_POOL_FREE_OOSEQ: u32 = 1;
+pub const IP_CLASSA_NET: u32 = 4278190080;
+pub const IP_CLASSA_NSHIFT: u32 = 24;
+pub const IP_CLASSA_HOST: u32 = 16777215;
+pub const IP_CLASSA_MAX: u32 = 128;
+pub const IP_CLASSB_NET: u32 = 4294901760;
+pub const IP_CLASSB_NSHIFT: u32 = 16;
+pub const IP_CLASSB_HOST: u32 = 65535;
+pub const IP_CLASSB_MAX: u32 = 65536;
+pub const IP_CLASSC_NET: u32 = 4294967040;
+pub const IP_CLASSC_NSHIFT: u32 = 8;
+pub const IP_CLASSC_HOST: u32 = 255;
+pub const IP_CLASSD_NET: u32 = 4026531840;
+pub const IP_CLASSD_NSHIFT: u32 = 28;
+pub const IP_CLASSD_HOST: u32 = 268435455;
+pub const IP_LOOPBACKNET: u32 = 127;
+pub const IP4ADDR_STRLEN_MAX: u32 = 16;
+pub const IP6_NO_ZONE: u32 = 0;
+pub const IPV6_CUSTOM_SCOPES: u32 = 0;
+pub const IP6_MULTICAST_SCOPE_RESERVED: u32 = 0;
+pub const IP6_MULTICAST_SCOPE_RESERVED0: u32 = 0;
+pub const IP6_MULTICAST_SCOPE_INTERFACE_LOCAL: u32 = 1;
+pub const IP6_MULTICAST_SCOPE_LINK_LOCAL: u32 = 2;
+pub const IP6_MULTICAST_SCOPE_RESERVED3: u32 = 3;
+pub const IP6_MULTICAST_SCOPE_ADMIN_LOCAL: u32 = 4;
+pub const IP6_MULTICAST_SCOPE_SITE_LOCAL: u32 = 5;
+pub const IP6_MULTICAST_SCOPE_ORGANIZATION_LOCAL: u32 = 8;
+pub const IP6_MULTICAST_SCOPE_GLOBAL: u32 = 14;
+pub const IP6_MULTICAST_SCOPE_RESERVEDF: u32 = 15;
+pub const IP6_ADDR_INVALID: u32 = 0;
+pub const IP6_ADDR_TENTATIVE: u32 = 8;
+pub const IP6_ADDR_TENTATIVE_1: u32 = 9;
+pub const IP6_ADDR_TENTATIVE_2: u32 = 10;
+pub const IP6_ADDR_TENTATIVE_3: u32 = 11;
+pub const IP6_ADDR_TENTATIVE_4: u32 = 12;
+pub const IP6_ADDR_TENTATIVE_5: u32 = 13;
+pub const IP6_ADDR_TENTATIVE_6: u32 = 14;
+pub const IP6_ADDR_TENTATIVE_7: u32 = 15;
+pub const IP6_ADDR_VALID: u32 = 16;
+pub const IP6_ADDR_PREFERRED: u32 = 48;
+pub const IP6_ADDR_DEPRECATED: u32 = 16;
+pub const IP6_ADDR_DUPLICATED: u32 = 64;
+pub const IP6_ADDR_TENTATIVE_COUNT_MASK: u32 = 7;
+pub const IP6_ADDR_LIFE_STATIC: u32 = 0;
+pub const IP6_ADDR_LIFE_INFINITE: u32 = 4294967295;
+pub const IP6ADDR_STRLEN_MAX: u32 = 46;
+pub const IPADDR_STRLEN_MAX: u32 = 46;
+pub const NETBUF_FLAG_DESTADDR: u32 = 1;
+pub const NETBUF_FLAG_CHKSUM: u32 = 2;
+pub const SYS_ARCH_TIMEOUT: u32 = 4294967295;
+pub const SYS_MBOX_EMPTY: u32 = 4294967295;
+pub const SYS_MBOX_NULL: u32 = 0;
+pub const SYS_SEM_NULL: u32 = 0;
+pub const LWIP_COMPAT_MUTEX: u32 = 1;
+pub const NETCONN_NOFLAG: u32 = 0;
+pub const NETCONN_NOCOPY: u32 = 0;
+pub const NETCONN_COPY: u32 = 1;
+pub const NETCONN_MORE: u32 = 2;
+pub const NETCONN_DONTBLOCK: u32 = 4;
+pub const NETCONN_NOAUTORCVD: u32 = 8;
+pub const NETCONN_NOFIN: u32 = 16;
+pub const NETCONN_FLAG_MBOXCLOSED: u32 = 1;
+pub const NETCONN_FLAG_NON_BLOCKING: u32 = 2;
+pub const NETCONN_FLAG_IN_NONBLOCKING_CONNECT: u32 = 4;
+pub const NETCONN_FLAG_CHECK_WRITESPACE: u32 = 16;
+pub const NETCONN_FLAG_IPV6_V6ONLY: u32 = 32;
+pub const NETCONN_FIN_RX_PENDING: u32 = 128;
+pub const NETCONN_TYPE_IPV6: u32 = 8;
+pub const NETCONN_DNS_IPV4: u32 = 0;
+pub const NETCONN_DNS_IPV6: u32 = 1;
+pub const NETCONN_DNS_IPV4_IPV6: u32 = 2;
+pub const NETCONN_DNS_IPV6_IPV4: u32 = 3;
+pub const MEM_SIZE_F: &[u8; 2] = b"u\0";
+pub const MEMP_SIZE: u32 = 0;
+pub const LWIP_STATS_LARGE: u32 = 0;
+pub const STAT_COUNTER_F: &[u8; 3] = b"hu\0";
+pub const NETIF_MAX_HWADDR_LEN: u32 = 6;
+pub const NETIF_NAMESIZE: u32 = 6;
+pub const NETIF_FLAG_UP: u32 = 1;
+pub const NETIF_FLAG_BROADCAST: u32 = 2;
+pub const NETIF_FLAG_LINK_UP: u32 = 4;
+pub const NETIF_FLAG_ETHARP: u32 = 8;
+pub const NETIF_FLAG_ETHERNET: u32 = 16;
+pub const NETIF_FLAG_IGMP: u32 = 32;
+pub const NETIF_FLAG_MLD6: u32 = 64;
+pub const NETIF_ADDR_IDX_MAX: u32 = 127;
+pub const LWIP_NETIF_USE_HINTS: u32 = 0;
+pub const NETIF_NO_INDEX: u32 = 0;
+pub const LWIP_NSC_NONE: u32 = 0;
+pub const LWIP_NSC_NETIF_ADDED: u32 = 1;
+pub const LWIP_NSC_NETIF_REMOVED: u32 = 2;
+pub const LWIP_NSC_LINK_CHANGED: u32 = 4;
+pub const LWIP_NSC_STATUS_CHANGED: u32 = 8;
+pub const LWIP_NSC_IPV4_ADDRESS_CHANGED: u32 = 16;
+pub const LWIP_NSC_IPV4_GATEWAY_CHANGED: u32 = 32;
+pub const LWIP_NSC_IPV4_NETMASK_CHANGED: u32 = 64;
+pub const LWIP_NSC_IPV4_SETTINGS_CHANGED: u32 = 128;
+pub const LWIP_NSC_IPV6_SET: u32 = 256;
+pub const LWIP_NSC_IPV6_ADDR_STATE_CHANGED: u32 = 512;
+pub const LWIP_DEBUG_TIMERNAMES: u32 = 0;
+pub const SYS_TIMEOUTS_SLEEPTIME_INFINITE: u32 = 4294967295;
+pub const TCP_WRITE_FLAG_COPY: u32 = 1;
+pub const TCP_WRITE_FLAG_MORE: u32 = 2;
+pub const TCP_PRIO_MIN: u32 = 1;
+pub const TCP_PRIO_NORMAL: u32 = 64;
+pub const TCP_PRIO_MAX: u32 = 127;
+pub const IP_HLEN: u32 = 20;
+pub const IP_HLEN_MAX: u32 = 60;
+pub const IP_RF: u32 = 32768;
+pub const IP_DF: u32 = 16384;
+pub const IP_MF: u32 = 8192;
+pub const IP_OFFMASK: u32 = 8191;
+pub const LWIP_IPV4_SRC_ROUTING: u32 = 0;
+pub const IP6_MIN_MTU_LENGTH: u32 = 1280;
+pub const IP6_HLEN: u32 = 40;
+pub const IP6_NEXTH_HOPBYHOP: u32 = 0;
+pub const IP6_NEXTH_TCP: u32 = 6;
+pub const IP6_NEXTH_UDP: u32 = 17;
+pub const IP6_NEXTH_ENCAPS: u32 = 41;
+pub const IP6_NEXTH_ROUTING: u32 = 43;
+pub const IP6_NEXTH_FRAGMENT: u32 = 44;
+pub const IP6_NEXTH_ICMP6: u32 = 58;
+pub const IP6_NEXTH_NONE: u32 = 59;
+pub const IP6_NEXTH_DESTOPTS: u32 = 60;
+pub const IP6_NEXTH_UDPLITE: u32 = 136;
+pub const IP6_PAD1_OPTION: u32 = 0;
+pub const IP6_PADN_OPTION: u32 = 1;
+pub const IP6_ROUTER_ALERT_OPTION: u32 = 5;
+pub const IP6_JUMBO_OPTION: u32 = 194;
+pub const IP6_HOME_ADDRESS_OPTION: u32 = 201;
+pub const IP6_ROUTER_ALERT_DLEN: u32 = 2;
+pub const IP6_ROUTER_ALERT_VALUE_MLD: u32 = 0;
+pub const IP6_OPT_HLEN: u32 = 2;
+pub const IP6_HBH_HLEN: u32 = 2;
+pub const IP6_DEST_HLEN: u32 = 2;
+pub const IP6_ROUT_TYPE2: u32 = 2;
+pub const IP6_ROUT_RPL: u32 = 3;
+pub const IP6_FRAG_HLEN: u32 = 8;
+pub const IP6_FRAG_OFFSET_MASK: u32 = 65528;
+pub const IP6_FRAG_MORE_FLAG: u32 = 1;
+pub const IP_PROTO_ICMP: u32 = 1;
+pub const IP_PROTO_IGMP: u32 = 2;
+pub const IP_PROTO_UDP: u32 = 17;
+pub const IP_PROTO_UDPLITE: u32 = 136;
+pub const IP_PROTO_TCP: u32 = 6;
+pub const LWIP_IP_HDRINCL: u32 = 0;
+pub const SOF_REUSEADDR: u32 = 4;
+pub const SOF_KEEPALIVE: u32 = 8;
+pub const SOF_BROADCAST: u32 = 32;
+pub const SOF_INHERITED: u32 = 12;
+pub const ICMP_ER: u32 = 0;
+pub const ICMP_DUR: u32 = 3;
+pub const ICMP_SQ: u32 = 4;
+pub const ICMP_RD: u32 = 5;
+pub const ICMP_ECHO: u32 = 8;
+pub const ICMP_TE: u32 = 11;
+pub const ICMP_PP: u32 = 12;
+pub const ICMP_TS: u32 = 13;
+pub const ICMP_TSR: u32 = 14;
+pub const ICMP_IRQ: u32 = 15;
+pub const ICMP_IR: u32 = 16;
+pub const ICMP_AM: u32 = 17;
+pub const ICMP_AMR: u32 = 18;
+pub const ICMP6_HLEN: u32 = 8;
+pub const LWIP_TCP_PCB_NUM_EXT_ARG_ID_INVALID: u32 = 255;
+pub const TCP_ALLFLAGS: u32 = 65535;
+pub const TF_ACK_DELAY: u32 = 1;
+pub const TF_ACK_NOW: u32 = 2;
+pub const TF_INFR: u32 = 4;
+pub const TF_CLOSEPEND: u32 = 8;
+pub const TF_RXCLOSED: u32 = 16;
+pub const TF_FIN: u32 = 32;
+pub const TF_NODELAY: u32 = 64;
+pub const TF_NAGLEMEMERR: u32 = 128;
+pub const TF_RTO: u32 = 2048;
+pub const TCP_SNDQUEUELEN_OVERFLOW: u32 = 65532;
+pub const UDP_HLEN: u32 = 8;
+pub const UDP_FLAGS_NOCHKSUM: u32 = 1;
+pub const UDP_FLAGS_UDPLITE: u32 = 2;
+pub const UDP_FLAGS_CONNECTED: u32 = 4;
+pub const UDP_FLAGS_MULTICAST_LOOP: u32 = 8;
+pub const DNS_TMR_INTERVAL: u32 = 1000;
+pub const LWIP_DNS_ADDRTYPE_IPV4: u32 = 0;
+pub const LWIP_DNS_ADDRTYPE_IPV6: u32 = 1;
+pub const LWIP_DNS_ADDRTYPE_IPV4_IPV6: u32 = 2;
+pub const LWIP_DNS_ADDRTYPE_IPV6_IPV4: u32 = 3;
+pub const LWIP_DNS_ADDRTYPE_DEFAULT: u32 = 2;
+pub const LWIP_VERSION_MAJOR: u32 = 2;
+pub const LWIP_VERSION_MINOR: u32 = 1;
+pub const LWIP_VERSION_REVISION: u32 = 3;
+pub const LWIP_RC_RELEASE: u32 = 255;
+pub const LWIP_RC_DEVELOPMENT: u32 = 0;
+pub const LWIP_VERSION_STRING_SUFFIX: &[u8; 1] = b"\0";
+pub const SNTP_MAX_SERVERS: u32 = 1;
+pub const SNTP_GET_SERVERS_FROM_DHCP: u32 = 0;
+pub const SNTP_GET_SERVERS_FROM_DHCPV6: u32 = 0;
+pub const SNTP_SERVER_DNS: u32 = 0;
+pub const SNTP_DEBUG: u32 = 0;
+pub const SNTP_CHECK_RESPONSE: u32 = 0;
+pub const SNTP_COMP_ROUNDTRIP: u32 = 0;
+pub const SNTP_STARTUP_DELAY: u32 = 1;
+pub const SNTP_RECV_TIMEOUT: u32 = 15000;
+pub const SNTP_UPDATE_DELAY: u32 = 3600000;
+pub const SNTP_RETRY_TIMEOUT: u32 = 15000;
+pub const SNTP_RETRY_TIMEOUT_MAX: u32 = 150000;
+pub const SNTP_RETRY_TIMEOUT_EXP: u32 = 1;
+pub const SNTP_MONITOR_SERVER_REACHABILITY: u32 = 1;
+pub const SNTP_OPMODE_POLL: u32 = 0;
+pub const SNTP_OPMODE_LISTENONLY: u32 = 1;
 extern "C" {
     pub static mut debug_flags: libc::c_uchar;
 }
@@ -21271,6 +21498,6422 @@ extern "C" {
 extern "C" {
     pub fn toupper(c: libc::c_int) -> libc::c_int;
 }
+#[doc = " No error, everything OK."]
+pub const err_enum_t_ERR_OK: err_enum_t = 0;
+#[doc = " Out of memory error."]
+pub const err_enum_t_ERR_MEM: err_enum_t = -1;
+#[doc = " Buffer error."]
+pub const err_enum_t_ERR_BUF: err_enum_t = -2;
+#[doc = " Timeout."]
+pub const err_enum_t_ERR_TIMEOUT: err_enum_t = -3;
+#[doc = " Routing problem."]
+pub const err_enum_t_ERR_RTE: err_enum_t = -4;
+#[doc = " Operation in progress"]
+pub const err_enum_t_ERR_INPROGRESS: err_enum_t = -5;
+#[doc = " Illegal value."]
+pub const err_enum_t_ERR_VAL: err_enum_t = -6;
+#[doc = " Operation would block."]
+pub const err_enum_t_ERR_WOULDBLOCK: err_enum_t = -7;
+#[doc = " Address in use."]
+pub const err_enum_t_ERR_USE: err_enum_t = -8;
+#[doc = " Already connecting."]
+pub const err_enum_t_ERR_ALREADY: err_enum_t = -9;
+#[doc = " Conn already established."]
+pub const err_enum_t_ERR_ISCONN: err_enum_t = -10;
+#[doc = " Not connected."]
+pub const err_enum_t_ERR_CONN: err_enum_t = -11;
+#[doc = " Low-level netif error"]
+pub const err_enum_t_ERR_IF: err_enum_t = -12;
+#[doc = " Connection aborted."]
+pub const err_enum_t_ERR_ABRT: err_enum_t = -13;
+#[doc = " Connection reset."]
+pub const err_enum_t_ERR_RST: err_enum_t = -14;
+#[doc = " Connection closed."]
+pub const err_enum_t_ERR_CLSD: err_enum_t = -15;
+#[doc = " Illegal argument."]
+pub const err_enum_t_ERR_ARG: err_enum_t = -16;
+#[doc = " Definitions for error constants."]
+pub type err_enum_t = libc::c_int;
+pub type err_t = s8_t;
+extern "C" {
+    pub fn lwip_strerr(err: err_t) -> *const libc::c_char;
+}
+extern "C" {
+    pub fn err_to_errno(err: err_t) -> libc::c_int;
+}
+#[doc = " Includes spare room for transport layer header, e.g. UDP header.\n Use this if you intend to pass the pbuf to functions like udp_send()."]
+pub const pbuf_layer_PBUF_TRANSPORT: pbuf_layer = 76;
+#[doc = " Includes spare room for IP header.\n Use this if you intend to pass the pbuf to functions like raw_send()."]
+pub const pbuf_layer_PBUF_IP: pbuf_layer = 56;
+#[doc = " Includes spare room for link layer header (ethernet header).\n Use this if you intend to pass the pbuf to functions like ethernet_output().\n @see PBUF_LINK_HLEN"]
+pub const pbuf_layer_PBUF_LINK: pbuf_layer = 16;
+#[doc = " Includes spare room for additional encapsulation header before ethernet\n headers (e.g. 802.11).\n Use this if you intend to pass the pbuf to functions like netif->linkoutput().\n @see PBUF_LINK_ENCAPSULATION_HLEN"]
+pub const pbuf_layer_PBUF_RAW_TX: pbuf_layer = 0;
+#[doc = " Use this for input packets in a netif driver when calling netif->input()\n in the most common case - ethernet-layer netif driver."]
+pub const pbuf_layer_PBUF_RAW: pbuf_layer = 0;
+#[doc = " @ingroup pbuf\n Enumeration of pbuf layers"]
+pub type pbuf_layer = libc::c_int;
+#[doc = " pbuf data is stored in RAM, used for TX mostly, struct pbuf and its payload\nare allocated in one piece of contiguous memory (so the first payload byte\ncan be calculated from struct pbuf).\npbuf_alloc() allocates PBUF_RAM pbufs as unchained pbufs (although that might\nchange in future versions).\nThis should be used for all OUTGOING packets (TX)."]
+pub const pbuf_type_PBUF_RAM: pbuf_type = 640;
+#[doc = " pbuf data is stored in ROM, i.e. struct pbuf and its payload are located in\ntotally different memory areas. Since it points to ROM, payload does not\nhave to be copied when queued for transmission."]
+pub const pbuf_type_PBUF_ROM: pbuf_type = 1;
+#[doc = " pbuf comes from the pbuf pool. Much like PBUF_ROM but payload might change\nso it has to be duplicated when queued before transmitting, depending on\nwho has a 'ref' to it."]
+pub const pbuf_type_PBUF_REF: pbuf_type = 65;
+#[doc = " pbuf payload refers to RAM. This one comes from a pool and should be used\nfor RX. Payload can be chained (scatter-gather RX) but like PBUF_RAM, struct\npbuf and its payload are allocated in one piece of contiguous memory (so\nthe first payload byte can be calculated from struct pbuf).\nDon't use this for TX, if the pool becomes empty e.g. because of TCP queuing,\nyou are unable to receive TCP acks!"]
+pub const pbuf_type_PBUF_POOL: pbuf_type = 386;
+#[doc = " @ingroup pbuf\n Enumeration of pbuf types"]
+pub type pbuf_type = libc::c_int;
+#[doc = " Main packet buffer struct"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct pbuf {
+    #[doc = " next pbuf in singly linked pbuf chain"]
+    pub next: *mut pbuf,
+    #[doc = " pointer to the actual data in the buffer"]
+    pub payload: *mut libc::c_void,
+    #[doc = " total length of this buffer and all next buffers in chain\n belonging to the same packet.\n\n For non-queue packet chains this is the invariant:\n p->tot_len == p->len + (p->next? p->next->tot_len: 0)"]
+    pub tot_len: u16_t,
+    #[doc = " length of this buffer"]
+    pub len: u16_t,
+    #[doc = " a bit field indicating pbuf type and allocation sources\n(see PBUF_TYPE_FLAG_*, PBUF_ALLOC_FLAG_* and PBUF_TYPE_ALLOC_SRC_MASK)"]
+    pub type_internal: u8_t,
+    #[doc = " misc flags"]
+    pub flags: u8_t,
+    #[doc = " the reference count always equals the number of pointers\n that refer to this pbuf. This can be pointers from an application,\n the stack itself, or pbuf->next pointers from a chain."]
+    pub ref_: u8_t,
+    #[doc = " For incoming packets, this contains the input netif's index"]
+    pub if_idx: u8_t,
+}
+#[test]
+fn bindgen_test_layout_pbuf() {
+    const UNINIT: ::core::mem::MaybeUninit<pbuf> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<pbuf>(),
+        16usize,
+        concat!("Size of: ", stringify!(pbuf))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<pbuf>(),
+        4usize,
+        concat!("Alignment of ", stringify!(pbuf))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(pbuf),
+            "::",
+            stringify!(next)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).payload) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(pbuf),
+            "::",
+            stringify!(payload)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tot_len) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(pbuf),
+            "::",
+            stringify!(tot_len)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).len) as usize - ptr as usize },
+        10usize,
+        concat!("Offset of field: ", stringify!(pbuf), "::", stringify!(len))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).type_internal) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(pbuf),
+            "::",
+            stringify!(type_internal)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).flags) as usize - ptr as usize },
+        13usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(pbuf),
+            "::",
+            stringify!(flags)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ref_) as usize - ptr as usize },
+        14usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(pbuf),
+            "::",
+            stringify!(ref_)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).if_idx) as usize - ptr as usize },
+        15usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(pbuf),
+            "::",
+            stringify!(if_idx)
+        )
+    );
+}
+#[doc = " Helper struct for const-correctness only.\n The only meaning of this one is to provide a const payload pointer\n for PBUF_ROM type."]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct pbuf_rom {
+    #[doc = " next pbuf in singly linked pbuf chain"]
+    pub next: *mut pbuf,
+    #[doc = " pointer to the actual data in the buffer"]
+    pub payload: *const libc::c_void,
+}
+#[test]
+fn bindgen_test_layout_pbuf_rom() {
+    const UNINIT: ::core::mem::MaybeUninit<pbuf_rom> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<pbuf_rom>(),
+        8usize,
+        concat!("Size of: ", stringify!(pbuf_rom))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<pbuf_rom>(),
+        4usize,
+        concat!("Alignment of ", stringify!(pbuf_rom))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(pbuf_rom),
+            "::",
+            stringify!(next)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).payload) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(pbuf_rom),
+            "::",
+            stringify!(payload)
+        )
+    );
+}
+#[doc = " Prototype for a function to free a custom pbuf"]
+pub type pbuf_free_custom_fn = ::core::option::Option<unsafe extern "C" fn(p: *mut pbuf)>;
+#[doc = " A custom pbuf: like a pbuf, but following a function pointer to free it."]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct pbuf_custom {
+    #[doc = " The actual pbuf"]
+    pub pbuf: pbuf,
+    #[doc = " This function is called when pbuf_free deallocates this pbuf(_custom)"]
+    pub custom_free_function: pbuf_free_custom_fn,
+}
+#[test]
+fn bindgen_test_layout_pbuf_custom() {
+    const UNINIT: ::core::mem::MaybeUninit<pbuf_custom> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<pbuf_custom>(),
+        20usize,
+        concat!("Size of: ", stringify!(pbuf_custom))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<pbuf_custom>(),
+        4usize,
+        concat!("Alignment of ", stringify!(pbuf_custom))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).pbuf) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(pbuf_custom),
+            "::",
+            stringify!(pbuf)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).custom_free_function) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(pbuf_custom),
+            "::",
+            stringify!(custom_free_function)
+        )
+    );
+}
+extern "C" {
+    pub fn pbuf_alloc(l: pbuf_layer, length: u16_t, type_: pbuf_type) -> *mut pbuf;
+}
+extern "C" {
+    pub fn pbuf_alloc_reference(
+        payload: *mut libc::c_void,
+        length: u16_t,
+        type_: pbuf_type,
+    ) -> *mut pbuf;
+}
+extern "C" {
+    pub fn pbuf_alloced_custom(
+        l: pbuf_layer,
+        length: u16_t,
+        type_: pbuf_type,
+        p: *mut pbuf_custom,
+        payload_mem: *mut libc::c_void,
+        payload_mem_len: u16_t,
+    ) -> *mut pbuf;
+}
+extern "C" {
+    pub fn pbuf_realloc(p: *mut pbuf, size: u16_t);
+}
+extern "C" {
+    pub fn pbuf_header(p: *mut pbuf, header_size: s16_t) -> u8_t;
+}
+extern "C" {
+    pub fn pbuf_header_force(p: *mut pbuf, header_size: s16_t) -> u8_t;
+}
+extern "C" {
+    pub fn pbuf_add_header(p: *mut pbuf, header_size_increment: usize) -> u8_t;
+}
+extern "C" {
+    pub fn pbuf_add_header_force(p: *mut pbuf, header_size_increment: usize) -> u8_t;
+}
+extern "C" {
+    pub fn pbuf_remove_header(p: *mut pbuf, header_size: usize) -> u8_t;
+}
+extern "C" {
+    pub fn pbuf_free_header(q: *mut pbuf, size: u16_t) -> *mut pbuf;
+}
+extern "C" {
+    pub fn pbuf_ref(p: *mut pbuf);
+}
+extern "C" {
+    pub fn pbuf_free(p: *mut pbuf) -> u8_t;
+}
+extern "C" {
+    pub fn pbuf_clen(p: *const pbuf) -> u16_t;
+}
+extern "C" {
+    pub fn pbuf_cat(head: *mut pbuf, tail: *mut pbuf);
+}
+extern "C" {
+    pub fn pbuf_chain(head: *mut pbuf, tail: *mut pbuf);
+}
+extern "C" {
+    pub fn pbuf_dechain(p: *mut pbuf) -> *mut pbuf;
+}
+extern "C" {
+    pub fn pbuf_copy(p_to: *mut pbuf, p_from: *const pbuf) -> err_t;
+}
+extern "C" {
+    pub fn pbuf_copy_partial_pbuf(
+        p_to: *mut pbuf,
+        p_from: *const pbuf,
+        copy_len: u16_t,
+        offset: u16_t,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn pbuf_copy_partial(
+        p: *const pbuf,
+        dataptr: *mut libc::c_void,
+        len: u16_t,
+        offset: u16_t,
+    ) -> u16_t;
+}
+extern "C" {
+    pub fn pbuf_get_contiguous(
+        p: *const pbuf,
+        buffer: *mut libc::c_void,
+        bufsize: usize,
+        len: u16_t,
+        offset: u16_t,
+    ) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn pbuf_take(buf: *mut pbuf, dataptr: *const libc::c_void, len: u16_t) -> err_t;
+}
+extern "C" {
+    pub fn pbuf_take_at(
+        buf: *mut pbuf,
+        dataptr: *const libc::c_void,
+        len: u16_t,
+        offset: u16_t,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn pbuf_skip(in_: *mut pbuf, in_offset: u16_t, out_offset: *mut u16_t) -> *mut pbuf;
+}
+extern "C" {
+    pub fn pbuf_coalesce(p: *mut pbuf, layer: pbuf_layer) -> *mut pbuf;
+}
+extern "C" {
+    pub fn pbuf_clone(l: pbuf_layer, type_: pbuf_type, p: *mut pbuf) -> *mut pbuf;
+}
+extern "C" {
+    pub fn pbuf_get_at(p: *const pbuf, offset: u16_t) -> u8_t;
+}
+extern "C" {
+    pub fn pbuf_try_get_at(p: *const pbuf, offset: u16_t) -> libc::c_int;
+}
+extern "C" {
+    pub fn pbuf_put_at(p: *mut pbuf, offset: u16_t, data: u8_t);
+}
+extern "C" {
+    pub fn pbuf_memcmp(p: *const pbuf, offset: u16_t, s2: *const libc::c_void, n: u16_t) -> u16_t;
+}
+extern "C" {
+    pub fn pbuf_memfind(
+        p: *const pbuf,
+        mem: *const libc::c_void,
+        mem_len: u16_t,
+        start_offset: u16_t,
+    ) -> u16_t;
+}
+extern "C" {
+    pub fn pbuf_strstr(p: *const pbuf, substr: *const libc::c_char) -> u16_t;
+}
+extern "C" {
+    pub fn lwip_htons(x: u16_t) -> u16_t;
+}
+extern "C" {
+    pub fn lwip_htonl(x: u32_t) -> u32_t;
+}
+extern "C" {
+    pub fn lwip_itoa(result: *mut libc::c_char, bufsize: usize, number: libc::c_int);
+}
+extern "C" {
+    pub fn lwip_strnicmp(
+        str1: *const libc::c_char,
+        str2: *const libc::c_char,
+        len: usize,
+    ) -> libc::c_int;
+}
+extern "C" {
+    pub fn lwip_stricmp(str1: *const libc::c_char, str2: *const libc::c_char) -> libc::c_int;
+}
+extern "C" {
+    pub fn lwip_strnstr(
+        buffer: *const libc::c_char,
+        token: *const libc::c_char,
+        n: usize,
+    ) -> *mut libc::c_char;
+}
+#[doc = " This is the aligned version of ip4_addr_t,\nused as local variable, on the stack, etc."]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ip4_addr {
+    pub addr: u32_t,
+}
+#[test]
+fn bindgen_test_layout_ip4_addr() {
+    const UNINIT: ::core::mem::MaybeUninit<ip4_addr> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<ip4_addr>(),
+        4usize,
+        concat!("Size of: ", stringify!(ip4_addr))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<ip4_addr>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ip4_addr))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).addr) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip4_addr),
+            "::",
+            stringify!(addr)
+        )
+    );
+}
+#[doc = " ip4_addr_t uses a struct for convenience only, so that the same defines can\n operate both on ip4_addr_t as well as on ip4_addr_p_t."]
+pub type ip4_addr_t = ip4_addr;
+extern "C" {
+    pub fn ip4_addr_isbroadcast_u32(addr: u32_t, netif: *const netif) -> u8_t;
+}
+extern "C" {
+    pub fn ip4_addr_netmask_valid(netmask: u32_t) -> u8_t;
+}
+extern "C" {
+    pub fn ipaddr_addr(cp: *const libc::c_char) -> u32_t;
+}
+extern "C" {
+    pub fn ip4addr_aton(cp: *const libc::c_char, addr: *mut ip4_addr_t) -> libc::c_int;
+}
+extern "C" {
+    #[doc = " returns ptr to static buffer; not reentrant!"]
+    pub fn ip4addr_ntoa(addr: *const ip4_addr_t) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn ip4addr_ntoa_r(
+        addr: *const ip4_addr_t,
+        buf: *mut libc::c_char,
+        buflen: libc::c_int,
+    ) -> *mut libc::c_char;
+}
+#[doc = " This is the aligned version of ip6_addr_t,\nused as local variable, on the stack, etc."]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ip6_addr {
+    pub addr: [u32_t; 4usize],
+}
+#[test]
+fn bindgen_test_layout_ip6_addr() {
+    const UNINIT: ::core::mem::MaybeUninit<ip6_addr> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<ip6_addr>(),
+        16usize,
+        concat!("Size of: ", stringify!(ip6_addr))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<ip6_addr>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ip6_addr))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).addr) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_addr),
+            "::",
+            stringify!(addr)
+        )
+    );
+}
+#[doc = " IPv6 address"]
+pub type ip6_addr_t = ip6_addr;
+extern "C" {
+    pub fn ip6addr_aton(cp: *const libc::c_char, addr: *mut ip6_addr_t) -> libc::c_int;
+}
+extern "C" {
+    #[doc = " returns ptr to static buffer; not reentrant!"]
+    pub fn ip6addr_ntoa(addr: *const ip6_addr_t) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn ip6addr_ntoa_r(
+        addr: *const ip6_addr_t,
+        buf: *mut libc::c_char,
+        buflen: libc::c_int,
+    ) -> *mut libc::c_char;
+}
+#[doc = " IPv4"]
+pub const lwip_ip_addr_type_IPADDR_TYPE_V4: lwip_ip_addr_type = 0;
+#[doc = " IPv6"]
+pub const lwip_ip_addr_type_IPADDR_TYPE_V6: lwip_ip_addr_type = 6;
+#[doc = " IPv4+IPv6 (\"dual-stack\")"]
+pub const lwip_ip_addr_type_IPADDR_TYPE_ANY: lwip_ip_addr_type = 46;
+#[doc = " @ingroup ipaddr\n IP address types for use in ip_addr_t.type member.\n @see tcp_new_ip_type(), udp_new_ip_type(), raw_new_ip_type()."]
+pub type lwip_ip_addr_type = libc::c_int;
+#[doc = " @ingroup ipaddr\n A union struct for both IP version's addresses.\n ATTENTION: watch out for its size when adding IPv6 address scope!"]
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct ip_addr {
+    pub u_addr: ip_addr__bindgen_ty_1,
+    #[doc = " @ref lwip_ip_addr_type"]
+    pub type_: u8_t,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union ip_addr__bindgen_ty_1 {
+    pub ip6: ip6_addr_t,
+    pub ip4: ip4_addr_t,
+}
+#[test]
+fn bindgen_test_layout_ip_addr__bindgen_ty_1() {
+    const UNINIT: ::core::mem::MaybeUninit<ip_addr__bindgen_ty_1> =
+        ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<ip_addr__bindgen_ty_1>(),
+        16usize,
+        concat!("Size of: ", stringify!(ip_addr__bindgen_ty_1))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<ip_addr__bindgen_ty_1>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ip_addr__bindgen_ty_1))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ip6) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_addr__bindgen_ty_1),
+            "::",
+            stringify!(ip6)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ip4) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_addr__bindgen_ty_1),
+            "::",
+            stringify!(ip4)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_ip_addr() {
+    const UNINIT: ::core::mem::MaybeUninit<ip_addr> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<ip_addr>(),
+        20usize,
+        concat!("Size of: ", stringify!(ip_addr))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<ip_addr>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ip_addr))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).u_addr) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_addr),
+            "::",
+            stringify!(u_addr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_addr),
+            "::",
+            stringify!(type_)
+        )
+    );
+}
+#[doc = " @ingroup ipaddr\n A union struct for both IP version's addresses.\n ATTENTION: watch out for its size when adding IPv6 address scope!"]
+pub type ip_addr_t = ip_addr;
+extern "C" {
+    pub static ip_addr_any_type: ip_addr_t;
+}
+extern "C" {
+    pub fn ipaddr_ntoa(addr: *const ip_addr_t) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn ipaddr_ntoa_r(
+        addr: *const ip_addr_t,
+        buf: *mut libc::c_char,
+        buflen: libc::c_int,
+    ) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn ipaddr_aton(cp: *const libc::c_char, addr: *mut ip_addr_t) -> libc::c_int;
+}
+extern "C" {
+    pub static ip_addr_any: ip_addr_t;
+}
+extern "C" {
+    pub static ip_addr_broadcast: ip_addr_t;
+}
+extern "C" {
+    pub static ip6_addr_any: ip_addr_t;
+}
+#[doc = " \"Network buffer\" - contains data and addressing info"]
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct netbuf {
+    pub p: *mut pbuf,
+    pub ptr: *mut pbuf,
+    pub addr: ip_addr_t,
+    pub port: u16_t,
+}
+#[test]
+fn bindgen_test_layout_netbuf() {
+    const UNINIT: ::core::mem::MaybeUninit<netbuf> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<netbuf>(),
+        32usize,
+        concat!("Size of: ", stringify!(netbuf))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<netbuf>(),
+        4usize,
+        concat!("Alignment of ", stringify!(netbuf))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).p) as usize - ptr as usize },
+        0usize,
+        concat!("Offset of field: ", stringify!(netbuf), "::", stringify!(p))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ptr) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netbuf),
+            "::",
+            stringify!(ptr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).addr) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netbuf),
+            "::",
+            stringify!(addr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).port) as usize - ptr as usize },
+        28usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netbuf),
+            "::",
+            stringify!(port)
+        )
+    );
+}
+extern "C" {
+    pub fn netbuf_new() -> *mut netbuf;
+}
+extern "C" {
+    pub fn netbuf_delete(buf: *mut netbuf);
+}
+extern "C" {
+    pub fn netbuf_alloc(buf: *mut netbuf, size: u16_t) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn netbuf_free(buf: *mut netbuf);
+}
+extern "C" {
+    pub fn netbuf_ref(buf: *mut netbuf, dataptr: *const libc::c_void, size: u16_t) -> err_t;
+}
+extern "C" {
+    pub fn netbuf_chain(head: *mut netbuf, tail: *mut netbuf);
+}
+extern "C" {
+    pub fn netbuf_data(buf: *mut netbuf, dataptr: *mut *mut libc::c_void, len: *mut u16_t)
+        -> err_t;
+}
+extern "C" {
+    pub fn netbuf_next(buf: *mut netbuf) -> s8_t;
+}
+extern "C" {
+    pub fn netbuf_first(buf: *mut netbuf);
+}
+pub type sys_prot_t = libc::c_uchar;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct sys_sem {
+    _unused: [u8; 0],
+}
+pub type sys_sem_t = *mut sys_sem;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct sys_mbox {
+    _unused: [u8; 0],
+}
+pub type sys_mbox_t = *mut sys_mbox;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct sys_thread {
+    _unused: [u8; 0],
+}
+pub type sys_thread_t = *mut sys_thread;
+#[doc = " Function prototype for thread functions"]
+pub type lwip_thread_fn = ::core::option::Option<unsafe extern "C" fn(arg: *mut libc::c_void)>;
+extern "C" {
+    #[doc = " @ingroup sys_sem\n Create a new semaphore\n Creates a new semaphore. The semaphore is allocated to the memory that 'sem'\n points to (which can be both a pointer or the actual OS structure).\n The \"count\" argument specifies the initial state of the semaphore (which is\n either 0 or 1).\n If the semaphore has been created, ERR_OK should be returned. Returning any\n other error will provide a hint what went wrong, but except for assertions,\n no real error handling is implemented.\n\n @param sem pointer to the semaphore to create\n @param count initial count of the semaphore\n @return ERR_OK if successful, another err_t otherwise"]
+    pub fn sys_sem_new(sem: *mut sys_sem_t, count: u8_t) -> err_t;
+}
+extern "C" {
+    #[doc = " @ingroup sys_sem\n Signals a semaphore\n @param sem the semaphore to signal"]
+    pub fn sys_sem_signal(sem: *mut sys_sem_t);
+}
+extern "C" {
+    #[doc = " @ingroup sys_sem\n  Blocks the thread while waiting for the semaphore to be signaled. If the\n \"timeout\" argument is non-zero, the thread should only be blocked for the\n specified time (measured in milliseconds). If the \"timeout\" argument is zero,\n the thread should be blocked until the semaphore is signalled.\n\n The return value is SYS_ARCH_TIMEOUT if the semaphore wasn't signaled within\n the specified time or any other value if it was signaled (with or without\n waiting).\n Notice that lwIP implements a function with a similar name,\n sys_sem_wait(), that uses the sys_arch_sem_wait() function.\n\n @param sem the semaphore to wait for\n @param timeout timeout in milliseconds to wait (0 = wait forever)\n @return SYS_ARCH_TIMEOUT on timeout, any other value on success"]
+    pub fn sys_arch_sem_wait(sem: *mut sys_sem_t, timeout: u32_t) -> u32_t;
+}
+extern "C" {
+    #[doc = " @ingroup sys_sem\n Deallocates a semaphore.\n @param sem semaphore to delete"]
+    pub fn sys_sem_free(sem: *mut sys_sem_t);
+}
+extern "C" {
+    #[doc = " @ingroup sys_misc\n Sleep for specified number of ms"]
+    pub fn sys_msleep(ms: u32_t);
+}
+extern "C" {
+    #[doc = " @ingroup sys_mbox\n Creates an empty mailbox for maximum \"size\" elements. Elements stored\n in mailboxes are pointers. You have to define macros \"_MBOX_SIZE\"\n in your lwipopts.h, or ignore this parameter in your implementation\n and use a default size.\n If the mailbox has been created, ERR_OK should be returned. Returning any\n other error will provide a hint what went wrong, but except for assertions,\n no real error handling is implemented.\n\n @param mbox pointer to the mbox to create\n @param size (minimum) number of messages in this mbox\n @return ERR_OK if successful, another err_t otherwise"]
+    pub fn sys_mbox_new(mbox: *mut sys_mbox_t, size: libc::c_int) -> err_t;
+}
+extern "C" {
+    #[doc = " @ingroup sys_mbox\n Post a message to an mbox - may not fail\n -> blocks if full, only to be used from tasks NOT from ISR!\n\n @param mbox mbox to posts the message\n @param msg message to post (ATTENTION: can be NULL)"]
+    pub fn sys_mbox_post(mbox: *mut sys_mbox_t, msg: *mut libc::c_void);
+}
+extern "C" {
+    #[doc = " @ingroup sys_mbox\n Try to post a message to an mbox - may fail if full.\n Can be used from ISR (if the sys arch layer allows this).\n Returns ERR_MEM if it is full, else, ERR_OK if the \"msg\" is posted.\n\n @param mbox mbox to posts the message\n @param msg message to post (ATTENTION: can be NULL)"]
+    pub fn sys_mbox_trypost(mbox: *mut sys_mbox_t, msg: *mut libc::c_void) -> err_t;
+}
+extern "C" {
+    #[doc = " @ingroup sys_mbox\n Try to post a message to an mbox - may fail if full.\n To be be used from ISR.\n Returns ERR_MEM if it is full, else, ERR_OK if the \"msg\" is posted.\n\n @param mbox mbox to posts the message\n @param msg message to post (ATTENTION: can be NULL)"]
+    pub fn sys_mbox_trypost_fromisr(mbox: *mut sys_mbox_t, msg: *mut libc::c_void) -> err_t;
+}
+extern "C" {
+    #[doc = " @ingroup sys_mbox\n Blocks the thread until a message arrives in the mailbox, but does\n not block the thread longer than \"timeout\" milliseconds (similar to\n the sys_arch_sem_wait() function). If \"timeout\" is 0, the thread should\n be blocked until a message arrives. The \"msg\" argument is a result\n parameter that is set by the function (i.e., by doing \"*msg =\n ptr\"). The \"msg\" parameter maybe NULL to indicate that the message\n should be dropped.\n The return values are the same as for the sys_arch_sem_wait() function:\n SYS_ARCH_TIMEOUT if there was a timeout, any other value if a messages\n is received.\n\n Note that a function with a similar name, sys_mbox_fetch(), is\n implemented by lwIP.\n\n @param mbox mbox to get a message from\n @param msg pointer where the message is stored\n @param timeout maximum time (in milliseconds) to wait for a message (0 = wait forever)\n @return SYS_ARCH_TIMEOUT on timeout, any other value if a message has been received"]
+    pub fn sys_arch_mbox_fetch(
+        mbox: *mut sys_mbox_t,
+        msg: *mut *mut libc::c_void,
+        timeout: u32_t,
+    ) -> u32_t;
+}
+extern "C" {
+    #[doc = " @ingroup sys_mbox\n This is similar to sys_arch_mbox_fetch, however if a message is not\n present in the mailbox, it immediately returns with the code\n SYS_MBOX_EMPTY. On success 0 is returned.\n To allow for efficient implementations, this can be defined as a\n function-like macro in sys_arch.h instead of a normal function. For\n example, a naive implementation could be:\n \\#define sys_arch_mbox_tryfetch(mbox,msg) sys_arch_mbox_fetch(mbox,msg,1)\n although this would introduce unnecessary delays.\n\n @param mbox mbox to get a message from\n @param msg pointer where the message is stored\n @return 0 (milliseconds) if a message has been received\n         or SYS_MBOX_EMPTY if the mailbox is empty"]
+    pub fn sys_arch_mbox_tryfetch(mbox: *mut sys_mbox_t, msg: *mut *mut libc::c_void) -> u32_t;
+}
+extern "C" {
+    #[doc = " @ingroup sys_mbox\n Deallocates a mailbox. If there are messages still present in the\n mailbox when the mailbox is deallocated, it is an indication of a\n programming error in lwIP and the developer should be notified.\n\n @param mbox mbox to delete"]
+    pub fn sys_mbox_free(mbox: *mut sys_mbox_t);
+}
+extern "C" {
+    #[doc = " @ingroup sys_misc\n The only thread function:\n Starts a new thread named \"name\" with priority \"prio\" that will begin its\n execution in the function \"thread()\". The \"arg\" argument will be passed as an\n argument to the thread() function. The stack size to used for this thread is\n the \"stacksize\" parameter. The id of the new thread is returned. Both the id\n and the priority are system dependent.\n ATTENTION: although this function returns a value, it MUST NOT FAIL (ports have to assert this!)\n\n @param name human-readable name for the thread (used for debugging purposes)\n @param thread thread-function\n @param arg parameter passed to 'thread'\n @param stacksize stack size in bytes for the new thread (may be ignored by ports)\n @param prio priority of the new thread (may be ignored by ports)"]
+    pub fn sys_thread_new(
+        name: *const libc::c_char,
+        thread: lwip_thread_fn,
+        arg: *mut libc::c_void,
+        stacksize: libc::c_int,
+        prio: libc::c_int,
+    ) -> sys_thread_t;
+}
+extern "C" {
+    #[doc = " @ingroup sys_misc\n sys_init() must be called before anything else.\n Initialize the sys_arch layer."]
+    pub fn sys_init();
+}
+extern "C" {
+    #[doc = " Ticks/jiffies since power up."]
+    pub fn sys_jiffies() -> u32_t;
+}
+extern "C" {
+    #[doc = " @ingroup sys_time\n Returns the current time in milliseconds,\n may be the same as sys_jiffies or at least based on it.\n Don't care for wraparound, this is only used for time diffs.\n Not implementing this function means you cannot use some modules (e.g. TCP\n timestamps, internal timeouts for NO_SYS==1)."]
+    pub fn sys_now() -> u32_t;
+}
+extern "C" {
+    pub fn sys_arch_protect() -> sys_prot_t;
+}
+extern "C" {
+    pub fn sys_arch_unprotect(pval: sys_prot_t);
+}
+pub const netconn_type_NETCONN_INVALID: netconn_type = 0;
+#[doc = " TCP IPv4"]
+pub const netconn_type_NETCONN_TCP: netconn_type = 16;
+#[doc = " TCP IPv6"]
+pub const netconn_type_NETCONN_TCP_IPV6: netconn_type = 24;
+#[doc = " UDP IPv4"]
+pub const netconn_type_NETCONN_UDP: netconn_type = 32;
+#[doc = " UDP IPv4 lite"]
+pub const netconn_type_NETCONN_UDPLITE: netconn_type = 33;
+#[doc = " UDP IPv4 no checksum"]
+pub const netconn_type_NETCONN_UDPNOCHKSUM: netconn_type = 34;
+#[doc = " UDP IPv6 (dual-stack by default, unless you call @ref netconn_set_ipv6only)"]
+pub const netconn_type_NETCONN_UDP_IPV6: netconn_type = 40;
+#[doc = " UDP IPv6 lite (dual-stack by default, unless you call @ref netconn_set_ipv6only)"]
+pub const netconn_type_NETCONN_UDPLITE_IPV6: netconn_type = 41;
+#[doc = " UDP IPv6 no checksum (dual-stack by default, unless you call @ref netconn_set_ipv6only)"]
+pub const netconn_type_NETCONN_UDPNOCHKSUM_IPV6: netconn_type = 42;
+#[doc = " Raw connection IPv4"]
+pub const netconn_type_NETCONN_RAW: netconn_type = 64;
+#[doc = " Raw connection IPv6 (dual-stack by default, unless you call @ref netconn_set_ipv6only)"]
+pub const netconn_type_NETCONN_RAW_IPV6: netconn_type = 72;
+#[doc = " @ingroup netconn_common\n Protocol family and type of the netconn"]
+pub type netconn_type = libc::c_int;
+pub const netconn_state_NETCONN_NONE: netconn_state = 0;
+pub const netconn_state_NETCONN_WRITE: netconn_state = 1;
+pub const netconn_state_NETCONN_LISTEN: netconn_state = 2;
+pub const netconn_state_NETCONN_CONNECT: netconn_state = 3;
+pub const netconn_state_NETCONN_CLOSE: netconn_state = 4;
+#[doc = " Current state of the netconn. Non-TCP netconns are always\n in state NETCONN_NONE!"]
+pub type netconn_state = libc::c_int;
+pub const netconn_evt_NETCONN_EVT_RCVPLUS: netconn_evt = 0;
+pub const netconn_evt_NETCONN_EVT_RCVMINUS: netconn_evt = 1;
+pub const netconn_evt_NETCONN_EVT_SENDPLUS: netconn_evt = 2;
+pub const netconn_evt_NETCONN_EVT_SENDMINUS: netconn_evt = 3;
+pub const netconn_evt_NETCONN_EVT_ERROR: netconn_evt = 4;
+#[doc = " Used to inform the callback function about changes\n\n Event explanation:\n\n In the netconn implementation, there are three ways to block a client:\n\n - accept mbox (sys_arch_mbox_fetch(&conn->acceptmbox, &accept_ptr, 0); in netconn_accept())\n - receive mbox (sys_arch_mbox_fetch(&conn->recvmbox, &buf, 0); in netconn_recv_data())\n - send queue is full (sys_arch_sem_wait(LWIP_API_MSG_SEM(msg), 0); in lwip_netconn_do_write())\n\n The events have to be seen as events signaling the state of these mboxes/semaphores. For non-blocking\n connections, you need to know in advance whether a call to a netconn function call would block or not,\n and these events tell you about that.\n\n RCVPLUS events say: Safe to perform a potentially blocking call call once more.\n They are counted in sockets - three RCVPLUS events for accept mbox means you are safe\n to call netconn_accept 3 times without being blocked.\n Same thing for receive mbox.\n\n RCVMINUS events say: Your call to to a possibly blocking function is \"acknowledged\".\n Socket implementation decrements the counter.\n\n For TX, there is no need to count, its merely a flag. SENDPLUS means you may send something.\n SENDPLUS occurs when enough data was delivered to peer so netconn_send() can be called again.\n A SENDMINUS event occurs when the next call to a netconn_send() would be blocking."]
+pub type netconn_evt = libc::c_int;
+pub const netconn_igmp_NETCONN_JOIN: netconn_igmp = 0;
+pub const netconn_igmp_NETCONN_LEAVE: netconn_igmp = 1;
+#[doc = " Used for netconn_join_leave_group()"]
+pub type netconn_igmp = libc::c_int;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct raw_pcb {
+    _unused: [u8; 0],
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct api_msg {
+    _unused: [u8; 0],
+}
+#[doc = " A callback prototype to inform about events for a netconn"]
+pub type netconn_callback =
+    ::core::option::Option<unsafe extern "C" fn(arg1: *mut netconn, arg2: netconn_evt, len: u16_t)>;
+#[doc = " A netconn descriptor"]
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct netconn {
+    #[doc = " type of the netconn (TCP, UDP or RAW)"]
+    pub type_: netconn_type,
+    #[doc = " current state of the netconn"]
+    pub state: netconn_state,
+    pub pcb: netconn__bindgen_ty_1,
+    #[doc = " the last asynchronous unreported error this netconn had"]
+    pub pending_err: err_t,
+    #[doc = " sem that is used to synchronously execute functions in the core context"]
+    pub op_completed: sys_sem_t,
+    #[doc = " mbox where received packets are stored until they are fetched\nby the netconn application thread (can grow quite big)"]
+    pub recvmbox: sys_mbox_t,
+    #[doc = " mbox where new connections are stored until processed\nby the application thread"]
+    pub acceptmbox: sys_mbox_t,
+    pub socket: libc::c_int,
+    #[doc = " flags holding more netconn-internal state, see NETCONN_FLAG_* defines"]
+    pub flags: u8_t,
+    #[doc = " TCP: when data passed to netconn_write doesn't fit into the send buffer,\nthis temporarily stores the message.\nAlso used during connect and close."]
+    pub current_msg: *mut api_msg,
+    #[doc = " A callback function that is informed about events for this netconn"]
+    pub callback: netconn_callback,
+}
+#[doc = " the lwIP internal protocol control block"]
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union netconn__bindgen_ty_1 {
+    pub ip: *mut ip_pcb,
+    pub tcp: *mut tcp_pcb,
+    pub udp: *mut udp_pcb,
+    pub raw: *mut raw_pcb,
+}
+#[test]
+fn bindgen_test_layout_netconn__bindgen_ty_1() {
+    const UNINIT: ::core::mem::MaybeUninit<netconn__bindgen_ty_1> =
+        ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<netconn__bindgen_ty_1>(),
+        4usize,
+        concat!("Size of: ", stringify!(netconn__bindgen_ty_1))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<netconn__bindgen_ty_1>(),
+        4usize,
+        concat!("Alignment of ", stringify!(netconn__bindgen_ty_1))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ip) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netconn__bindgen_ty_1),
+            "::",
+            stringify!(ip)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tcp) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netconn__bindgen_ty_1),
+            "::",
+            stringify!(tcp)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).udp) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netconn__bindgen_ty_1),
+            "::",
+            stringify!(udp)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).raw) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netconn__bindgen_ty_1),
+            "::",
+            stringify!(raw)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_netconn() {
+    const UNINIT: ::core::mem::MaybeUninit<netconn> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<netconn>(),
+        44usize,
+        concat!("Size of: ", stringify!(netconn))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<netconn>(),
+        4usize,
+        concat!("Alignment of ", stringify!(netconn))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netconn),
+            "::",
+            stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).state) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netconn),
+            "::",
+            stringify!(state)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).pcb) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netconn),
+            "::",
+            stringify!(pcb)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).pending_err) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netconn),
+            "::",
+            stringify!(pending_err)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).op_completed) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netconn),
+            "::",
+            stringify!(op_completed)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).recvmbox) as usize - ptr as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netconn),
+            "::",
+            stringify!(recvmbox)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).acceptmbox) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netconn),
+            "::",
+            stringify!(acceptmbox)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).socket) as usize - ptr as usize },
+        28usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netconn),
+            "::",
+            stringify!(socket)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).flags) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netconn),
+            "::",
+            stringify!(flags)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).current_msg) as usize - ptr as usize },
+        36usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netconn),
+            "::",
+            stringify!(current_msg)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).callback) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netconn),
+            "::",
+            stringify!(callback)
+        )
+    );
+}
+#[doc = " This vector type is passed to @ref netconn_write_vectors_partly to send\n multiple buffers at once.\n ATTENTION: This type has to directly map struct iovec since one is casted\n            into the other!"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct netvector {
+    #[doc = " pointer to the application buffer that contains the data to send"]
+    pub ptr: *const libc::c_void,
+    #[doc = " size of the application data to send"]
+    pub len: usize,
+}
+#[test]
+fn bindgen_test_layout_netvector() {
+    const UNINIT: ::core::mem::MaybeUninit<netvector> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<netvector>(),
+        8usize,
+        concat!("Size of: ", stringify!(netvector))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<netvector>(),
+        4usize,
+        concat!("Alignment of ", stringify!(netvector))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ptr) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netvector),
+            "::",
+            stringify!(ptr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).len) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netvector),
+            "::",
+            stringify!(len)
+        )
+    );
+}
+extern "C" {
+    pub fn netconn_new_with_proto_and_callback(
+        t: netconn_type,
+        proto: u8_t,
+        callback: netconn_callback,
+    ) -> *mut netconn;
+}
+extern "C" {
+    pub fn netconn_prepare_delete(conn: *mut netconn) -> err_t;
+}
+extern "C" {
+    pub fn netconn_delete(conn: *mut netconn) -> err_t;
+}
+extern "C" {
+    pub fn netconn_getaddr(
+        conn: *mut netconn,
+        addr: *mut ip_addr_t,
+        port: *mut u16_t,
+        local: u8_t,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn netconn_bind(conn: *mut netconn, addr: *const ip_addr_t, port: u16_t) -> err_t;
+}
+extern "C" {
+    pub fn netconn_bind_if(conn: *mut netconn, if_idx: u8_t) -> err_t;
+}
+extern "C" {
+    pub fn netconn_connect(conn: *mut netconn, addr: *const ip_addr_t, port: u16_t) -> err_t;
+}
+extern "C" {
+    pub fn netconn_disconnect(conn: *mut netconn) -> err_t;
+}
+extern "C" {
+    pub fn netconn_listen_with_backlog(conn: *mut netconn, backlog: u8_t) -> err_t;
+}
+extern "C" {
+    pub fn netconn_accept(conn: *mut netconn, new_conn: *mut *mut netconn) -> err_t;
+}
+extern "C" {
+    pub fn netconn_recv(conn: *mut netconn, new_buf: *mut *mut netbuf) -> err_t;
+}
+extern "C" {
+    pub fn netconn_recv_udp_raw_netbuf(conn: *mut netconn, new_buf: *mut *mut netbuf) -> err_t;
+}
+extern "C" {
+    pub fn netconn_recv_udp_raw_netbuf_flags(
+        conn: *mut netconn,
+        new_buf: *mut *mut netbuf,
+        apiflags: u8_t,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn netconn_recv_tcp_pbuf(conn: *mut netconn, new_buf: *mut *mut pbuf) -> err_t;
+}
+extern "C" {
+    pub fn netconn_recv_tcp_pbuf_flags(
+        conn: *mut netconn,
+        new_buf: *mut *mut pbuf,
+        apiflags: u8_t,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn netconn_tcp_recvd(conn: *mut netconn, len: usize) -> err_t;
+}
+extern "C" {
+    pub fn netconn_sendto(
+        conn: *mut netconn,
+        buf: *mut netbuf,
+        addr: *const ip_addr_t,
+        port: u16_t,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn netconn_send(conn: *mut netconn, buf: *mut netbuf) -> err_t;
+}
+extern "C" {
+    pub fn netconn_write_partly(
+        conn: *mut netconn,
+        dataptr: *const libc::c_void,
+        size: usize,
+        apiflags: u8_t,
+        bytes_written: *mut usize,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn netconn_write_vectors_partly(
+        conn: *mut netconn,
+        vectors: *mut netvector,
+        vectorcnt: u16_t,
+        apiflags: u8_t,
+        bytes_written: *mut usize,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn netconn_close(conn: *mut netconn) -> err_t;
+}
+extern "C" {
+    pub fn netconn_shutdown(conn: *mut netconn, shut_rx: u8_t, shut_tx: u8_t) -> err_t;
+}
+extern "C" {
+    pub fn netconn_join_leave_group(
+        conn: *mut netconn,
+        multiaddr: *const ip_addr_t,
+        netif_addr: *const ip_addr_t,
+        join_or_leave: netconn_igmp,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn netconn_join_leave_group_netif(
+        conn: *mut netconn,
+        multiaddr: *const ip_addr_t,
+        if_idx: u8_t,
+        join_or_leave: netconn_igmp,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn netconn_gethostbyname_addrtype(
+        name: *const libc::c_char,
+        addr: *mut ip_addr_t,
+        dns_addrtype: u8_t,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn netconn_err(conn: *mut netconn) -> err_t;
+}
+pub type mem_size_t = usize;
+extern "C" {
+    pub fn mem_init();
+}
+extern "C" {
+    pub fn mem_trim(mem: *mut libc::c_void, size: mem_size_t) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn mem_malloc(size: mem_size_t) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn mem_calloc(count: mem_size_t, size: mem_size_t) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn mem_free(mem: *mut libc::c_void);
+}
+pub const memp_t_MEMP_RAW_PCB: memp_t = 0;
+pub const memp_t_MEMP_UDP_PCB: memp_t = 1;
+pub const memp_t_MEMP_TCP_PCB: memp_t = 2;
+pub const memp_t_MEMP_TCP_PCB_LISTEN: memp_t = 3;
+pub const memp_t_MEMP_TCP_SEG: memp_t = 4;
+pub const memp_t_MEMP_REASSDATA: memp_t = 5;
+pub const memp_t_MEMP_FRAG_PBUF: memp_t = 6;
+pub const memp_t_MEMP_NETBUF: memp_t = 7;
+pub const memp_t_MEMP_NETCONN: memp_t = 8;
+pub const memp_t_MEMP_TCPIP_MSG_API: memp_t = 9;
+pub const memp_t_MEMP_SYS_TIMEOUT: memp_t = 10;
+pub const memp_t_MEMP_NETDB: memp_t = 11;
+pub const memp_t_MEMP_ND6_QUEUE: memp_t = 12;
+pub const memp_t_MEMP_IP6_REASSDATA: memp_t = 13;
+pub const memp_t_MEMP_MLD6_GROUP: memp_t = 14;
+pub const memp_t_MEMP_PBUF: memp_t = 15;
+pub const memp_t_MEMP_PBUF_POOL: memp_t = 16;
+pub const memp_t_MEMP_MAX: memp_t = 17;
+#[doc = " Create the list of all memory pools managed by memp. MEMP_MAX represents a NULL pool at the end"]
+pub type memp_t = libc::c_int;
+#[doc = " Memory pool descriptor"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct memp_desc {
+    #[doc = " Textual description"]
+    pub desc: *const libc::c_char,
+    #[doc = " Element size"]
+    pub size: u16_t,
+}
+#[test]
+fn bindgen_test_layout_memp_desc() {
+    const UNINIT: ::core::mem::MaybeUninit<memp_desc> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<memp_desc>(),
+        8usize,
+        concat!("Size of: ", stringify!(memp_desc))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<memp_desc>(),
+        4usize,
+        concat!("Alignment of ", stringify!(memp_desc))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).desc) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(memp_desc),
+            "::",
+            stringify!(desc)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).size) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(memp_desc),
+            "::",
+            stringify!(size)
+        )
+    );
+}
+extern "C" {
+    pub fn memp_init_pool(desc: *const memp_desc);
+}
+extern "C" {
+    pub fn memp_malloc_pool(desc: *const memp_desc) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn memp_free_pool(desc: *const memp_desc, mem: *mut libc::c_void);
+}
+extern "C" {
+    pub static memp_pools: [*const memp_desc; 17usize];
+}
+extern "C" {
+    pub fn memp_init();
+}
+extern "C" {
+    pub fn memp_malloc(type_: memp_t) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn memp_free(type_: memp_t, mem: *mut libc::c_void);
+}
+#[doc = " Protocol related stats"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct stats_proto {
+    pub xmit: u16_t,
+    pub recv: u16_t,
+    pub fw: u16_t,
+    pub drop: u16_t,
+    pub chkerr: u16_t,
+    pub lenerr: u16_t,
+    pub memerr: u16_t,
+    pub rterr: u16_t,
+    pub proterr: u16_t,
+    pub opterr: u16_t,
+    pub err: u16_t,
+    pub cachehit: u16_t,
+}
+#[test]
+fn bindgen_test_layout_stats_proto() {
+    const UNINIT: ::core::mem::MaybeUninit<stats_proto> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<stats_proto>(),
+        24usize,
+        concat!("Size of: ", stringify!(stats_proto))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<stats_proto>(),
+        2usize,
+        concat!("Alignment of ", stringify!(stats_proto))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).xmit) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_proto),
+            "::",
+            stringify!(xmit)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).recv) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_proto),
+            "::",
+            stringify!(recv)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).fw) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_proto),
+            "::",
+            stringify!(fw)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).drop) as usize - ptr as usize },
+        6usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_proto),
+            "::",
+            stringify!(drop)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).chkerr) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_proto),
+            "::",
+            stringify!(chkerr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).lenerr) as usize - ptr as usize },
+        10usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_proto),
+            "::",
+            stringify!(lenerr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).memerr) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_proto),
+            "::",
+            stringify!(memerr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rterr) as usize - ptr as usize },
+        14usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_proto),
+            "::",
+            stringify!(rterr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).proterr) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_proto),
+            "::",
+            stringify!(proterr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).opterr) as usize - ptr as usize },
+        18usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_proto),
+            "::",
+            stringify!(opterr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).err) as usize - ptr as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_proto),
+            "::",
+            stringify!(err)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).cachehit) as usize - ptr as usize },
+        22usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_proto),
+            "::",
+            stringify!(cachehit)
+        )
+    );
+}
+#[doc = " IGMP stats"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct stats_igmp {
+    pub xmit: u16_t,
+    pub recv: u16_t,
+    pub drop: u16_t,
+    pub chkerr: u16_t,
+    pub lenerr: u16_t,
+    pub memerr: u16_t,
+    pub proterr: u16_t,
+    pub rx_v1: u16_t,
+    pub rx_group: u16_t,
+    pub rx_general: u16_t,
+    pub rx_report: u16_t,
+    pub tx_join: u16_t,
+    pub tx_leave: u16_t,
+    pub tx_report: u16_t,
+}
+#[test]
+fn bindgen_test_layout_stats_igmp() {
+    const UNINIT: ::core::mem::MaybeUninit<stats_igmp> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<stats_igmp>(),
+        28usize,
+        concat!("Size of: ", stringify!(stats_igmp))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<stats_igmp>(),
+        2usize,
+        concat!("Alignment of ", stringify!(stats_igmp))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).xmit) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_igmp),
+            "::",
+            stringify!(xmit)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).recv) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_igmp),
+            "::",
+            stringify!(recv)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).drop) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_igmp),
+            "::",
+            stringify!(drop)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).chkerr) as usize - ptr as usize },
+        6usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_igmp),
+            "::",
+            stringify!(chkerr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).lenerr) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_igmp),
+            "::",
+            stringify!(lenerr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).memerr) as usize - ptr as usize },
+        10usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_igmp),
+            "::",
+            stringify!(memerr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).proterr) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_igmp),
+            "::",
+            stringify!(proterr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rx_v1) as usize - ptr as usize },
+        14usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_igmp),
+            "::",
+            stringify!(rx_v1)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rx_group) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_igmp),
+            "::",
+            stringify!(rx_group)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rx_general) as usize - ptr as usize },
+        18usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_igmp),
+            "::",
+            stringify!(rx_general)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rx_report) as usize - ptr as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_igmp),
+            "::",
+            stringify!(rx_report)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tx_join) as usize - ptr as usize },
+        22usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_igmp),
+            "::",
+            stringify!(tx_join)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tx_leave) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_igmp),
+            "::",
+            stringify!(tx_leave)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tx_report) as usize - ptr as usize },
+        26usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_igmp),
+            "::",
+            stringify!(tx_report)
+        )
+    );
+}
+#[doc = " Memory stats"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct stats_mem {
+    pub name: *const libc::c_char,
+    pub err: u16_t,
+    pub avail: mem_size_t,
+    pub used: mem_size_t,
+    pub max: mem_size_t,
+    pub illegal: u16_t,
+}
+#[test]
+fn bindgen_test_layout_stats_mem() {
+    const UNINIT: ::core::mem::MaybeUninit<stats_mem> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<stats_mem>(),
+        24usize,
+        concat!("Size of: ", stringify!(stats_mem))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<stats_mem>(),
+        4usize,
+        concat!("Alignment of ", stringify!(stats_mem))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).name) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mem),
+            "::",
+            stringify!(name)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).err) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mem),
+            "::",
+            stringify!(err)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).avail) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mem),
+            "::",
+            stringify!(avail)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).used) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mem),
+            "::",
+            stringify!(used)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).max) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mem),
+            "::",
+            stringify!(max)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).illegal) as usize - ptr as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mem),
+            "::",
+            stringify!(illegal)
+        )
+    );
+}
+#[doc = " System element stats"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct stats_syselem {
+    pub used: u16_t,
+    pub max: u16_t,
+    pub err: u16_t,
+}
+#[test]
+fn bindgen_test_layout_stats_syselem() {
+    const UNINIT: ::core::mem::MaybeUninit<stats_syselem> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<stats_syselem>(),
+        6usize,
+        concat!("Size of: ", stringify!(stats_syselem))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<stats_syselem>(),
+        2usize,
+        concat!("Alignment of ", stringify!(stats_syselem))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).used) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_syselem),
+            "::",
+            stringify!(used)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).max) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_syselem),
+            "::",
+            stringify!(max)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).err) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_syselem),
+            "::",
+            stringify!(err)
+        )
+    );
+}
+#[doc = " System stats"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct stats_sys {
+    pub sem: stats_syselem,
+    pub mutex: stats_syselem,
+    pub mbox: stats_syselem,
+}
+#[test]
+fn bindgen_test_layout_stats_sys() {
+    const UNINIT: ::core::mem::MaybeUninit<stats_sys> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<stats_sys>(),
+        18usize,
+        concat!("Size of: ", stringify!(stats_sys))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<stats_sys>(),
+        2usize,
+        concat!("Alignment of ", stringify!(stats_sys))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).sem) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_sys),
+            "::",
+            stringify!(sem)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).mutex) as usize - ptr as usize },
+        6usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_sys),
+            "::",
+            stringify!(mutex)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).mbox) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_sys),
+            "::",
+            stringify!(mbox)
+        )
+    );
+}
+#[doc = " SNMP MIB2 stats"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct stats_mib2 {
+    pub ipinhdrerrors: u32_t,
+    pub ipinaddrerrors: u32_t,
+    pub ipinunknownprotos: u32_t,
+    pub ipindiscards: u32_t,
+    pub ipindelivers: u32_t,
+    pub ipoutrequests: u32_t,
+    pub ipoutdiscards: u32_t,
+    pub ipoutnoroutes: u32_t,
+    pub ipreasmoks: u32_t,
+    pub ipreasmfails: u32_t,
+    pub ipfragoks: u32_t,
+    pub ipfragfails: u32_t,
+    pub ipfragcreates: u32_t,
+    pub ipreasmreqds: u32_t,
+    pub ipforwdatagrams: u32_t,
+    pub ipinreceives: u32_t,
+    pub tcpactiveopens: u32_t,
+    pub tcppassiveopens: u32_t,
+    pub tcpattemptfails: u32_t,
+    pub tcpestabresets: u32_t,
+    pub tcpoutsegs: u32_t,
+    pub tcpretranssegs: u32_t,
+    pub tcpinsegs: u32_t,
+    pub tcpinerrs: u32_t,
+    pub tcpoutrsts: u32_t,
+    pub udpindatagrams: u32_t,
+    pub udpnoports: u32_t,
+    pub udpinerrors: u32_t,
+    pub udpoutdatagrams: u32_t,
+    pub icmpinmsgs: u32_t,
+    pub icmpinerrors: u32_t,
+    pub icmpindestunreachs: u32_t,
+    pub icmpintimeexcds: u32_t,
+    pub icmpinparmprobs: u32_t,
+    pub icmpinsrcquenchs: u32_t,
+    pub icmpinredirects: u32_t,
+    pub icmpinechos: u32_t,
+    pub icmpinechoreps: u32_t,
+    pub icmpintimestamps: u32_t,
+    pub icmpintimestampreps: u32_t,
+    pub icmpinaddrmasks: u32_t,
+    pub icmpinaddrmaskreps: u32_t,
+    pub icmpoutmsgs: u32_t,
+    pub icmpouterrors: u32_t,
+    pub icmpoutdestunreachs: u32_t,
+    pub icmpouttimeexcds: u32_t,
+    pub icmpoutechos: u32_t,
+    pub icmpoutechoreps: u32_t,
+}
+#[test]
+fn bindgen_test_layout_stats_mib2() {
+    const UNINIT: ::core::mem::MaybeUninit<stats_mib2> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<stats_mib2>(),
+        192usize,
+        concat!("Size of: ", stringify!(stats_mib2))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<stats_mib2>(),
+        4usize,
+        concat!("Alignment of ", stringify!(stats_mib2))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipinhdrerrors) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(ipinhdrerrors)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipinaddrerrors) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(ipinaddrerrors)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipinunknownprotos) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(ipinunknownprotos)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipindiscards) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(ipindiscards)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipindelivers) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(ipindelivers)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipoutrequests) as usize - ptr as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(ipoutrequests)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipoutdiscards) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(ipoutdiscards)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipoutnoroutes) as usize - ptr as usize },
+        28usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(ipoutnoroutes)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipreasmoks) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(ipreasmoks)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipreasmfails) as usize - ptr as usize },
+        36usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(ipreasmfails)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipfragoks) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(ipfragoks)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipfragfails) as usize - ptr as usize },
+        44usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(ipfragfails)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipfragcreates) as usize - ptr as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(ipfragcreates)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipreasmreqds) as usize - ptr as usize },
+        52usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(ipreasmreqds)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipforwdatagrams) as usize - ptr as usize },
+        56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(ipforwdatagrams)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipinreceives) as usize - ptr as usize },
+        60usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(ipinreceives)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tcpactiveopens) as usize - ptr as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(tcpactiveopens)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tcppassiveopens) as usize - ptr as usize },
+        68usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(tcppassiveopens)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tcpattemptfails) as usize - ptr as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(tcpattemptfails)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tcpestabresets) as usize - ptr as usize },
+        76usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(tcpestabresets)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tcpoutsegs) as usize - ptr as usize },
+        80usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(tcpoutsegs)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tcpretranssegs) as usize - ptr as usize },
+        84usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(tcpretranssegs)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tcpinsegs) as usize - ptr as usize },
+        88usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(tcpinsegs)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tcpinerrs) as usize - ptr as usize },
+        92usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(tcpinerrs)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tcpoutrsts) as usize - ptr as usize },
+        96usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(tcpoutrsts)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).udpindatagrams) as usize - ptr as usize },
+        100usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(udpindatagrams)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).udpnoports) as usize - ptr as usize },
+        104usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(udpnoports)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).udpinerrors) as usize - ptr as usize },
+        108usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(udpinerrors)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).udpoutdatagrams) as usize - ptr as usize },
+        112usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(udpoutdatagrams)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpinmsgs) as usize - ptr as usize },
+        116usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpinmsgs)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpinerrors) as usize - ptr as usize },
+        120usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpinerrors)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpindestunreachs) as usize - ptr as usize },
+        124usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpindestunreachs)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpintimeexcds) as usize - ptr as usize },
+        128usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpintimeexcds)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpinparmprobs) as usize - ptr as usize },
+        132usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpinparmprobs)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpinsrcquenchs) as usize - ptr as usize },
+        136usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpinsrcquenchs)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpinredirects) as usize - ptr as usize },
+        140usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpinredirects)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpinechos) as usize - ptr as usize },
+        144usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpinechos)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpinechoreps) as usize - ptr as usize },
+        148usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpinechoreps)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpintimestamps) as usize - ptr as usize },
+        152usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpintimestamps)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpintimestampreps) as usize - ptr as usize },
+        156usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpintimestampreps)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpinaddrmasks) as usize - ptr as usize },
+        160usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpinaddrmasks)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpinaddrmaskreps) as usize - ptr as usize },
+        164usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpinaddrmaskreps)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpoutmsgs) as usize - ptr as usize },
+        168usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpoutmsgs)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpouterrors) as usize - ptr as usize },
+        172usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpouterrors)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpoutdestunreachs) as usize - ptr as usize },
+        176usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpoutdestunreachs)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpouttimeexcds) as usize - ptr as usize },
+        180usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpouttimeexcds)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpoutechos) as usize - ptr as usize },
+        184usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpoutechos)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmpoutechoreps) as usize - ptr as usize },
+        188usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2),
+            "::",
+            stringify!(icmpoutechoreps)
+        )
+    );
+}
+#[doc = " @ingroup netif_mib2\n SNMP MIB2 interface stats"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct stats_mib2_netif_ctrs {
+    #[doc = " The total number of octets received on the interface, including framing characters"]
+    pub ifinoctets: u32_t,
+    #[doc = " The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were\n not addressed to a multicast or broadcast address at this sub-layer"]
+    pub ifinucastpkts: u32_t,
+    #[doc = " The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were\n addressed to a multicast or broadcast address at this sub-layer"]
+    pub ifinnucastpkts: u32_t,
+    #[doc = " The number of inbound packets which were chosen to be discarded even though no errors had\n been detected to prevent their being deliverable to a higher-layer protocol. One possible\n reason for discarding such a packet could be to free up buffer space"]
+    pub ifindiscards: u32_t,
+    #[doc = " For packet-oriented interfaces, the number of inbound packets that contained errors\n preventing them from being deliverable to a higher-layer protocol.  For character-\n oriented or fixed-length interfaces, the number of inbound transmission units that\n contained errors preventing them from being deliverable to a higher-layer protocol."]
+    pub ifinerrors: u32_t,
+    #[doc = " For packet-oriented interfaces, the number of packets received via the interface which\n were discarded because of an unknown or unsupported protocol.  For character-oriented\n or fixed-length interfaces that support protocol multiplexing the number of transmission\n units received via the interface which were discarded because of an unknown or unsupported\n protocol. For any interface that does not support protocol multiplexing, this counter will\n always be 0"]
+    pub ifinunknownprotos: u32_t,
+    #[doc = " The total number of octets transmitted out of the interface, including framing characters."]
+    pub ifoutoctets: u32_t,
+    #[doc = " The total number of packets that higher-level protocols requested be transmitted, and\n which were not addressed to a multicast or broadcast address at this sub-layer, including\n those that were discarded or not sent."]
+    pub ifoutucastpkts: u32_t,
+    #[doc = " The total number of packets that higher-level protocols requested be transmitted, and which\n were addressed to a multicast or broadcast address at this sub-layer, including\n those that were discarded or not sent."]
+    pub ifoutnucastpkts: u32_t,
+    #[doc = " The number of outbound packets which were chosen to be discarded even though no errors had\n been detected to prevent their being transmitted.  One possible reason for discarding\n such a packet could be to free up buffer space."]
+    pub ifoutdiscards: u32_t,
+    #[doc = " For packet-oriented interfaces, the number of outbound packets that could not be transmitted\n because of errors. For character-oriented or fixed-length interfaces, the number of outbound\n transmission units that could not be transmitted because of errors."]
+    pub ifouterrors: u32_t,
+}
+#[test]
+fn bindgen_test_layout_stats_mib2_netif_ctrs() {
+    const UNINIT: ::core::mem::MaybeUninit<stats_mib2_netif_ctrs> =
+        ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<stats_mib2_netif_ctrs>(),
+        44usize,
+        concat!("Size of: ", stringify!(stats_mib2_netif_ctrs))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<stats_mib2_netif_ctrs>(),
+        4usize,
+        concat!("Alignment of ", stringify!(stats_mib2_netif_ctrs))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ifinoctets) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2_netif_ctrs),
+            "::",
+            stringify!(ifinoctets)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ifinucastpkts) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2_netif_ctrs),
+            "::",
+            stringify!(ifinucastpkts)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ifinnucastpkts) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2_netif_ctrs),
+            "::",
+            stringify!(ifinnucastpkts)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ifindiscards) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2_netif_ctrs),
+            "::",
+            stringify!(ifindiscards)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ifinerrors) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2_netif_ctrs),
+            "::",
+            stringify!(ifinerrors)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ifinunknownprotos) as usize - ptr as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2_netif_ctrs),
+            "::",
+            stringify!(ifinunknownprotos)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ifoutoctets) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2_netif_ctrs),
+            "::",
+            stringify!(ifoutoctets)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ifoutucastpkts) as usize - ptr as usize },
+        28usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2_netif_ctrs),
+            "::",
+            stringify!(ifoutucastpkts)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ifoutnucastpkts) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2_netif_ctrs),
+            "::",
+            stringify!(ifoutnucastpkts)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ifoutdiscards) as usize - ptr as usize },
+        36usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2_netif_ctrs),
+            "::",
+            stringify!(ifoutdiscards)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ifouterrors) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_mib2_netif_ctrs),
+            "::",
+            stringify!(ifouterrors)
+        )
+    );
+}
+#[doc = " lwIP stats container"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct stats_ {
+    #[doc = " Link level"]
+    pub link: stats_proto,
+    #[doc = " ARP"]
+    pub etharp: stats_proto,
+    #[doc = " Fragmentation"]
+    pub ip_frag: stats_proto,
+    #[doc = " IP"]
+    pub ip: stats_proto,
+    #[doc = " ICMP"]
+    pub icmp: stats_proto,
+    #[doc = " UDP"]
+    pub udp: stats_proto,
+    #[doc = " TCP"]
+    pub tcp: stats_proto,
+    #[doc = " System"]
+    pub sys: stats_sys,
+    #[doc = " IPv6"]
+    pub ip6: stats_proto,
+    #[doc = " ICMP6"]
+    pub icmp6: stats_proto,
+    #[doc = " IPv6 fragmentation"]
+    pub ip6_frag: stats_proto,
+    #[doc = " Multicast listener discovery"]
+    pub mld6: stats_igmp,
+    #[doc = " Neighbor discovery"]
+    pub nd6: stats_proto,
+    #[doc = " SNMP MIB2"]
+    pub mib2: stats_mib2,
+}
+#[test]
+fn bindgen_test_layout_stats_() {
+    const UNINIT: ::core::mem::MaybeUninit<stats_> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<stats_>(),
+        504usize,
+        concat!("Size of: ", stringify!(stats_))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<stats_>(),
+        4usize,
+        concat!("Alignment of ", stringify!(stats_))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).link) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_),
+            "::",
+            stringify!(link)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).etharp) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_),
+            "::",
+            stringify!(etharp)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ip_frag) as usize - ptr as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_),
+            "::",
+            stringify!(ip_frag)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ip) as usize - ptr as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_),
+            "::",
+            stringify!(ip)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmp) as usize - ptr as usize },
+        96usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_),
+            "::",
+            stringify!(icmp)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).udp) as usize - ptr as usize },
+        120usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_),
+            "::",
+            stringify!(udp)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tcp) as usize - ptr as usize },
+        144usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_),
+            "::",
+            stringify!(tcp)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).sys) as usize - ptr as usize },
+        168usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_),
+            "::",
+            stringify!(sys)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ip6) as usize - ptr as usize },
+        186usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_),
+            "::",
+            stringify!(ip6)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).icmp6) as usize - ptr as usize },
+        210usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_),
+            "::",
+            stringify!(icmp6)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ip6_frag) as usize - ptr as usize },
+        234usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_),
+            "::",
+            stringify!(ip6_frag)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).mld6) as usize - ptr as usize },
+        258usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_),
+            "::",
+            stringify!(mld6)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).nd6) as usize - ptr as usize },
+        286usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_),
+            "::",
+            stringify!(nd6)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).mib2) as usize - ptr as usize },
+        312usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(stats_),
+            "::",
+            stringify!(mib2)
+        )
+    );
+}
+extern "C" {
+    #[doc = " Global variable containing lwIP internal statistics. Add this to your debugger's watchlist."]
+    pub static mut lwip_stats: stats_;
+}
+extern "C" {
+    #[doc = " Init statistics"]
+    pub fn stats_init();
+}
+pub const lwip_internal_netif_client_data_index_LWIP_NETIF_CLIENT_DATA_INDEX_DHCP:
+    lwip_internal_netif_client_data_index = 0;
+pub const lwip_internal_netif_client_data_index_LWIP_NETIF_CLIENT_DATA_INDEX_AUTOIP:
+    lwip_internal_netif_client_data_index = 1;
+pub const lwip_internal_netif_client_data_index_LWIP_NETIF_CLIENT_DATA_INDEX_DHCP6:
+    lwip_internal_netif_client_data_index = 2;
+pub const lwip_internal_netif_client_data_index_LWIP_NETIF_CLIENT_DATA_INDEX_MLD6:
+    lwip_internal_netif_client_data_index = 3;
+pub const lwip_internal_netif_client_data_index_LWIP_NETIF_CLIENT_DATA_INDEX_MAX:
+    lwip_internal_netif_client_data_index = 4;
+#[doc = " @}"]
+pub type lwip_internal_netif_client_data_index = libc::c_int;
+#[doc = " Delete a filter entry"]
+pub const netif_mac_filter_action_NETIF_DEL_MAC_FILTER: netif_mac_filter_action = 0;
+#[doc = " Add a filter entry"]
+pub const netif_mac_filter_action_NETIF_ADD_MAC_FILTER: netif_mac_filter_action = 1;
+#[doc = " MAC Filter Actions, these are passed to a netif's igmp_mac_filter or\n mld_mac_filter callback function."]
+pub type netif_mac_filter_action = libc::c_int;
+#[doc = " Function prototype for netif init functions. Set up flags and output/linkoutput\n callback functions in this function.\n\n @param netif The netif to initialize"]
+pub type netif_init_fn = ::core::option::Option<unsafe extern "C" fn(netif: *mut netif) -> err_t>;
+#[doc = " Function prototype for netif->input functions. This function is saved as 'input'\n callback function in the netif struct. Call it when a packet has been received.\n\n @param p The received packet, copied into a pbuf\n @param inp The netif which received the packet\n @return ERR_OK if the packet was handled\n         != ERR_OK is the packet was NOT handled, in this case, the caller has\n                   to free the pbuf"]
+pub type netif_input_fn =
+    ::core::option::Option<unsafe extern "C" fn(p: *mut pbuf, inp: *mut netif) -> err_t>;
+#[doc = " Function prototype for netif->output functions. Called by lwIP when a packet\n shall be sent. For ethernet netif, set this to 'etharp_output' and set\n 'linkoutput'.\n\n @param netif The netif which shall send a packet\n @param p The packet to send (p->payload points to IP header)\n @param ipaddr The IP address to which the packet shall be sent"]
+pub type netif_output_fn = ::core::option::Option<
+    unsafe extern "C" fn(netif: *mut netif, p: *mut pbuf, ipaddr: *const ip4_addr_t) -> err_t,
+>;
+#[doc = " Function prototype for netif->output_ip6 functions. Called by lwIP when a packet\n shall be sent. For ethernet netif, set this to 'ethip6_output' and set\n 'linkoutput'.\n\n @param netif The netif which shall send a packet\n @param p The packet to send (p->payload points to IP header)\n @param ipaddr The IPv6 address to which the packet shall be sent"]
+pub type netif_output_ip6_fn = ::core::option::Option<
+    unsafe extern "C" fn(netif: *mut netif, p: *mut pbuf, ipaddr: *const ip6_addr_t) -> err_t,
+>;
+#[doc = " Function prototype for netif->linkoutput functions. Only used for ethernet\n netifs. This function is called by ARP when a packet shall be sent.\n\n @param netif The netif which shall send a packet\n @param p The packet to send (raw ethernet packet)"]
+pub type netif_linkoutput_fn =
+    ::core::option::Option<unsafe extern "C" fn(netif: *mut netif, p: *mut pbuf) -> err_t>;
+#[doc = " Function prototype for netif status- or link-callback functions."]
+pub type netif_status_callback_fn = ::core::option::Option<unsafe extern "C" fn(netif: *mut netif)>;
+#[doc = " Function prototype for netif mld_mac_filter functions"]
+pub type netif_mld_mac_filter_fn = ::core::option::Option<
+    unsafe extern "C" fn(
+        netif: *mut netif,
+        group: *const ip6_addr_t,
+        action: netif_mac_filter_action,
+    ) -> err_t,
+>;
+pub type netif_addr_idx_t = u8_t;
+#[doc = " Generic data structure used for all lwIP network interfaces.\n  The following fields should be filled in by the initialization\n  function for the device driver: hwaddr_len, hwaddr[], mtu, flags"]
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct netif {
+    #[doc = " IP address configuration in network byte order"]
+    pub ip_addr: ip_addr_t,
+    pub netmask: ip_addr_t,
+    pub gw: ip_addr_t,
+    #[doc = " Array of IPv6 addresses for this netif."]
+    pub ip6_addr: [ip_addr_t; 3usize],
+    #[doc = " The state of each IPv6 address (Tentative, Preferred, etc).\n @see ip6_addr.h"]
+    pub ip6_addr_state: [u8_t; 3usize],
+    #[doc = " Remaining valid and preferred lifetime of each IPv6 address, in seconds.\n For valid lifetimes, the special value of IP6_ADDR_LIFE_STATIC (0)\n indicates the address is static and has no lifetimes."]
+    pub ip6_addr_valid_life: [u32_t; 3usize],
+    pub ip6_addr_pref_life: [u32_t; 3usize],
+    #[doc = " This function is called by the network device driver\n  to pass a packet up the TCP/IP stack."]
+    pub input: netif_input_fn,
+    #[doc = " This function is called by the IP module when it wants\n  to send a packet on the interface. This function typically\n  first resolves the hardware address, then sends the packet.\n  For ethernet physical layer, this is usually etharp_output()"]
+    pub output: netif_output_fn,
+    #[doc = " This function is called by ethernet_output() when it wants\n  to send a packet on the interface. This function outputs\n  the pbuf as-is on the link medium."]
+    pub linkoutput: netif_linkoutput_fn,
+    #[doc = " This function is called by the IPv6 module when it wants\n  to send a packet on the interface. This function typically\n  first resolves the hardware address, then sends the packet.\n  For ethernet physical layer, this is usually ethip6_output()"]
+    pub output_ip6: netif_output_ip6_fn,
+    #[doc = " This field can be set by the device driver and could point\n  to state information for the device."]
+    pub state: *mut libc::c_void,
+    pub client_data: [*mut libc::c_void; 4usize],
+    #[doc = " maximum transfer unit (in bytes)"]
+    pub mtu: u16_t,
+    #[doc = " maximum transfer unit (in bytes), updated by RA"]
+    pub mtu6: u16_t,
+    #[doc = " link level hardware address of this interface"]
+    pub hwaddr: [u8_t; 6usize],
+    #[doc = " number of bytes used in hwaddr"]
+    pub hwaddr_len: u8_t,
+    #[doc = " flags (@see @ref netif_flags)"]
+    pub flags: u8_t,
+    #[doc = " descriptive abbreviation"]
+    pub name: [libc::c_char; 2usize],
+    #[doc = " number of this interface. Used for @ref if_api and @ref netifapi_netif,\n as well as for IPv6 zones"]
+    pub num: u8_t,
+    #[doc = " is this netif enabled for IPv6 autoconfiguration"]
+    pub ip6_autoconfig_enabled: u8_t,
+    #[doc = " Number of Router Solicitation messages that remain to be sent."]
+    pub rs_count: u8_t,
+    #[doc = " link type (from \"snmp_ifType\" enum from snmp_mib2.h)"]
+    pub link_type: u8_t,
+    #[doc = " (estimate) link speed"]
+    pub link_speed: u32_t,
+    #[doc = " timestamp at last change made (up/down)"]
+    pub ts: u32_t,
+    #[doc = " counters"]
+    pub mib2_counters: stats_mib2_netif_ctrs,
+    #[doc = " This function could be called to add or delete an entry in the IPv6 multicast\nfilter table of the ethernet MAC."]
+    pub mld_mac_filter: netif_mld_mac_filter_fn,
+}
+#[test]
+fn bindgen_test_layout_netif() {
+    const UNINIT: ::core::mem::MaybeUninit<netif> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<netif>(),
+        260usize,
+        concat!("Size of: ", stringify!(netif))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<netif>(),
+        4usize,
+        concat!("Alignment of ", stringify!(netif))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ip_addr) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(ip_addr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).netmask) as usize - ptr as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(netmask)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).gw) as usize - ptr as usize },
+        40usize,
+        concat!("Offset of field: ", stringify!(netif), "::", stringify!(gw))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ip6_addr) as usize - ptr as usize },
+        60usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(ip6_addr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ip6_addr_state) as usize - ptr as usize },
+        120usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(ip6_addr_state)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ip6_addr_valid_life) as usize - ptr as usize },
+        124usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(ip6_addr_valid_life)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ip6_addr_pref_life) as usize - ptr as usize },
+        136usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(ip6_addr_pref_life)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).input) as usize - ptr as usize },
+        148usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(input)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).output) as usize - ptr as usize },
+        152usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(output)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).linkoutput) as usize - ptr as usize },
+        156usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(linkoutput)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).output_ip6) as usize - ptr as usize },
+        160usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(output_ip6)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).state) as usize - ptr as usize },
+        164usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(state)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).client_data) as usize - ptr as usize },
+        168usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(client_data)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).mtu) as usize - ptr as usize },
+        184usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(mtu)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).mtu6) as usize - ptr as usize },
+        186usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(mtu6)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).hwaddr) as usize - ptr as usize },
+        188usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(hwaddr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).hwaddr_len) as usize - ptr as usize },
+        194usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(hwaddr_len)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).flags) as usize - ptr as usize },
+        195usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(flags)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).name) as usize - ptr as usize },
+        196usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(name)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).num) as usize - ptr as usize },
+        198usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(num)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ip6_autoconfig_enabled) as usize - ptr as usize },
+        199usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(ip6_autoconfig_enabled)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rs_count) as usize - ptr as usize },
+        200usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(rs_count)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).link_type) as usize - ptr as usize },
+        201usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(link_type)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).link_speed) as usize - ptr as usize },
+        204usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(link_speed)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ts) as usize - ptr as usize },
+        208usize,
+        concat!("Offset of field: ", stringify!(netif), "::", stringify!(ts))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).mib2_counters) as usize - ptr as usize },
+        212usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(mib2_counters)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).mld_mac_filter) as usize - ptr as usize },
+        256usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif),
+            "::",
+            stringify!(mld_mac_filter)
+        )
+    );
+}
+extern "C" {
+    #[doc = " The default network interface."]
+    pub static mut netif_default: *mut netif;
+}
+extern "C" {
+    pub fn netif_init();
+}
+extern "C" {
+    pub fn netif_add_noaddr(
+        netif: *mut netif,
+        state: *mut libc::c_void,
+        init: netif_init_fn,
+        input: netif_input_fn,
+    ) -> *mut netif;
+}
+extern "C" {
+    pub fn netif_add(
+        netif: *mut netif,
+        ipaddr: *const ip4_addr_t,
+        netmask: *const ip4_addr_t,
+        gw: *const ip4_addr_t,
+        state: *mut libc::c_void,
+        init: netif_init_fn,
+        input: netif_input_fn,
+    ) -> *mut netif;
+}
+extern "C" {
+    pub fn netif_set_addr(
+        netif: *mut netif,
+        ipaddr: *const ip4_addr_t,
+        netmask: *const ip4_addr_t,
+        gw: *const ip4_addr_t,
+    );
+}
+extern "C" {
+    pub fn netif_remove(netif: *mut netif);
+}
+extern "C" {
+    pub fn netif_find(name: *const libc::c_char) -> *mut netif;
+}
+extern "C" {
+    pub fn netif_set_default(netif: *mut netif);
+}
+extern "C" {
+    pub fn netif_set_ipaddr(netif: *mut netif, ipaddr: *const ip4_addr_t);
+}
+extern "C" {
+    pub fn netif_set_netmask(netif: *mut netif, netmask: *const ip4_addr_t);
+}
+extern "C" {
+    pub fn netif_set_gw(netif: *mut netif, gw: *const ip4_addr_t);
+}
+extern "C" {
+    pub fn netif_set_up(netif: *mut netif);
+}
+extern "C" {
+    pub fn netif_set_down(netif: *mut netif);
+}
+extern "C" {
+    pub fn netif_set_link_up(netif: *mut netif);
+}
+extern "C" {
+    pub fn netif_set_link_down(netif: *mut netif);
+}
+extern "C" {
+    pub fn netif_input(p: *mut pbuf, inp: *mut netif) -> err_t;
+}
+extern "C" {
+    pub fn netif_ip6_addr_set(netif: *mut netif, addr_idx: s8_t, addr6: *const ip6_addr_t);
+}
+extern "C" {
+    pub fn netif_ip6_addr_set_parts(
+        netif: *mut netif,
+        addr_idx: s8_t,
+        i0: u32_t,
+        i1: u32_t,
+        i2: u32_t,
+        i3: u32_t,
+    );
+}
+extern "C" {
+    pub fn netif_ip6_addr_set_state(netif: *mut netif, addr_idx: s8_t, state: u8_t);
+}
+extern "C" {
+    pub fn netif_get_ip6_addr_match(netif: *mut netif, ip6addr: *const ip6_addr_t) -> s8_t;
+}
+extern "C" {
+    pub fn netif_create_ip6_linklocal_address(netif: *mut netif, from_mac_48bit: u8_t);
+}
+extern "C" {
+    pub fn netif_add_ip6_address(
+        netif: *mut netif,
+        ip6addr: *const ip6_addr_t,
+        chosen_idx: *mut s8_t,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn netif_name_to_index(name: *const libc::c_char) -> u8_t;
+}
+extern "C" {
+    pub fn netif_index_to_name(idx: u8_t, name: *mut libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn netif_get_by_index(idx: u8_t) -> *mut netif;
+}
+#[doc = " @ingroup netif\n Extended netif status callback (NSC) reasons flags.\n May be extended in the future!"]
+pub type netif_nsc_reason_t = u16_t;
+#[doc = " @ingroup netif\n Argument supplied to netif_ext_callback_fn."]
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union netif_ext_callback_args_t {
+    pub link_changed: netif_ext_callback_args_t_link_changed_s,
+    pub status_changed: netif_ext_callback_args_t_status_changed_s,
+    pub ipv4_changed: netif_ext_callback_args_t_ipv4_changed_s,
+    pub ipv6_set: netif_ext_callback_args_t_ipv6_set_s,
+    pub ipv6_addr_state_changed: netif_ext_callback_args_t_ipv6_addr_state_changed_s,
+}
+#[doc = " Args to LWIP_NSC_LINK_CHANGED callback"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct netif_ext_callback_args_t_link_changed_s {
+    #[doc = " 1: up; 0: down"]
+    pub state: u8_t,
+}
+#[test]
+fn bindgen_test_layout_netif_ext_callback_args_t_link_changed_s() {
+    const UNINIT: ::core::mem::MaybeUninit<netif_ext_callback_args_t_link_changed_s> =
+        ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<netif_ext_callback_args_t_link_changed_s>(),
+        1usize,
+        concat!(
+            "Size of: ",
+            stringify!(netif_ext_callback_args_t_link_changed_s)
+        )
+    );
+    assert_eq!(
+        ::core::mem::align_of::<netif_ext_callback_args_t_link_changed_s>(),
+        1usize,
+        concat!(
+            "Alignment of ",
+            stringify!(netif_ext_callback_args_t_link_changed_s)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).state) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif_ext_callback_args_t_link_changed_s),
+            "::",
+            stringify!(state)
+        )
+    );
+}
+#[doc = " Args to LWIP_NSC_STATUS_CHANGED callback"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct netif_ext_callback_args_t_status_changed_s {
+    #[doc = " 1: up; 0: down"]
+    pub state: u8_t,
+}
+#[test]
+fn bindgen_test_layout_netif_ext_callback_args_t_status_changed_s() {
+    const UNINIT: ::core::mem::MaybeUninit<netif_ext_callback_args_t_status_changed_s> =
+        ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<netif_ext_callback_args_t_status_changed_s>(),
+        1usize,
+        concat!(
+            "Size of: ",
+            stringify!(netif_ext_callback_args_t_status_changed_s)
+        )
+    );
+    assert_eq!(
+        ::core::mem::align_of::<netif_ext_callback_args_t_status_changed_s>(),
+        1usize,
+        concat!(
+            "Alignment of ",
+            stringify!(netif_ext_callback_args_t_status_changed_s)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).state) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif_ext_callback_args_t_status_changed_s),
+            "::",
+            stringify!(state)
+        )
+    );
+}
+#[doc = " Args to LWIP_NSC_IPV4_ADDRESS_CHANGED|LWIP_NSC_IPV4_GATEWAY_CHANGED|LWIP_NSC_IPV4_NETMASK_CHANGED|LWIP_NSC_IPV4_SETTINGS_CHANGED callback"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct netif_ext_callback_args_t_ipv4_changed_s {
+    #[doc = " Old IPv4 address"]
+    pub old_address: *const ip_addr_t,
+    pub old_netmask: *const ip_addr_t,
+    pub old_gw: *const ip_addr_t,
+}
+#[test]
+fn bindgen_test_layout_netif_ext_callback_args_t_ipv4_changed_s() {
+    const UNINIT: ::core::mem::MaybeUninit<netif_ext_callback_args_t_ipv4_changed_s> =
+        ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<netif_ext_callback_args_t_ipv4_changed_s>(),
+        12usize,
+        concat!(
+            "Size of: ",
+            stringify!(netif_ext_callback_args_t_ipv4_changed_s)
+        )
+    );
+    assert_eq!(
+        ::core::mem::align_of::<netif_ext_callback_args_t_ipv4_changed_s>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(netif_ext_callback_args_t_ipv4_changed_s)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).old_address) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif_ext_callback_args_t_ipv4_changed_s),
+            "::",
+            stringify!(old_address)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).old_netmask) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif_ext_callback_args_t_ipv4_changed_s),
+            "::",
+            stringify!(old_netmask)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).old_gw) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif_ext_callback_args_t_ipv4_changed_s),
+            "::",
+            stringify!(old_gw)
+        )
+    );
+}
+#[doc = " Args to LWIP_NSC_IPV6_SET callback"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct netif_ext_callback_args_t_ipv6_set_s {
+    #[doc = " Index of changed IPv6 address"]
+    pub addr_index: s8_t,
+    #[doc = " Old IPv6 address"]
+    pub old_address: *const ip_addr_t,
+}
+#[test]
+fn bindgen_test_layout_netif_ext_callback_args_t_ipv6_set_s() {
+    const UNINIT: ::core::mem::MaybeUninit<netif_ext_callback_args_t_ipv6_set_s> =
+        ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<netif_ext_callback_args_t_ipv6_set_s>(),
+        8usize,
+        concat!(
+            "Size of: ",
+            stringify!(netif_ext_callback_args_t_ipv6_set_s)
+        )
+    );
+    assert_eq!(
+        ::core::mem::align_of::<netif_ext_callback_args_t_ipv6_set_s>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(netif_ext_callback_args_t_ipv6_set_s)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).addr_index) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif_ext_callback_args_t_ipv6_set_s),
+            "::",
+            stringify!(addr_index)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).old_address) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif_ext_callback_args_t_ipv6_set_s),
+            "::",
+            stringify!(old_address)
+        )
+    );
+}
+#[doc = " Args to LWIP_NSC_IPV6_ADDR_STATE_CHANGED callback"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct netif_ext_callback_args_t_ipv6_addr_state_changed_s {
+    #[doc = " Index of affected IPv6 address"]
+    pub addr_index: s8_t,
+    #[doc = " Old IPv6 address state"]
+    pub old_state: u8_t,
+    #[doc = " Affected IPv6 address"]
+    pub address: *const ip_addr_t,
+}
+#[test]
+fn bindgen_test_layout_netif_ext_callback_args_t_ipv6_addr_state_changed_s() {
+    const UNINIT: ::core::mem::MaybeUninit<netif_ext_callback_args_t_ipv6_addr_state_changed_s> =
+        ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<netif_ext_callback_args_t_ipv6_addr_state_changed_s>(),
+        8usize,
+        concat!(
+            "Size of: ",
+            stringify!(netif_ext_callback_args_t_ipv6_addr_state_changed_s)
+        )
+    );
+    assert_eq!(
+        ::core::mem::align_of::<netif_ext_callback_args_t_ipv6_addr_state_changed_s>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(netif_ext_callback_args_t_ipv6_addr_state_changed_s)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).addr_index) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif_ext_callback_args_t_ipv6_addr_state_changed_s),
+            "::",
+            stringify!(addr_index)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).old_state) as usize - ptr as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif_ext_callback_args_t_ipv6_addr_state_changed_s),
+            "::",
+            stringify!(old_state)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).address) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif_ext_callback_args_t_ipv6_addr_state_changed_s),
+            "::",
+            stringify!(address)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_netif_ext_callback_args_t() {
+    const UNINIT: ::core::mem::MaybeUninit<netif_ext_callback_args_t> =
+        ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<netif_ext_callback_args_t>(),
+        12usize,
+        concat!("Size of: ", stringify!(netif_ext_callback_args_t))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<netif_ext_callback_args_t>(),
+        4usize,
+        concat!("Alignment of ", stringify!(netif_ext_callback_args_t))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).link_changed) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif_ext_callback_args_t),
+            "::",
+            stringify!(link_changed)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).status_changed) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif_ext_callback_args_t),
+            "::",
+            stringify!(status_changed)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipv4_changed) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif_ext_callback_args_t),
+            "::",
+            stringify!(ipv4_changed)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipv6_set) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif_ext_callback_args_t),
+            "::",
+            stringify!(ipv6_set)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ipv6_addr_state_changed) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(netif_ext_callback_args_t),
+            "::",
+            stringify!(ipv6_addr_state_changed)
+        )
+    );
+}
+#[doc = " @ingroup netif\n Function used for extended netif status callbacks\n Note: When parsing reason argument, keep in mind that more reasons may be added in the future!\n @param netif netif that is affected by change\n @param reason change reason\n @param args depends on reason, see reason description"]
+pub type netif_ext_callback_fn = ::core::option::Option<
+    unsafe extern "C" fn(
+        netif: *mut netif,
+        reason: netif_nsc_reason_t,
+        args: *const netif_ext_callback_args_t,
+    ),
+>;
+#[doc = " Function prototype for a stack-internal timer function that has to be\n called at a defined interval"]
+pub type lwip_cyclic_timer_handler = ::core::option::Option<unsafe extern "C" fn()>;
+#[doc = " This struct contains information about a stack-internal timer function\nthat has to be called at a defined interval"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct lwip_cyclic_timer {
+    pub interval_ms: u32_t,
+    pub handler: lwip_cyclic_timer_handler,
+}
+#[test]
+fn bindgen_test_layout_lwip_cyclic_timer() {
+    const UNINIT: ::core::mem::MaybeUninit<lwip_cyclic_timer> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<lwip_cyclic_timer>(),
+        8usize,
+        concat!("Size of: ", stringify!(lwip_cyclic_timer))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<lwip_cyclic_timer>(),
+        4usize,
+        concat!("Alignment of ", stringify!(lwip_cyclic_timer))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).interval_ms) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(lwip_cyclic_timer),
+            "::",
+            stringify!(interval_ms)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).handler) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(lwip_cyclic_timer),
+            "::",
+            stringify!(handler)
+        )
+    );
+}
+extern "C" {
+    #[doc = " This array contains all stack-internal cyclic timers. To get the number of\n timers, use lwip_num_cyclic_timers"]
+    pub static lwip_cyclic_timers: [lwip_cyclic_timer; 0usize];
+}
+extern "C" {
+    #[doc = " Array size of lwip_cyclic_timers[]"]
+    pub static lwip_num_cyclic_timers: libc::c_int;
+}
+#[doc = " Function prototype for a timeout callback function. Register such a function\n using sys_timeout().\n\n @param arg Additional argument to pass to the function - set up by sys_timeout()"]
+pub type sys_timeout_handler = ::core::option::Option<unsafe extern "C" fn(arg: *mut libc::c_void)>;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct sys_timeo {
+    pub next: *mut sys_timeo,
+    pub time: u32_t,
+    pub h: sys_timeout_handler,
+    pub arg: *mut libc::c_void,
+}
+#[test]
+fn bindgen_test_layout_sys_timeo() {
+    const UNINIT: ::core::mem::MaybeUninit<sys_timeo> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<sys_timeo>(),
+        16usize,
+        concat!("Size of: ", stringify!(sys_timeo))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<sys_timeo>(),
+        4usize,
+        concat!("Alignment of ", stringify!(sys_timeo))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sys_timeo),
+            "::",
+            stringify!(next)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).time) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sys_timeo),
+            "::",
+            stringify!(time)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).h) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sys_timeo),
+            "::",
+            stringify!(h)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).arg) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sys_timeo),
+            "::",
+            stringify!(arg)
+        )
+    );
+}
+extern "C" {
+    pub fn sys_timeouts_init();
+}
+extern "C" {
+    pub fn sys_timeout(msecs: u32_t, handler: sys_timeout_handler, arg: *mut libc::c_void);
+}
+extern "C" {
+    pub fn sys_untimeout(handler: sys_timeout_handler, arg: *mut libc::c_void);
+}
+extern "C" {
+    pub fn sys_restart_timeouts();
+}
+extern "C" {
+    pub fn sys_check_timeouts();
+}
+extern "C" {
+    pub fn sys_timeouts_sleeptime() -> u32_t;
+}
+extern "C" {
+    #[doc = " The global semaphore to lock the stack."]
+    pub static mut lock_tcpip_core: sys_sem_t;
+}
+#[doc = " Function prototype for the init_done function passed to tcpip_init"]
+pub type tcpip_init_done_fn = ::core::option::Option<unsafe extern "C" fn(arg: *mut libc::c_void)>;
+#[doc = " Function prototype for functions passed to tcpip_callback()"]
+pub type tcpip_callback_fn = ::core::option::Option<unsafe extern "C" fn(ctx: *mut libc::c_void)>;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct tcpip_callback_msg {
+    _unused: [u8; 0],
+}
+extern "C" {
+    pub fn tcpip_init(tcpip_init_done: tcpip_init_done_fn, arg: *mut libc::c_void);
+}
+extern "C" {
+    pub fn tcpip_inpkt(p: *mut pbuf, inp: *mut netif, input_fn: netif_input_fn) -> err_t;
+}
+extern "C" {
+    pub fn tcpip_input(p: *mut pbuf, inp: *mut netif) -> err_t;
+}
+extern "C" {
+    pub fn tcpip_try_callback(function: tcpip_callback_fn, ctx: *mut libc::c_void) -> err_t;
+}
+extern "C" {
+    pub fn tcpip_callback(function: tcpip_callback_fn, ctx: *mut libc::c_void) -> err_t;
+}
+extern "C" {
+    pub fn tcpip_callbackmsg_new(
+        function: tcpip_callback_fn,
+        ctx: *mut libc::c_void,
+    ) -> *mut tcpip_callback_msg;
+}
+extern "C" {
+    pub fn tcpip_callbackmsg_delete(msg: *mut tcpip_callback_msg);
+}
+extern "C" {
+    pub fn tcpip_callbackmsg_trycallback(msg: *mut tcpip_callback_msg) -> err_t;
+}
+extern "C" {
+    pub fn tcpip_callbackmsg_trycallback_fromisr(msg: *mut tcpip_callback_msg) -> err_t;
+}
+extern "C" {
+    pub fn pbuf_free_callback(p: *mut pbuf) -> err_t;
+}
+extern "C" {
+    pub fn mem_free_callback(m: *mut libc::c_void) -> err_t;
+}
+pub type tcpwnd_size_t = u16_t;
+pub const tcp_state_CLOSED: tcp_state = 0;
+pub const tcp_state_LISTEN: tcp_state = 1;
+pub const tcp_state_SYN_SENT: tcp_state = 2;
+pub const tcp_state_SYN_RCVD: tcp_state = 3;
+pub const tcp_state_ESTABLISHED: tcp_state = 4;
+pub const tcp_state_FIN_WAIT_1: tcp_state = 5;
+pub const tcp_state_FIN_WAIT_2: tcp_state = 6;
+pub const tcp_state_CLOSE_WAIT: tcp_state = 7;
+pub const tcp_state_CLOSING: tcp_state = 8;
+pub const tcp_state_LAST_ACK: tcp_state = 9;
+pub const tcp_state_TIME_WAIT: tcp_state = 10;
+pub type tcp_state = libc::c_int;
+extern "C" {
+    pub fn tcp_debug_state_str(s: tcp_state) -> *const libc::c_char;
+}
+#[repr(C, packed)]
+#[derive(Debug, Copy, Clone)]
+pub struct ip4_addr_packed {
+    pub addr: u32_t,
+}
+#[test]
+fn bindgen_test_layout_ip4_addr_packed() {
+    const UNINIT: ::core::mem::MaybeUninit<ip4_addr_packed> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<ip4_addr_packed>(),
+        4usize,
+        concat!("Size of: ", stringify!(ip4_addr_packed))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<ip4_addr_packed>(),
+        1usize,
+        concat!("Alignment of ", stringify!(ip4_addr_packed))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).addr) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip4_addr_packed),
+            "::",
+            stringify!(addr)
+        )
+    );
+}
+pub type ip4_addr_p_t = ip4_addr_packed;
+#[repr(C, packed)]
+#[derive(Debug, Copy, Clone)]
+pub struct ip_hdr {
+    pub _v_hl: u8_t,
+    pub _tos: u8_t,
+    pub _len: u16_t,
+    pub _id: u16_t,
+    pub _offset: u16_t,
+    pub _ttl: u8_t,
+    pub _proto: u8_t,
+    pub _chksum: u16_t,
+    pub src: ip4_addr_p_t,
+    pub dest: ip4_addr_p_t,
+}
+#[test]
+fn bindgen_test_layout_ip_hdr() {
+    const UNINIT: ::core::mem::MaybeUninit<ip_hdr> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<ip_hdr>(),
+        20usize,
+        concat!("Size of: ", stringify!(ip_hdr))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<ip_hdr>(),
+        1usize,
+        concat!("Alignment of ", stringify!(ip_hdr))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._v_hl) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_hdr),
+            "::",
+            stringify!(_v_hl)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._tos) as usize - ptr as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_hdr),
+            "::",
+            stringify!(_tos)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._len) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_hdr),
+            "::",
+            stringify!(_len)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._id) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_hdr),
+            "::",
+            stringify!(_id)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._offset) as usize - ptr as usize },
+        6usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_hdr),
+            "::",
+            stringify!(_offset)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._ttl) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_hdr),
+            "::",
+            stringify!(_ttl)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._proto) as usize - ptr as usize },
+        9usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_hdr),
+            "::",
+            stringify!(_proto)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._chksum) as usize - ptr as usize },
+        10usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_hdr),
+            "::",
+            stringify!(_chksum)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).src) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_hdr),
+            "::",
+            stringify!(src)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).dest) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_hdr),
+            "::",
+            stringify!(dest)
+        )
+    );
+}
+extern "C" {
+    pub fn ip4_route(dest: *const ip4_addr_t) -> *mut netif;
+}
+extern "C" {
+    pub fn ip4_input(p: *mut pbuf, inp: *mut netif) -> err_t;
+}
+extern "C" {
+    pub fn ip4_output(
+        p: *mut pbuf,
+        src: *const ip4_addr_t,
+        dest: *const ip4_addr_t,
+        ttl: u8_t,
+        tos: u8_t,
+        proto: u8_t,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn ip4_output_if(
+        p: *mut pbuf,
+        src: *const ip4_addr_t,
+        dest: *const ip4_addr_t,
+        ttl: u8_t,
+        tos: u8_t,
+        proto: u8_t,
+        netif: *mut netif,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn ip4_output_if_src(
+        p: *mut pbuf,
+        src: *const ip4_addr_t,
+        dest: *const ip4_addr_t,
+        ttl: u8_t,
+        tos: u8_t,
+        proto: u8_t,
+        netif: *mut netif,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn ip4_set_default_multicast_netif(default_multicast_netif: *mut netif);
+}
+extern "C" {
+    pub fn ip4_debug_print(p: *mut pbuf);
+}
+#[repr(C, packed)]
+#[derive(Debug, Copy, Clone)]
+pub struct ip6_addr_packed {
+    pub addr: [u32_t; 4usize],
+}
+#[test]
+fn bindgen_test_layout_ip6_addr_packed() {
+    const UNINIT: ::core::mem::MaybeUninit<ip6_addr_packed> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<ip6_addr_packed>(),
+        16usize,
+        concat!("Size of: ", stringify!(ip6_addr_packed))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<ip6_addr_packed>(),
+        1usize,
+        concat!("Alignment of ", stringify!(ip6_addr_packed))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).addr) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_addr_packed),
+            "::",
+            stringify!(addr)
+        )
+    );
+}
+pub type ip6_addr_p_t = ip6_addr_packed;
+#[repr(C, packed)]
+#[derive(Debug, Copy, Clone)]
+pub struct ip6_hdr {
+    #[doc = " version / traffic class / flow label"]
+    pub _v_tc_fl: u32_t,
+    #[doc = " payload length"]
+    pub _plen: u16_t,
+    #[doc = " next header"]
+    pub _nexth: u8_t,
+    #[doc = " hop limit"]
+    pub _hoplim: u8_t,
+    #[doc = " source and destination IP addresses"]
+    pub src: ip6_addr_p_t,
+    pub dest: ip6_addr_p_t,
+}
+#[test]
+fn bindgen_test_layout_ip6_hdr() {
+    const UNINIT: ::core::mem::MaybeUninit<ip6_hdr> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<ip6_hdr>(),
+        40usize,
+        concat!("Size of: ", stringify!(ip6_hdr))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<ip6_hdr>(),
+        1usize,
+        concat!("Alignment of ", stringify!(ip6_hdr))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._v_tc_fl) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_hdr),
+            "::",
+            stringify!(_v_tc_fl)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._plen) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_hdr),
+            "::",
+            stringify!(_plen)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._nexth) as usize - ptr as usize },
+        6usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_hdr),
+            "::",
+            stringify!(_nexth)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._hoplim) as usize - ptr as usize },
+        7usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_hdr),
+            "::",
+            stringify!(_hoplim)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).src) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_hdr),
+            "::",
+            stringify!(src)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).dest) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_hdr),
+            "::",
+            stringify!(dest)
+        )
+    );
+}
+#[repr(C, packed)]
+#[derive(Debug, Copy, Clone)]
+pub struct ip6_opt_hdr {
+    pub _opt_type: u8_t,
+    pub _opt_dlen: u8_t,
+}
+#[test]
+fn bindgen_test_layout_ip6_opt_hdr() {
+    const UNINIT: ::core::mem::MaybeUninit<ip6_opt_hdr> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<ip6_opt_hdr>(),
+        2usize,
+        concat!("Size of: ", stringify!(ip6_opt_hdr))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<ip6_opt_hdr>(),
+        1usize,
+        concat!("Alignment of ", stringify!(ip6_opt_hdr))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._opt_type) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_opt_hdr),
+            "::",
+            stringify!(_opt_type)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._opt_dlen) as usize - ptr as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_opt_hdr),
+            "::",
+            stringify!(_opt_dlen)
+        )
+    );
+}
+#[repr(C, packed)]
+#[derive(Debug, Copy, Clone)]
+pub struct ip6_hbh_hdr {
+    pub _nexth: u8_t,
+    pub _hlen: u8_t,
+}
+#[test]
+fn bindgen_test_layout_ip6_hbh_hdr() {
+    const UNINIT: ::core::mem::MaybeUninit<ip6_hbh_hdr> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<ip6_hbh_hdr>(),
+        2usize,
+        concat!("Size of: ", stringify!(ip6_hbh_hdr))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<ip6_hbh_hdr>(),
+        1usize,
+        concat!("Alignment of ", stringify!(ip6_hbh_hdr))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._nexth) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_hbh_hdr),
+            "::",
+            stringify!(_nexth)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._hlen) as usize - ptr as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_hbh_hdr),
+            "::",
+            stringify!(_hlen)
+        )
+    );
+}
+#[repr(C, packed)]
+#[derive(Debug, Copy, Clone)]
+pub struct ip6_dest_hdr {
+    pub _nexth: u8_t,
+    pub _hlen: u8_t,
+}
+#[test]
+fn bindgen_test_layout_ip6_dest_hdr() {
+    const UNINIT: ::core::mem::MaybeUninit<ip6_dest_hdr> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<ip6_dest_hdr>(),
+        2usize,
+        concat!("Size of: ", stringify!(ip6_dest_hdr))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<ip6_dest_hdr>(),
+        1usize,
+        concat!("Alignment of ", stringify!(ip6_dest_hdr))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._nexth) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_dest_hdr),
+            "::",
+            stringify!(_nexth)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._hlen) as usize - ptr as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_dest_hdr),
+            "::",
+            stringify!(_hlen)
+        )
+    );
+}
+#[repr(C, packed)]
+#[derive(Debug, Copy, Clone)]
+pub struct ip6_rout_hdr {
+    pub _nexth: u8_t,
+    pub _hlen: u8_t,
+    pub _routing_type: u8_t,
+    pub _segments_left: u8_t,
+}
+#[test]
+fn bindgen_test_layout_ip6_rout_hdr() {
+    const UNINIT: ::core::mem::MaybeUninit<ip6_rout_hdr> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<ip6_rout_hdr>(),
+        4usize,
+        concat!("Size of: ", stringify!(ip6_rout_hdr))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<ip6_rout_hdr>(),
+        1usize,
+        concat!("Alignment of ", stringify!(ip6_rout_hdr))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._nexth) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_rout_hdr),
+            "::",
+            stringify!(_nexth)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._hlen) as usize - ptr as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_rout_hdr),
+            "::",
+            stringify!(_hlen)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._routing_type) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_rout_hdr),
+            "::",
+            stringify!(_routing_type)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._segments_left) as usize - ptr as usize },
+        3usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_rout_hdr),
+            "::",
+            stringify!(_segments_left)
+        )
+    );
+}
+#[repr(C, packed)]
+#[derive(Debug, Copy, Clone)]
+pub struct ip6_frag_hdr {
+    pub _nexth: u8_t,
+    pub reserved: u8_t,
+    pub _fragment_offset: u16_t,
+    pub _identification: u32_t,
+}
+#[test]
+fn bindgen_test_layout_ip6_frag_hdr() {
+    const UNINIT: ::core::mem::MaybeUninit<ip6_frag_hdr> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<ip6_frag_hdr>(),
+        8usize,
+        concat!("Size of: ", stringify!(ip6_frag_hdr))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<ip6_frag_hdr>(),
+        1usize,
+        concat!("Alignment of ", stringify!(ip6_frag_hdr))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._nexth) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_frag_hdr),
+            "::",
+            stringify!(_nexth)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).reserved) as usize - ptr as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_frag_hdr),
+            "::",
+            stringify!(reserved)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._fragment_offset) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_frag_hdr),
+            "::",
+            stringify!(_fragment_offset)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr)._identification) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_frag_hdr),
+            "::",
+            stringify!(_identification)
+        )
+    );
+}
+extern "C" {
+    pub fn ip6_route(src: *const ip6_addr_t, dest: *const ip6_addr_t) -> *mut netif;
+}
+extern "C" {
+    pub fn ip6_select_source_address(
+        netif: *mut netif,
+        dest: *const ip6_addr_t,
+    ) -> *const ip_addr_t;
+}
+extern "C" {
+    pub fn ip6_input(p: *mut pbuf, inp: *mut netif) -> err_t;
+}
+extern "C" {
+    pub fn ip6_output(
+        p: *mut pbuf,
+        src: *const ip6_addr_t,
+        dest: *const ip6_addr_t,
+        hl: u8_t,
+        tc: u8_t,
+        nexth: u8_t,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn ip6_output_if(
+        p: *mut pbuf,
+        src: *const ip6_addr_t,
+        dest: *const ip6_addr_t,
+        hl: u8_t,
+        tc: u8_t,
+        nexth: u8_t,
+        netif: *mut netif,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn ip6_output_if_src(
+        p: *mut pbuf,
+        src: *const ip6_addr_t,
+        dest: *const ip6_addr_t,
+        hl: u8_t,
+        tc: u8_t,
+        nexth: u8_t,
+        netif: *mut netif,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn ip6_options_add_hbh_ra(p: *mut pbuf, nexth: u8_t, value: u8_t) -> err_t;
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct ip_pcb {
+    pub local_ip: ip_addr_t,
+    pub remote_ip: ip_addr_t,
+    pub netif_idx: u8_t,
+    pub so_options: u8_t,
+    pub tos: u8_t,
+    pub ttl: u8_t,
+}
+#[test]
+fn bindgen_test_layout_ip_pcb() {
+    const UNINIT: ::core::mem::MaybeUninit<ip_pcb> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<ip_pcb>(),
+        44usize,
+        concat!("Size of: ", stringify!(ip_pcb))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<ip_pcb>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ip_pcb))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).local_ip) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_pcb),
+            "::",
+            stringify!(local_ip)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).remote_ip) as usize - ptr as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_pcb),
+            "::",
+            stringify!(remote_ip)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).netif_idx) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_pcb),
+            "::",
+            stringify!(netif_idx)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).so_options) as usize - ptr as usize },
+        41usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_pcb),
+            "::",
+            stringify!(so_options)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tos) as usize - ptr as usize },
+        42usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_pcb),
+            "::",
+            stringify!(tos)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ttl) as usize - ptr as usize },
+        43usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_pcb),
+            "::",
+            stringify!(ttl)
+        )
+    );
+}
+#[doc = " Global variables of this module, kept in a struct for efficient access using base+index."]
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct ip_globals {
+    #[doc = " The interface that accepted the packet for the current callback invocation."]
+    pub current_netif: *mut netif,
+    #[doc = " The interface that received the packet for the current callback invocation."]
+    pub current_input_netif: *mut netif,
+    #[doc = " Header of the input packet currently being processed."]
+    pub current_ip4_header: *const ip_hdr,
+    #[doc = " Header of the input IPv6 packet currently being processed."]
+    pub current_ip6_header: *mut ip6_hdr,
+    #[doc = " Total header length of current_ip4/6_header (i.e. after this, the UDP/TCP header starts)"]
+    pub current_ip_header_tot_len: u16_t,
+    #[doc = " Source IP address of current_header"]
+    pub current_iphdr_src: ip_addr_t,
+    #[doc = " Destination IP address of current_header"]
+    pub current_iphdr_dest: ip_addr_t,
+}
+#[test]
+fn bindgen_test_layout_ip_globals() {
+    const UNINIT: ::core::mem::MaybeUninit<ip_globals> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<ip_globals>(),
+        60usize,
+        concat!("Size of: ", stringify!(ip_globals))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<ip_globals>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ip_globals))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).current_netif) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_globals),
+            "::",
+            stringify!(current_netif)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).current_input_netif) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_globals),
+            "::",
+            stringify!(current_input_netif)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).current_ip4_header) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_globals),
+            "::",
+            stringify!(current_ip4_header)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).current_ip6_header) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_globals),
+            "::",
+            stringify!(current_ip6_header)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).current_ip_header_tot_len) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_globals),
+            "::",
+            stringify!(current_ip_header_tot_len)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).current_iphdr_src) as usize - ptr as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_globals),
+            "::",
+            stringify!(current_iphdr_src)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).current_iphdr_dest) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_globals),
+            "::",
+            stringify!(current_iphdr_dest)
+        )
+    );
+}
+extern "C" {
+    pub static mut ip_data: ip_globals;
+}
+extern "C" {
+    pub fn ip_input(p: *mut pbuf, inp: *mut netif) -> err_t;
+}
+#[doc = " This is the standard ICMP header only that the u32_t data\n  is split to two u16_t like ICMP echo needs it.\n  This header is also used for other ICMP types that do not\n  use the data part."]
+#[repr(C, packed)]
+#[derive(Debug, Copy, Clone)]
+pub struct icmp_echo_hdr {
+    pub type_: u8_t,
+    pub code: u8_t,
+    pub chksum: u16_t,
+    pub id: u16_t,
+    pub seqno: u16_t,
+}
+#[test]
+fn bindgen_test_layout_icmp_echo_hdr() {
+    const UNINIT: ::core::mem::MaybeUninit<icmp_echo_hdr> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<icmp_echo_hdr>(),
+        8usize,
+        concat!("Size of: ", stringify!(icmp_echo_hdr))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<icmp_echo_hdr>(),
+        1usize,
+        concat!("Alignment of ", stringify!(icmp_echo_hdr))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp_echo_hdr),
+            "::",
+            stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).code) as usize - ptr as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp_echo_hdr),
+            "::",
+            stringify!(code)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).chksum) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp_echo_hdr),
+            "::",
+            stringify!(chksum)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).id) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp_echo_hdr),
+            "::",
+            stringify!(id)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).seqno) as usize - ptr as usize },
+        6usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp_echo_hdr),
+            "::",
+            stringify!(seqno)
+        )
+    );
+}
+#[doc = " Destination unreachable"]
+pub const icmp6_type_ICMP6_TYPE_DUR: icmp6_type = 1;
+#[doc = " Packet too big"]
+pub const icmp6_type_ICMP6_TYPE_PTB: icmp6_type = 2;
+#[doc = " Time exceeded"]
+pub const icmp6_type_ICMP6_TYPE_TE: icmp6_type = 3;
+#[doc = " Parameter problem"]
+pub const icmp6_type_ICMP6_TYPE_PP: icmp6_type = 4;
+#[doc = " Private experimentation"]
+pub const icmp6_type_ICMP6_TYPE_PE1: icmp6_type = 100;
+#[doc = " Private experimentation"]
+pub const icmp6_type_ICMP6_TYPE_PE2: icmp6_type = 101;
+#[doc = " Reserved for expansion of error messages"]
+pub const icmp6_type_ICMP6_TYPE_RSV_ERR: icmp6_type = 127;
+#[doc = " Echo request"]
+pub const icmp6_type_ICMP6_TYPE_EREQ: icmp6_type = 128;
+#[doc = " Echo reply"]
+pub const icmp6_type_ICMP6_TYPE_EREP: icmp6_type = 129;
+#[doc = " Multicast listener query"]
+pub const icmp6_type_ICMP6_TYPE_MLQ: icmp6_type = 130;
+#[doc = " Multicast listener report"]
+pub const icmp6_type_ICMP6_TYPE_MLR: icmp6_type = 131;
+#[doc = " Multicast listener done"]
+pub const icmp6_type_ICMP6_TYPE_MLD: icmp6_type = 132;
+#[doc = " Router solicitation"]
+pub const icmp6_type_ICMP6_TYPE_RS: icmp6_type = 133;
+#[doc = " Router advertisement"]
+pub const icmp6_type_ICMP6_TYPE_RA: icmp6_type = 134;
+#[doc = " Neighbor solicitation"]
+pub const icmp6_type_ICMP6_TYPE_NS: icmp6_type = 135;
+#[doc = " Neighbor advertisement"]
+pub const icmp6_type_ICMP6_TYPE_NA: icmp6_type = 136;
+#[doc = " Redirect"]
+pub const icmp6_type_ICMP6_TYPE_RD: icmp6_type = 137;
+#[doc = " Multicast router advertisement"]
+pub const icmp6_type_ICMP6_TYPE_MRA: icmp6_type = 151;
+#[doc = " Multicast router solicitation"]
+pub const icmp6_type_ICMP6_TYPE_MRS: icmp6_type = 152;
+#[doc = " Multicast router termination"]
+pub const icmp6_type_ICMP6_TYPE_MRT: icmp6_type = 153;
+#[doc = " Private experimentation"]
+pub const icmp6_type_ICMP6_TYPE_PE3: icmp6_type = 200;
+#[doc = " Private experimentation"]
+pub const icmp6_type_ICMP6_TYPE_PE4: icmp6_type = 201;
+#[doc = " Reserved for expansion of informational messages"]
+pub const icmp6_type_ICMP6_TYPE_RSV_INF: icmp6_type = 255;
+#[doc = " ICMP type"]
+pub type icmp6_type = libc::c_int;
+#[doc = " No route to destination"]
+pub const icmp6_dur_code_ICMP6_DUR_NO_ROUTE: icmp6_dur_code = 0;
+#[doc = " Communication with destination administratively prohibited"]
+pub const icmp6_dur_code_ICMP6_DUR_PROHIBITED: icmp6_dur_code = 1;
+#[doc = " Beyond scope of source address"]
+pub const icmp6_dur_code_ICMP6_DUR_SCOPE: icmp6_dur_code = 2;
+#[doc = " Address unreachable"]
+pub const icmp6_dur_code_ICMP6_DUR_ADDRESS: icmp6_dur_code = 3;
+#[doc = " Port unreachable"]
+pub const icmp6_dur_code_ICMP6_DUR_PORT: icmp6_dur_code = 4;
+#[doc = " Source address failed ingress/egress policy"]
+pub const icmp6_dur_code_ICMP6_DUR_POLICY: icmp6_dur_code = 5;
+#[doc = " Reject route to destination"]
+pub const icmp6_dur_code_ICMP6_DUR_REJECT_ROUTE: icmp6_dur_code = 6;
+#[doc = " ICMP destination unreachable codes"]
+pub type icmp6_dur_code = libc::c_int;
+#[doc = " Hop limit exceeded in transit"]
+pub const icmp6_te_code_ICMP6_TE_HL: icmp6_te_code = 0;
+#[doc = " Fragment reassembly time exceeded"]
+pub const icmp6_te_code_ICMP6_TE_FRAG: icmp6_te_code = 1;
+#[doc = " ICMP time exceeded codes"]
+pub type icmp6_te_code = libc::c_int;
+#[doc = " Erroneous header field encountered"]
+pub const icmp6_pp_code_ICMP6_PP_FIELD: icmp6_pp_code = 0;
+#[doc = " Unrecognized next header type encountered"]
+pub const icmp6_pp_code_ICMP6_PP_HEADER: icmp6_pp_code = 1;
+#[doc = " Unrecognized IPv6 option encountered"]
+pub const icmp6_pp_code_ICMP6_PP_OPTION: icmp6_pp_code = 2;
+#[doc = " ICMP parameter code"]
+pub type icmp6_pp_code = libc::c_int;
+#[repr(C, packed)]
+#[derive(Debug, Copy, Clone)]
+pub struct icmp6_hdr {
+    pub type_: u8_t,
+    pub code: u8_t,
+    pub chksum: u16_t,
+    pub data: u32_t,
+}
+#[test]
+fn bindgen_test_layout_icmp6_hdr() {
+    const UNINIT: ::core::mem::MaybeUninit<icmp6_hdr> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<icmp6_hdr>(),
+        8usize,
+        concat!("Size of: ", stringify!(icmp6_hdr))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<icmp6_hdr>(),
+        1usize,
+        concat!("Alignment of ", stringify!(icmp6_hdr))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6_hdr),
+            "::",
+            stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).code) as usize - ptr as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6_hdr),
+            "::",
+            stringify!(code)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).chksum) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6_hdr),
+            "::",
+            stringify!(chksum)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).data) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6_hdr),
+            "::",
+            stringify!(data)
+        )
+    );
+}
+#[repr(C, packed)]
+#[derive(Debug, Copy, Clone)]
+pub struct icmp6_echo_hdr {
+    pub type_: u8_t,
+    pub code: u8_t,
+    pub chksum: u16_t,
+    pub id: u16_t,
+    pub seqno: u16_t,
+}
+#[test]
+fn bindgen_test_layout_icmp6_echo_hdr() {
+    const UNINIT: ::core::mem::MaybeUninit<icmp6_echo_hdr> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<icmp6_echo_hdr>(),
+        8usize,
+        concat!("Size of: ", stringify!(icmp6_echo_hdr))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<icmp6_echo_hdr>(),
+        1usize,
+        concat!("Alignment of ", stringify!(icmp6_echo_hdr))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6_echo_hdr),
+            "::",
+            stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).code) as usize - ptr as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6_echo_hdr),
+            "::",
+            stringify!(code)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).chksum) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6_echo_hdr),
+            "::",
+            stringify!(chksum)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).id) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6_echo_hdr),
+            "::",
+            stringify!(id)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).seqno) as usize - ptr as usize },
+        6usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6_echo_hdr),
+            "::",
+            stringify!(seqno)
+        )
+    );
+}
+extern "C" {
+    pub fn icmp6_input(p: *mut pbuf, inp: *mut netif);
+}
+extern "C" {
+    pub fn icmp6_dest_unreach(p: *mut pbuf, c: icmp6_dur_code);
+}
+extern "C" {
+    pub fn icmp6_packet_too_big(p: *mut pbuf, mtu: u32_t);
+}
+extern "C" {
+    pub fn icmp6_time_exceeded(p: *mut pbuf, c: icmp6_te_code);
+}
+extern "C" {
+    pub fn icmp6_time_exceeded_with_addrs(
+        p: *mut pbuf,
+        c: icmp6_te_code,
+        src_addr: *const ip6_addr_t,
+        dest_addr: *const ip6_addr_t,
+    );
+}
+extern "C" {
+    pub fn icmp6_param_problem(p: *mut pbuf, c: icmp6_pp_code, pointer: *const libc::c_void);
+}
+#[doc = " net unreachable"]
+pub const icmp_dur_type_ICMP_DUR_NET: icmp_dur_type = 0;
+#[doc = " host unreachable"]
+pub const icmp_dur_type_ICMP_DUR_HOST: icmp_dur_type = 1;
+#[doc = " protocol unreachable"]
+pub const icmp_dur_type_ICMP_DUR_PROTO: icmp_dur_type = 2;
+#[doc = " port unreachable"]
+pub const icmp_dur_type_ICMP_DUR_PORT: icmp_dur_type = 3;
+#[doc = " fragmentation needed and DF set"]
+pub const icmp_dur_type_ICMP_DUR_FRAG: icmp_dur_type = 4;
+#[doc = " source route failed"]
+pub const icmp_dur_type_ICMP_DUR_SR: icmp_dur_type = 5;
+#[doc = " ICMP destination unreachable codes"]
+pub type icmp_dur_type = libc::c_int;
+#[doc = " time to live exceeded in transit"]
+pub const icmp_te_type_ICMP_TE_TTL: icmp_te_type = 0;
+#[doc = " fragment reassembly time exceeded"]
+pub const icmp_te_type_ICMP_TE_FRAG: icmp_te_type = 1;
+#[doc = " ICMP time exceeded codes"]
+pub type icmp_te_type = libc::c_int;
+extern "C" {
+    pub fn icmp_input(p: *mut pbuf, inp: *mut netif);
+}
+extern "C" {
+    pub fn icmp_dest_unreach(p: *mut pbuf, t: icmp_dur_type);
+}
+extern "C" {
+    pub fn icmp_time_exceeded(p: *mut pbuf, t: icmp_te_type);
+}
+#[doc = " Function prototype for tcp accept callback functions. Called when a new\n connection can be accepted on a listening pcb.\n\n @param arg Additional argument to pass to the callback function (@see tcp_arg())\n @param newpcb The new connection pcb\n @param err An error code if there has been an error accepting.\n            Only return ERR_ABRT if you have called tcp_abort from within the\n            callback function!"]
+pub type tcp_accept_fn = ::core::option::Option<
+    unsafe extern "C" fn(arg: *mut libc::c_void, newpcb: *mut tcp_pcb, err: err_t) -> err_t,
+>;
+#[doc = " Function prototype for tcp receive callback functions. Called when data has\n been received.\n\n @param arg Additional argument to pass to the callback function (@see tcp_arg())\n @param tpcb The connection pcb which received data\n @param p The received data (or NULL when the connection has been closed!)\n @param err An error code if there has been an error receiving\n            Only return ERR_ABRT if you have called tcp_abort from within the\n            callback function!"]
+pub type tcp_recv_fn = ::core::option::Option<
+    unsafe extern "C" fn(
+        arg: *mut libc::c_void,
+        tpcb: *mut tcp_pcb,
+        p: *mut pbuf,
+        err: err_t,
+    ) -> err_t,
+>;
+#[doc = " Function prototype for tcp sent callback functions. Called when sent data has\n been acknowledged by the remote side. Use it to free corresponding resources.\n This also means that the pcb has now space available to send new data.\n\n @param arg Additional argument to pass to the callback function (@see tcp_arg())\n @param tpcb The connection pcb for which data has been acknowledged\n @param len The amount of bytes acknowledged\n @return ERR_OK: try to send some data by calling tcp_output\n            Only return ERR_ABRT if you have called tcp_abort from within the\n            callback function!"]
+pub type tcp_sent_fn = ::core::option::Option<
+    unsafe extern "C" fn(arg: *mut libc::c_void, tpcb: *mut tcp_pcb, len: u16_t) -> err_t,
+>;
+#[doc = " Function prototype for tcp poll callback functions. Called periodically as\n specified by @see tcp_poll.\n\n @param arg Additional argument to pass to the callback function (@see tcp_arg())\n @param tpcb tcp pcb\n @return ERR_OK: try to send some data by calling tcp_output\n            Only return ERR_ABRT if you have called tcp_abort from within the\n            callback function!"]
+pub type tcp_poll_fn = ::core::option::Option<
+    unsafe extern "C" fn(arg: *mut libc::c_void, tpcb: *mut tcp_pcb) -> err_t,
+>;
+#[doc = " Function prototype for tcp error callback functions. Called when the pcb\n receives a RST or is unexpectedly closed for any other reason.\n\n @note The corresponding pcb is already freed when this callback is called!\n\n @param arg Additional argument to pass to the callback function (@see tcp_arg())\n @param err Error code to indicate why the pcb has been closed\n            ERR_ABRT: aborted through tcp_abort or by a TCP timer\n            ERR_RST: the connection was reset by the remote host"]
+pub type tcp_err_fn =
+    ::core::option::Option<unsafe extern "C" fn(arg: *mut libc::c_void, err: err_t)>;
+#[doc = " Function prototype for tcp connected callback functions. Called when a pcb\n is connected to the remote side after initiating a connection attempt by\n calling tcp_connect().\n\n @param arg Additional argument to pass to the callback function (@see tcp_arg())\n @param tpcb The connection pcb which is connected\n @param err An unused error code, always ERR_OK currently ;-) @todo!\n            Only return ERR_ABRT if you have called tcp_abort from within the\n            callback function!\n\n @note When a connection attempt fails, the error callback is currently called!"]
+pub type tcp_connected_fn = ::core::option::Option<
+    unsafe extern "C" fn(arg: *mut libc::c_void, tpcb: *mut tcp_pcb, err: err_t) -> err_t,
+>;
+#[doc = " Function prototype for deallocation of arguments. Called *just before* the\n pcb is freed, so don't expect to be able to do anything with this pcb!\n\n @param id ext arg id (allocated via @ref tcp_ext_arg_alloc_id)\n @param data pointer to the data (set via @ref tcp_ext_arg_set before)"]
+pub type tcp_extarg_callback_pcb_destroyed_fn =
+    ::core::option::Option<unsafe extern "C" fn(id: u8_t, data: *mut libc::c_void)>;
+#[doc = " Function prototype to transition arguments from a listening pcb to an accepted pcb\n\n @param id ext arg id (allocated via @ref tcp_ext_arg_alloc_id)\n @param lpcb the listening pcb accepting a connection\n @param cpcb the newly allocated connection pcb\n @return ERR_OK if OK, any error if connection should be dropped"]
+pub type tcp_extarg_callback_passive_open_fn = ::core::option::Option<
+    unsafe extern "C" fn(id: u8_t, lpcb: *mut tcp_pcb_listen, cpcb: *mut tcp_pcb) -> err_t,
+>;
+#[doc = " A table of callback functions that is invoked for ext arguments"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct tcp_ext_arg_callbacks {
+    #[doc = " @ref tcp_extarg_callback_pcb_destroyed_fn"]
+    pub destroy: tcp_extarg_callback_pcb_destroyed_fn,
+    #[doc = " @ref tcp_extarg_callback_passive_open_fn"]
+    pub passive_open: tcp_extarg_callback_passive_open_fn,
+}
+#[test]
+fn bindgen_test_layout_tcp_ext_arg_callbacks() {
+    const UNINIT: ::core::mem::MaybeUninit<tcp_ext_arg_callbacks> =
+        ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<tcp_ext_arg_callbacks>(),
+        8usize,
+        concat!("Size of: ", stringify!(tcp_ext_arg_callbacks))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<tcp_ext_arg_callbacks>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tcp_ext_arg_callbacks))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).destroy) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_ext_arg_callbacks),
+            "::",
+            stringify!(destroy)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).passive_open) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_ext_arg_callbacks),
+            "::",
+            stringify!(passive_open)
+        )
+    );
+}
+pub type tcpflags_t = u16_t;
+#[doc = " the TCP protocol control block for listening pcbs"]
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct tcp_pcb_listen {
+    #[doc = " Common members of all PCB types"]
+    pub local_ip: ip_addr_t,
+    #[doc = " Common members of all PCB types"]
+    pub remote_ip: ip_addr_t,
+    #[doc = " Common members of all PCB types"]
+    pub netif_idx: u8_t,
+    #[doc = " Common members of all PCB types"]
+    pub so_options: u8_t,
+    #[doc = " Common members of all PCB types"]
+    pub tos: u8_t,
+    #[doc = " Common members of all PCB types"]
+    pub ttl: u8_t,
+    #[doc = " Protocol specific PCB members"]
+    pub next: *mut tcp_pcb_listen,
+    #[doc = " Protocol specific PCB members"]
+    pub callback_arg: *mut libc::c_void,
+    #[doc = " Protocol specific PCB members"]
+    pub state: tcp_state,
+    #[doc = " Protocol specific PCB members"]
+    pub prio: u8_t,
+    #[doc = " Protocol specific PCB members"]
+    pub local_port: u16_t,
+    pub accept: tcp_accept_fn,
+}
+#[test]
+fn bindgen_test_layout_tcp_pcb_listen() {
+    const UNINIT: ::core::mem::MaybeUninit<tcp_pcb_listen> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<tcp_pcb_listen>(),
+        64usize,
+        concat!("Size of: ", stringify!(tcp_pcb_listen))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<tcp_pcb_listen>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tcp_pcb_listen))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).local_ip) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb_listen),
+            "::",
+            stringify!(local_ip)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).remote_ip) as usize - ptr as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb_listen),
+            "::",
+            stringify!(remote_ip)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).netif_idx) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb_listen),
+            "::",
+            stringify!(netif_idx)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).so_options) as usize - ptr as usize },
+        41usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb_listen),
+            "::",
+            stringify!(so_options)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tos) as usize - ptr as usize },
+        42usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb_listen),
+            "::",
+            stringify!(tos)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ttl) as usize - ptr as usize },
+        43usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb_listen),
+            "::",
+            stringify!(ttl)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
+        44usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb_listen),
+            "::",
+            stringify!(next)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).callback_arg) as usize - ptr as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb_listen),
+            "::",
+            stringify!(callback_arg)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).state) as usize - ptr as usize },
+        52usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb_listen),
+            "::",
+            stringify!(state)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).prio) as usize - ptr as usize },
+        56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb_listen),
+            "::",
+            stringify!(prio)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).local_port) as usize - ptr as usize },
+        58usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb_listen),
+            "::",
+            stringify!(local_port)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).accept) as usize - ptr as usize },
+        60usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb_listen),
+            "::",
+            stringify!(accept)
+        )
+    );
+}
+#[doc = " the TCP protocol control block"]
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct tcp_pcb {
+    #[doc = " common PCB members"]
+    pub local_ip: ip_addr_t,
+    #[doc = " common PCB members"]
+    pub remote_ip: ip_addr_t,
+    #[doc = " common PCB members"]
+    pub netif_idx: u8_t,
+    #[doc = " common PCB members"]
+    pub so_options: u8_t,
+    #[doc = " common PCB members"]
+    pub tos: u8_t,
+    #[doc = " common PCB members"]
+    pub ttl: u8_t,
+    #[doc = " protocol specific PCB members"]
+    pub next: *mut tcp_pcb,
+    #[doc = " protocol specific PCB members"]
+    pub callback_arg: *mut libc::c_void,
+    #[doc = " protocol specific PCB members"]
+    pub state: tcp_state,
+    #[doc = " protocol specific PCB members"]
+    pub prio: u8_t,
+    #[doc = " protocol specific PCB members"]
+    pub local_port: u16_t,
+    pub remote_port: u16_t,
+    pub flags: tcpflags_t,
+    pub polltmr: u8_t,
+    pub pollinterval: u8_t,
+    pub last_timer: u8_t,
+    pub tmr: u32_t,
+    pub rcv_nxt: u32_t,
+    pub rcv_wnd: tcpwnd_size_t,
+    pub rcv_ann_wnd: tcpwnd_size_t,
+    pub rcv_ann_right_edge: u32_t,
+    pub rtime: s16_t,
+    pub mss: u16_t,
+    pub rttest: u32_t,
+    pub rtseq: u32_t,
+    pub sa: s16_t,
+    pub sv: s16_t,
+    pub rto: s16_t,
+    pub nrtx: u8_t,
+    pub dupacks: u8_t,
+    pub lastack: u32_t,
+    pub cwnd: tcpwnd_size_t,
+    pub ssthresh: tcpwnd_size_t,
+    pub rto_end: u32_t,
+    pub snd_nxt: u32_t,
+    pub snd_wl1: u32_t,
+    pub snd_wl2: u32_t,
+    pub snd_lbb: u32_t,
+    pub snd_wnd: tcpwnd_size_t,
+    pub snd_wnd_max: tcpwnd_size_t,
+    pub snd_buf: tcpwnd_size_t,
+    pub snd_queuelen: u16_t,
+    pub unsent_oversize: u16_t,
+    pub bytes_acked: tcpwnd_size_t,
+    pub unsent: *mut tcp_seg,
+    pub unacked: *mut tcp_seg,
+    pub ooseq: *mut tcp_seg,
+    pub refused_data: *mut pbuf,
+    pub listener: *mut tcp_pcb_listen,
+    pub sent: tcp_sent_fn,
+    pub recv: tcp_recv_fn,
+    pub connected: tcp_connected_fn,
+    pub poll: tcp_poll_fn,
+    pub errf: tcp_err_fn,
+    pub keep_idle: u32_t,
+    pub persist_cnt: u8_t,
+    pub persist_backoff: u8_t,
+    pub persist_probe: u8_t,
+    pub keep_cnt_sent: u8_t,
+}
+#[test]
+fn bindgen_test_layout_tcp_pcb() {
+    const UNINIT: ::core::mem::MaybeUninit<tcp_pcb> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<tcp_pcb>(),
+        192usize,
+        concat!("Size of: ", stringify!(tcp_pcb))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<tcp_pcb>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tcp_pcb))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).local_ip) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(local_ip)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).remote_ip) as usize - ptr as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(remote_ip)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).netif_idx) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(netif_idx)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).so_options) as usize - ptr as usize },
+        41usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(so_options)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tos) as usize - ptr as usize },
+        42usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(tos)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ttl) as usize - ptr as usize },
+        43usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(ttl)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
+        44usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(next)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).callback_arg) as usize - ptr as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(callback_arg)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).state) as usize - ptr as usize },
+        52usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(state)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).prio) as usize - ptr as usize },
+        56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(prio)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).local_port) as usize - ptr as usize },
+        58usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(local_port)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).remote_port) as usize - ptr as usize },
+        60usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(remote_port)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).flags) as usize - ptr as usize },
+        62usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(flags)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).polltmr) as usize - ptr as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(polltmr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).pollinterval) as usize - ptr as usize },
+        65usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(pollinterval)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).last_timer) as usize - ptr as usize },
+        66usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(last_timer)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tmr) as usize - ptr as usize },
+        68usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(tmr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rcv_nxt) as usize - ptr as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(rcv_nxt)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rcv_wnd) as usize - ptr as usize },
+        76usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(rcv_wnd)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rcv_ann_wnd) as usize - ptr as usize },
+        78usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(rcv_ann_wnd)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rcv_ann_right_edge) as usize - ptr as usize },
+        80usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(rcv_ann_right_edge)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rtime) as usize - ptr as usize },
+        84usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(rtime)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).mss) as usize - ptr as usize },
+        86usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(mss)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rttest) as usize - ptr as usize },
+        88usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(rttest)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rtseq) as usize - ptr as usize },
+        92usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(rtseq)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).sa) as usize - ptr as usize },
+        96usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(sa)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).sv) as usize - ptr as usize },
+        98usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(sv)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rto) as usize - ptr as usize },
+        100usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(rto)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).nrtx) as usize - ptr as usize },
+        102usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(nrtx)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).dupacks) as usize - ptr as usize },
+        103usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(dupacks)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).lastack) as usize - ptr as usize },
+        104usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(lastack)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).cwnd) as usize - ptr as usize },
+        108usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(cwnd)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ssthresh) as usize - ptr as usize },
+        110usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(ssthresh)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rto_end) as usize - ptr as usize },
+        112usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(rto_end)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).snd_nxt) as usize - ptr as usize },
+        116usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(snd_nxt)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).snd_wl1) as usize - ptr as usize },
+        120usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(snd_wl1)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).snd_wl2) as usize - ptr as usize },
+        124usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(snd_wl2)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).snd_lbb) as usize - ptr as usize },
+        128usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(snd_lbb)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).snd_wnd) as usize - ptr as usize },
+        132usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(snd_wnd)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).snd_wnd_max) as usize - ptr as usize },
+        134usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(snd_wnd_max)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).snd_buf) as usize - ptr as usize },
+        136usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(snd_buf)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).snd_queuelen) as usize - ptr as usize },
+        138usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(snd_queuelen)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).unsent_oversize) as usize - ptr as usize },
+        140usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(unsent_oversize)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).bytes_acked) as usize - ptr as usize },
+        142usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(bytes_acked)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).unsent) as usize - ptr as usize },
+        144usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(unsent)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).unacked) as usize - ptr as usize },
+        148usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(unacked)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ooseq) as usize - ptr as usize },
+        152usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(ooseq)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).refused_data) as usize - ptr as usize },
+        156usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(refused_data)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).listener) as usize - ptr as usize },
+        160usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(listener)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).sent) as usize - ptr as usize },
+        164usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(sent)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).recv) as usize - ptr as usize },
+        168usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(recv)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).connected) as usize - ptr as usize },
+        172usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(connected)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).poll) as usize - ptr as usize },
+        176usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(poll)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).errf) as usize - ptr as usize },
+        180usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(errf)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).keep_idle) as usize - ptr as usize },
+        184usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(keep_idle)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).persist_cnt) as usize - ptr as usize },
+        188usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(persist_cnt)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).persist_backoff) as usize - ptr as usize },
+        189usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(persist_backoff)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).persist_probe) as usize - ptr as usize },
+        190usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(persist_probe)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).keep_cnt_sent) as usize - ptr as usize },
+        191usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_pcb),
+            "::",
+            stringify!(keep_cnt_sent)
+        )
+    );
+}
+extern "C" {
+    pub fn tcp_new() -> *mut tcp_pcb;
+}
+extern "C" {
+    pub fn tcp_new_ip_type(type_: u8_t) -> *mut tcp_pcb;
+}
+extern "C" {
+    pub fn tcp_arg(pcb: *mut tcp_pcb, arg: *mut libc::c_void);
+}
+extern "C" {
+    pub fn tcp_recv(pcb: *mut tcp_pcb, recv: tcp_recv_fn);
+}
+extern "C" {
+    pub fn tcp_sent(pcb: *mut tcp_pcb, sent: tcp_sent_fn);
+}
+extern "C" {
+    pub fn tcp_err(pcb: *mut tcp_pcb, err: tcp_err_fn);
+}
+extern "C" {
+    pub fn tcp_accept(pcb: *mut tcp_pcb, accept: tcp_accept_fn);
+}
+extern "C" {
+    pub fn tcp_poll(pcb: *mut tcp_pcb, poll: tcp_poll_fn, interval: u8_t);
+}
+extern "C" {
+    pub fn tcp_recved(pcb: *mut tcp_pcb, len: u16_t);
+}
+extern "C" {
+    pub fn tcp_bind(pcb: *mut tcp_pcb, ipaddr: *const ip_addr_t, port: u16_t) -> err_t;
+}
+extern "C" {
+    pub fn tcp_bind_netif(pcb: *mut tcp_pcb, netif: *const netif);
+}
+extern "C" {
+    pub fn tcp_connect(
+        pcb: *mut tcp_pcb,
+        ipaddr: *const ip_addr_t,
+        port: u16_t,
+        connected: tcp_connected_fn,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn tcp_listen_with_backlog_and_err(
+        pcb: *mut tcp_pcb,
+        backlog: u8_t,
+        err: *mut err_t,
+    ) -> *mut tcp_pcb;
+}
+extern "C" {
+    pub fn tcp_listen_with_backlog(pcb: *mut tcp_pcb, backlog: u8_t) -> *mut tcp_pcb;
+}
+extern "C" {
+    pub fn tcp_abort(pcb: *mut tcp_pcb);
+}
+extern "C" {
+    pub fn tcp_close(pcb: *mut tcp_pcb) -> err_t;
+}
+extern "C" {
+    pub fn tcp_shutdown(pcb: *mut tcp_pcb, shut_rx: libc::c_int, shut_tx: libc::c_int) -> err_t;
+}
+extern "C" {
+    pub fn tcp_write(
+        pcb: *mut tcp_pcb,
+        dataptr: *const libc::c_void,
+        len: u16_t,
+        apiflags: u8_t,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn tcp_setprio(pcb: *mut tcp_pcb, prio: u8_t);
+}
+extern "C" {
+    pub fn tcp_output(pcb: *mut tcp_pcb) -> err_t;
+}
+extern "C" {
+    pub fn tcp_tcp_get_tcp_addrinfo(
+        pcb: *mut tcp_pcb,
+        local: libc::c_int,
+        addr: *mut ip_addr_t,
+        port: *mut u16_t,
+    ) -> err_t;
+}
+#[repr(C, packed)]
+#[derive(Debug, Copy, Clone)]
+pub struct udp_hdr {
+    pub src: u16_t,
+    pub dest: u16_t,
+    pub len: u16_t,
+    pub chksum: u16_t,
+}
+#[test]
+fn bindgen_test_layout_udp_hdr() {
+    const UNINIT: ::core::mem::MaybeUninit<udp_hdr> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<udp_hdr>(),
+        8usize,
+        concat!("Size of: ", stringify!(udp_hdr))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<udp_hdr>(),
+        1usize,
+        concat!("Alignment of ", stringify!(udp_hdr))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).src) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_hdr),
+            "::",
+            stringify!(src)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).dest) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_hdr),
+            "::",
+            stringify!(dest)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).len) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_hdr),
+            "::",
+            stringify!(len)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).chksum) as usize - ptr as usize },
+        6usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_hdr),
+            "::",
+            stringify!(chksum)
+        )
+    );
+}
+#[doc = " Function prototype for udp pcb receive callback functions\n addr and port are in same byte order as in the pcb\n The callback is responsible for freeing the pbuf\n if it's not used any more.\n\n ATTENTION: Be aware that 'addr' might point into the pbuf 'p' so freeing this pbuf\n            can make 'addr' invalid, too.\n\n @param arg user supplied argument (udp_pcb.recv_arg)\n @param pcb the udp_pcb which received data\n @param p the packet buffer that was received\n @param addr the remote IP address from which the packet was received\n @param port the remote port from which the packet was received"]
+pub type udp_recv_fn = ::core::option::Option<
+    unsafe extern "C" fn(
+        arg: *mut libc::c_void,
+        pcb: *mut udp_pcb,
+        p: *mut pbuf,
+        addr: *const ip_addr_t,
+        port: u16_t,
+    ),
+>;
+#[doc = " the UDP protocol control block"]
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct udp_pcb {
+    #[doc = " Common members of all PCB types"]
+    pub local_ip: ip_addr_t,
+    #[doc = " Common members of all PCB types"]
+    pub remote_ip: ip_addr_t,
+    #[doc = " Common members of all PCB types"]
+    pub netif_idx: u8_t,
+    #[doc = " Common members of all PCB types"]
+    pub so_options: u8_t,
+    #[doc = " Common members of all PCB types"]
+    pub tos: u8_t,
+    #[doc = " Common members of all PCB types"]
+    pub ttl: u8_t,
+    pub next: *mut udp_pcb,
+    pub flags: u8_t,
+    #[doc = " ports are in host byte order"]
+    pub local_port: u16_t,
+    #[doc = " ports are in host byte order"]
+    pub remote_port: u16_t,
+    #[doc = " outgoing network interface for multicast packets, by IPv4 address (if not 'any')"]
+    pub mcast_ip4: ip4_addr_t,
+    #[doc = " outgoing network interface for multicast packets, by interface index (if nonzero)"]
+    pub mcast_ifindex: u8_t,
+    #[doc = " TTL for outgoing multicast packets"]
+    pub mcast_ttl: u8_t,
+    #[doc = " receive callback function"]
+    pub recv: udp_recv_fn,
+    #[doc = " user-supplied argument for the recv callback"]
+    pub recv_arg: *mut libc::c_void,
+}
+#[test]
+fn bindgen_test_layout_udp_pcb() {
+    const UNINIT: ::core::mem::MaybeUninit<udp_pcb> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<udp_pcb>(),
+        72usize,
+        concat!("Size of: ", stringify!(udp_pcb))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<udp_pcb>(),
+        4usize,
+        concat!("Alignment of ", stringify!(udp_pcb))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).local_ip) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_pcb),
+            "::",
+            stringify!(local_ip)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).remote_ip) as usize - ptr as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_pcb),
+            "::",
+            stringify!(remote_ip)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).netif_idx) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_pcb),
+            "::",
+            stringify!(netif_idx)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).so_options) as usize - ptr as usize },
+        41usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_pcb),
+            "::",
+            stringify!(so_options)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tos) as usize - ptr as usize },
+        42usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_pcb),
+            "::",
+            stringify!(tos)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ttl) as usize - ptr as usize },
+        43usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_pcb),
+            "::",
+            stringify!(ttl)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
+        44usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_pcb),
+            "::",
+            stringify!(next)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).flags) as usize - ptr as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_pcb),
+            "::",
+            stringify!(flags)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).local_port) as usize - ptr as usize },
+        50usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_pcb),
+            "::",
+            stringify!(local_port)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).remote_port) as usize - ptr as usize },
+        52usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_pcb),
+            "::",
+            stringify!(remote_port)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).mcast_ip4) as usize - ptr as usize },
+        56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_pcb),
+            "::",
+            stringify!(mcast_ip4)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).mcast_ifindex) as usize - ptr as usize },
+        60usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_pcb),
+            "::",
+            stringify!(mcast_ifindex)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).mcast_ttl) as usize - ptr as usize },
+        61usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_pcb),
+            "::",
+            stringify!(mcast_ttl)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).recv) as usize - ptr as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_pcb),
+            "::",
+            stringify!(recv)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).recv_arg) as usize - ptr as usize },
+        68usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udp_pcb),
+            "::",
+            stringify!(recv_arg)
+        )
+    );
+}
+extern "C" {
+    pub static mut udp_pcbs: *mut udp_pcb;
+}
+extern "C" {
+    pub fn udp_new() -> *mut udp_pcb;
+}
+extern "C" {
+    pub fn udp_new_ip_type(type_: u8_t) -> *mut udp_pcb;
+}
+extern "C" {
+    pub fn udp_remove(pcb: *mut udp_pcb);
+}
+extern "C" {
+    pub fn udp_bind(pcb: *mut udp_pcb, ipaddr: *const ip_addr_t, port: u16_t) -> err_t;
+}
+extern "C" {
+    pub fn udp_bind_netif(pcb: *mut udp_pcb, netif: *const netif);
+}
+extern "C" {
+    pub fn udp_connect(pcb: *mut udp_pcb, ipaddr: *const ip_addr_t, port: u16_t) -> err_t;
+}
+extern "C" {
+    pub fn udp_disconnect(pcb: *mut udp_pcb);
+}
+extern "C" {
+    pub fn udp_recv(pcb: *mut udp_pcb, recv: udp_recv_fn, recv_arg: *mut libc::c_void);
+}
+extern "C" {
+    pub fn udp_sendto_if(
+        pcb: *mut udp_pcb,
+        p: *mut pbuf,
+        dst_ip: *const ip_addr_t,
+        dst_port: u16_t,
+        netif: *mut netif,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn udp_sendto_if_src(
+        pcb: *mut udp_pcb,
+        p: *mut pbuf,
+        dst_ip: *const ip_addr_t,
+        dst_port: u16_t,
+        netif: *mut netif,
+        src_ip: *const ip_addr_t,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn udp_sendto(
+        pcb: *mut udp_pcb,
+        p: *mut pbuf,
+        dst_ip: *const ip_addr_t,
+        dst_port: u16_t,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn udp_send(pcb: *mut udp_pcb, p: *mut pbuf) -> err_t;
+}
+extern "C" {
+    pub fn udp_input(p: *mut pbuf, inp: *mut netif);
+}
+extern "C" {
+    pub fn udp_init();
+}
+extern "C" {
+    pub fn udp_debug_print(udphdr: *mut udp_hdr);
+}
+extern "C" {
+    pub fn udp_netif_ip_addr_changed(old_addr: *const ip_addr_t, new_addr: *const ip_addr_t);
+}
+extern "C" {
+    pub static dns_mquery_v4group: ip_addr_t;
+}
+extern "C" {
+    pub static dns_mquery_v6group: ip_addr_t;
+}
+#[doc = " Callback which is invoked when a hostname is found.\n A function of this type must be implemented by the application using the DNS resolver.\n @param name pointer to the name that was looked up.\n @param ipaddr pointer to an ip_addr_t containing the IP address of the hostname,\n        or NULL if the name could not be found (or on any other error).\n @param callback_arg a user-specified callback argument passed to dns_gethostbyname"]
+pub type dns_found_callback = ::core::option::Option<
+    unsafe extern "C" fn(
+        name: *const libc::c_char,
+        ipaddr: *const ip_addr_t,
+        callback_arg: *mut libc::c_void,
+    ),
+>;
+extern "C" {
+    pub fn dns_init();
+}
+extern "C" {
+    pub fn dns_tmr();
+}
+extern "C" {
+    pub fn dns_setserver(numdns: u8_t, dnsserver: *const ip_addr_t);
+}
+extern "C" {
+    pub fn dns_getserver(numdns: u8_t) -> *const ip_addr_t;
+}
+extern "C" {
+    pub fn dns_gethostbyname(
+        hostname: *const libc::c_char,
+        addr: *mut ip_addr_t,
+        found: dns_found_callback,
+        callback_arg: *mut libc::c_void,
+    ) -> err_t;
+}
+extern "C" {
+    pub fn dns_gethostbyname_addrtype(
+        hostname: *const libc::c_char,
+        addr: *mut ip_addr_t,
+        found: dns_found_callback,
+        callback_arg: *mut libc::c_void,
+        dns_addrtype: u8_t,
+    ) -> err_t;
+}
+extern "C" {
+    #[doc = " @}"]
+    pub fn lwip_init();
+}
+#[doc = " Ethernet"]
+pub const lwip_iana_hwtype_LWIP_IANA_HWTYPE_ETHERNET: lwip_iana_hwtype = 1;
+#[doc = " @ingroup iana\n Hardware types"]
+pub type lwip_iana_hwtype = libc::c_int;
+#[doc = " SMTP"]
+pub const lwip_iana_port_number_LWIP_IANA_PORT_SMTP: lwip_iana_port_number = 25;
+#[doc = " DHCP server"]
+pub const lwip_iana_port_number_LWIP_IANA_PORT_DHCP_SERVER: lwip_iana_port_number = 67;
+#[doc = " DHCP client"]
+pub const lwip_iana_port_number_LWIP_IANA_PORT_DHCP_CLIENT: lwip_iana_port_number = 68;
+#[doc = " TFTP"]
+pub const lwip_iana_port_number_LWIP_IANA_PORT_TFTP: lwip_iana_port_number = 69;
+#[doc = " HTTP"]
+pub const lwip_iana_port_number_LWIP_IANA_PORT_HTTP: lwip_iana_port_number = 80;
+#[doc = " SNTP"]
+pub const lwip_iana_port_number_LWIP_IANA_PORT_SNTP: lwip_iana_port_number = 123;
+#[doc = " NETBIOS"]
+pub const lwip_iana_port_number_LWIP_IANA_PORT_NETBIOS: lwip_iana_port_number = 137;
+#[doc = " SNMP"]
+pub const lwip_iana_port_number_LWIP_IANA_PORT_SNMP: lwip_iana_port_number = 161;
+#[doc = " SNMP traps"]
+pub const lwip_iana_port_number_LWIP_IANA_PORT_SNMP_TRAP: lwip_iana_port_number = 162;
+#[doc = " HTTPS"]
+pub const lwip_iana_port_number_LWIP_IANA_PORT_HTTPS: lwip_iana_port_number = 443;
+#[doc = " SMTPS"]
+pub const lwip_iana_port_number_LWIP_IANA_PORT_SMTPS: lwip_iana_port_number = 465;
+#[doc = " MQTT"]
+pub const lwip_iana_port_number_LWIP_IANA_PORT_MQTT: lwip_iana_port_number = 1883;
+#[doc = " MDNS"]
+pub const lwip_iana_port_number_LWIP_IANA_PORT_MDNS: lwip_iana_port_number = 5353;
+#[doc = " Secure MQTT"]
+pub const lwip_iana_port_number_LWIP_IANA_PORT_SECURE_MQTT: lwip_iana_port_number = 8883;
+#[doc = " @ingroup iana\n Port numbers\n https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt"]
+pub type lwip_iana_port_number = libc::c_int;
+extern "C" {
+    pub fn sntp_setoperatingmode(operating_mode: u8_t);
+}
+extern "C" {
+    pub fn sntp_getoperatingmode() -> u8_t;
+}
+extern "C" {
+    pub fn sntp_init();
+}
+extern "C" {
+    pub fn sntp_stop();
+}
+extern "C" {
+    pub fn sntp_enabled() -> u8_t;
+}
+extern "C" {
+    pub fn sntp_setserver(idx: u8_t, addr: *const ip_addr_t);
+}
+extern "C" {
+    pub fn sntp_getserver(idx: u8_t) -> *const ip_addr_t;
+}
+extern "C" {
+    pub fn sntp_getreachability(idx: u8_t) -> u8_t;
+}
 pub type __builtin_va_list = *mut libc::c_char;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -21280,5 +27923,10 @@ pub struct lconv {
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _IO_STATUS_LOCATION {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct tcp_seg {
     pub _address: u8,
 }
