@@ -95,9 +95,7 @@ impl NetParametersBuilder {
 }
 
 pub fn nx_net_init() -> Result<(), NxNetError> {
-    let err_code = unsafe {
-        nxNetInit(null_mut())
-    };
+    let err_code = unsafe { nxNetInit(null_mut()) };
 
     if err_code != 0 {
         return Err(NxNetError::from(err_code));
@@ -109,9 +107,7 @@ pub fn nx_net_init() -> Result<(), NxNetError> {
 pub fn nx_net_init_with(parameters: NetParametersBuilder) -> Result<(), NxNetError> {
     let param = parameters.build();
 
-    let err_code = unsafe {
-        nxNetInit(&param)
-    };
+    let err_code = unsafe { nxNetInit(&param) };
 
     if err_code != 0 {
         return Err(NxNetError::from(err_code));

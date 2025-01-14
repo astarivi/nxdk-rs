@@ -17,7 +17,7 @@ pub enum AvPack {
     Scart = AV_PACK_SCART as isize,
     Hdtv = AV_PACK_HDTV as isize,
     Vga = AV_PACK_VGA as isize,
-    SVideo = AV_PACK_SVIDEO as isize
+    SVideo = AV_PACK_SVIDEO as isize,
 }
 
 impl AvPack {
@@ -29,21 +29,19 @@ impl AvPack {
             AV_PACK_HDTV => AvPack::Hdtv,
             AV_PACK_VGA => AvPack::Vga,
             AV_PACK_SVIDEO => AvPack::SVideo,
-            _ => AvPack::None
+            _ => AvPack::None,
         }
     }
 }
 
 pub fn get_av_pack() -> AvPack {
     let video_adapter = xvideo_get_encoder_settings() & VIDEO_ADAPTER_MASK;
-    
+
     AvPack::from_code(video_adapter)
 }
 
 pub fn xvideo_get_encoder_settings() -> DWORD {
-    unsafe {
-        XVideoGetEncoderSettings()
-    }
+    unsafe { XVideoGetEncoderSettings() }
 }
 
 pub fn xvideo_flush_fb() {

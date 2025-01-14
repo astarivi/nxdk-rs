@@ -2,6 +2,7 @@
 name = "nxdk-sys"
 version = "0.1.0"
 build = "build.rs"
+edition = "2015"
 
 [build-dependencies]
 bindgen = "0.69.5"

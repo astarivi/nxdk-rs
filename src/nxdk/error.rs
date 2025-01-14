@@ -13,9 +13,7 @@ impl NxNetError {
         match code {
             -1 => NxNetError::InitError,
             -2 => NxNetError::DhcpError,
-            _ => {
-                NxNetError::UnknownError
-            }
+            _ => NxNetError::UnknownError,
         }
     }
 }

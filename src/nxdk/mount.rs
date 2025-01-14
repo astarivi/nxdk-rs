@@ -1,7 +1,7 @@
-use nxdk_sys::nxdk::mount::{nxIsDriveMounted, nxMountDrive, nxUnmountDrive};
 use crate::nxdk::path::nx_get_current_xbe_nt_path_native;
 use crate::utils::error::PlatformError;
 use crate::utils::path_str_to_cstr;
+use nxdk_sys::nxdk::mount::{nxIsDriveMounted, nxMountDrive, nxUnmountDrive};
 
 /// Mounts the given path to the given drive letter.
 ///
@@ -10,17 +10,12 @@ use crate::utils::path_str_to_cstr;
 pub fn nx_mount_drive(drive_letter: char, path: &str) -> Result<bool, PlatformError> {
     let c_path = path_str_to_cstr(path)?;
 
-    Ok(unsafe {
-        nxMountDrive(
-            drive_letter as u8 as i8,
-            c_path.as_ptr() as *const i8
-        )
-    })
+    Ok(unsafe { nxMountDrive(drive_letter as u8 as i8, c_path.as_ptr() as *const i8) })
 }
 
 /// Helper method to mount the current execution path to the given
 /// drive letter.
-/// 
+///
 /// This is the equivalent of mounting `nxGetCurrentXbeNtPath` result
 /// to the given drive.
 pub fn nx_mount_execution_to(drive_letter: char) -> bool {
@@ -37,12 +32,7 @@ fn nx_mount_drive_from(drive_letter: char, native_path: &mut [libc::c_char; 260]
         }
     }
 
-    unsafe {
-        nxMountDrive(
-            drive_letter as u8 as i8,
-            native_path.as_ptr() as *const i8
-        )
-    }
+    unsafe { nxMountDrive(drive_letter as u8 as i8, native_path.as_ptr() as *const i8) }
 }
 
 pub fn nx_unmount_drive(drive_letter: char) -> bool {

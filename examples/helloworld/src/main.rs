@@ -10,7 +10,7 @@ use core::panic::PanicInfo;
 extern crate alloc;
 
 #[global_allocator]
-static ALLOCATOR: nxdk_rs::alloc::XboxKernelAlloc = nxdk_rs::alloc::XboxKernelAlloc {};
+static ALLOCATOR: nxdk_rs::xbox_alloc::XboxKernelAlloc = nxdk_rs::xbox_alloc::XboxKernelAlloc {};
 
 #[alloc_error_handler]
 fn alloc_error_handler(layout: core::alloc::Layout) -> ! {

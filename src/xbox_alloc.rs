@@ -23,7 +23,12 @@ unsafe impl core::alloc::GlobalAlloc for XboxKernelAlloc {
         mem as *mut u8
     }
 
-    unsafe fn realloc(&self, ptr: *mut u8, _layout: core::alloc::Layout, new_size: usize) -> *mut u8 {
+    unsafe fn realloc(
+        &self,
+        ptr: *mut u8,
+        _layout: core::alloc::Layout,
+        new_size: usize,
+    ) -> *mut u8 {
         clib::stdlib::realloc(ptr as *mut libc::c_void, new_size as libc::c_uint) as *mut u8
     }
 }

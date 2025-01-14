@@ -3,8 +3,8 @@ extern crate bindgen;
 
 use std::fs;
 use std::fs::File;
-use std::path::Path;
 use std::io::Write;
+use std::path::Path;
 
 const LWIP_UMBRELLA: &str = r#"
 #ifndef LWIP_UMBRELLA_H
@@ -22,7 +22,6 @@ const LWIP_UMBRELLA: &str = r#"
 
 #endif // LWIP_UMBRELLA_H
 "#;
-
 
 fn link_lib(lib: &str) {
     println!("cargo:rustc-link-lib={}", lib);
@@ -53,7 +52,10 @@ fn gen_bindings(nxdk_dir: &str, lib_path: &str, header: &str) {
         .generate()
         .expect("Unable to generate bindings");
 
-    println!("cargo:rerun-if-changed={}/lib/{}/{}/h", nxdk_dir, lib_path, header);
+    println!(
+        "cargo:rerun-if-changed={}/lib/{}/{}/h",
+        nxdk_dir, lib_path, header
+    );
 
     let manifest_dir = std::env::var("CARGO_MANIFEST_DIR")
         .expect("CARGO_MANIFEST_DIR environment variable is not set");
@@ -62,9 +64,10 @@ fn gen_bindings(nxdk_dir: &str, lib_path: &str, header: &str) {
     out_path.push("src");
     out_path.push("bindings");
 
-    bindings.write_to_file(out_path.join(format!("bindings_{}.rs", header))).expect("Unable to write bindings");
+    bindings
+        .write_to_file(out_path.join(format!("bindings_{}.rs", header)))
+        .expect("Unable to write bindings");
 }
-
 
 fn gen_bindings_lwip(nxdk_dir: &str) {
     let bindings = bindgen::builder()
@@ -98,9 +101,10 @@ fn gen_bindings_lwip(nxdk_dir: &str) {
     out_path.push("src");
     out_path.push("bindings");
 
-    bindings.write_to_file(out_path.join("bindings_lwip.rs")).expect("Unable to write bindings");
+    bindings
+        .write_to_file(out_path.join("bindings_lwip.rs"))
+        .expect("Unable to write bindings");
 }
-
 
 fn generate_mod_rs() -> std::io::Result<()> {
     let manifest_dir = std::env::var("CARGO_MANIFEST_DIR")
@@ -139,7 +143,7 @@ fn main() {
     match std::env::var("NXDK_DIR") {
         Ok(v) => {
             nxdk_dir = v;
-        },
+        }
         Err(e) => {
             panic!("Error reading NXDK_DIR environment variable: {:?}", e);
         }
@@ -173,7 +177,7 @@ fn main() {
     gen_bindings(&nxdk_dir, "hal", "led");
     gen_bindings(&nxdk_dir, "hal", "video");
     gen_bindings(&nxdk_dir, "hal", "xbox");
-    
+
     gen_bindings(&nxdk_dir, "pbkit", "pbkit");
 
     gen_bindings(&nxdk_dir, "xboxkrnl", "xboxkrnl");
