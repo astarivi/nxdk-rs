@@ -1,11 +1,12 @@
 // SPDX-License-Identifier: MIT
 extern crate alloc;
 
+use alloc::ffi::CString;
 use alloc::format;
+use core::ffi::CStr;
 use nxdk_sys::hal::debug::*;
-use cstr_core::{CStr, CString};
 
-pub fn debug_print_cstr(msg: &cstr_core::CStr) {
+pub fn debug_print_cstr(msg: &CStr) {
     unsafe {
         debugPrint(msg.as_ptr() as *const libc::c_char);
     }
