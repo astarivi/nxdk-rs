@@ -4,6 +4,8 @@ use core::fmt::{Display, Formatter};
 #[derive(Debug, PartialEq, Eq, Clone)]
 pub enum PlatformError {
     PathTooLong,
+    ReadError(&'static str),
+    WriteError(&'static str),
 }
 
 impl Display for PlatformError {

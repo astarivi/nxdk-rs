@@ -8,3 +8,5 @@ pub mod hal;
 pub mod nxdk;
 pub mod utils;
 pub mod xbox_alloc;
+pub mod lwip;
+pub mod io;
