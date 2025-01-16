@@ -1,6 +1,5 @@
 use core::error::Error;
 use core::fmt;
-use crate::utils::error::PlatformError;
 
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub enum IoWrappedErr<E> {
