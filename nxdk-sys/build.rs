@@ -48,6 +48,7 @@ fn gen_bindings(nxdk_dir: &str, lib_path: &str, header: &str) {
         .clang_arg("-DUSBH_USE_EXTERNAL_CONFIG=\"usbh_config_xbox.h\"")
         .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
         .use_core()
+        .layout_tests(false)
         .ctypes_prefix("libc")
         .generate()
         .expect("Unable to generate bindings");
@@ -90,6 +91,7 @@ fn gen_bindings_lwip(nxdk_dir: &str) {
         .clang_arg("-DUSBH_USE_EXTERNAL_CONFIG=\"usbh_config_xbox.h\"")
         .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
         .use_core()
+        .layout_tests(false)
         .ctypes_prefix("libc")
         .generate()
         .expect("Unable to generate bindings");
