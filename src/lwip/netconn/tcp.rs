@@ -188,11 +188,9 @@ impl NetconnTcp {
     /// Close, and delete a TCP connection.
     ///
     /// API: `Util`
-    pub fn close_and_delete(&mut self) -> Result<(), NetconnErr> {
-        self.close()?;
+    pub fn close_and_delete(&mut self) {
+        let _ = self.close();
         self.delete();
-
-        Ok(())
     }
 }
 

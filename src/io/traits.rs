@@ -120,6 +120,21 @@ pub trait Write {
     }
 }
 
+impl<W: Write> Write for &mut W where
+    W: Write,
+    W::WriteError: 'static,
+{
+    type WriteError = W::WriteError;
+
+    fn write(&mut self, buf: &[u8]) -> Result<usize, Self::WriteError> {
+        (**self).write(buf)
+    }
+
+    fn flush(&mut self) -> Result<(), Self::WriteError> {
+        (**self).flush()
+    }
+}
+
 /// A wrapper around a Write trait implementer that retries
 /// the write for the given amount of time.
 ///
