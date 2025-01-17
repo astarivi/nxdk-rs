@@ -11,3 +11,4 @@ pub mod xbox_alloc;
 pub mod lwip;
 pub mod io;
 pub mod winapi;
+pub mod kernel;

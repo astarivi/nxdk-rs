@@ -1,5 +1,5 @@
 use core::time::Duration;
-use nxdk_sys::winapi::{KeQuerySystemTime, Sleep, LARGE_INTEGER};
+use nxdk_sys::kernel::{KeQuerySystemTime, LARGE_INTEGER};
 
 pub const WINDOWS_EPOCH: u64 = 116444736000000000;
 
@@ -42,13 +42,4 @@ pub fn windows_to_unix_timestamp(sys_time: &u64) -> u64 {
 /// Gets the unix timestamp from the system clock, in seconds.
 pub fn get_unix_timestamp() -> u64 {
     windows_to_unix_timestamp(&query_system_time())
-}
-
-/// Sleep the current thread.
-/// 
-/// Time is in ms.
-pub fn sleep(ms: u32) {
-    unsafe {
-        Sleep(ms);
-    }
 }

@@ -1,6 +1,7 @@
 use core::error::Error;
 use core::fmt;
-use crate::winapi::time::{sleep, Timer};
+use crate::kernel::time::Timer;
+use crate::winapi::sleep;
 
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub enum IoWrappedErr<E> {
