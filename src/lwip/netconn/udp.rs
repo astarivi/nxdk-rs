@@ -1,8 +1,6 @@
-use nxdk_sys::lwip::*;
-use crate::lwip::local_ipv4_to_native;
 use crate::lwip::netconn::error::NetconnErr;
 use crate::lwip::netconn::NetconnCommon;
-use crate::lwip::netconn::tcp::NetconnTcpType;
+use nxdk_sys::lwip::*;
 
 #[derive(Default, Debug, PartialEq, Eq, Clone)]
 pub enum NetconnUdpType {

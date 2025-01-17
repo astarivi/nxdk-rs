@@ -1,10 +1,12 @@
 use core::error::Error;
 use core::fmt;
+use crate::winapi::time::{sleep, Timer};
 
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub enum IoWrappedErr<E> {
     FmtError,
     UnexpectedEof,
+    Timeout,
     Other(E),
 }
 
@@ -68,7 +70,6 @@ pub trait Seek {
     }
 }
 
-
 pub trait Write {
     type WriteError: Error;
 
@@ -115,5 +116,78 @@ pub trait Write {
                 Ok(()) => Err(IoWrappedErr::FmtError),
             },
         }
+    }
+}
+
+/// A wrapper around a Write trait implementer that retries
+/// the write for the given amount of time.
+///
+/// Useful for non-blocking facilities, or for creating
+/// failure resistant structures in failure prone environments.
+///
+/// # Example:
+///
+/// ```
+/// use nxdk_rs::io::traits::{RetryWrite, Write};
+/// use nxdk_rs::lwip::netconn::tcp::{NetconnTcp, NetconnTcpType};
+/// 
+/// // Where we want to write to. Ideally, connect this somewhere
+/// let write_to = NetconnTcp::new(NetconnTcpType::Tcp)?;
+///
+/// // Data to write
+/// let buf: [u8; 100] = [0; 100];
+/// 
+/// let mut retry = RetryWrite::new(write_to, 60, 200);
+///
+/// // Blocks until written, or timed out
+/// let bytes_written = retry.write(&buf)?;
+/// ```
+pub struct RetryWrite<W: Write> {
+    timeout: u64,
+    sleep_for: u32,
+    inner: W
+}
+
+impl<W: Write> RetryWrite<W> {
+    /// Creates a new wrapper.
+    ///
+    /// # Arguments
+    ///
+    /// - `w` is the Write trait implementer.
+    /// - `timeout_secs` is the amount of time to try to write for. In seconds.
+    /// - `sleep_between` is the amount of time to sleep between tries. In milliseconds.
+    pub fn new(w: W, timeout_secs: u64, sleep_between: u32) -> Self {
+        Self { timeout: timeout_secs, inner: w, sleep_for: sleep_between }
+    }
+}
+
+impl<W: Write> Write for RetryWrite<W>
+where
+    W: Write,
+    W::WriteError: 'static,
+{
+    type WriteError = IoWrappedErr<<W as Write>::WriteError>;
+
+    fn write(&mut self, buf: &[u8]) -> Result<usize, Self::WriteError> {
+        let start_time = Timer::new();
+
+        loop {
+            if start_time.elapsed().as_secs() >= self.timeout {
+                return Err(Self::WriteError::Timeout);
+            }
+
+            let res = self.inner.write(buf).map_err(|e| IoWrappedErr::Other(e))?;
+
+            if res != 0 {
+                return Ok(res)
+            }
+
+            sleep(self.sleep_for);
+        }
+    }
+
+    fn flush(&mut self) -> Result<(), Self::WriteError> {
+        // Not implemented. Why would you want to flush like this anyway?
+        unimplemented!()
     }
 }
