@@ -1,3 +1,8 @@
+pub mod error;
+pub mod file;
+
+pub type WindowsPath = [u8; 260];
+
 use nxdk_sys::winapi::Sleep;
 
 /// Sleep the current thread.
