@@ -120,11 +120,11 @@ pub trait Write {
     }
 }
 
-impl<W: Write> Write for &mut W where
-    W: Write,
-    W::WriteError: 'static,
+impl<W> Write for &mut W
+where
+    W: Write
 {
-    type WriteError = W::WriteError;
+    type WriteError = <W as Write>::WriteError;
 
     fn write(&mut self, buf: &[u8]) -> Result<usize, Self::WriteError> {
         (**self).write(buf)
@@ -148,12 +148,12 @@ impl<W: Write> Write for &mut W where
 /// use nxdk_rs::lwip::netconn::tcp::{NetconnTcp, NetconnTcpType};
 /// 
 /// // Where we want to write to. Ideally, connect this somewhere
-/// let write_to = NetconnTcp::new(NetconnTcpType::Tcp)?;
+/// let mut write_to = NetconnTcp::new(NetconnTcpType::Tcp)?;
 ///
 /// // Data to write
 /// let buf: [u8; 100] = [0; 100];
 /// 
-/// let mut retry = RetryWrite::new(write_to, 60, 200);
+/// let mut retry = RetryWrite::new(&mut write_to, 60, 200);
 ///
 /// // Blocks until written, or timed out
 /// let bytes_written = retry.write(&buf)?;
