@@ -255,8 +255,8 @@ pub type _PDCLIB_int_fast16_t = libc::c_int;
 pub type _PDCLIB_uint_fast16_t = libc::c_uint;
 pub type _PDCLIB_int_fast32_t = libc::c_int;
 pub type _PDCLIB_uint_fast32_t = libc::c_uint;
-pub type _PDCLIB_int_fast64_t = libc::c_long;
-pub type _PDCLIB_uint_fast64_t = libc::c_ulong;
+pub type _PDCLIB_int_fast64_t = libc::c_longlong;
+pub type _PDCLIB_uint_fast64_t = libc::c_ulonglong;
 pub type _PDCLIB_ptrdiff_t = libc::c_int;
 pub type _PDCLIB_size_t = libc::c_uint;
 pub type _PDCLIB_wchar_t = libc::c_ushort;
@@ -572,6 +572,7 @@ pub struct nx_net_parameters_t_ {
 }
 pub type nx_net_parameters_t = nx_net_parameters_t_;
 extern "C" {
+    #[doc = " Initializes the networking subsystem.\n @param parameters nx_net_parameters_t containing configuration data\n @return 0 on success, negative values indicate various errors."]
     pub fn nxNetInit(parameters: *const nx_net_parameters_t) -> libc::c_int;
 }
 extern "C" {

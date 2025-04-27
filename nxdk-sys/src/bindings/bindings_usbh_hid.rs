@@ -7,7 +7,7 @@ pub const OHCI_ISO_DELAY: u32 = 4;
 pub const MAX_DESC_BUFF_SIZE: u32 = 4096;
 pub const MAX_UDEV_DRIVER: u32 = 8;
 pub const MAX_ALT_PER_IFACE: u32 = 12;
-pub const MAX_EP_PER_IFACE: u32 = 8;
+pub const MAX_EP_PER_IFACE: u32 = 15;
 pub const MAX_HUB_DEVICE: u32 = 8;
 pub const MEM_POOL_UNIT_SIZE: u32 = 128;
 pub const MEM_POOL_UNIT_NUM: u32 = 96;
@@ -778,8 +778,8 @@ pub type _PDCLIB_int_fast16_t = libc::c_int;
 pub type _PDCLIB_uint_fast16_t = libc::c_uint;
 pub type _PDCLIB_int_fast32_t = libc::c_int;
 pub type _PDCLIB_uint_fast32_t = libc::c_uint;
-pub type _PDCLIB_int_fast64_t = libc::c_long;
-pub type _PDCLIB_uint_fast64_t = libc::c_ulong;
+pub type _PDCLIB_int_fast64_t = libc::c_longlong;
+pub type _PDCLIB_uint_fast64_t = libc::c_ulonglong;
 pub type _PDCLIB_ptrdiff_t = libc::c_int;
 pub type _PDCLIB_size_t = libc::c_uint;
 pub type _PDCLIB_wchar_t = libc::c_ushort;
@@ -2583,7 +2583,7 @@ pub struct alt_iface_t {
     #[doc = "< point to the location of this alternative interface descriptor in UDEV_T->cfd_buff"]
     pub ifd: *mut DESC_IF_T,
     #[doc = "< endpoints of this alternative interface"]
-    pub ep: [EP_INFO_T; 8usize],
+    pub ep: [EP_INFO_T; 15usize],
 }
 pub type ALT_IFACE_T = alt_iface_t;
 #[repr(C)]

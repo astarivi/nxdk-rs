@@ -70,9 +70,9 @@ fn gen_bindings(nxdk_dir: &str, lib_path: &str, header: &str) {
         .expect("Unable to write bindings");
 }
 
-fn gen_bindings_lwip(nxdk_dir: &str) {
+fn gen_bindings_umbrella(nxdk_dir: &str, umbrella: &str, name: &str) {
     let bindings = bindgen::builder()
-        .header_contents("lwip_umbrella.h", LWIP_UMBRELLA)
+        .header_contents(&format!("{}_umbrella.h", name), umbrella)
         .clang_arg(format!("-I{}/lib", nxdk_dir))
         .clang_arg(format!("-I{}/lib/xboxrt/libc_extensions", nxdk_dir))
         .clang_arg(format!("-I{}/lib/pdclib/include", nxdk_dir))
@@ -104,7 +104,7 @@ fn gen_bindings_lwip(nxdk_dir: &str) {
     out_path.push("bindings");
 
     bindings
-        .write_to_file(out_path.join("bindings_lwip.rs"))
+        .write_to_file(out_path.join(format!("bindings_{}.rs", name)))
         .expect("Unable to write bindings");
 }
 
@@ -200,7 +200,7 @@ fn main() {
     gen_bindings(&nxdk_dir, "winapi", "windows");
 
     // Networking
-    gen_bindings_lwip(&nxdk_dir);
+    gen_bindings_umbrella(&nxdk_dir, LWIP_UMBRELLA, "lwip");
 
     // NXDK general helper functions
     gen_bindings(&nxdk_dir, "nxdk", "configsector");

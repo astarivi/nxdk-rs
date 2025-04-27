@@ -417,6 +417,9 @@ pub const AV_PACK_SCART: u32 = 3;
 pub const AV_PACK_HDTV: u32 = 4;
 pub const AV_PACK_VGA: u32 = 5;
 pub const AV_PACK_SVIDEO: u32 = 6;
+pub const PASSIVE_LEVEL: u32 = 0;
+pub const APC_LEVEL: u32 = 1;
+pub const DISPATCH_LEVEL: u32 = 2;
 pub const PAGE_SIZE: u32 = 4096;
 pub const OBJ_INHERIT: u32 = 2;
 pub const OBJ_PERMANENT: u32 = 16;
@@ -451,6 +454,8 @@ pub const LOW_PRIORITY: u32 = 0;
 pub const LOW_REALTIME_PRIORITY: u32 = 16;
 pub const HIGH_PRIORITY: u32 = 31;
 pub const MAXIMUM_PRIORITY: u32 = 32;
+pub const NULL: u32 = 0;
+pub const _NLSCMPERROR: u32 = 2147483647;
 pub const XNET_ETHERNET_LINK_ACTIVE: u32 = 1;
 pub const XNET_ETHERNET_LINK_100MBPS: u32 = 2;
 pub const XNET_ETHERNET_LINK_10MBPS: u32 = 4;
@@ -622,6 +627,9 @@ pub const PROCESSOR_ARCHITECTURE_IA64: u32 = 6;
 pub const PROCESSOR_ARCHITECTURE_AMD64: u32 = 9;
 pub const PROCESSOR_ARCHITECTURE_ARM64: u32 = 12;
 pub const PROCESSOR_ARCHITECTURE_UNKNOWN: u32 = 65535;
+pub const TIME_ZONE_ID_UNKNOWN: u32 = 0;
+pub const TIME_ZONE_ID_STANDARD: u32 = 1;
+pub const TIME_ZONE_ID_DAYLIGHT: u32 = 2;
 pub const ERROR_SUCCESS: u32 = 0;
 pub const NO_ERROR: u32 = 0;
 pub const ERROR_INVALID_FUNCTION: u32 = 1;
@@ -2456,9 +2464,6 @@ pub const FACILITY_NULL: u32 = 0;
 pub const FACILITY_ITF: u32 = 4;
 pub const FACILITY_DISPATCH: u32 = 2;
 pub const FACILITY_NT_BIT: u32 = 268435456;
-pub const TIME_ZONE_ID_UNKNOWN: u32 = 0;
-pub const TIME_ZONE_ID_STANDARD: u32 = 1;
-pub const TIME_ZONE_ID_DAYLIGHT: u32 = 2;
 pub type LPCVOID = *const libc::c_void;
 pub type VOID = libc::c_void;
 pub type PVOID = *mut libc::c_void;
@@ -2703,6 +2708,7 @@ pub type FARPROC = ::core::option::Option<unsafe extern "stdcall" fn() -> libc::
 extern "C" {
     pub fn IsDebuggerPresent() -> BOOL;
 }
+pub type UINT_PTR = libc::c_uint;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _FILETIME {
@@ -3058,7 +3064,6 @@ pub struct _XBE_FILE_HEADER {
 }
 pub type XBE_FILE_HEADER = _XBE_FILE_HEADER;
 pub type PXBE_FILE_HEADER = *mut _XBE_FILE_HEADER;
-pub type UINT_PTR = libc::c_uint;
 pub type PFLS_CALLBACK_FUNCTION = ::core::option::Option<unsafe extern "stdcall" fn(arg1: PVOID)>;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -3146,6 +3151,14 @@ extern "C" {
     pub fn IsBadWritePtr(lp: LPVOID, ucb: UINT_PTR) -> BOOL;
 }
 extern "C" {
+    pub fn GetOverlappedResult(
+        hFile: HANDLE,
+        lpOverlapped: LPOVERLAPPED,
+        lpNumberOfBytesTransferred: LPDWORD,
+        bWait: BOOL,
+    ) -> BOOL;
+}
+extern "C" {
     pub fn RaiseException(
         dwExceptionCode: DWORD,
         dwExceptionFlags: DWORD,
@@ -3209,8 +3222,8 @@ pub type _PDCLIB_int_fast16_t = libc::c_int;
 pub type _PDCLIB_uint_fast16_t = libc::c_uint;
 pub type _PDCLIB_int_fast32_t = libc::c_int;
 pub type _PDCLIB_uint_fast32_t = libc::c_uint;
-pub type _PDCLIB_int_fast64_t = libc::c_long;
-pub type _PDCLIB_uint_fast64_t = libc::c_ulong;
+pub type _PDCLIB_int_fast64_t = libc::c_longlong;
+pub type _PDCLIB_uint_fast64_t = libc::c_ulonglong;
 pub type _PDCLIB_ptrdiff_t = libc::c_int;
 pub type _PDCLIB_size_t = libc::c_uint;
 pub type _PDCLIB_wchar_t = libc::c_ushort;
@@ -5816,9 +5829,102 @@ extern "stdcall" {
     #[doc = " Writes a number of UCHAR values from the specified port address into a buffer.\n @param Port The memory mapped I/O address of the port. E.g., `(PUCHAR)0x0cf8` for port 0x0CF8.\n @param Buffer Pointer to a buffer containing the values to be written.\n @param Count Specifies the number of values to be written to the port."]
     pub fn WRITE_PORT_BUFFER_UCHAR(Port: PUCHAR, Buffer: PUCHAR, Count: ULONG);
 }
-extern "stdcall" {
-    #[doc = " Fills a specified memory area with zeroes\n @param Destination A pointer to the memory block which is to be filled\n @param Length The length of the memory block which is to be filled"]
-    pub fn RtlZeroMemory(Destination: *mut VOID, Length: SIZE_T);
+extern "C" {
+    pub fn memcpy(
+        s1: *mut libc::c_void,
+        s2: *const libc::c_void,
+        n: libc::c_uint,
+    ) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn memmove(
+        s1: *mut libc::c_void,
+        s2: *const libc::c_void,
+        n: libc::c_uint,
+    ) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn strcpy(s1: *mut libc::c_char, s2: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strncpy(
+        s1: *mut libc::c_char,
+        s2: *const libc::c_char,
+        n: libc::c_uint,
+    ) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strcat(s1: *mut libc::c_char, s2: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strncat(
+        s1: *mut libc::c_char,
+        s2: *const libc::c_char,
+        n: libc::c_uint,
+    ) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn memcmp(s1: *const libc::c_void, s2: *const libc::c_void, n: libc::c_uint)
+        -> libc::c_int;
+}
+extern "C" {
+    pub fn strcmp(s1: *const libc::c_char, s2: *const libc::c_char) -> libc::c_int;
+}
+extern "C" {
+    pub fn strcoll(s1: *const libc::c_char, s2: *const libc::c_char) -> libc::c_int;
+}
+extern "C" {
+    pub fn strncmp(
+        s1: *const libc::c_char,
+        s2: *const libc::c_char,
+        n: libc::c_uint,
+    ) -> libc::c_int;
+}
+extern "C" {
+    pub fn strxfrm(s1: *mut libc::c_char, s2: *const libc::c_char, n: libc::c_uint)
+        -> libc::c_uint;
+}
+extern "C" {
+    pub fn memchr(s: *const libc::c_void, c: libc::c_int, n: libc::c_uint) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn strchr(s: *const libc::c_char, c: libc::c_int) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strcspn(s1: *const libc::c_char, s2: *const libc::c_char) -> libc::c_uint;
+}
+extern "C" {
+    pub fn strpbrk(s1: *const libc::c_char, s2: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strrchr(s: *const libc::c_char, c: libc::c_int) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strspn(s1: *const libc::c_char, s2: *const libc::c_char) -> libc::c_uint;
+}
+extern "C" {
+    pub fn strstr(s1: *const libc::c_char, s2: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strtok(s1: *mut libc::c_char, s2: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn memset(s: *mut libc::c_void, c: libc::c_int, n: libc::c_uint) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn strerror(errnum: libc::c_int) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strlen(s: *const libc::c_char) -> libc::c_uint;
+}
+extern "C" {
+    pub fn strdup(s: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn _strnicmp(s1: *const libc::c_char, s2: *const libc::c_char, n: usize) -> libc::c_int;
+}
+extern "C" {
+    pub fn _stricmp(s1: *const libc::c_char, s2: *const libc::c_char) -> libc::c_int;
 }
 extern "stdcall" {
     pub fn RtlWalkFrameChain(Callers: *mut PVOID, Count: ULONG, Flags: ULONG) -> ULONG;
@@ -5941,9 +6047,6 @@ extern "stdcall" {
     ) -> NTSTATUS;
 }
 extern "stdcall" {
-    pub fn RtlMoveMemory(Destination: PVOID, Source: *const PVOID, Length: ULONG);
-}
-extern "stdcall" {
     pub fn RtlMapGenericMask(AccessMask: PACCESS_MASK, GenericMapping: PGENERIC_MAPPING);
 }
 extern "stdcall" {
@@ -5994,10 +6097,6 @@ extern "stdcall" {
 extern "stdcall" {
     #[doc = " Fills a specified memory area with repetitions of a ULONG value\n @param Destination A pointer to the (ULONG-aligned) memory block which is to be filled\n @param Length The length of the memory block which is to be filled\n @param Pattern The ULONG-value with which the memory block will be filled"]
     pub fn RtlFillMemoryUlong(Destination: PVOID, Length: SIZE_T, Pattern: ULONG);
-}
-extern "stdcall" {
-    #[doc = " Fills a specified memory area with a specified value\n @param Destination A pointer to the memory block which is to be filled\n @param Length The length of the memory block which is to be filled\n @param Fill The byte-value with which the memory block will be filled"]
-    pub fn RtlFillMemory(Destination: PVOID, Length: ULONG, Fill: UCHAR);
 }
 extern "stdcall" {
     pub fn RtlExtendedMagicDivide(
@@ -7652,6 +7751,12 @@ extern "C" {
     pub fn SetThreadPriority(hThread: HANDLE, nPriority: libc::c_int) -> BOOL;
 }
 extern "C" {
+    pub fn SuspendThread(hThread: HANDLE) -> DWORD;
+}
+extern "C" {
+    pub fn ResumeThread(hThread: HANDLE) -> DWORD;
+}
+extern "C" {
     pub fn TlsAlloc() -> DWORD;
 }
 extern "C" {
@@ -7835,6 +7940,9 @@ extern "C" {
 }
 extern "C" {
     pub fn GetSystemTime(lpSystemTime: LPSYSTEMTIME);
+}
+extern "C" {
+    pub fn GetSystemTimeAsFileTime(lpSystemTimeAsFileTime: LPFILETIME);
 }
 extern "C" {
     pub fn GetSystemTimePreciseAsFileTime(lpSystemTimeAsFileTime: LPFILETIME);

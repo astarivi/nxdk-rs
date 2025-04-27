@@ -89,3 +89,15 @@ impl Display for WinMixedError {
 }
 
 impl Error for WinMixedError {}
+
+impl From<WinError> for WinMixedError {
+    fn from(value: WinError) -> Self {
+        WinMixedError::WinError(value)
+    }
+}
+
+impl From<NtStatusError> for WinMixedError {
+    fn from(value: NtStatusError) -> Self {
+        WinMixedError::NtStatus(value)
+    }
+}

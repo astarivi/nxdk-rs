@@ -115,6 +115,9 @@ pub const AV_PACK_SCART: u32 = 3;
 pub const AV_PACK_HDTV: u32 = 4;
 pub const AV_PACK_VGA: u32 = 5;
 pub const AV_PACK_SVIDEO: u32 = 6;
+pub const PASSIVE_LEVEL: u32 = 0;
+pub const APC_LEVEL: u32 = 1;
+pub const DISPATCH_LEVEL: u32 = 2;
 pub const PAGE_SIZE: u32 = 4096;
 pub const OBJ_INHERIT: u32 = 2;
 pub const OBJ_PERMANENT: u32 = 16;
@@ -149,6 +152,183 @@ pub const LOW_PRIORITY: u32 = 0;
 pub const LOW_REALTIME_PRIORITY: u32 = 16;
 pub const HIGH_PRIORITY: u32 = 31;
 pub const MAXIMUM_PRIORITY: u32 = 32;
+pub const __STDC_WANT_LIB_EXT1_PREVIOUS__: i32 = -1;
+pub const _PDCLIB_endl: &[u8; 2] = b"\n\0";
+pub const _PDCLIB_SUCCESS: u32 = 0;
+pub const _PDCLIB_FAILURE: i32 = -1;
+pub const _PDCLIB_CHAR_SIGNED: u32 = 1;
+pub const _PDCLIB_SHRT_BYTES: u32 = 2;
+pub const _PDCLIB_INT_BYTES: u32 = 4;
+pub const _PDCLIB_LONG_BYTES: u32 = 4;
+pub const _PDCLIB_LLONG_BYTES: u32 = 8;
+pub const _PDCLIB_CLOCKS_PER_SEC: u32 = 1000;
+pub const _PDCLIB_TIME_UTC: u32 = 1;
+pub const _PDCLIB_FLT_ROUNDS: i32 = -1;
+pub const _PDCLIB_FLT_EVAL_METHOD: i32 = -1;
+pub const _PDCLIB_DECIMAL_DIG: u32 = 17;
+pub const _PDCLIB_PAGESIZE: u32 = 4096;
+pub const _PDCLIB_MINALLOC: u32 = 8;
+pub const _PDCLIB_BUFSIZ: u32 = 1024;
+pub const _PDCLIB_FOPEN_MAX: u32 = 8;
+pub const _PDCLIB_FILENAME_MAX: u32 = 128;
+pub const _PDCLIB_L_tmpnam: u32 = 46;
+pub const _PDCLIB_TMP_MAX: u32 = 50;
+pub const _PDCLIB_SEEK_SET: u32 = 0;
+pub const _PDCLIB_SEEK_CUR: u32 = 1;
+pub const _PDCLIB_SEEK_END: u32 = 2;
+pub const _PDCLIB_UNGETCBUFSIZE: u32 = 1;
+pub const _PDCLIB_ATEXIT_SLOTS: u32 = 40;
+pub const _PDCLIB_E2BIG: u32 = 7;
+pub const _PDCLIB_EACCES: u32 = 13;
+pub const _PDCLIB_EADDRINUSE: u32 = 100;
+pub const _PDCLIB_EADDRNOTAVAIL: u32 = 101;
+pub const _PDCLIB_EAFNOSUPPORT: u32 = 102;
+pub const _PDCLIB_EAGAIN: u32 = 11;
+pub const _PDCLIB_EALREADY: u32 = 103;
+pub const _PDCLIB_EBADF: u32 = 9;
+pub const _PDCLIB_EBADMSG: u32 = 104;
+pub const _PDCLIB_EBUSY: u32 = 16;
+pub const _PDCLIB_ECANCELED: u32 = 105;
+pub const _PDCLIB_ECHILD: u32 = 10;
+pub const _PDCLIB_ECONNABORTED: u32 = 106;
+pub const _PDCLIB_ECONNREFUSED: u32 = 107;
+pub const _PDCLIB_ECONNRESET: u32 = 108;
+pub const _PDCLIB_EDEADLK: u32 = 36;
+pub const _PDCLIB_EDESTADDRREQ: u32 = 109;
+pub const _PDCLIB_EDOM: u32 = 33;
+pub const _PDCLIB_EEXIST: u32 = 17;
+pub const _PDCLIB_EFAULT: u32 = 14;
+pub const _PDCLIB_EFBIG: u32 = 27;
+pub const _PDCLIB_EHOSTUNREACH: u32 = 110;
+pub const _PDCLIB_EIDRM: u32 = 111;
+pub const _PDCLIB_EILSEQ: u32 = 42;
+pub const _PDCLIB_EINPROGRESS: u32 = 112;
+pub const _PDCLIB_EINTR: u32 = 4;
+pub const _PDCLIB_EINVAL: u32 = 22;
+pub const _PDCLIB_EIO: u32 = 5;
+pub const _PDCLIB_EISCONN: u32 = 113;
+pub const _PDCLIB_EISDIR: u32 = 21;
+pub const _PDCLIB_ELOOP: u32 = 114;
+pub const _PDCLIB_EMFILE: u32 = 24;
+pub const _PDCLIB_EMLINK: u32 = 31;
+pub const _PDCLIB_EMSGSIZE: u32 = 115;
+pub const _PDCLIB_ENAMETOOLONG: u32 = 38;
+pub const _PDCLIB_ENETDOWN: u32 = 116;
+pub const _PDCLIB_ENETRESET: u32 = 117;
+pub const _PDCLIB_ENETUNREACH: u32 = 118;
+pub const _PDCLIB_ENFILE: u32 = 23;
+pub const _PDCLIB_ENOBUFS: u32 = 119;
+pub const _PDCLIB_ENODATA: u32 = 120;
+pub const _PDCLIB_ENODEV: u32 = 19;
+pub const _PDCLIB_ENOENT: u32 = 2;
+pub const _PDCLIB_ENOEXEC: u32 = 8;
+pub const _PDCLIB_ENOLCK: u32 = 39;
+pub const _PDCLIB_ENOLINK: u32 = 121;
+pub const _PDCLIB_ENOMEM: u32 = 12;
+pub const _PDCLIB_ENOMSG: u32 = 122;
+pub const _PDCLIB_ENOPROTOOPT: u32 = 123;
+pub const _PDCLIB_ENOSPC: u32 = 28;
+pub const _PDCLIB_ENOSR: u32 = 124;
+pub const _PDCLIB_ENOSTR: u32 = 125;
+pub const _PDCLIB_ENOSYS: u32 = 40;
+pub const _PDCLIB_ENOTCONN: u32 = 126;
+pub const _PDCLIB_ENOTDIR: u32 = 20;
+pub const _PDCLIB_ENOTEMPTY: u32 = 41;
+pub const _PDCLIB_ENOTRECOVERABLE: u32 = 127;
+pub const _PDCLIB_ENOTSOCK: u32 = 128;
+pub const _PDCLIB_ENOTSUP: u32 = 129;
+pub const _PDCLIB_ENOTTY: u32 = 25;
+pub const _PDCLIB_ENXIO: u32 = 6;
+pub const _PDCLIB_EOPNOTSUPP: u32 = 130;
+pub const _PDCLIB_EOVERFLOW: u32 = 132;
+pub const _PDCLIB_EOWNERDEAD: u32 = 133;
+pub const _PDCLIB_EPERM: u32 = 1;
+pub const _PDCLIB_EPIPE: u32 = 32;
+pub const _PDCLIB_EPROTO: u32 = 134;
+pub const _PDCLIB_EPROTONOSUPPORT: u32 = 135;
+pub const _PDCLIB_EPROTOTYPE: u32 = 136;
+pub const _PDCLIB_ERANGE: u32 = 34;
+pub const _PDCLIB_EROFS: u32 = 30;
+pub const _PDCLIB_ESPIPE: u32 = 29;
+pub const _PDCLIB_ESRCH: u32 = 3;
+pub const _PDCLIB_ETIME: u32 = 137;
+pub const _PDCLIB_ETIMEDOUT: u32 = 138;
+pub const _PDCLIB_ETXTBSY: u32 = 139;
+pub const _PDCLIB_EWOULDBLOCK: u32 = 140;
+pub const _PDCLIB_EXDEV: u32 = 18;
+pub const _PDCLIB_ERRNO_MAX: u32 = 141;
+pub const _PDCLIB_LOCALE_PATH: &[u8; 23] = b"/usr/share/pdclib/i18n\0";
+pub const _PDCLIB_ONCE_FLAG_INIT: u32 = 0;
+pub const _PDCLIB_TSS_DTOR_ITERATIONS: u32 = 4;
+pub const _PDCLIB_HOSTED: u32 = 1;
+pub const _PDCLIB_NULL: u32 = 0;
+pub const _PDCLIB_CHAR_BIT: u32 = 8;
+pub const _PDCLIB_UCHAR_MIN: u32 = 0;
+pub const _PDCLIB_UCHAR_MAX: u32 = 255;
+pub const _PDCLIB_SCHAR_MIN: i32 = -128;
+pub const _PDCLIB_SCHAR_MAX: u32 = 127;
+pub const _PDCLIB_CHAR_MIN: i32 = -128;
+pub const _PDCLIB_CHAR_MAX: u32 = 127;
+pub const _PDCLIB_SHRT_MAX: u32 = 32767;
+pub const _PDCLIB_SHRT_MIN: i32 = -32768;
+pub const _PDCLIB_USHRT_MAX: u32 = 65535;
+pub const _PDCLIB_USHRT_MIN: u32 = 0;
+pub const _PDCLIB_INT_MAX: u32 = 2147483647;
+pub const _PDCLIB_INT_MIN: i32 = -2147483648;
+pub const _PDCLIB_UINT_MAX: u32 = 4294967295;
+pub const _PDCLIB_UINT_MIN: u32 = 0;
+pub const _PDCLIB_LONG_MAX: u32 = 2147483647;
+pub const _PDCLIB_LONG_MIN: i32 = -2147483648;
+pub const _PDCLIB_ULONG_MAX: u32 = 4294967295;
+pub const _PDCLIB_ULONG_MIN: u32 = 0;
+pub const _PDCLIB_LLONG_MAX: u64 = 9223372036854775807;
+pub const _PDCLIB_LLONG_MIN: i64 = -9223372036854775808;
+pub const _PDCLIB_ULLONG_MAX: i32 = -1;
+pub const _PDCLIB_ULLONG_MIN: u32 = 0;
+pub const _PDCLIB_INT8_MAX: u32 = 127;
+pub const _PDCLIB_INT8_MIN: i32 = -128;
+pub const _PDCLIB_UINT8_MAX: u32 = 255;
+pub const _PDCLIB_INT16_MAX: u32 = 32767;
+pub const _PDCLIB_INT16_MIN: i32 = -32768;
+pub const _PDCLIB_UINT16_MAX: u32 = 65535;
+pub const _PDCLIB_INT32_MAX: u32 = 2147483647;
+pub const _PDCLIB_INT32_MIN: i32 = -2147483648;
+pub const _PDCLIB_UINT32_MAX: u32 = 4294967295;
+pub const _PDCLIB_INT64_MAX: u64 = 9223372036854775807;
+pub const _PDCLIB_INT64_MIN: i64 = -9223372036854775808;
+pub const _PDCLIB_UINT64_MAX: i32 = -1;
+pub const _PDCLIB_FREAD: u32 = 8;
+pub const _PDCLIB_FWRITE: u32 = 16;
+pub const _PDCLIB_FAPPEND: u32 = 32;
+pub const _PDCLIB_FRW: u32 = 64;
+pub const _PDCLIB_FBIN: u32 = 128;
+pub const _PDCLIB_FREEBUFFER: u32 = 256;
+pub const _PDCLIB_ERRORFLAG: u32 = 512;
+pub const _PDCLIB_EOFFLAG: u32 = 1024;
+pub const _PDCLIB_WIDESTREAM: u32 = 2048;
+pub const _PDCLIB_BYTESTREAM: u32 = 4096;
+pub const _PDCLIB_DELONCLOSE: u32 = 8192;
+pub const _PDCLIB_STATIC: u32 = 16384;
+pub const _PDCLIB_FREENAME: u32 = 32768;
+pub const _PDCLIB_LC_ALL: u32 = 0;
+pub const _PDCLIB_LC_COLLATE: u32 = 1;
+pub const _PDCLIB_LC_CTYPE: u32 = 2;
+pub const _PDCLIB_LC_MONETARY: u32 = 3;
+pub const _PDCLIB_LC_NUMERIC: u32 = 4;
+pub const _PDCLIB_LC_TIME: u32 = 5;
+pub const _PDCLIB_LC_MESSAGES: u32 = 6;
+pub const _PDCLIB_LC_COUNT: u32 = 7;
+pub const _PDCLIB_CTYPE_ALPHA: u32 = 1;
+pub const _PDCLIB_CTYPE_BLANK: u32 = 2;
+pub const _PDCLIB_CTYPE_CNTRL: u32 = 4;
+pub const _PDCLIB_CTYPE_GRAPH: u32 = 8;
+pub const _PDCLIB_CTYPE_PUNCT: u32 = 16;
+pub const _PDCLIB_CTYPE_SPACE: u32 = 32;
+pub const _PDCLIB_CTYPE_LOWER: u32 = 64;
+pub const _PDCLIB_CTYPE_UPPER: u32 = 128;
+pub const _PDCLIB_CHARSET_SIZE: u32 = 256;
+pub const NULL: u32 = 0;
+pub const _NLSCMPERROR: u32 = 2147483647;
 pub const XNET_ETHERNET_LINK_ACTIVE: u32 = 1;
 pub const XNET_ETHERNET_LINK_100MBPS: u32 = 2;
 pub const XNET_ETHERNET_LINK_10MBPS: u32 = 4;
@@ -4611,9 +4791,439 @@ extern "stdcall" {
     #[doc = " Writes a number of UCHAR values from the specified port address into a buffer.\n @param Port The memory mapped I/O address of the port. E.g., `(PUCHAR)0x0cf8` for port 0x0CF8.\n @param Buffer Pointer to a buffer containing the values to be written.\n @param Count Specifies the number of values to be written to the port."]
     pub fn WRITE_PORT_BUFFER_UCHAR(Port: PUCHAR, Buffer: PUCHAR, Count: ULONG);
 }
-extern "stdcall" {
-    #[doc = " Fills a specified memory area with zeroes\n @param Destination A pointer to the memory block which is to be filled\n @param Length The length of the memory block which is to be filled"]
-    pub fn RtlZeroMemory(Destination: *mut VOID, Length: SIZE_T);
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_div_t {
+    pub quot: libc::c_int,
+    pub rem: libc::c_int,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_ldiv_t {
+    pub quot: libc::c_long,
+    pub rem: libc::c_long,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lldiv_t {
+    pub quot: libc::c_longlong,
+    pub rem: libc::c_longlong,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_imaxdiv_t {
+    pub quot: libc::c_longlong,
+    pub rem: libc::c_longlong,
+}
+pub type _PDCLIB_va_list = __builtin_va_list;
+pub type _PDCLIB_fd_t = *mut libc::c_void;
+pub type _PDCLIB_thrd_t = *mut libc::c_void;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __PDCLIB_cnd_t {
+    pub eventHandles: [*mut libc::c_void; 2usize],
+    pub waitCount: u32,
+}
+pub type _PDCLIB_cnd_t = __PDCLIB_cnd_t;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __PDCLIB_mtx_t {
+    pub handle: *mut libc::c_void,
+}
+pub type _PDCLIB_mtx_t = __PDCLIB_mtx_t;
+pub type _PDCLIB_tss_t = libc::c_uint;
+pub type _PDCLIB_once_flag = libc::c_int;
+pub type _PDCLIB_int8_t = libc::c_schar;
+pub type _PDCLIB_uint8_t = libc::c_uchar;
+pub type _PDCLIB_int16_t = libc::c_short;
+pub type _PDCLIB_uint16_t = libc::c_ushort;
+pub type _PDCLIB_int32_t = libc::c_int;
+pub type _PDCLIB_uint32_t = libc::c_uint;
+pub type _PDCLIB_int64_t = libc::c_longlong;
+pub type _PDCLIB_uint64_t = libc::c_ulonglong;
+pub type _PDCLIB_int_fast8_t = libc::c_int;
+pub type _PDCLIB_uint_fast8_t = libc::c_uint;
+pub type _PDCLIB_int_fast16_t = libc::c_int;
+pub type _PDCLIB_uint_fast16_t = libc::c_uint;
+pub type _PDCLIB_int_fast32_t = libc::c_int;
+pub type _PDCLIB_uint_fast32_t = libc::c_uint;
+pub type _PDCLIB_int_fast64_t = libc::c_longlong;
+pub type _PDCLIB_uint_fast64_t = libc::c_ulonglong;
+pub type _PDCLIB_ptrdiff_t = libc::c_int;
+pub type _PDCLIB_size_t = libc::c_uint;
+pub type _PDCLIB_wchar_t = libc::c_ushort;
+pub type _PDCLIB_wint_t = libc::c_ushort;
+pub type _PDCLIB_intptr_t = libc::c_long;
+pub type _PDCLIB_uintptr_t = libc::c_ulong;
+pub type _PDCLIB_intmax_t = libc::c_longlong;
+pub type _PDCLIB_uintmax_t = libc::c_ulonglong;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_fpos_t {
+    pub offset: _PDCLIB_uint64_t,
+    pub status: libc::c_int,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_file_t {
+    pub handle: _PDCLIB_fd_t,
+    pub buffer: *mut libc::c_char,
+    pub bufsize: _PDCLIB_size_t,
+    pub bufidx: _PDCLIB_size_t,
+    pub bufend: _PDCLIB_size_t,
+    pub pos: _PDCLIB_fpos_t,
+    pub ungetidx: _PDCLIB_size_t,
+    pub ungetbuf: *mut libc::c_uchar,
+    pub status: libc::c_uint,
+    pub filename: *mut libc::c_char,
+    pub next: *mut _PDCLIB_file_t,
+}
+pub type _PDCLIB_time_t = libc::c_long;
+pub type _PDCLIB_clock_t = libc::c_uint;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_exitfunc_t {
+    pub next: *mut _PDCLIB_exitfunc_t,
+    pub func: ::core::option::Option<unsafe extern "C" fn()>,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_status_t {
+    pub base: libc::c_int,
+    pub flags: _PDCLIB_int_fast32_t,
+    pub n: _PDCLIB_size_t,
+    pub i: _PDCLIB_size_t,
+    pub current: _PDCLIB_size_t,
+    pub s: *mut libc::c_char,
+    pub width: _PDCLIB_size_t,
+    pub prec: libc::c_int,
+    pub stream: *mut _PDCLIB_file_t,
+    pub arg: _PDCLIB_va_list,
+}
+extern "C" {
+    pub fn _PDCLIB_atomax(s: *const libc::c_char) -> _PDCLIB_intmax_t;
+}
+extern "C" {
+    pub fn _PDCLIB_strtox_prelim(
+        p: *const libc::c_char,
+        sign: *mut libc::c_char,
+        base: *mut libc::c_int,
+    ) -> *const libc::c_char;
+}
+extern "C" {
+    pub fn _PDCLIB_strtox_main(
+        p: *mut *const libc::c_char,
+        base: libc::c_uint,
+        error: _PDCLIB_uintmax_t,
+        limval: _PDCLIB_uintmax_t,
+        limdigit: libc::c_int,
+        sign: *mut libc::c_char,
+    ) -> _PDCLIB_uintmax_t;
+}
+extern "C" {
+    pub static _PDCLIB_digits: [libc::c_char; 0usize];
+}
+extern "C" {
+    pub static _PDCLIB_Xdigits: [libc::c_char; 0usize];
+}
+extern "C" {
+    pub fn _PDCLIB_print(
+        spec: *const libc::c_char,
+        status: *mut _PDCLIB_status_t,
+    ) -> *const libc::c_char;
+}
+extern "C" {
+    pub fn _PDCLIB_scan(
+        spec: *const libc::c_char,
+        status: *mut _PDCLIB_status_t,
+    ) -> *const libc::c_char;
+}
+extern "C" {
+    pub fn _PDCLIB_filemode(mode: *const libc::c_char) -> libc::c_uint;
+}
+extern "C" {
+    pub fn _PDCLIB_prepread(stream: *mut _PDCLIB_file_t) -> libc::c_int;
+}
+extern "C" {
+    pub fn _PDCLIB_prepwrite(stream: *mut _PDCLIB_file_t) -> libc::c_int;
+}
+extern "C" {
+    pub fn _PDCLIB_closeall();
+}
+extern "C" {
+    pub fn _PDCLIB_is_leap(year_offset: libc::c_int) -> libc::c_int;
+}
+extern "C" {
+    pub fn _PDCLIB_load_lines(
+        stream: *mut _PDCLIB_file_t,
+        lines: _PDCLIB_size_t,
+    ) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn _PDCLIB_getstream(stream: *mut _PDCLIB_file_t) -> libc::c_int;
+}
+extern "C" {
+    pub fn _PDCLIB_setstream(stream: *mut _PDCLIB_file_t);
+}
+extern "C" {
+    pub fn _PDCLIB_strtok(
+        s1: *mut libc::c_char,
+        s1max: *mut _PDCLIB_size_t,
+        s2: *const libc::c_char,
+        ptr: *mut *mut libc::c_char,
+    ) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn _PDCLIB_errno_func() -> *mut libc::c_int;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lc_lconv_numeric_t {
+    pub decimal_point: *mut libc::c_char,
+    pub thousands_sep: *mut libc::c_char,
+    pub grouping: *mut libc::c_char,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lc_lconv_monetary_t {
+    pub mon_decimal_point: *mut libc::c_char,
+    pub mon_thousands_sep: *mut libc::c_char,
+    pub mon_grouping: *mut libc::c_char,
+    pub positive_sign: *mut libc::c_char,
+    pub negative_sign: *mut libc::c_char,
+    pub currency_symbol: *mut libc::c_char,
+    pub int_curr_symbol: *mut libc::c_char,
+    pub frac_digits: libc::c_char,
+    pub p_cs_precedes: libc::c_char,
+    pub n_cs_precedes: libc::c_char,
+    pub p_sep_by_space: libc::c_char,
+    pub n_sep_by_space: libc::c_char,
+    pub p_sign_posn: libc::c_char,
+    pub n_sign_posn: libc::c_char,
+    pub int_frac_digits: libc::c_char,
+    pub int_p_cs_precedes: libc::c_char,
+    pub int_n_cs_precedes: libc::c_char,
+    pub int_p_sep_by_space: libc::c_char,
+    pub int_n_sep_by_space: libc::c_char,
+    pub int_p_sign_posn: libc::c_char,
+    pub int_n_sign_posn: libc::c_char,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lc_numeric_monetary_t {
+    pub lconv: *mut lconv,
+    pub numeric_alloced: libc::c_int,
+    pub monetary_alloced: libc::c_int,
+}
+extern "C" {
+    pub static mut _PDCLIB_lc_numeric_monetary: _PDCLIB_lc_numeric_monetary_t;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lc_collate_t {
+    pub alloced: libc::c_int,
+}
+extern "C" {
+    pub static mut _PDCLIB_lc_collate: _PDCLIB_lc_collate_t;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lc_ctype_entry_t {
+    pub flags: _PDCLIB_uint16_t,
+    pub upper: libc::c_uchar,
+    pub lower: libc::c_uchar,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lc_ctype_t {
+    pub alloced: libc::c_int,
+    pub digits_low: libc::c_int,
+    pub digits_high: libc::c_int,
+    pub Xdigits_low: libc::c_int,
+    pub Xdigits_high: libc::c_int,
+    pub xdigits_low: libc::c_int,
+    pub xdigits_high: libc::c_int,
+    pub entry: *mut _PDCLIB_lc_ctype_entry_t,
+}
+extern "C" {
+    pub static mut _PDCLIB_lc_ctype: _PDCLIB_lc_ctype_t;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lc_messages_t {
+    pub alloced: libc::c_int,
+    pub errno_texts: [*mut libc::c_char; 141usize],
+}
+extern "C" {
+    pub static mut _PDCLIB_lc_messages: _PDCLIB_lc_messages_t;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lc_time_t {
+    pub alloced: libc::c_int,
+    pub month_name_abbr: [*mut libc::c_char; 12usize],
+    pub month_name_full: [*mut libc::c_char; 12usize],
+    pub day_name_abbr: [*mut libc::c_char; 7usize],
+    pub day_name_full: [*mut libc::c_char; 7usize],
+    pub date_time_format: *mut libc::c_char,
+    pub time_format_12h: *mut libc::c_char,
+    pub date_format: *mut libc::c_char,
+    pub time_format: *mut libc::c_char,
+    pub am_pm: [*mut libc::c_char; 2usize],
+}
+extern "C" {
+    pub static mut _PDCLIB_lc_time: _PDCLIB_lc_time_t;
+}
+extern "C" {
+    pub fn _PDCLIB_load_lc_numeric(
+        path: *const libc::c_char,
+        locale: *const libc::c_char,
+    ) -> *mut _PDCLIB_lc_lconv_numeric_t;
+}
+extern "C" {
+    pub fn _PDCLIB_load_lc_monetary(
+        path: *const libc::c_char,
+        locale: *const libc::c_char,
+    ) -> *mut _PDCLIB_lc_lconv_monetary_t;
+}
+extern "C" {
+    pub fn _PDCLIB_load_lc_collate(
+        path: *const libc::c_char,
+        locale: *const libc::c_char,
+    ) -> *mut _PDCLIB_lc_collate_t;
+}
+extern "C" {
+    pub fn _PDCLIB_load_lc_ctype(
+        path: *const libc::c_char,
+        locale: *const libc::c_char,
+    ) -> *mut _PDCLIB_lc_ctype_t;
+}
+extern "C" {
+    pub fn _PDCLIB_load_lc_time(
+        path: *const libc::c_char,
+        locale: *const libc::c_char,
+    ) -> *mut _PDCLIB_lc_time_t;
+}
+extern "C" {
+    pub fn _PDCLIB_load_lc_messages(
+        path: *const libc::c_char,
+        locale: *const libc::c_char,
+    ) -> *mut _PDCLIB_lc_messages_t;
+}
+pub const _PDCLIB_assert_568: _bindgen_ty_1 = 1;
+pub type _bindgen_ty_1 = libc::c_int;
+pub const _PDCLIB_assert_569: _bindgen_ty_2 = 1;
+pub type _bindgen_ty_2 = libc::c_int;
+pub const _PDCLIB_assert_570: _bindgen_ty_3 = 1;
+pub type _bindgen_ty_3 = libc::c_int;
+pub const _PDCLIB_assert_571: _bindgen_ty_4 = 1;
+pub type _bindgen_ty_4 = libc::c_int;
+pub const _PDCLIB_assert_574: _bindgen_ty_5 = 1;
+pub type _bindgen_ty_5 = libc::c_int;
+pub const _PDCLIB_assert_577: _bindgen_ty_6 = 1;
+pub type _bindgen_ty_6 = libc::c_int;
+pub const _PDCLIB_assert_580: _bindgen_ty_7 = 1;
+pub type _bindgen_ty_7 = libc::c_int;
+pub const _PDCLIB_assert_586: _bindgen_ty_8 = 1;
+pub type _bindgen_ty_8 = libc::c_int;
+pub const _PDCLIB_assert_589: _bindgen_ty_9 = 1;
+pub type _bindgen_ty_9 = libc::c_int;
+extern "C" {
+    pub fn memcpy(
+        s1: *mut libc::c_void,
+        s2: *const libc::c_void,
+        n: libc::c_uint,
+    ) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn memmove(
+        s1: *mut libc::c_void,
+        s2: *const libc::c_void,
+        n: libc::c_uint,
+    ) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn strcpy(s1: *mut libc::c_char, s2: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strncpy(
+        s1: *mut libc::c_char,
+        s2: *const libc::c_char,
+        n: libc::c_uint,
+    ) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strcat(s1: *mut libc::c_char, s2: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strncat(
+        s1: *mut libc::c_char,
+        s2: *const libc::c_char,
+        n: libc::c_uint,
+    ) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn memcmp(s1: *const libc::c_void, s2: *const libc::c_void, n: libc::c_uint)
+        -> libc::c_int;
+}
+extern "C" {
+    pub fn strcmp(s1: *const libc::c_char, s2: *const libc::c_char) -> libc::c_int;
+}
+extern "C" {
+    pub fn strcoll(s1: *const libc::c_char, s2: *const libc::c_char) -> libc::c_int;
+}
+extern "C" {
+    pub fn strncmp(
+        s1: *const libc::c_char,
+        s2: *const libc::c_char,
+        n: libc::c_uint,
+    ) -> libc::c_int;
+}
+extern "C" {
+    pub fn strxfrm(s1: *mut libc::c_char, s2: *const libc::c_char, n: libc::c_uint)
+        -> libc::c_uint;
+}
+extern "C" {
+    pub fn memchr(s: *const libc::c_void, c: libc::c_int, n: libc::c_uint) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn strchr(s: *const libc::c_char, c: libc::c_int) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strcspn(s1: *const libc::c_char, s2: *const libc::c_char) -> libc::c_uint;
+}
+extern "C" {
+    pub fn strpbrk(s1: *const libc::c_char, s2: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strrchr(s: *const libc::c_char, c: libc::c_int) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strspn(s1: *const libc::c_char, s2: *const libc::c_char) -> libc::c_uint;
+}
+extern "C" {
+    pub fn strstr(s1: *const libc::c_char, s2: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strtok(s1: *mut libc::c_char, s2: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn memset(s: *mut libc::c_void, c: libc::c_int, n: libc::c_uint) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn strerror(errnum: libc::c_int) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strlen(s: *const libc::c_char) -> libc::c_uint;
+}
+extern "C" {
+    pub fn strdup(s: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn _strnicmp(s1: *const libc::c_char, s2: *const libc::c_char, n: usize) -> libc::c_int;
+}
+extern "C" {
+    pub fn _stricmp(s1: *const libc::c_char, s2: *const libc::c_char) -> libc::c_int;
 }
 extern "stdcall" {
     pub fn RtlWalkFrameChain(Callers: *mut PVOID, Count: ULONG, Flags: ULONG) -> ULONG;
@@ -4736,9 +5346,6 @@ extern "stdcall" {
     ) -> NTSTATUS;
 }
 extern "stdcall" {
-    pub fn RtlMoveMemory(Destination: PVOID, Source: *const PVOID, Length: ULONG);
-}
-extern "stdcall" {
     pub fn RtlMapGenericMask(AccessMask: PACCESS_MASK, GenericMapping: PGENERIC_MAPPING);
 }
 extern "stdcall" {
@@ -4789,10 +5396,6 @@ extern "stdcall" {
 extern "stdcall" {
     #[doc = " Fills a specified memory area with repetitions of a ULONG value\n @param Destination A pointer to the (ULONG-aligned) memory block which is to be filled\n @param Length The length of the memory block which is to be filled\n @param Pattern The ULONG-value with which the memory block will be filled"]
     pub fn RtlFillMemoryUlong(Destination: PVOID, Length: SIZE_T, Pattern: ULONG);
-}
-extern "stdcall" {
-    #[doc = " Fills a specified memory area with a specified value\n @param Destination A pointer to the memory block which is to be filled\n @param Length The length of the memory block which is to be filled\n @param Fill The byte-value with which the memory block will be filled"]
-    pub fn RtlFillMemory(Destination: PVOID, Length: ULONG, Fill: UCHAR);
 }
 extern "stdcall" {
     pub fn RtlExtendedMagicDivide(
@@ -6395,6 +6998,7 @@ extern "fastcall" {
     #[doc = " Performs an interlocked addition of a ULONG increment value to a LARGE_INTEGER variable.\n @param Addend A pointer to the LARGE_INTEGER variable that is incremented by the value of Increment.\n @param Increment Specifies a ULONG value that is added to the variable that Addend points to."]
     pub fn ExInterlockedAddLargeStatistic(Addend: PLARGE_INTEGER, Increment: ULONG);
 }
+pub type UINT_PTR = libc::c_uint;
 pub type HWND = HANDLE;
 pub type HINSTANCE = HANDLE;
 pub type HMODULE = HINSTANCE;
@@ -6754,7 +7358,6 @@ pub struct _XBE_FILE_HEADER {
 }
 pub type XBE_FILE_HEADER = _XBE_FILE_HEADER;
 pub type PXBE_FILE_HEADER = *mut _XBE_FILE_HEADER;
-pub type UINT_PTR = libc::c_uint;
 pub type PFLS_CALLBACK_FUNCTION = ::core::option::Option<unsafe extern "stdcall" fn(arg1: PVOID)>;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -6842,6 +7445,14 @@ extern "C" {
     pub fn IsBadWritePtr(lp: LPVOID, ucb: UINT_PTR) -> BOOL;
 }
 extern "C" {
+    pub fn GetOverlappedResult(
+        hFile: HANDLE,
+        lpOverlapped: LPOVERLAPPED,
+        lpNumberOfBytesTransferred: LPDWORD,
+        bWait: BOOL,
+    ) -> BOOL;
+}
+extern "C" {
     pub fn XConvertDOSFilenameToXBOX(
         dosFilename: *const libc::c_char,
         xboxFilename: *mut libc::c_char,
@@ -6850,5 +7461,11 @@ extern "C" {
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _IO_STATUS_LOCATION {
+    pub _address: u8,
+}
+pub type __builtin_va_list = *mut libc::c_char;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct lconv {
     pub _address: u8,
 }

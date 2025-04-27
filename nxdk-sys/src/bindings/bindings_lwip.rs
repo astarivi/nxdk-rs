@@ -87,9 +87,10 @@ pub const LWIP_DEBUG: u32 = 1;
 pub const LWIP_ERRNO_STDINCLUDE: u32 = 1;
 pub const NO_SYS: u32 = 0;
 pub const LWIP_TCPIP_CORE_LOCKING: u32 = 1;
-pub const LWIP_TCPIP_CORE_LOCKING_INPUT: u32 = 1;
+pub const LWIP_TCPIP_CORE_LOCKING_INPUT: u32 = 0;
 pub const SYS_LIGHTWEIGHT_PROT: u32 = 1;
-pub const MEM_LIBC_MALLOC: u32 = 1;
+pub const MEM_LIBC_MALLOC: u32 = 0;
+pub const MEM_CUSTOM_ALLOCATOR: u32 = 1;
 pub const MEMP_MEM_MALLOC: u32 = 1;
 pub const MEM_ALIGNMENT: u32 = 1;
 pub const MEM_SIZE: u32 = 16000;
@@ -98,7 +99,7 @@ pub const IP_FORWARD: u32 = 0;
 pub const IP_OPTIONS_ALLOWED: u32 = 1;
 pub const IP_REASSEMBLY: u32 = 1;
 pub const IP_FRAG: u32 = 1;
-pub const IP_REASS_MAXAGE: u32 = 3;
+pub const IP_REASS_MAXAGE: u32 = 15;
 pub const IP_REASS_MAX_PBUFS: u32 = 10;
 pub const IP_FRAG_USES_STATIC_BUF: u32 = 0;
 pub const IP_DEFAULT_TTL: u32 = 255;
@@ -480,6 +481,9 @@ pub const AV_PACK_SCART: u32 = 3;
 pub const AV_PACK_HDTV: u32 = 4;
 pub const AV_PACK_VGA: u32 = 5;
 pub const AV_PACK_SVIDEO: u32 = 6;
+pub const PASSIVE_LEVEL: u32 = 0;
+pub const APC_LEVEL: u32 = 1;
+pub const DISPATCH_LEVEL: u32 = 2;
 pub const PAGE_SIZE: u32 = 4096;
 pub const OBJ_INHERIT: u32 = 2;
 pub const OBJ_PERMANENT: u32 = 16;
@@ -685,6 +689,9 @@ pub const PROCESSOR_ARCHITECTURE_IA64: u32 = 6;
 pub const PROCESSOR_ARCHITECTURE_AMD64: u32 = 9;
 pub const PROCESSOR_ARCHITECTURE_ARM64: u32 = 12;
 pub const PROCESSOR_ARCHITECTURE_UNKNOWN: u32 = 65535;
+pub const TIME_ZONE_ID_UNKNOWN: u32 = 0;
+pub const TIME_ZONE_ID_STANDARD: u32 = 1;
+pub const TIME_ZONE_ID_DAYLIGHT: u32 = 2;
 pub const ERROR_SUCCESS: u32 = 0;
 pub const NO_ERROR: u32 = 0;
 pub const ERROR_INVALID_FUNCTION: u32 = 1;
@@ -2519,9 +2526,6 @@ pub const FACILITY_NULL: u32 = 0;
 pub const FACILITY_ITF: u32 = 4;
 pub const FACILITY_DISPATCH: u32 = 2;
 pub const FACILITY_NT_BIT: u32 = 268435456;
-pub const TIME_ZONE_ID_UNKNOWN: u32 = 0;
-pub const TIME_ZONE_ID_STANDARD: u32 = 1;
-pub const TIME_ZONE_ID_DAYLIGHT: u32 = 2;
 pub const BYTE_ORDER: u32 = 1234;
 pub const X8_F: &[u8; 4] = b"02x\0";
 pub const U16_F: &[u8; 3] = b"hu\0";
@@ -2619,6 +2623,7 @@ pub const ARP_MAXAGE: u32 = 300;
 pub const ARP_QUEUEING: u32 = 0;
 pub const ARP_QUEUE_LEN: u32 = 3;
 pub const ETHARP_SUPPORT_VLAN: u32 = 0;
+pub const LWIP_VLAN_PCP: u32 = 0;
 pub const LWIP_ETHERNET: u32 = 1;
 pub const ETH_PAD_SIZE: u32 = 0;
 pub const ETHARP_SUPPORT_STATIC_ENTRIES: u32 = 0;
@@ -2628,9 +2633,11 @@ pub const IP_FORWARD_ALLOW_TX_ON_RX_NETIF: u32 = 0;
 pub const LWIP_BROADCAST_PING: u32 = 0;
 pub const LWIP_MULTICAST_PING: u32 = 0;
 pub const RAW_TTL: u32 = 255;
+pub const LWIP_DHCP_DOES_ACD_CHECK: u32 = 1;
 pub const LWIP_DHCP_BOOTP_FILE: u32 = 0;
 pub const LWIP_DHCP_GET_NTP_SRV: u32 = 0;
 pub const LWIP_DHCP_MAX_NTP_SERVERS: u32 = 1;
+pub const LWIP_DHCP_DISCOVER_ADD_HOSTNAME: u32 = 1;
 pub const LWIP_DHCP_AUTOIP_COOP: u32 = 0;
 pub const LWIP_DHCP_AUTOIP_COOP_TRIES: u32 = 9;
 pub const DNS_TABLE_SIZE: u32 = 4;
@@ -2652,6 +2659,7 @@ pub const TCP_QUEUE_OOSEQ: u32 = 1;
 pub const LWIP_TCP_SACK_OUT: u32 = 0;
 pub const LWIP_TCP_MAX_SACK_NUM: u32 = 4;
 pub const TCP_CALCULATE_EFF_SEND_MSS: u32 = 1;
+pub const LWIP_TCP_RTO_TIME: u32 = 3000;
 pub const TCP_SND_QUEUELEN: u32 = 180;
 pub const TCP_OOSEQ_MAX_BYTES: u32 = 0;
 pub const TCP_OOSEQ_MAX_PBUFS: u32 = 0;
@@ -2696,6 +2704,7 @@ pub const LWIP_NETCONN_FULLDUPLEX: u32 = 0;
 pub const LWIP_COMPAT_SOCKETS: u32 = 1;
 pub const LWIP_POSIX_SOCKETS_IO_NAMES: u32 = 1;
 pub const LWIP_SOCKET_OFFSET: u32 = 0;
+pub const LWIP_SOCKET_EXTERNAL_HEADERS: u32 = 0;
 pub const LWIP_TCP_KEEPALIVE: u32 = 0;
 pub const LWIP_SO_SNDTIMEO: u32 = 0;
 pub const LWIP_SO_RCVTIMEO: u32 = 0;
@@ -2778,6 +2787,7 @@ pub const TIMERS_DEBUG: u32 = 0;
 pub const SLIP_DEBUG: u32 = 0;
 pub const DHCP_DEBUG: u32 = 0;
 pub const AUTOIP_DEBUG: u32 = 0;
+pub const ACD_DEBUG: u32 = 0;
 pub const DNS_DEBUG: u32 = 0;
 pub const IP6_DEBUG: u32 = 0;
 pub const DHCP6_DEBUG: u32 = 0;
@@ -2855,6 +2865,7 @@ pub const SYS_MBOX_EMPTY: u32 = 4294967295;
 pub const SYS_MBOX_NULL: u32 = 0;
 pub const SYS_SEM_NULL: u32 = 0;
 pub const LWIP_COMPAT_MUTEX: u32 = 1;
+pub const SYS_MBOX_SIZE: u32 = 128;
 pub const NETCONN_NOFLAG: u32 = 0;
 pub const NETCONN_NOCOPY: u32 = 0;
 pub const NETCONN_COPY: u32 = 1;
@@ -2900,6 +2911,7 @@ pub const LWIP_NSC_IPV4_NETMASK_CHANGED: u32 = 64;
 pub const LWIP_NSC_IPV4_SETTINGS_CHANGED: u32 = 128;
 pub const LWIP_NSC_IPV6_SET: u32 = 256;
 pub const LWIP_NSC_IPV6_ADDR_STATE_CHANGED: u32 = 512;
+pub const LWIP_NSC_IPV4_ADDR_VALID: u32 = 1024;
 pub const LWIP_DEBUG_TIMERNAMES: u32 = 0;
 pub const SYS_TIMEOUTS_SLEEPTIME_INFINITE: u32 = 4294967295;
 pub const TCP_WRITE_FLAG_COPY: u32 = 1;
@@ -2989,8 +3001,8 @@ pub const LWIP_DNS_ADDRTYPE_IPV4_IPV6: u32 = 2;
 pub const LWIP_DNS_ADDRTYPE_IPV6_IPV4: u32 = 3;
 pub const LWIP_DNS_ADDRTYPE_DEFAULT: u32 = 2;
 pub const LWIP_VERSION_MAJOR: u32 = 2;
-pub const LWIP_VERSION_MINOR: u32 = 1;
-pub const LWIP_VERSION_REVISION: u32 = 3;
+pub const LWIP_VERSION_MINOR: u32 = 2;
+pub const LWIP_VERSION_REVISION: u32 = 1;
 pub const LWIP_RC_RELEASE: u32 = 255;
 pub const LWIP_RC_DEVELOPMENT: u32 = 0;
 pub const LWIP_VERSION_STRING_SUFFIX: &[u8; 1] = b"\0";
@@ -3077,8 +3089,8 @@ pub type _PDCLIB_int_fast16_t = libc::c_int;
 pub type _PDCLIB_uint_fast16_t = libc::c_uint;
 pub type _PDCLIB_int_fast32_t = libc::c_int;
 pub type _PDCLIB_uint_fast32_t = libc::c_uint;
-pub type _PDCLIB_int_fast64_t = libc::c_long;
-pub type _PDCLIB_uint_fast64_t = libc::c_ulong;
+pub type _PDCLIB_int_fast64_t = libc::c_longlong;
+pub type _PDCLIB_uint_fast64_t = libc::c_ulonglong;
 pub type _PDCLIB_ptrdiff_t = libc::c_int;
 pub type _PDCLIB_size_t = libc::c_uint;
 pub type _PDCLIB_wchar_t = libc::c_ushort;
@@ -4157,6 +4169,7 @@ pub type FARPROC = ::core::option::Option<unsafe extern "stdcall" fn() -> libc::
 extern "C" {
     pub fn IsDebuggerPresent() -> BOOL;
 }
+pub type UINT_PTR = libc::c_uint;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _FILETIME {
@@ -4512,7 +4525,6 @@ pub struct _XBE_FILE_HEADER {
 }
 pub type XBE_FILE_HEADER = _XBE_FILE_HEADER;
 pub type PXBE_FILE_HEADER = *mut _XBE_FILE_HEADER;
-pub type UINT_PTR = libc::c_uint;
 pub type PFLS_CALLBACK_FUNCTION = ::core::option::Option<unsafe extern "stdcall" fn(arg1: PVOID)>;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -4598,6 +4610,14 @@ extern "stdcall" {
 }
 extern "C" {
     pub fn IsBadWritePtr(lp: LPVOID, ucb: UINT_PTR) -> BOOL;
+}
+extern "C" {
+    pub fn GetOverlappedResult(
+        hFile: HANDLE,
+        lpOverlapped: LPOVERLAPPED,
+        lpNumberOfBytesTransferred: LPDWORD,
+        bWait: BOOL,
+    ) -> BOOL;
 }
 extern "C" {
     pub fn RaiseException(
@@ -6916,10 +6936,6 @@ extern "stdcall" {
     pub fn WRITE_PORT_BUFFER_UCHAR(Port: PUCHAR, Buffer: PUCHAR, Count: ULONG);
 }
 extern "stdcall" {
-    #[doc = " Fills a specified memory area with zeroes\n @param Destination A pointer to the memory block which is to be filled\n @param Length The length of the memory block which is to be filled"]
-    pub fn RtlZeroMemory(Destination: *mut VOID, Length: SIZE_T);
-}
-extern "stdcall" {
     pub fn RtlWalkFrameChain(Callers: *mut PVOID, Count: ULONG, Flags: ULONG) -> ULONG;
 }
 extern "C" {
@@ -7040,9 +7056,6 @@ extern "stdcall" {
     ) -> NTSTATUS;
 }
 extern "stdcall" {
-    pub fn RtlMoveMemory(Destination: PVOID, Source: *const PVOID, Length: ULONG);
-}
-extern "stdcall" {
     pub fn RtlMapGenericMask(AccessMask: PACCESS_MASK, GenericMapping: PGENERIC_MAPPING);
 }
 extern "stdcall" {
@@ -7093,10 +7106,6 @@ extern "stdcall" {
 extern "stdcall" {
     #[doc = " Fills a specified memory area with repetitions of a ULONG value\n @param Destination A pointer to the (ULONG-aligned) memory block which is to be filled\n @param Length The length of the memory block which is to be filled\n @param Pattern The ULONG-value with which the memory block will be filled"]
     pub fn RtlFillMemoryUlong(Destination: PVOID, Length: SIZE_T, Pattern: ULONG);
-}
-extern "stdcall" {
-    #[doc = " Fills a specified memory area with a specified value\n @param Destination A pointer to the memory block which is to be filled\n @param Length The length of the memory block which is to be filled\n @param Fill The byte-value with which the memory block will be filled"]
-    pub fn RtlFillMemory(Destination: PVOID, Length: ULONG, Fill: UCHAR);
 }
 extern "stdcall" {
     pub fn RtlExtendedMagicDivide(
@@ -8751,6 +8760,12 @@ extern "C" {
     pub fn SetThreadPriority(hThread: HANDLE, nPriority: libc::c_int) -> BOOL;
 }
 extern "C" {
+    pub fn SuspendThread(hThread: HANDLE) -> DWORD;
+}
+extern "C" {
+    pub fn ResumeThread(hThread: HANDLE) -> DWORD;
+}
+extern "C" {
     pub fn TlsAlloc() -> DWORD;
 }
 extern "C" {
@@ -8934,6 +8949,9 @@ extern "C" {
 }
 extern "C" {
     pub fn GetSystemTime(lpSystemTime: LPSYSTEMTIME);
+}
+extern "C" {
+    pub fn GetSystemTimeAsFileTime(lpSystemTimeAsFileTime: LPFILETIME);
 }
 extern "C" {
     pub fn GetSystemTimePreciseAsFileTime(lpSystemTimeAsFileTime: LPFILETIME);
@@ -9326,6 +9344,20 @@ extern "C" {
         n: usize,
     ) -> *mut libc::c_char;
 }
+extern "C" {
+    pub fn lwip_strnistr(
+        buffer: *const libc::c_char,
+        token: *const libc::c_char,
+        n: usize,
+    ) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn lwip_memcmp_consttime(
+        s1: *const libc::c_void,
+        s2: *const libc::c_void,
+        len: usize,
+    ) -> libc::c_int;
+}
 #[doc = " This is the aligned version of ip4_addr_t,\nused as local variable, on the stack, etc."]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -9465,25 +9497,56 @@ extern "C" {
 extern "C" {
     pub fn netbuf_first(buf: *mut netbuf);
 }
+extern "C" {
+    pub fn nxdk_lwip_malloc(size: usize) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn nxdk_lwip_calloc(nmemb: usize, size: usize) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn nxdk_lwip_free(ptr: *mut libc::c_void);
+}
 pub type sys_prot_t = libc::c_uchar;
+#[doc = " The provided semaphores are KSEMAPHORE, but we don't want to pollute the\n namespace by including the kernel header, so we define an equivalent and\n check the size for correctness with a static_assert in sys_arch.c"]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct sys_sem {
-    _unused: [u8; 0],
+pub struct sys_sem_t {
+    pub sem: sys_sem_t__bindgen_ty_1,
+    pub valid: libc::c_int,
 }
-pub type sys_sem_t = *mut sys_sem;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct sys_mbox {
-    _unused: [u8; 0],
+pub struct sys_sem_t__bindgen_ty_1 {
+    pub Header: sys_sem_t__bindgen_ty_1__bindgen_ty_1,
+    pub LIMIT: libc::c_long,
 }
-pub type sys_mbox_t = *mut sys_mbox;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct sys_thread {
-    _unused: [u8; 0],
+pub struct sys_sem_t__bindgen_ty_1__bindgen_ty_1 {
+    pub Type: libc::c_uchar,
+    pub Absolute: libc::c_uchar,
+    pub Size: libc::c_uchar,
+    pub Inserted: libc::c_uchar,
+    pub SignalState: libc::c_long,
+    pub WaitListHead: sys_sem_t__bindgen_ty_1__bindgen_ty_1__bindgen_ty_1,
 }
-pub type sys_thread_t = *mut sys_thread;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct sys_sem_t__bindgen_ty_1__bindgen_ty_1__bindgen_ty_1 {
+    pub Flink: *mut libc::c_void,
+    pub Blink: *mut libc::c_void,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct sys_mbox_t {
+    pub first: libc::c_int,
+    pub last: libc::c_int,
+    pub msgs: [*mut libc::c_void; 128usize],
+    pub read_sem: sys_sem_t,
+    pub write_sem: sys_sem_t,
+    pub valid: libc::c_int,
+}
+pub type sys_thread_t = *mut libc::c_void;
 #[doc = " Function prototype for thread functions"]
 pub type lwip_thread_fn = ::core::option::Option<unsafe extern "C" fn(arg: *mut libc::c_void)>;
 extern "C" {
@@ -9501,6 +9564,14 @@ extern "C" {
 extern "C" {
     #[doc = " @ingroup sys_sem\n Deallocates a semaphore.\n @param sem semaphore to delete"]
     pub fn sys_sem_free(sem: *mut sys_sem_t);
+}
+extern "C" {
+    #[doc = " @ingroup sys_sem\n Returns 1 if the semaphore is valid, 0 if it is not valid.\n When using pointers, a simple way is to check the pointer for != NULL.\n When directly using OS structures, implementing this may be more complex.\n This may also be a define, in which case the function is not prototyped."]
+    pub fn sys_sem_valid(sem: *mut sys_sem_t) -> libc::c_int;
+}
+extern "C" {
+    #[doc = " @ingroup sys_sem\n Invalidate a semaphore so that sys_sem_valid() returns 0.\n ATTENTION: This does NOT mean that the semaphore shall be deallocated:\n sys_sem_free() is always called before calling this function!\n This may also be a define, in which case the function is not prototyped."]
+    pub fn sys_sem_set_invalid(sem: *mut sys_sem_t);
 }
 extern "C" {
     #[doc = " @ingroup sys_misc\n Sleep for specified number of ms"]
@@ -9537,6 +9608,14 @@ extern "C" {
 extern "C" {
     #[doc = " @ingroup sys_mbox\n Deallocates a mailbox. If there are messages still present in the\n mailbox when the mailbox is deallocated, it is an indication of a\n programming error in lwIP and the developer should be notified.\n\n @param mbox mbox to delete"]
     pub fn sys_mbox_free(mbox: *mut sys_mbox_t);
+}
+extern "C" {
+    #[doc = " @ingroup sys_mbox\n Returns 1 if the mailbox is valid, 0 if it is not valid.\n When using pointers, a simple way is to check the pointer for != NULL.\n When directly using OS structures, implementing this may be more complex.\n This may also be a define, in which case the function is not prototyped."]
+    pub fn sys_mbox_valid(mbox: *mut sys_mbox_t) -> libc::c_int;
+}
+extern "C" {
+    #[doc = " @ingroup sys_mbox\n Invalidate a mailbox so that sys_mbox_valid() returns 0.\n ATTENTION: This does NOT mean that the mailbox shall be deallocated:\n sys_mbox_free() is always called before calling this function!\n This may also be a define, in which case the function is not prototyped."]
+    pub fn sys_mbox_set_invalid(mbox: *mut sys_mbox_t);
 }
 extern "C" {
     #[doc = " @ingroup sys_misc\n The only thread function:\n Starts a new thread named \"name\" with priority \"prio\" that will begin its\n execution in the function \"thread()\". The \"arg\" argument will be passed as an\n argument to the thread() function. The stack size to used for this thread is\n the \"stacksize\" parameter. The id of the new thread is returned. Both the id\n and the priority are system dependent.\n ATTENTION: although this function returns a value, it MUST NOT FAIL (ports have to assert this!)\n\n @param name human-readable name for the thread (used for debugging purposes)\n @param thread thread-function\n @param arg parameter passed to 'thread'\n @param stacksize stack size in bytes for the new thread (may be ignored by ports)\n @param prio priority of the new thread (may be ignored by ports)"]
@@ -9637,7 +9716,7 @@ pub struct netconn {
     pub recvmbox: sys_mbox_t,
     #[doc = " mbox where new connections are stored until processed\nby the application thread"]
     pub acceptmbox: sys_mbox_t,
-    pub socket: libc::c_int,
+    pub callback_arg: netconn__bindgen_ty_2,
     #[doc = " flags holding more netconn-internal state, see NETCONN_FLAG_* defines"]
     pub flags: u8_t,
     #[doc = " TCP: when data passed to netconn_write doesn't fit into the send buffer,\nthis temporarily stores the message.\nAlso used during connect and close."]
@@ -9653,6 +9732,12 @@ pub union netconn__bindgen_ty_1 {
     pub tcp: *mut tcp_pcb,
     pub udp: *mut udp_pcb,
     pub raw: *mut raw_pcb,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union netconn__bindgen_ty_2 {
+    pub socket: libc::c_int,
+    pub ptr: *mut libc::c_void,
 }
 #[doc = " This vector type is passed to @ref netconn_write_vectors_partly to send\n multiple buffers at once.\n ATTENTION: This type has to directly map struct iovec since one is casted\n            into the other!"]
 #[repr(C)]
@@ -9815,14 +9900,15 @@ pub const memp_t_MEMP_FRAG_PBUF: memp_t = 6;
 pub const memp_t_MEMP_NETBUF: memp_t = 7;
 pub const memp_t_MEMP_NETCONN: memp_t = 8;
 pub const memp_t_MEMP_TCPIP_MSG_API: memp_t = 9;
-pub const memp_t_MEMP_SYS_TIMEOUT: memp_t = 10;
-pub const memp_t_MEMP_NETDB: memp_t = 11;
-pub const memp_t_MEMP_ND6_QUEUE: memp_t = 12;
-pub const memp_t_MEMP_IP6_REASSDATA: memp_t = 13;
-pub const memp_t_MEMP_MLD6_GROUP: memp_t = 14;
-pub const memp_t_MEMP_PBUF: memp_t = 15;
-pub const memp_t_MEMP_PBUF_POOL: memp_t = 16;
-pub const memp_t_MEMP_MAX: memp_t = 17;
+pub const memp_t_MEMP_TCPIP_MSG_INPKT: memp_t = 10;
+pub const memp_t_MEMP_SYS_TIMEOUT: memp_t = 11;
+pub const memp_t_MEMP_NETDB: memp_t = 12;
+pub const memp_t_MEMP_ND6_QUEUE: memp_t = 13;
+pub const memp_t_MEMP_IP6_REASSDATA: memp_t = 14;
+pub const memp_t_MEMP_MLD6_GROUP: memp_t = 15;
+pub const memp_t_MEMP_PBUF: memp_t = 16;
+pub const memp_t_MEMP_PBUF_POOL: memp_t = 17;
+pub const memp_t_MEMP_MAX: memp_t = 18;
 #[doc = " Create the list of all memory pools managed by memp. MEMP_MAX represents a NULL pool at the end"]
 pub type memp_t = libc::c_int;
 #[doc = " Memory pool descriptor"]
@@ -9844,7 +9930,7 @@ extern "C" {
     pub fn memp_free_pool(desc: *const memp_desc, mem: *mut libc::c_void);
 }
 extern "C" {
-    pub static memp_pools: [*const memp_desc; 17usize];
+    pub static memp_pools: [*const memp_desc; 18usize];
 }
 extern "C" {
     pub fn memp_init();
@@ -9938,6 +10024,7 @@ pub struct stats_mib2 {
     pub ipreasmreqds: u32_t,
     pub ipforwdatagrams: u32_t,
     pub ipinreceives: u32_t,
+    pub ip6reasmoks: u32_t,
     pub tcpactiveopens: u32_t,
     pub tcppassiveopens: u32_t,
     pub tcpattemptfails: u32_t,
@@ -10043,12 +10130,14 @@ pub const lwip_internal_netif_client_data_index_LWIP_NETIF_CLIENT_DATA_INDEX_DHC
     lwip_internal_netif_client_data_index = 0;
 pub const lwip_internal_netif_client_data_index_LWIP_NETIF_CLIENT_DATA_INDEX_AUTOIP:
     lwip_internal_netif_client_data_index = 1;
-pub const lwip_internal_netif_client_data_index_LWIP_NETIF_CLIENT_DATA_INDEX_DHCP6:
+pub const lwip_internal_netif_client_data_index_LWIP_NETIF_CLIENT_DATA_INDEX_ACD:
     lwip_internal_netif_client_data_index = 2;
-pub const lwip_internal_netif_client_data_index_LWIP_NETIF_CLIENT_DATA_INDEX_MLD6:
+pub const lwip_internal_netif_client_data_index_LWIP_NETIF_CLIENT_DATA_INDEX_DHCP6:
     lwip_internal_netif_client_data_index = 3;
-pub const lwip_internal_netif_client_data_index_LWIP_NETIF_CLIENT_DATA_INDEX_MAX:
+pub const lwip_internal_netif_client_data_index_LWIP_NETIF_CLIENT_DATA_INDEX_MLD6:
     lwip_internal_netif_client_data_index = 4;
+pub const lwip_internal_netif_client_data_index_LWIP_NETIF_CLIENT_DATA_INDEX_MAX:
+    lwip_internal_netif_client_data_index = 5;
 #[doc = " @}"]
 pub type lwip_internal_netif_client_data_index = libc::c_int;
 #[doc = " Delete a filter entry"]
@@ -10109,7 +10198,7 @@ pub struct netif {
     pub output_ip6: netif_output_ip6_fn,
     #[doc = " This field can be set by the device driver and could point\n  to state information for the device."]
     pub state: *mut libc::c_void,
-    pub client_data: [*mut libc::c_void; 4usize],
+    pub client_data: [*mut libc::c_void; 5usize],
     #[doc = " maximum transfer unit (in bytes)"]
     pub mtu: u16_t,
     #[doc = " maximum transfer unit (in bytes), updated by RA"]
@@ -10138,6 +10227,7 @@ pub struct netif {
     pub mib2_counters: stats_mib2_netif_ctrs,
     #[doc = " This function could be called to add or delete an entry in the IPv6 multicast\nfilter table of the ethernet MAC."]
     pub mld_mac_filter: netif_mld_mac_filter_fn,
+    pub acd_list: *mut acd,
 }
 extern "C" {
     #[doc = " The default network interface."]
@@ -10381,6 +10471,9 @@ extern "C" {
     pub fn tcpip_callback(function: tcpip_callback_fn, ctx: *mut libc::c_void) -> err_t;
 }
 extern "C" {
+    pub fn tcpip_callback_wait(function: tcpip_callback_fn, ctx: *mut libc::c_void) -> err_t;
+}
+extern "C" {
     pub fn tcpip_callbackmsg_new(
         function: tcpip_callback_fn,
         ctx: *mut libc::c_void,
@@ -10618,7 +10711,16 @@ extern "C" {
 extern "C" {
     pub fn ip_input(p: *mut pbuf, inp: *mut netif) -> err_t;
 }
-#[doc = " This is the standard ICMP header only that the u32_t data\n  is split to two u16_t like ICMP echo needs it.\n  This header is also used for other ICMP types that do not\n  use the data part."]
+#[doc = " The standard ICMP header (unspecified 32 bit data)"]
+#[repr(C, packed)]
+#[derive(Debug, Copy, Clone)]
+pub struct icmp_hdr {
+    pub type_: u8_t,
+    pub code: u8_t,
+    pub chksum: u16_t,
+    pub data: u32_t,
+}
+#[doc = " This is the standard ICMP header only that the u32_t data\n  is split to two u16_t like ICMP echo needs it."]
 #[repr(C, packed)]
 #[derive(Debug, Copy, Clone)]
 pub struct icmp_echo_hdr {
@@ -11228,6 +11330,9 @@ extern "C" {
     pub fn sntp_getserver(idx: u8_t) -> *const ip_addr_t;
 }
 extern "C" {
+    pub fn sntp_getkodreceived(idx: u8_t) -> u8_t;
+}
+extern "C" {
     pub fn sntp_getreachability(idx: u8_t) -> u8_t;
 }
 pub type __builtin_va_list = *mut libc::c_char;
@@ -11239,6 +11344,11 @@ pub struct lconv {
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _IO_STATUS_LOCATION {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct acd {
     pub _address: u8,
 }
 #[repr(C)]

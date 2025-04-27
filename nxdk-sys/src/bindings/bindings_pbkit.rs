@@ -115,6 +115,9 @@ pub const AV_PACK_SCART: u32 = 3;
 pub const AV_PACK_HDTV: u32 = 4;
 pub const AV_PACK_VGA: u32 = 5;
 pub const AV_PACK_SVIDEO: u32 = 6;
+pub const PASSIVE_LEVEL: u32 = 0;
+pub const APC_LEVEL: u32 = 1;
+pub const DISPATCH_LEVEL: u32 = 2;
 pub const PAGE_SIZE: u32 = 4096;
 pub const OBJ_INHERIT: u32 = 2;
 pub const OBJ_PERMANENT: u32 = 16;
@@ -149,171 +152,6 @@ pub const LOW_PRIORITY: u32 = 0;
 pub const LOW_REALTIME_PRIORITY: u32 = 16;
 pub const HIGH_PRIORITY: u32 = 31;
 pub const MAXIMUM_PRIORITY: u32 = 32;
-pub const XNET_ETHERNET_LINK_ACTIVE: u32 = 1;
-pub const XNET_ETHERNET_LINK_100MBPS: u32 = 2;
-pub const XNET_ETHERNET_LINK_10MBPS: u32 = 4;
-pub const XNET_ETHERNET_LINK_FULL_DUPLEX: u32 = 8;
-pub const XNET_ETHERNET_LINK_HALF_DUPLEX: u32 = 16;
-pub const METHOD_BUFFERED: u32 = 0;
-pub const METHOD_IN_DIRECT: u32 = 1;
-pub const METHOD_OUT_DIRECT: u32 = 2;
-pub const METHOD_NEITHER: u32 = 3;
-pub const FILE_ANY_ACCESS: u32 = 0;
-pub const FILE_READ_ACCESS: u32 = 1;
-pub const FILE_WRITE_ACCESS: u32 = 2;
-pub const FILE_DEVICE_FILE_SYSTEM: u32 = 9;
-pub const IOCTL_DISK_BASE: u32 = 7;
-pub const DELETE: u32 = 65536;
-pub const READ_CONTROL: u32 = 131072;
-pub const WRITE_DAC: u32 = 262144;
-pub const WRITE_OWNER: u32 = 524288;
-pub const SYNCHRONIZE: u32 = 1048576;
-pub const STANDARD_RIGHTS_REQUIRED: u32 = 983040;
-pub const STANDARD_RIGHTS_READ: u32 = 131072;
-pub const STANDARD_RIGHTS_WRITE: u32 = 131072;
-pub const STANDARD_RIGHTS_EXECUTE: u32 = 131072;
-pub const STANDARD_RIGHTS_ALL: u32 = 2031616;
-pub const SPECIFIC_RIGHTS_ALL: u32 = 65535;
-pub const ACCESS_SYSTEM_SECURITY: u32 = 16777216;
-pub const MAXIMUM_ALLOWED: u32 = 33554432;
-pub const GENERIC_READ: u32 = 2147483648;
-pub const GENERIC_WRITE: u32 = 1073741824;
-pub const GENERIC_EXECUTE: u32 = 536870912;
-pub const GENERIC_ALL: u32 = 268435456;
-pub const FILE_READ_DATA: u32 = 1;
-pub const FILE_LIST_DIRECTORY: u32 = 1;
-pub const FILE_WRITE_DATA: u32 = 2;
-pub const FILE_ADD_FILE: u32 = 2;
-pub const FILE_APPEND_DATA: u32 = 4;
-pub const FILE_ADD_SUBDIRECTORY: u32 = 4;
-pub const FILE_CREATE_PIPE_INSTANCE: u32 = 4;
-pub const FILE_READ_EA: u32 = 8;
-pub const FILE_WRITE_EA: u32 = 16;
-pub const FILE_EXECUTE: u32 = 32;
-pub const FILE_TRAVERSE: u32 = 32;
-pub const FILE_DELETE_CHILD: u32 = 64;
-pub const FILE_READ_ATTRIBUTES: u32 = 128;
-pub const FILE_WRITE_ATTRIBUTES: u32 = 256;
-pub const FILE_ALL_ACCESS: u32 = 2032127;
-pub const FILE_GENERIC_READ: u32 = 1179785;
-pub const FILE_GENERIC_WRITE: u32 = 1179926;
-pub const FILE_GENERIC_EXECUTE: u32 = 1179808;
-pub const FILE_SHARE_READ: u32 = 1;
-pub const FILE_SHARE_WRITE: u32 = 2;
-pub const FILE_SHARE_DELETE: u32 = 4;
-pub const FILE_DIRECTORY_FILE: u32 = 1;
-pub const FILE_WRITE_THROUGH: u32 = 2;
-pub const FILE_SEQUENTIAL_ONLY: u32 = 4;
-pub const FILE_NO_INTERMEDIATE_BUFFERING: u32 = 8;
-pub const FILE_SYNCHRONOUS_IO_ALERT: u32 = 16;
-pub const FILE_SYNCHRONOUS_IO_NONALERT: u32 = 32;
-pub const FILE_NON_DIRECTORY_FILE: u32 = 64;
-pub const FILE_CREATE_TREE_CONNECTION: u32 = 128;
-pub const FILE_COMPLETE_IF_OPLOCKED: u32 = 256;
-pub const FILE_NO_EA_KNOWLEDGE: u32 = 512;
-pub const FILE_OPEN_FOR_RECOVERY: u32 = 1024;
-pub const FILE_RANDOM_ACCESS: u32 = 2048;
-pub const FILE_DELETE_ON_CLOSE: u32 = 4096;
-pub const FILE_OPEN_BY_FILE_ID: u32 = 8192;
-pub const FILE_OPEN_FOR_BACKUP_INTENT: u32 = 16384;
-pub const FILE_NO_COMPRESSION: u32 = 32768;
-pub const FILE_RESERVE_OPFILTER: u32 = 1048576;
-pub const FILE_OPEN_REPARSE_POINT: u32 = 2097152;
-pub const FILE_OPEN_NO_RECALL: u32 = 4194304;
-pub const FILE_OPEN_FOR_FREE_SPACE_QUERY: u32 = 8388608;
-pub const FILE_COPY_STRUCTURED_STORAGE: u32 = 65;
-pub const FILE_STRUCTURED_STORAGE: u32 = 1089;
-pub const FILE_VALID_OPTION_FLAGS: u32 = 16777215;
-pub const FILE_VALID_PIPE_OPTION_FLAGS: u32 = 50;
-pub const FILE_VALID_MAILSLOT_OPTION_FLAGS: u32 = 50;
-pub const FILE_VALID_SET_FLAGS: u32 = 54;
-pub const FILE_SUPERSEDE: u32 = 0;
-pub const FILE_OPEN: u32 = 1;
-pub const FILE_CREATE: u32 = 2;
-pub const FILE_OPEN_IF: u32 = 3;
-pub const FILE_OVERWRITE: u32 = 4;
-pub const FILE_OVERWRITE_IF: u32 = 5;
-pub const FILE_MAXIMUM_DISPOSITION: u32 = 5;
-pub const FILE_SUPERSEDED: u32 = 0;
-pub const FILE_OPENED: u32 = 1;
-pub const FILE_CREATED: u32 = 2;
-pub const FILE_OVERWRITTEN: u32 = 3;
-pub const FILE_EXISTS: u32 = 4;
-pub const FILE_DOES_NOT_EXIST: u32 = 5;
-pub const ERESOURCE_INCREMENT: u32 = 4;
-pub const EVENT_INCREMENT: u32 = 1;
-pub const EVENT_PAIR_INCREMENT: u32 = 1;
-pub const LPC_RELEASE_WAIT_INCREMENT: u32 = 1;
-pub const IO_NO_INCREMENT: u32 = 0;
-pub const IO_CD_ROM_INCREMENT: u32 = 1;
-pub const IO_DISK_INCREMENT: u32 = 1;
-pub const IO_PARALLEL_INCREMENT: u32 = 1;
-pub const IO_VIDEO_INCREMENT: u32 = 1;
-pub const IO_MAILSLOT_INCREMENT: u32 = 2;
-pub const IO_NAMED_PIPE_INCREMENT: u32 = 2;
-pub const IO_NETWORK_INCREMENT: u32 = 2;
-pub const IO_SERIAL_INCREMENT: u32 = 2;
-pub const IO_MOUSE_INCREMENT: u32 = 6;
-pub const IO_KEYBOARD_INCREMENT: u32 = 6;
-pub const IO_SOUND_INCREMENT: u32 = 8;
-pub const MUTANT_INCREMENT: u32 = 1;
-pub const SEMAPHORE_INCREMENT: u32 = 1;
-pub const TIMER_APC_INCREMENT: u32 = 0;
-pub const PAGE_NOACCESS: u32 = 1;
-pub const PAGE_READONLY: u32 = 2;
-pub const PAGE_READWRITE: u32 = 4;
-pub const PAGE_WRITECOPY: u32 = 8;
-pub const PAGE_EXECUTE: u32 = 16;
-pub const PAGE_EXECUTE_READ: u32 = 32;
-pub const PAGE_EXECUTE_READWRITE: u32 = 64;
-pub const PAGE_EXECUTE_WRITECOPY: u32 = 128;
-pub const PAGE_GUARD: u32 = 256;
-pub const PAGE_NOCACHE: u32 = 512;
-pub const PAGE_WRITECOMBINE: u32 = 1024;
-pub const PAGE_VIDEO: u32 = 0;
-pub const PAGE_OLD_VIDEO: u32 = 2048;
-pub const MEM_COMMIT: u32 = 4096;
-pub const MEM_RESERVE: u32 = 8192;
-pub const MEM_DECOMMIT: u32 = 16384;
-pub const MEM_RELEASE: u32 = 32768;
-pub const MEM_FREE: u32 = 65536;
-pub const MEM_PRIVATE: u32 = 131072;
-pub const MEM_MAPPED: u32 = 262144;
-pub const MEM_RESET: u32 = 524288;
-pub const MEM_TOP_DOWN: u32 = 1048576;
-pub const MEM_NOZERO: u32 = 8388608;
-pub const MEM_LARGE_PAGES: u32 = 536870912;
-pub const MEM_4MB_PAGES: u32 = 2147483648;
-pub const XC_TIMEZONE_BIAS: u32 = 0;
-pub const XC_TZ_STD_NAME: u32 = 1;
-pub const XC_TZ_STD_DATE: u32 = 2;
-pub const XC_TZ_STD_BIAS: u32 = 3;
-pub const XC_TZ_DLT_NAME: u32 = 4;
-pub const XC_TZ_DLT_DATE: u32 = 5;
-pub const XC_TZ_DLT_BIAS: u32 = 6;
-pub const XC_LANGUAGE: u32 = 7;
-pub const XC_VIDEO: u32 = 8;
-pub const XC_AUDIO: u32 = 9;
-pub const XC_P_CONTROL_GAMES: u32 = 10;
-pub const XC_P_CONTROL_PASSWORD: u32 = 11;
-pub const XC_P_CONTROL_MOVIES: u32 = 12;
-pub const XC_ONLINE_IP_ADDRESS: u32 = 13;
-pub const XC_ONLINE_DNS_ADDRESS: u32 = 14;
-pub const XC_ONLINE_DEFAULT_GATEWAY_ADDRESS: u32 = 15;
-pub const XC_ONLINE_SUBNET_ADDRESS: u32 = 16;
-pub const XC_MISC: u32 = 17;
-pub const XC_DVD_REGION: u32 = 18;
-pub const XC_MAX_OS: u32 = 255;
-pub const XC_FACTORY_START_INDEX: u32 = 256;
-pub const XC_FACTORY_SERIAL_NUMBER: u32 = 256;
-pub const XC_FACTORY_ETHERNET_ADDR: u32 = 257;
-pub const XC_FACTORY_ONLINE_KEY: u32 = 258;
-pub const XC_FACTORY_AV_REGION: u32 = 259;
-pub const XC_FACTORY_GAME_REGION: u32 = 260;
-pub const XC_MAX_FACTORY: u32 = 511;
-pub const XC_ENCRYPTED_SECTION: u32 = 65534;
-pub const XC_MAX_ALL: u32 = 65535;
-pub const XC_MISC_FLAG_DISABLE_DST: u32 = 2;
 pub const __STDC_WANT_LIB_EXT1_PREVIOUS__: i32 = -1;
 pub const _PDCLIB_endl: &[u8; 2] = b"\n\0";
 pub const _PDCLIB_SUCCESS: u32 = 0;
@@ -489,6 +327,173 @@ pub const _PDCLIB_CTYPE_SPACE: u32 = 32;
 pub const _PDCLIB_CTYPE_LOWER: u32 = 64;
 pub const _PDCLIB_CTYPE_UPPER: u32 = 128;
 pub const _PDCLIB_CHARSET_SIZE: u32 = 256;
+pub const NULL: u32 = 0;
+pub const _NLSCMPERROR: u32 = 2147483647;
+pub const XNET_ETHERNET_LINK_ACTIVE: u32 = 1;
+pub const XNET_ETHERNET_LINK_100MBPS: u32 = 2;
+pub const XNET_ETHERNET_LINK_10MBPS: u32 = 4;
+pub const XNET_ETHERNET_LINK_FULL_DUPLEX: u32 = 8;
+pub const XNET_ETHERNET_LINK_HALF_DUPLEX: u32 = 16;
+pub const METHOD_BUFFERED: u32 = 0;
+pub const METHOD_IN_DIRECT: u32 = 1;
+pub const METHOD_OUT_DIRECT: u32 = 2;
+pub const METHOD_NEITHER: u32 = 3;
+pub const FILE_ANY_ACCESS: u32 = 0;
+pub const FILE_READ_ACCESS: u32 = 1;
+pub const FILE_WRITE_ACCESS: u32 = 2;
+pub const FILE_DEVICE_FILE_SYSTEM: u32 = 9;
+pub const IOCTL_DISK_BASE: u32 = 7;
+pub const DELETE: u32 = 65536;
+pub const READ_CONTROL: u32 = 131072;
+pub const WRITE_DAC: u32 = 262144;
+pub const WRITE_OWNER: u32 = 524288;
+pub const SYNCHRONIZE: u32 = 1048576;
+pub const STANDARD_RIGHTS_REQUIRED: u32 = 983040;
+pub const STANDARD_RIGHTS_READ: u32 = 131072;
+pub const STANDARD_RIGHTS_WRITE: u32 = 131072;
+pub const STANDARD_RIGHTS_EXECUTE: u32 = 131072;
+pub const STANDARD_RIGHTS_ALL: u32 = 2031616;
+pub const SPECIFIC_RIGHTS_ALL: u32 = 65535;
+pub const ACCESS_SYSTEM_SECURITY: u32 = 16777216;
+pub const MAXIMUM_ALLOWED: u32 = 33554432;
+pub const GENERIC_READ: u32 = 2147483648;
+pub const GENERIC_WRITE: u32 = 1073741824;
+pub const GENERIC_EXECUTE: u32 = 536870912;
+pub const GENERIC_ALL: u32 = 268435456;
+pub const FILE_READ_DATA: u32 = 1;
+pub const FILE_LIST_DIRECTORY: u32 = 1;
+pub const FILE_WRITE_DATA: u32 = 2;
+pub const FILE_ADD_FILE: u32 = 2;
+pub const FILE_APPEND_DATA: u32 = 4;
+pub const FILE_ADD_SUBDIRECTORY: u32 = 4;
+pub const FILE_CREATE_PIPE_INSTANCE: u32 = 4;
+pub const FILE_READ_EA: u32 = 8;
+pub const FILE_WRITE_EA: u32 = 16;
+pub const FILE_EXECUTE: u32 = 32;
+pub const FILE_TRAVERSE: u32 = 32;
+pub const FILE_DELETE_CHILD: u32 = 64;
+pub const FILE_READ_ATTRIBUTES: u32 = 128;
+pub const FILE_WRITE_ATTRIBUTES: u32 = 256;
+pub const FILE_ALL_ACCESS: u32 = 2032127;
+pub const FILE_GENERIC_READ: u32 = 1179785;
+pub const FILE_GENERIC_WRITE: u32 = 1179926;
+pub const FILE_GENERIC_EXECUTE: u32 = 1179808;
+pub const FILE_SHARE_READ: u32 = 1;
+pub const FILE_SHARE_WRITE: u32 = 2;
+pub const FILE_SHARE_DELETE: u32 = 4;
+pub const FILE_DIRECTORY_FILE: u32 = 1;
+pub const FILE_WRITE_THROUGH: u32 = 2;
+pub const FILE_SEQUENTIAL_ONLY: u32 = 4;
+pub const FILE_NO_INTERMEDIATE_BUFFERING: u32 = 8;
+pub const FILE_SYNCHRONOUS_IO_ALERT: u32 = 16;
+pub const FILE_SYNCHRONOUS_IO_NONALERT: u32 = 32;
+pub const FILE_NON_DIRECTORY_FILE: u32 = 64;
+pub const FILE_CREATE_TREE_CONNECTION: u32 = 128;
+pub const FILE_COMPLETE_IF_OPLOCKED: u32 = 256;
+pub const FILE_NO_EA_KNOWLEDGE: u32 = 512;
+pub const FILE_OPEN_FOR_RECOVERY: u32 = 1024;
+pub const FILE_RANDOM_ACCESS: u32 = 2048;
+pub const FILE_DELETE_ON_CLOSE: u32 = 4096;
+pub const FILE_OPEN_BY_FILE_ID: u32 = 8192;
+pub const FILE_OPEN_FOR_BACKUP_INTENT: u32 = 16384;
+pub const FILE_NO_COMPRESSION: u32 = 32768;
+pub const FILE_RESERVE_OPFILTER: u32 = 1048576;
+pub const FILE_OPEN_REPARSE_POINT: u32 = 2097152;
+pub const FILE_OPEN_NO_RECALL: u32 = 4194304;
+pub const FILE_OPEN_FOR_FREE_SPACE_QUERY: u32 = 8388608;
+pub const FILE_COPY_STRUCTURED_STORAGE: u32 = 65;
+pub const FILE_STRUCTURED_STORAGE: u32 = 1089;
+pub const FILE_VALID_OPTION_FLAGS: u32 = 16777215;
+pub const FILE_VALID_PIPE_OPTION_FLAGS: u32 = 50;
+pub const FILE_VALID_MAILSLOT_OPTION_FLAGS: u32 = 50;
+pub const FILE_VALID_SET_FLAGS: u32 = 54;
+pub const FILE_SUPERSEDE: u32 = 0;
+pub const FILE_OPEN: u32 = 1;
+pub const FILE_CREATE: u32 = 2;
+pub const FILE_OPEN_IF: u32 = 3;
+pub const FILE_OVERWRITE: u32 = 4;
+pub const FILE_OVERWRITE_IF: u32 = 5;
+pub const FILE_MAXIMUM_DISPOSITION: u32 = 5;
+pub const FILE_SUPERSEDED: u32 = 0;
+pub const FILE_OPENED: u32 = 1;
+pub const FILE_CREATED: u32 = 2;
+pub const FILE_OVERWRITTEN: u32 = 3;
+pub const FILE_EXISTS: u32 = 4;
+pub const FILE_DOES_NOT_EXIST: u32 = 5;
+pub const ERESOURCE_INCREMENT: u32 = 4;
+pub const EVENT_INCREMENT: u32 = 1;
+pub const EVENT_PAIR_INCREMENT: u32 = 1;
+pub const LPC_RELEASE_WAIT_INCREMENT: u32 = 1;
+pub const IO_NO_INCREMENT: u32 = 0;
+pub const IO_CD_ROM_INCREMENT: u32 = 1;
+pub const IO_DISK_INCREMENT: u32 = 1;
+pub const IO_PARALLEL_INCREMENT: u32 = 1;
+pub const IO_VIDEO_INCREMENT: u32 = 1;
+pub const IO_MAILSLOT_INCREMENT: u32 = 2;
+pub const IO_NAMED_PIPE_INCREMENT: u32 = 2;
+pub const IO_NETWORK_INCREMENT: u32 = 2;
+pub const IO_SERIAL_INCREMENT: u32 = 2;
+pub const IO_MOUSE_INCREMENT: u32 = 6;
+pub const IO_KEYBOARD_INCREMENT: u32 = 6;
+pub const IO_SOUND_INCREMENT: u32 = 8;
+pub const MUTANT_INCREMENT: u32 = 1;
+pub const SEMAPHORE_INCREMENT: u32 = 1;
+pub const TIMER_APC_INCREMENT: u32 = 0;
+pub const PAGE_NOACCESS: u32 = 1;
+pub const PAGE_READONLY: u32 = 2;
+pub const PAGE_READWRITE: u32 = 4;
+pub const PAGE_WRITECOPY: u32 = 8;
+pub const PAGE_EXECUTE: u32 = 16;
+pub const PAGE_EXECUTE_READ: u32 = 32;
+pub const PAGE_EXECUTE_READWRITE: u32 = 64;
+pub const PAGE_EXECUTE_WRITECOPY: u32 = 128;
+pub const PAGE_GUARD: u32 = 256;
+pub const PAGE_NOCACHE: u32 = 512;
+pub const PAGE_WRITECOMBINE: u32 = 1024;
+pub const PAGE_VIDEO: u32 = 0;
+pub const PAGE_OLD_VIDEO: u32 = 2048;
+pub const MEM_COMMIT: u32 = 4096;
+pub const MEM_RESERVE: u32 = 8192;
+pub const MEM_DECOMMIT: u32 = 16384;
+pub const MEM_RELEASE: u32 = 32768;
+pub const MEM_FREE: u32 = 65536;
+pub const MEM_PRIVATE: u32 = 131072;
+pub const MEM_MAPPED: u32 = 262144;
+pub const MEM_RESET: u32 = 524288;
+pub const MEM_TOP_DOWN: u32 = 1048576;
+pub const MEM_NOZERO: u32 = 8388608;
+pub const MEM_LARGE_PAGES: u32 = 536870912;
+pub const MEM_4MB_PAGES: u32 = 2147483648;
+pub const XC_TIMEZONE_BIAS: u32 = 0;
+pub const XC_TZ_STD_NAME: u32 = 1;
+pub const XC_TZ_STD_DATE: u32 = 2;
+pub const XC_TZ_STD_BIAS: u32 = 3;
+pub const XC_TZ_DLT_NAME: u32 = 4;
+pub const XC_TZ_DLT_DATE: u32 = 5;
+pub const XC_TZ_DLT_BIAS: u32 = 6;
+pub const XC_LANGUAGE: u32 = 7;
+pub const XC_VIDEO: u32 = 8;
+pub const XC_AUDIO: u32 = 9;
+pub const XC_P_CONTROL_GAMES: u32 = 10;
+pub const XC_P_CONTROL_PASSWORD: u32 = 11;
+pub const XC_P_CONTROL_MOVIES: u32 = 12;
+pub const XC_ONLINE_IP_ADDRESS: u32 = 13;
+pub const XC_ONLINE_DNS_ADDRESS: u32 = 14;
+pub const XC_ONLINE_DEFAULT_GATEWAY_ADDRESS: u32 = 15;
+pub const XC_ONLINE_SUBNET_ADDRESS: u32 = 16;
+pub const XC_MISC: u32 = 17;
+pub const XC_DVD_REGION: u32 = 18;
+pub const XC_MAX_OS: u32 = 255;
+pub const XC_FACTORY_START_INDEX: u32 = 256;
+pub const XC_FACTORY_SERIAL_NUMBER: u32 = 256;
+pub const XC_FACTORY_ETHERNET_ADDR: u32 = 257;
+pub const XC_FACTORY_ONLINE_KEY: u32 = 258;
+pub const XC_FACTORY_AV_REGION: u32 = 259;
+pub const XC_FACTORY_GAME_REGION: u32 = 260;
+pub const XC_MAX_FACTORY: u32 = 511;
+pub const XC_ENCRYPTED_SECTION: u32 = 65534;
+pub const XC_MAX_ALL: u32 = 65535;
+pub const XC_MISC_FLAG_DISABLE_DST: u32 = 2;
 pub const INT8_MIN: i32 = -128;
 pub const INT8_MAX: u32 = 127;
 pub const UINT8_MAX: u32 = 255;
@@ -1835,7 +1840,44 @@ pub const NV097_SET_COMBINER_SPECULAR_FOG_CW1_SPECULAR_ADD_INVERT_R12: u32 = 63;
 pub const NV097_SET_CONTROL0: u32 = 656;
 pub const NV097_SET_CONTROL0_STENCIL_WRITE_ENABLE: u32 = 1;
 pub const NV097_SET_CONTROL0_Z_FORMAT: u32 = 4096;
+pub const NV097_SET_CONTROL0_Z_FORMAT_FIXED: u32 = 0;
+pub const NV097_SET_CONTROL0_Z_FORMAT_FLOAT: u32 = 4096;
 pub const NV097_SET_CONTROL0_Z_PERSPECTIVE_ENABLE: u32 = 65536;
+pub const NV097_SET_CONTROL0_TEXTURE_PERSPECTIVE_ENABLE: u32 = 1048576;
+pub const NV097_SET_CONTROL0_COLOR_SPACE_CONVERT: u32 = 4026531840;
+pub const NV097_SET_CONTROL0_COLOR_SPACE_CONVERT_CRYCB_TO_RGB: u32 = 268435456;
+pub const NV097_SET_LIGHT_CONTROL: u32 = 660;
+pub const NV097_SET_LIGHT_CONTROL_V_INCLUDE_SPECULAR: u32 = 0;
+pub const NV097_SET_LIGHT_CONTROL_V_SEPARATE_SPECULAR: u32 = 1;
+pub const NV097_SET_LIGHT_CONTROL_V_LOCALEYE: u32 = 65536;
+pub const NV097_SET_LIGHT_CONTROL_V_ALPHA_OPAQUE: u32 = 0;
+pub const NV097_SET_LIGHT_CONTROL_V_ALPHA_FROM_MATERIAL_SPECULAR: u32 = 131072;
+pub const NV097_SET_COLOR_MATERIAL: u32 = 664;
+pub const NV097_SET_COLOR_MATERIAL_ALL_FROM_MATERIAL: u32 = 0;
+pub const NV097_SET_COLOR_MATERIAL_EMISSIVE_FROM_MATERIAL: u32 = 0;
+pub const NV097_SET_COLOR_MATERIAL_EMISSIVE_FROM_VERTEX_DIFFUSE: u32 = 1;
+pub const NV097_SET_COLOR_MATERIAL_EMISSIVE_FROM_VERTEX_SPECULAR: u32 = 2;
+pub const NV097_SET_COLOR_MATERIAL_AMBIENT_FROM_MATERIAL: u32 = 0;
+pub const NV097_SET_COLOR_MATERIAL_AMBIENT_FROM_VERTEX_DIFFUSE: u32 = 4;
+pub const NV097_SET_COLOR_MATERIAL_AMBIENT_FROM_VERTEX_SPECULAR: u32 = 8;
+pub const NV097_SET_COLOR_MATERIAL_DIFFUSE_FROM_MATERIAL: u32 = 0;
+pub const NV097_SET_COLOR_MATERIAL_DIFFUSE_FROM_VERTEX_DIFFUSE: u32 = 16;
+pub const NV097_SET_COLOR_MATERIAL_DIFFUSE_FROM_VERTEX_SPECULAR: u32 = 32;
+pub const NV097_SET_COLOR_MATERIAL_SPECULAR_FROM_MATERIAL: u32 = 0;
+pub const NV097_SET_COLOR_MATERIAL_SPECULAR_FROM_VERTEX_DIFFUSE: u32 = 64;
+pub const NV097_SET_COLOR_MATERIAL_SPECULAR_FROM_VERTEX_SPECULAR: u32 = 128;
+pub const NV097_SET_COLOR_MATERIAL_BACK_EMISSIVE_FROM_MATERIAL: u32 = 0;
+pub const NV097_SET_COLOR_MATERIAL_BACK_EMISSIVE_FROM_VERTEX_DIFFUSE: u32 = 256;
+pub const NV097_SET_COLOR_MATERIAL_BACK_EMISSIVE_FROM_VERTEX_SPECULAR: u32 = 512;
+pub const NV097_SET_COLOR_MATERIAL_BACK_AMBIENT_FROM_MATERIAL: u32 = 0;
+pub const NV097_SET_COLOR_MATERIAL_BACK_AMBIENT_FROM_VERTEX_DIFFUSE: u32 = 1024;
+pub const NV097_SET_COLOR_MATERIAL_BACK_AMBIENT_FROM_VERTEX_SPECULAR: u32 = 2048;
+pub const NV097_SET_COLOR_MATERIAL_BACK_DIFFUSE_FROM_MATERIAL: u32 = 0;
+pub const NV097_SET_COLOR_MATERIAL_BACK_DIFFUSE_FROM_VERTEX_DIFFUSE: u32 = 4096;
+pub const NV097_SET_COLOR_MATERIAL_BACK_DIFFUSE_FROM_VERTEX_SPECULAR: u32 = 8192;
+pub const NV097_SET_COLOR_MATERIAL_BACK_SPECULAR_FROM_MATERIAL: u32 = 0;
+pub const NV097_SET_COLOR_MATERIAL_BACK_SPECULAR_FROM_VERTEX_DIFFUSE: u32 = 16384;
+pub const NV097_SET_COLOR_MATERIAL_BACK_SPECULAR_FROM_VERTEX_SPECULAR: u32 = 32768;
 pub const NV097_SET_FOG_MODE: u32 = 668;
 pub const NV097_SET_FOG_MODE_V_LINEAR: u32 = 9729;
 pub const NV097_SET_FOG_MODE_V_EXP: u32 = 2048;
@@ -1855,12 +1897,19 @@ pub const NV097_SET_FOG_COLOR_RED: u32 = 255;
 pub const NV097_SET_FOG_COLOR_GREEN: u32 = 65280;
 pub const NV097_SET_FOG_COLOR_BLUE: u32 = 16711680;
 pub const NV097_SET_FOG_COLOR_ALPHA: u32 = 4278190080;
+pub const NV097_SET_WINDOW_CLIP_TYPE: u32 = 692;
+pub const NV097_SET_WINDOW_CLIP_HORIZONTAL: u32 = 704;
+pub const NV097_SET_WINDOW_CLIP_VERTICAL: u32 = 736;
 pub const NV097_SET_ALPHA_TEST_ENABLE: u32 = 768;
 pub const NV097_SET_BLEND_ENABLE: u32 = 772;
 pub const NV097_SET_CULL_FACE_ENABLE: u32 = 776;
 pub const NV097_SET_DEPTH_TEST_ENABLE: u32 = 780;
 pub const NV097_SET_DITHER_ENABLE: u32 = 784;
 pub const NV097_SET_LIGHTING_ENABLE: u32 = 788;
+pub const NV097_SET_POINT_PARAMS_ENABLE: u32 = 792;
+pub const NV097_SET_POINT_SMOOTH_ENABLE: u32 = 796;
+pub const NV097_SET_LINE_SMOOTH_ENABLE: u32 = 800;
+pub const NV097_SET_POLY_SMOOTH_ENABLE: u32 = 804;
 pub const NV097_SET_SKIN_MODE: u32 = 808;
 pub const NV097_SET_SKIN_MODE_OFF: u32 = 0;
 pub const NV097_SET_SKIN_MODE_2G: u32 = 1;
@@ -1874,6 +1923,14 @@ pub const NV097_SET_POLY_OFFSET_POINT_ENABLE: u32 = 816;
 pub const NV097_SET_POLY_OFFSET_LINE_ENABLE: u32 = 820;
 pub const NV097_SET_POLY_OFFSET_FILL_ENABLE: u32 = 824;
 pub const NV097_SET_ALPHA_FUNC: u32 = 828;
+pub const NV097_SET_ALPHA_FUNC_V_NEVER: u32 = 512;
+pub const NV097_SET_ALPHA_FUNC_V_LESS: u32 = 513;
+pub const NV097_SET_ALPHA_FUNC_V_EQUAL: u32 = 514;
+pub const NV097_SET_ALPHA_FUNC_V_LEQUAL: u32 = 515;
+pub const NV097_SET_ALPHA_FUNC_V_GREATER: u32 = 516;
+pub const NV097_SET_ALPHA_FUNC_V_NOTEQUAL: u32 = 517;
+pub const NV097_SET_ALPHA_FUNC_V_GEQUAL: u32 = 518;
+pub const NV097_SET_ALPHA_FUNC_V_ALWAYS: u32 = 519;
 pub const NV097_SET_ALPHA_REF: u32 = 832;
 pub const NV097_SET_BLEND_FUNC_SFACTOR: u32 = 836;
 pub const NV097_SET_BLEND_FUNC_SFACTOR_V_ZERO: u32 = 0;
@@ -1917,6 +1974,14 @@ pub const NV097_SET_BLEND_EQUATION_V_MAX: u32 = 32776;
 pub const NV097_SET_BLEND_EQUATION_V_FUNC_REVERSE_SUBTRACT_SIGNED: u32 = 61445;
 pub const NV097_SET_BLEND_EQUATION_V_FUNC_ADD_SIGNED: u32 = 61446;
 pub const NV097_SET_DEPTH_FUNC: u32 = 852;
+pub const NV097_SET_DEPTH_FUNC_V_NEVER: u32 = 512;
+pub const NV097_SET_DEPTH_FUNC_V_LESS: u32 = 513;
+pub const NV097_SET_DEPTH_FUNC_V_EQUAL: u32 = 514;
+pub const NV097_SET_DEPTH_FUNC_V_LEQUAL: u32 = 515;
+pub const NV097_SET_DEPTH_FUNC_V_GREATER: u32 = 516;
+pub const NV097_SET_DEPTH_FUNC_V_NOTEQUAL: u32 = 517;
+pub const NV097_SET_DEPTH_FUNC_V_GEQUAL: u32 = 518;
+pub const NV097_SET_DEPTH_FUNC_V_ALWAYS: u32 = 519;
 pub const NV097_SET_COLOR_MASK: u32 = 856;
 pub const NV097_SET_COLOR_MASK_BLUE_WRITE_ENABLE: u32 = 1;
 pub const NV097_SET_COLOR_MASK_GREEN_WRITE_ENABLE: u32 = 256;
@@ -1938,6 +2003,12 @@ pub const NV097_SET_STENCIL_OP_V_DECRSAT: u32 = 7683;
 pub const NV097_SET_STENCIL_OP_V_INVERT: u32 = 5386;
 pub const NV097_SET_STENCIL_OP_V_INCR: u32 = 34055;
 pub const NV097_SET_STENCIL_OP_V_DECR: u32 = 34056;
+pub const NV097_SET_SHADE_MODEL: u32 = 892;
+pub const NV097_SET_SHADE_MODEL_FLAT: u32 = 7424;
+pub const NV097_SET_SHADE_MODEL_SMOOTH: u32 = 7425;
+pub const NV097_SET_LINE_WIDTH: u32 = 896;
+pub const NV097_SET_LINE_WIDTH_MAX_VALUE: u32 = 504;
+pub const NV097_SET_LINE_WIDTH_MASK: u32 = 511;
 pub const NV097_SET_POLYGON_OFFSET_SCALE_FACTOR: u32 = 900;
 pub const NV097_SET_POLYGON_OFFSET_BIAS: u32 = 904;
 pub const NV097_SET_FRONT_POLYGON_MODE: u32 = 908;
@@ -1955,11 +2026,18 @@ pub const NV097_SET_FRONT_FACE: u32 = 928;
 pub const NV097_SET_FRONT_FACE_V_CW: u32 = 2304;
 pub const NV097_SET_FRONT_FACE_V_CCW: u32 = 2305;
 pub const NV097_SET_NORMALIZATION_ENABLE: u32 = 932;
+pub const NV097_SET_MATERIAL_EMISSION: u32 = 936;
+pub const NV097_SET_MATERIAL_ALPHA: u32 = 948;
+pub const NV097_SET_SPECULAR_ENABLE: u32 = 952;
 pub const NV097_SET_LIGHT_ENABLE_MASK: u32 = 956;
 pub const NV097_SET_LIGHT_ENABLE_MASK_LIGHT0_OFF: u32 = 0;
 pub const NV097_SET_LIGHT_ENABLE_MASK_LIGHT0_INFINITE: u32 = 1;
 pub const NV097_SET_LIGHT_ENABLE_MASK_LIGHT0_LOCAL: u32 = 2;
 pub const NV097_SET_LIGHT_ENABLE_MASK_LIGHT0_SPOT: u32 = 3;
+pub const NV097_SET_LIGHT_ENABLE_MASK_LIGHT1_OFF: u32 = 0;
+pub const NV097_SET_LIGHT_ENABLE_MASK_LIGHT1_INFINITE: u32 = 4;
+pub const NV097_SET_LIGHT_ENABLE_MASK_LIGHT1_LOCAL: u32 = 8;
+pub const NV097_SET_LIGHT_ENABLE_MASK_LIGHT1_SPOT: u32 = 12;
 pub const NV097_SET_TEXGEN_S: u32 = 960;
 pub const NV097_SET_TEXGEN_S_DISABLE: u32 = 0;
 pub const NV097_SET_TEXGEN_S_EYE_LINEAR: u32 = 9216;
@@ -1971,6 +2049,7 @@ pub const NV097_SET_TEXGEN_T: u32 = 964;
 pub const NV097_SET_TEXGEN_R: u32 = 968;
 pub const NV097_SET_TEXGEN_Q: u32 = 972;
 pub const NV097_SET_TEXTURE_MATRIX_ENABLE: u32 = 1056;
+pub const NV097_SET_POINT_SIZE: u32 = 1084;
 pub const NV097_SET_PROJECTION_MATRIX: u32 = 1088;
 pub const NV097_SET_MODEL_VIEW_MATRIX: u32 = 1152;
 pub const NV097_SET_INVERSE_MODEL_VIEW_MATRIX: u32 = 1408;
@@ -1986,8 +2065,19 @@ pub const NV097_SET_TEXGEN_VIEW_MODEL_LOCAL_VIEWER: u32 = 0;
 pub const NV097_SET_TEXGEN_VIEW_MODEL_INFINITE_VIEWER: u32 = 1;
 pub const NV097_SET_FOG_PLANE: u32 = 2512;
 pub const NV097_SET_FLAT_SHADE_OP: u32 = 2556;
+pub const NV097_SET_FLAT_SHADE_OP_VERTEX_LAST: u32 = 0;
+pub const NV097_SET_FLAT_SHADE_OP_VERTEX_FIRST: u32 = 1;
 pub const NV097_SET_SCENE_AMBIENT_COLOR: u32 = 2576;
 pub const NV097_SET_VIEWPORT_OFFSET: u32 = 2592;
+pub const NV097_SET_POINT_PARAMS: u32 = 2608;
+pub const NV097_SET_POINT_PARAMS_SCALE_FACTOR_A: u32 = 2608;
+pub const NV097_SET_POINT_PARAMS_SCALE_FACTOR_B: u32 = 2612;
+pub const NV097_SET_POINT_PARAMS_SCALE_FACTOR_C: u32 = 2616;
+pub const NV097_SET_POINT_PARAMS_SIZE_RANGE: u32 = 2620;
+pub const NV097_SET_POINT_PARAMS_SIZE_RANGE_DUP_1: u32 = 2624;
+pub const NV097_SET_POINT_PARAMS_SIZE_RANGE_DUP_2: u32 = 2628;
+pub const NV097_SET_POINT_PARAMS_SCALE_BIAS: u32 = 2632;
+pub const NV097_SET_POINT_PARAMS_MIN_SIZE: u32 = 2636;
 pub const NV097_SET_EYE_POSITION: u32 = 2640;
 pub const NV097_SET_COMBINER_FACTOR0: u32 = 2656;
 pub const NV097_SET_COMBINER_FACTOR1: u32 = 2688;
@@ -2016,6 +2106,7 @@ pub const NV097_SET_COMBINER_COLOR_ICW_C_SOURCE: u32 = 3840;
 pub const NV097_SET_COMBINER_COLOR_ICW_D_MAP: u32 = 224;
 pub const NV097_SET_COMBINER_COLOR_ICW_D_ALPHA: u32 = 16;
 pub const NV097_SET_COMBINER_COLOR_ICW_D_SOURCE: u32 = 15;
+pub const NV097_SET_COLOR_KEY_COLOR: u32 = 2784;
 pub const NV097_SET_VIEWPORT_SCALE: u32 = 2800;
 pub const NV097_SET_TRANSFORM_PROGRAM: u32 = 2816;
 pub const NV097_SET_TRANSFORM_CONSTANT: u32 = 2944;
@@ -2033,7 +2124,39 @@ pub const NV097_SET_LIGHT_SPOT_FALLOFF: u32 = 4160;
 pub const NV097_SET_LIGHT_SPOT_DIRECTION: u32 = 4172;
 pub const NV097_SET_LIGHT_LOCAL_POSITION: u32 = 4188;
 pub const NV097_SET_LIGHT_LOCAL_ATTENUATION: u32 = 4200;
+pub const NV097_SET_STIPPLE_ENABLE: u32 = 5244;
+pub const NV097_SET_STIPPLE_PATERN_0: u32 = 5248;
+pub const NV097_SET_STIPPLE_PATERN_SIZE: u32 = 32;
 pub const NV097_SET_VERTEX4F: u32 = 5400;
+pub const NV097_SET_WEIGHT1F: u32 = 5788;
+pub const NV097_SET_EDGE_FLAG: u32 = 5820;
+pub const NV097_SET_WEIGHT4F: u32 = 5824;
+pub const NV097_SET_NORMAL3F: u32 = 5424;
+pub const NV097_SET_NORMAL3S: u32 = 5440;
+pub const NV097_SET_DIFFUSE_COLOR4F: u32 = 5456;
+pub const NV097_SET_DIFFUSE_COLOR3F: u32 = 5472;
+pub const NV097_SET_DIFFUSE_COLOR4I: u32 = 5484;
+pub const NV097_SET_SPECULAR_COLOR4F: u32 = 5488;
+pub const NV097_SET_SPECULAR_COLOR3F: u32 = 5504;
+pub const NV097_SET_SPECULAR_COLOR4I: u32 = 5516;
+pub const NV097_SET_FOG_COORD: u32 = 5784;
+pub const NV097_SET_TEXCOORD0_2F: u32 = 5520;
+pub const NV097_SET_TEXCOORD0_4F: u32 = 5536;
+pub const NV097_SET_TEXCOORD0_2S: u32 = 5528;
+pub const NV097_SET_TEXCOORD0_4S: u32 = 5552;
+pub const NV097_SET_TEXCOORD1_2F: u32 = 5560;
+pub const NV097_SET_TEXCOORD1_4F: u32 = 5576;
+pub const NV097_SET_TEXCOORD1_2S: u32 = 5568;
+pub const NV097_SET_TEXCOORD1_4S: u32 = 5592;
+pub const NV097_SET_TEXCOORD2_2F: u32 = 5600;
+pub const NV097_SET_TEXCOORD2_4F: u32 = 5616;
+pub const NV097_SET_TEXCOORD2_2S: u32 = 5608;
+pub const NV097_SET_TEXCOORD2_4S: u32 = 5632;
+pub const NV097_SET_TEXCOORD3_2F: u32 = 5640;
+pub const NV097_SET_TEXCOORD3_4F: u32 = 5664;
+pub const NV097_SET_TEXCOORD3_2S: u32 = 5648;
+pub const NV097_SET_TEXCOORD3_4S: u32 = 5680;
+pub const NV097_BREAK_VERTEX_BUFFER_CACHE: u32 = 5904;
 pub const NV097_SET_VERTEX_DATA_ARRAY_OFFSET: u32 = 5920;
 pub const NV097_SET_VERTEX_DATA_ARRAY_FORMAT: u32 = 5984;
 pub const NV097_SET_VERTEX_DATA_ARRAY_FORMAT_TYPE: u32 = 15;
@@ -2045,8 +2168,10 @@ pub const NV097_SET_VERTEX_DATA_ARRAY_FORMAT_TYPE_S32K: u32 = 5;
 pub const NV097_SET_VERTEX_DATA_ARRAY_FORMAT_TYPE_CMP: u32 = 6;
 pub const NV097_SET_VERTEX_DATA_ARRAY_FORMAT_SIZE: u32 = 240;
 pub const NV097_SET_VERTEX_DATA_ARRAY_FORMAT_STRIDE: u32 = 4294967040;
+pub const NV097_SET_BACK_MATERIAL_ALPHA: u32 = 6060;
 pub const NV097_SET_LOGIC_OP_ENABLE: u32 = 6076;
 pub const NV097_SET_LOGIC_OP: u32 = 6080;
+pub const NV097_SET_LIGHT_TWO_SIDE_ENABLE: u32 = 6084;
 pub const NV097_CLEAR_REPORT_VALUE: u32 = 6088;
 pub const NV097_CLEAR_REPORT_VALUE_TYPE: u32 = 4294967295;
 pub const NV097_CLEAR_REPORT_VALUE_TYPE_ZPASS_PIXEL_CNT: u32 = 1;
@@ -2106,6 +2231,8 @@ pub const NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_A1R5G5B5: u32 = 16;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_R5G6B5: u32 = 17;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_A8R8G8B8: u32 = 18;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_Y8: u32 = 19;
+pub const NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_R8B8: u32 = 22;
+pub const NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_G8B8: u32 = 23;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_SZ_A8: u32 = 25;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_SZ_A8Y8: u32 = 26;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_AY8: u32 = 27;
@@ -2115,13 +2242,17 @@ pub const NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_X8R8G8B8: u32 = 30;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_A8: u32 = 31;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_A8Y8: u32 = 32;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_LC_IMAGE_CR8YB8CB8YA8: u32 = 36;
+pub const NV097_SET_TEXTURE_FORMAT_COLOR_LC_IMAGE_YB8CR8YA8CB8: u32 = 37;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_SZ_R6G5B5: u32 = 39;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_SZ_G8B8: u32 = 40;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_SZ_R8B8: u32 = 41;
+pub const NV097_SET_TEXTURE_FORMAT_COLOR_SZ_DEPTH_Y16_FIXED: u32 = 44;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_DEPTH_X8_Y24_FIXED: u32 = 46;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_DEPTH_Y16_FIXED: u32 = 48;
+pub const NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_DEPTH_Y16_FLOAT: u32 = 49;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_Y16: u32 = 53;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_SZ_A8B8G8R8: u32 = 58;
+pub const NV097_SET_TEXTURE_FORMAT_COLOR_SZ_B8G8R8A8: u32 = 59;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_SZ_R8G8B8A8: u32 = 60;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_A8B8G8R8: u32 = 63;
 pub const NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_B8G8R8A8: u32 = 64;
@@ -2131,7 +2262,16 @@ pub const NV097_SET_TEXTURE_FORMAT_BASE_SIZE_U: u32 = 15728640;
 pub const NV097_SET_TEXTURE_FORMAT_BASE_SIZE_V: u32 = 251658240;
 pub const NV097_SET_TEXTURE_FORMAT_BASE_SIZE_P: u32 = 4026531840;
 pub const NV097_SET_TEXTURE_ADDRESS: u32 = 6920;
+pub const NV097_SET_TEXTURE_ADDRESS_U: u32 = 15;
+pub const NV097_SET_TEXTURE_ADDRESS_CYLINDERWRAP_U: u32 = 240;
+pub const NV097_SET_TEXTURE_ADDRESS_V: u32 = 3840;
+pub const NV097_SET_TEXTURE_ADDRESS_CYLINDERWRAP_V: u32 = 61440;
+pub const NV097_SET_TEXTURE_ADDRESS_P: u32 = 983040;
+pub const NV097_SET_TEXTURE_ADDRESS_CYLINDERWRAP_P: u32 = 15728640;
+pub const NV097_SET_TEXTURE_ADDRESS_CYLINDERWRAP_Q: u32 = 251658240;
 pub const NV097_SET_TEXTURE_CONTROL0: u32 = 6924;
+pub const NV097_SET_TEXTURE_CONTROL0_ALPHA_KILL_ENABLE: u32 = 4;
+pub const NV097_SET_TEXTURE_CONTROL0_COLOR_KEY_MODE: u32 = 3;
 pub const NV097_SET_TEXTURE_CONTROL0_ENABLE: u32 = 1073741824;
 pub const NV097_SET_TEXTURE_CONTROL0_MIN_LOD_CLAMP: u32 = 1073479680;
 pub const NV097_SET_TEXTURE_CONTROL0_MAX_LOD_CLAMP: u32 = 262080;
@@ -2163,6 +2303,10 @@ pub const NV097_SET_TEXTURE_SET_BUMP_ENV_OFFSET: u32 = 6972;
 pub const NV097_SET_SEMAPHORE_OFFSET: u32 = 7532;
 pub const NV097_BACK_END_WRITE_SEMAPHORE_RELEASE: u32 = 7536;
 pub const NV097_SET_ZMIN_MAX_CONTROL: u32 = 7544;
+pub const NV097_SET_ZMIN_MAX_CONTROL_CULL_NEAR_FAR: u32 = 1;
+pub const NV097_SET_ZMIN_MAX_CONTROL_ZCLAMP_CULL: u32 = 0;
+pub const NV097_SET_ZMIN_MAX_CONTROL_ZCLAMP_CLAMP: u32 = 16;
+pub const NV097_SET_ZMIN_MAX_CONTROL_CULL_IGNORE_W: u32 = 256;
 pub const NV097_SET_COMPRESS_ZBUFFER_EN: u32 = 7552;
 pub const NV097_SET_ZSTENCIL_CLEAR_VALUE: u32 = 7564;
 pub const NV097_SET_COLOR_CLEAR_VALUE: u32 = 7568;
@@ -2216,6 +2360,15 @@ pub const NV097_SET_COMBINER_CONTROL_FACTOR0_EACH_STAGE: u32 = 1;
 pub const NV097_SET_COMBINER_CONTROL_FACTOR1: u32 = 4294901760;
 pub const NV097_SET_COMBINER_CONTROL_FACTOR1_SAME_FACTOR_ALL: u32 = 0;
 pub const NV097_SET_COMBINER_CONTROL_FACTOR1_EACH_STAGE: u32 = 1;
+pub const NV097_SET_SHADOW_COMPARE_FUNC: u32 = 7788;
+pub const NV097_SET_SHADOW_COMPARE_FUNC_NEVER: u32 = 0;
+pub const NV097_SET_SHADOW_COMPARE_FUNC_GREATER: u32 = 1;
+pub const NV097_SET_SHADOW_COMPARE_FUNC_EQUAL: u32 = 2;
+pub const NV097_SET_SHADOW_COMPARE_FUNC_GEQUAL: u32 = 3;
+pub const NV097_SET_SHADOW_COMPARE_FUNC_LESS: u32 = 4;
+pub const NV097_SET_SHADOW_COMPARE_FUNC_NOTEQUAL: u32 = 5;
+pub const NV097_SET_SHADOW_COMPARE_FUNC_LEQUAL: u32 = 6;
+pub const NV097_SET_SHADOW_COMPARE_FUNC_ALWAYS: u32 = 7;
 pub const NV097_SET_SHADOW_ZSLOPE_THRESHOLD: u32 = 7784;
 pub const NV097_SET_SHADER_STAGE_PROGRAM: u32 = 7792;
 pub const NV097_SET_SHADER_STAGE_PROGRAM_STAGE0: u32 = 31;
@@ -2271,6 +2424,7 @@ pub const NV097_SET_SHADER_STAGE_PROGRAM_STAGE3_DOT_STR_CUBE: u32 = 14;
 pub const NV097_SET_SHADER_STAGE_PROGRAM_STAGE3_DEPENDENT_AR: u32 = 15;
 pub const NV097_SET_SHADER_STAGE_PROGRAM_STAGE3_DEPENDENT_GB: u32 = 16;
 pub const NV097_SET_SHADER_STAGE_PROGRAM_STAGE3_DOT_REFLECT_SPECULAR_CONST: u32 = 18;
+pub const NV097_SET_DOT_RGBMAPPING: u32 = 7796;
 pub const NV097_SET_SHADER_OTHER_STAGE_INPUT: u32 = 7800;
 pub const NV097_SET_SHADER_OTHER_STAGE_INPUT_STAGE1: u32 = 65535;
 pub const NV097_SET_SHADER_OTHER_STAGE_INPUT_STAGE1_INSTAGE_0: u32 = 0;
@@ -2294,6 +2448,22 @@ pub const NV097_SET_TRANSFORM_PROGRAM_CXT_WRITE_EN: u32 = 7832;
 pub const NV097_SET_TRANSFORM_PROGRAM_LOAD: u32 = 7836;
 pub const NV097_SET_TRANSFORM_PROGRAM_START: u32 = 7840;
 pub const NV097_SET_TRANSFORM_CONSTANT_LOAD: u32 = 7844;
+pub const MAXRAM: u32 = 67088383;
+pub const DMA_CLASS_2: u32 = 2;
+pub const DMA_CLASS_3: u32 = 3;
+pub const DMA_CLASS_3D: u32 = 61;
+pub const GR_CLASS_12: u32 = 18;
+pub const GR_CLASS_19: u32 = 25;
+pub const GR_CLASS_30: u32 = 48;
+pub const GR_CLASS_39: u32 = 57;
+pub const GR_CLASS_62: u32 = 98;
+pub const GR_CLASS_72: u32 = 114;
+pub const GR_CLASS_97: u32 = 151;
+pub const GR_CLASS_9F: u32 = 159;
+pub const DMA_CHANNEL_3D_3: u32 = 3;
+pub const DMA_CHANNEL_PIXEL_RENDERER: u32 = 9;
+pub const DMA_CHANNEL_DEPTH_STENCIL_RENDERER: u32 = 10;
+pub const DMA_CHANNEL_BITBLT_IMAGES: u32 = 11;
 pub const _11: u32 = 0;
 pub const _12: u32 = 1;
 pub const _13: u32 = 2;
@@ -2314,6 +2484,8 @@ pub const SUBCH_3D: u32 = 0;
 pub const SUBCH_2: u32 = 2;
 pub const SUBCH_3: u32 = 3;
 pub const SUBCH_4: u32 = 4;
+pub const NEXT_SUBCH: u32 = 5;
+pub const PBKIT_PUSHBUFFER_SIZE: u32 = 524288;
 pub type LPCVOID = *const libc::c_void;
 pub type VOID = libc::c_void;
 pub type PVOID = *mut libc::c_void;
@@ -4681,9 +4853,439 @@ extern "stdcall" {
     #[doc = " Writes a number of UCHAR values from the specified port address into a buffer.\n @param Port The memory mapped I/O address of the port. E.g., `(PUCHAR)0x0cf8` for port 0x0CF8.\n @param Buffer Pointer to a buffer containing the values to be written.\n @param Count Specifies the number of values to be written to the port."]
     pub fn WRITE_PORT_BUFFER_UCHAR(Port: PUCHAR, Buffer: PUCHAR, Count: ULONG);
 }
-extern "stdcall" {
-    #[doc = " Fills a specified memory area with zeroes\n @param Destination A pointer to the memory block which is to be filled\n @param Length The length of the memory block which is to be filled"]
-    pub fn RtlZeroMemory(Destination: *mut VOID, Length: SIZE_T);
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_div_t {
+    pub quot: libc::c_int,
+    pub rem: libc::c_int,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_ldiv_t {
+    pub quot: libc::c_long,
+    pub rem: libc::c_long,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lldiv_t {
+    pub quot: libc::c_longlong,
+    pub rem: libc::c_longlong,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_imaxdiv_t {
+    pub quot: libc::c_longlong,
+    pub rem: libc::c_longlong,
+}
+pub type _PDCLIB_va_list = __builtin_va_list;
+pub type _PDCLIB_fd_t = *mut libc::c_void;
+pub type _PDCLIB_thrd_t = *mut libc::c_void;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __PDCLIB_cnd_t {
+    pub eventHandles: [*mut libc::c_void; 2usize],
+    pub waitCount: u32,
+}
+pub type _PDCLIB_cnd_t = __PDCLIB_cnd_t;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __PDCLIB_mtx_t {
+    pub handle: *mut libc::c_void,
+}
+pub type _PDCLIB_mtx_t = __PDCLIB_mtx_t;
+pub type _PDCLIB_tss_t = libc::c_uint;
+pub type _PDCLIB_once_flag = libc::c_int;
+pub type _PDCLIB_int8_t = libc::c_schar;
+pub type _PDCLIB_uint8_t = libc::c_uchar;
+pub type _PDCLIB_int16_t = libc::c_short;
+pub type _PDCLIB_uint16_t = libc::c_ushort;
+pub type _PDCLIB_int32_t = libc::c_int;
+pub type _PDCLIB_uint32_t = libc::c_uint;
+pub type _PDCLIB_int64_t = libc::c_longlong;
+pub type _PDCLIB_uint64_t = libc::c_ulonglong;
+pub type _PDCLIB_int_fast8_t = libc::c_int;
+pub type _PDCLIB_uint_fast8_t = libc::c_uint;
+pub type _PDCLIB_int_fast16_t = libc::c_int;
+pub type _PDCLIB_uint_fast16_t = libc::c_uint;
+pub type _PDCLIB_int_fast32_t = libc::c_int;
+pub type _PDCLIB_uint_fast32_t = libc::c_uint;
+pub type _PDCLIB_int_fast64_t = libc::c_longlong;
+pub type _PDCLIB_uint_fast64_t = libc::c_ulonglong;
+pub type _PDCLIB_ptrdiff_t = libc::c_int;
+pub type _PDCLIB_size_t = libc::c_uint;
+pub type _PDCLIB_wchar_t = libc::c_ushort;
+pub type _PDCLIB_wint_t = libc::c_ushort;
+pub type _PDCLIB_intptr_t = libc::c_long;
+pub type _PDCLIB_uintptr_t = libc::c_ulong;
+pub type _PDCLIB_intmax_t = libc::c_longlong;
+pub type _PDCLIB_uintmax_t = libc::c_ulonglong;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_fpos_t {
+    pub offset: _PDCLIB_uint64_t,
+    pub status: libc::c_int,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_file_t {
+    pub handle: _PDCLIB_fd_t,
+    pub buffer: *mut libc::c_char,
+    pub bufsize: _PDCLIB_size_t,
+    pub bufidx: _PDCLIB_size_t,
+    pub bufend: _PDCLIB_size_t,
+    pub pos: _PDCLIB_fpos_t,
+    pub ungetidx: _PDCLIB_size_t,
+    pub ungetbuf: *mut libc::c_uchar,
+    pub status: libc::c_uint,
+    pub filename: *mut libc::c_char,
+    pub next: *mut _PDCLIB_file_t,
+}
+pub type _PDCLIB_time_t = libc::c_long;
+pub type _PDCLIB_clock_t = libc::c_uint;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_exitfunc_t {
+    pub next: *mut _PDCLIB_exitfunc_t,
+    pub func: ::core::option::Option<unsafe extern "C" fn()>,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_status_t {
+    pub base: libc::c_int,
+    pub flags: _PDCLIB_int_fast32_t,
+    pub n: _PDCLIB_size_t,
+    pub i: _PDCLIB_size_t,
+    pub current: _PDCLIB_size_t,
+    pub s: *mut libc::c_char,
+    pub width: _PDCLIB_size_t,
+    pub prec: libc::c_int,
+    pub stream: *mut _PDCLIB_file_t,
+    pub arg: _PDCLIB_va_list,
+}
+extern "C" {
+    pub fn _PDCLIB_atomax(s: *const libc::c_char) -> _PDCLIB_intmax_t;
+}
+extern "C" {
+    pub fn _PDCLIB_strtox_prelim(
+        p: *const libc::c_char,
+        sign: *mut libc::c_char,
+        base: *mut libc::c_int,
+    ) -> *const libc::c_char;
+}
+extern "C" {
+    pub fn _PDCLIB_strtox_main(
+        p: *mut *const libc::c_char,
+        base: libc::c_uint,
+        error: _PDCLIB_uintmax_t,
+        limval: _PDCLIB_uintmax_t,
+        limdigit: libc::c_int,
+        sign: *mut libc::c_char,
+    ) -> _PDCLIB_uintmax_t;
+}
+extern "C" {
+    pub static _PDCLIB_digits: [libc::c_char; 0usize];
+}
+extern "C" {
+    pub static _PDCLIB_Xdigits: [libc::c_char; 0usize];
+}
+extern "C" {
+    pub fn _PDCLIB_print(
+        spec: *const libc::c_char,
+        status: *mut _PDCLIB_status_t,
+    ) -> *const libc::c_char;
+}
+extern "C" {
+    pub fn _PDCLIB_scan(
+        spec: *const libc::c_char,
+        status: *mut _PDCLIB_status_t,
+    ) -> *const libc::c_char;
+}
+extern "C" {
+    pub fn _PDCLIB_filemode(mode: *const libc::c_char) -> libc::c_uint;
+}
+extern "C" {
+    pub fn _PDCLIB_prepread(stream: *mut _PDCLIB_file_t) -> libc::c_int;
+}
+extern "C" {
+    pub fn _PDCLIB_prepwrite(stream: *mut _PDCLIB_file_t) -> libc::c_int;
+}
+extern "C" {
+    pub fn _PDCLIB_closeall();
+}
+extern "C" {
+    pub fn _PDCLIB_is_leap(year_offset: libc::c_int) -> libc::c_int;
+}
+extern "C" {
+    pub fn _PDCLIB_load_lines(
+        stream: *mut _PDCLIB_file_t,
+        lines: _PDCLIB_size_t,
+    ) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn _PDCLIB_getstream(stream: *mut _PDCLIB_file_t) -> libc::c_int;
+}
+extern "C" {
+    pub fn _PDCLIB_setstream(stream: *mut _PDCLIB_file_t);
+}
+extern "C" {
+    pub fn _PDCLIB_strtok(
+        s1: *mut libc::c_char,
+        s1max: *mut _PDCLIB_size_t,
+        s2: *const libc::c_char,
+        ptr: *mut *mut libc::c_char,
+    ) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn _PDCLIB_errno_func() -> *mut libc::c_int;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lc_lconv_numeric_t {
+    pub decimal_point: *mut libc::c_char,
+    pub thousands_sep: *mut libc::c_char,
+    pub grouping: *mut libc::c_char,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lc_lconv_monetary_t {
+    pub mon_decimal_point: *mut libc::c_char,
+    pub mon_thousands_sep: *mut libc::c_char,
+    pub mon_grouping: *mut libc::c_char,
+    pub positive_sign: *mut libc::c_char,
+    pub negative_sign: *mut libc::c_char,
+    pub currency_symbol: *mut libc::c_char,
+    pub int_curr_symbol: *mut libc::c_char,
+    pub frac_digits: libc::c_char,
+    pub p_cs_precedes: libc::c_char,
+    pub n_cs_precedes: libc::c_char,
+    pub p_sep_by_space: libc::c_char,
+    pub n_sep_by_space: libc::c_char,
+    pub p_sign_posn: libc::c_char,
+    pub n_sign_posn: libc::c_char,
+    pub int_frac_digits: libc::c_char,
+    pub int_p_cs_precedes: libc::c_char,
+    pub int_n_cs_precedes: libc::c_char,
+    pub int_p_sep_by_space: libc::c_char,
+    pub int_n_sep_by_space: libc::c_char,
+    pub int_p_sign_posn: libc::c_char,
+    pub int_n_sign_posn: libc::c_char,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lc_numeric_monetary_t {
+    pub lconv: *mut lconv,
+    pub numeric_alloced: libc::c_int,
+    pub monetary_alloced: libc::c_int,
+}
+extern "C" {
+    pub static mut _PDCLIB_lc_numeric_monetary: _PDCLIB_lc_numeric_monetary_t;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lc_collate_t {
+    pub alloced: libc::c_int,
+}
+extern "C" {
+    pub static mut _PDCLIB_lc_collate: _PDCLIB_lc_collate_t;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lc_ctype_entry_t {
+    pub flags: _PDCLIB_uint16_t,
+    pub upper: libc::c_uchar,
+    pub lower: libc::c_uchar,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lc_ctype_t {
+    pub alloced: libc::c_int,
+    pub digits_low: libc::c_int,
+    pub digits_high: libc::c_int,
+    pub Xdigits_low: libc::c_int,
+    pub Xdigits_high: libc::c_int,
+    pub xdigits_low: libc::c_int,
+    pub xdigits_high: libc::c_int,
+    pub entry: *mut _PDCLIB_lc_ctype_entry_t,
+}
+extern "C" {
+    pub static mut _PDCLIB_lc_ctype: _PDCLIB_lc_ctype_t;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lc_messages_t {
+    pub alloced: libc::c_int,
+    pub errno_texts: [*mut libc::c_char; 141usize],
+}
+extern "C" {
+    pub static mut _PDCLIB_lc_messages: _PDCLIB_lc_messages_t;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _PDCLIB_lc_time_t {
+    pub alloced: libc::c_int,
+    pub month_name_abbr: [*mut libc::c_char; 12usize],
+    pub month_name_full: [*mut libc::c_char; 12usize],
+    pub day_name_abbr: [*mut libc::c_char; 7usize],
+    pub day_name_full: [*mut libc::c_char; 7usize],
+    pub date_time_format: *mut libc::c_char,
+    pub time_format_12h: *mut libc::c_char,
+    pub date_format: *mut libc::c_char,
+    pub time_format: *mut libc::c_char,
+    pub am_pm: [*mut libc::c_char; 2usize],
+}
+extern "C" {
+    pub static mut _PDCLIB_lc_time: _PDCLIB_lc_time_t;
+}
+extern "C" {
+    pub fn _PDCLIB_load_lc_numeric(
+        path: *const libc::c_char,
+        locale: *const libc::c_char,
+    ) -> *mut _PDCLIB_lc_lconv_numeric_t;
+}
+extern "C" {
+    pub fn _PDCLIB_load_lc_monetary(
+        path: *const libc::c_char,
+        locale: *const libc::c_char,
+    ) -> *mut _PDCLIB_lc_lconv_monetary_t;
+}
+extern "C" {
+    pub fn _PDCLIB_load_lc_collate(
+        path: *const libc::c_char,
+        locale: *const libc::c_char,
+    ) -> *mut _PDCLIB_lc_collate_t;
+}
+extern "C" {
+    pub fn _PDCLIB_load_lc_ctype(
+        path: *const libc::c_char,
+        locale: *const libc::c_char,
+    ) -> *mut _PDCLIB_lc_ctype_t;
+}
+extern "C" {
+    pub fn _PDCLIB_load_lc_time(
+        path: *const libc::c_char,
+        locale: *const libc::c_char,
+    ) -> *mut _PDCLIB_lc_time_t;
+}
+extern "C" {
+    pub fn _PDCLIB_load_lc_messages(
+        path: *const libc::c_char,
+        locale: *const libc::c_char,
+    ) -> *mut _PDCLIB_lc_messages_t;
+}
+pub const _PDCLIB_assert_568: _bindgen_ty_1 = 1;
+pub type _bindgen_ty_1 = libc::c_int;
+pub const _PDCLIB_assert_569: _bindgen_ty_2 = 1;
+pub type _bindgen_ty_2 = libc::c_int;
+pub const _PDCLIB_assert_570: _bindgen_ty_3 = 1;
+pub type _bindgen_ty_3 = libc::c_int;
+pub const _PDCLIB_assert_571: _bindgen_ty_4 = 1;
+pub type _bindgen_ty_4 = libc::c_int;
+pub const _PDCLIB_assert_574: _bindgen_ty_5 = 1;
+pub type _bindgen_ty_5 = libc::c_int;
+pub const _PDCLIB_assert_577: _bindgen_ty_6 = 1;
+pub type _bindgen_ty_6 = libc::c_int;
+pub const _PDCLIB_assert_580: _bindgen_ty_7 = 1;
+pub type _bindgen_ty_7 = libc::c_int;
+pub const _PDCLIB_assert_586: _bindgen_ty_8 = 1;
+pub type _bindgen_ty_8 = libc::c_int;
+pub const _PDCLIB_assert_589: _bindgen_ty_9 = 1;
+pub type _bindgen_ty_9 = libc::c_int;
+extern "C" {
+    pub fn memcpy(
+        s1: *mut libc::c_void,
+        s2: *const libc::c_void,
+        n: libc::c_uint,
+    ) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn memmove(
+        s1: *mut libc::c_void,
+        s2: *const libc::c_void,
+        n: libc::c_uint,
+    ) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn strcpy(s1: *mut libc::c_char, s2: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strncpy(
+        s1: *mut libc::c_char,
+        s2: *const libc::c_char,
+        n: libc::c_uint,
+    ) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strcat(s1: *mut libc::c_char, s2: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strncat(
+        s1: *mut libc::c_char,
+        s2: *const libc::c_char,
+        n: libc::c_uint,
+    ) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn memcmp(s1: *const libc::c_void, s2: *const libc::c_void, n: libc::c_uint)
+        -> libc::c_int;
+}
+extern "C" {
+    pub fn strcmp(s1: *const libc::c_char, s2: *const libc::c_char) -> libc::c_int;
+}
+extern "C" {
+    pub fn strcoll(s1: *const libc::c_char, s2: *const libc::c_char) -> libc::c_int;
+}
+extern "C" {
+    pub fn strncmp(
+        s1: *const libc::c_char,
+        s2: *const libc::c_char,
+        n: libc::c_uint,
+    ) -> libc::c_int;
+}
+extern "C" {
+    pub fn strxfrm(s1: *mut libc::c_char, s2: *const libc::c_char, n: libc::c_uint)
+        -> libc::c_uint;
+}
+extern "C" {
+    pub fn memchr(s: *const libc::c_void, c: libc::c_int, n: libc::c_uint) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn strchr(s: *const libc::c_char, c: libc::c_int) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strcspn(s1: *const libc::c_char, s2: *const libc::c_char) -> libc::c_uint;
+}
+extern "C" {
+    pub fn strpbrk(s1: *const libc::c_char, s2: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strrchr(s: *const libc::c_char, c: libc::c_int) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strspn(s1: *const libc::c_char, s2: *const libc::c_char) -> libc::c_uint;
+}
+extern "C" {
+    pub fn strstr(s1: *const libc::c_char, s2: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strtok(s1: *mut libc::c_char, s2: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn memset(s: *mut libc::c_void, c: libc::c_int, n: libc::c_uint) -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn strerror(errnum: libc::c_int) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn strlen(s: *const libc::c_char) -> libc::c_uint;
+}
+extern "C" {
+    pub fn strdup(s: *const libc::c_char) -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn _strnicmp(s1: *const libc::c_char, s2: *const libc::c_char, n: usize) -> libc::c_int;
+}
+extern "C" {
+    pub fn _stricmp(s1: *const libc::c_char, s2: *const libc::c_char) -> libc::c_int;
 }
 extern "stdcall" {
     pub fn RtlWalkFrameChain(Callers: *mut PVOID, Count: ULONG, Flags: ULONG) -> ULONG;
@@ -4806,9 +5408,6 @@ extern "stdcall" {
     ) -> NTSTATUS;
 }
 extern "stdcall" {
-    pub fn RtlMoveMemory(Destination: PVOID, Source: *const PVOID, Length: ULONG);
-}
-extern "stdcall" {
     pub fn RtlMapGenericMask(AccessMask: PACCESS_MASK, GenericMapping: PGENERIC_MAPPING);
 }
 extern "stdcall" {
@@ -4859,10 +5458,6 @@ extern "stdcall" {
 extern "stdcall" {
     #[doc = " Fills a specified memory area with repetitions of a ULONG value\n @param Destination A pointer to the (ULONG-aligned) memory block which is to be filled\n @param Length The length of the memory block which is to be filled\n @param Pattern The ULONG-value with which the memory block will be filled"]
     pub fn RtlFillMemoryUlong(Destination: PVOID, Length: SIZE_T, Pattern: ULONG);
-}
-extern "stdcall" {
-    #[doc = " Fills a specified memory area with a specified value\n @param Destination A pointer to the memory block which is to be filled\n @param Length The length of the memory block which is to be filled\n @param Fill The byte-value with which the memory block will be filled"]
-    pub fn RtlFillMemory(Destination: PVOID, Length: ULONG, Fill: UCHAR);
 }
 extern "stdcall" {
     pub fn RtlExtendedMagicDivide(
@@ -6465,343 +7060,6 @@ extern "fastcall" {
     #[doc = " Performs an interlocked addition of a ULONG increment value to a LARGE_INTEGER variable.\n @param Addend A pointer to the LARGE_INTEGER variable that is incremented by the value of Increment.\n @param Increment Specifies a ULONG value that is added to the variable that Addend points to."]
     pub fn ExInterlockedAddLargeStatistic(Addend: PLARGE_INTEGER, Increment: ULONG);
 }
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _PDCLIB_div_t {
-    pub quot: libc::c_int,
-    pub rem: libc::c_int,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _PDCLIB_ldiv_t {
-    pub quot: libc::c_long,
-    pub rem: libc::c_long,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _PDCLIB_lldiv_t {
-    pub quot: libc::c_longlong,
-    pub rem: libc::c_longlong,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _PDCLIB_imaxdiv_t {
-    pub quot: libc::c_longlong,
-    pub rem: libc::c_longlong,
-}
-pub type _PDCLIB_va_list = __builtin_va_list;
-pub type _PDCLIB_fd_t = *mut libc::c_void;
-pub type _PDCLIB_thrd_t = *mut libc::c_void;
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct __PDCLIB_cnd_t {
-    pub eventHandles: [*mut libc::c_void; 2usize],
-    pub waitCount: u32,
-}
-pub type _PDCLIB_cnd_t = __PDCLIB_cnd_t;
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct __PDCLIB_mtx_t {
-    pub handle: *mut libc::c_void,
-}
-pub type _PDCLIB_mtx_t = __PDCLIB_mtx_t;
-pub type _PDCLIB_tss_t = libc::c_uint;
-pub type _PDCLIB_once_flag = libc::c_int;
-pub type _PDCLIB_int8_t = libc::c_schar;
-pub type _PDCLIB_uint8_t = libc::c_uchar;
-pub type _PDCLIB_int16_t = libc::c_short;
-pub type _PDCLIB_uint16_t = libc::c_ushort;
-pub type _PDCLIB_int32_t = libc::c_int;
-pub type _PDCLIB_uint32_t = libc::c_uint;
-pub type _PDCLIB_int64_t = libc::c_longlong;
-pub type _PDCLIB_uint64_t = libc::c_ulonglong;
-pub type _PDCLIB_int_fast8_t = libc::c_int;
-pub type _PDCLIB_uint_fast8_t = libc::c_uint;
-pub type _PDCLIB_int_fast16_t = libc::c_int;
-pub type _PDCLIB_uint_fast16_t = libc::c_uint;
-pub type _PDCLIB_int_fast32_t = libc::c_int;
-pub type _PDCLIB_uint_fast32_t = libc::c_uint;
-pub type _PDCLIB_int_fast64_t = libc::c_long;
-pub type _PDCLIB_uint_fast64_t = libc::c_ulong;
-pub type _PDCLIB_ptrdiff_t = libc::c_int;
-pub type _PDCLIB_size_t = libc::c_uint;
-pub type _PDCLIB_wchar_t = libc::c_ushort;
-pub type _PDCLIB_wint_t = libc::c_ushort;
-pub type _PDCLIB_intptr_t = libc::c_long;
-pub type _PDCLIB_uintptr_t = libc::c_ulong;
-pub type _PDCLIB_intmax_t = libc::c_longlong;
-pub type _PDCLIB_uintmax_t = libc::c_ulonglong;
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _PDCLIB_fpos_t {
-    pub offset: _PDCLIB_uint64_t,
-    pub status: libc::c_int,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _PDCLIB_file_t {
-    pub handle: _PDCLIB_fd_t,
-    pub buffer: *mut libc::c_char,
-    pub bufsize: _PDCLIB_size_t,
-    pub bufidx: _PDCLIB_size_t,
-    pub bufend: _PDCLIB_size_t,
-    pub pos: _PDCLIB_fpos_t,
-    pub ungetidx: _PDCLIB_size_t,
-    pub ungetbuf: *mut libc::c_uchar,
-    pub status: libc::c_uint,
-    pub filename: *mut libc::c_char,
-    pub next: *mut _PDCLIB_file_t,
-}
-pub type _PDCLIB_time_t = libc::c_long;
-pub type _PDCLIB_clock_t = libc::c_uint;
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _PDCLIB_exitfunc_t {
-    pub next: *mut _PDCLIB_exitfunc_t,
-    pub func: ::core::option::Option<unsafe extern "C" fn()>,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _PDCLIB_status_t {
-    pub base: libc::c_int,
-    pub flags: _PDCLIB_int_fast32_t,
-    pub n: _PDCLIB_size_t,
-    pub i: _PDCLIB_size_t,
-    pub current: _PDCLIB_size_t,
-    pub s: *mut libc::c_char,
-    pub width: _PDCLIB_size_t,
-    pub prec: libc::c_int,
-    pub stream: *mut _PDCLIB_file_t,
-    pub arg: _PDCLIB_va_list,
-}
-extern "C" {
-    pub fn _PDCLIB_atomax(s: *const libc::c_char) -> _PDCLIB_intmax_t;
-}
-extern "C" {
-    pub fn _PDCLIB_strtox_prelim(
-        p: *const libc::c_char,
-        sign: *mut libc::c_char,
-        base: *mut libc::c_int,
-    ) -> *const libc::c_char;
-}
-extern "C" {
-    pub fn _PDCLIB_strtox_main(
-        p: *mut *const libc::c_char,
-        base: libc::c_uint,
-        error: _PDCLIB_uintmax_t,
-        limval: _PDCLIB_uintmax_t,
-        limdigit: libc::c_int,
-        sign: *mut libc::c_char,
-    ) -> _PDCLIB_uintmax_t;
-}
-extern "C" {
-    pub static _PDCLIB_digits: [libc::c_char; 0usize];
-}
-extern "C" {
-    pub static _PDCLIB_Xdigits: [libc::c_char; 0usize];
-}
-extern "C" {
-    pub fn _PDCLIB_print(
-        spec: *const libc::c_char,
-        status: *mut _PDCLIB_status_t,
-    ) -> *const libc::c_char;
-}
-extern "C" {
-    pub fn _PDCLIB_scan(
-        spec: *const libc::c_char,
-        status: *mut _PDCLIB_status_t,
-    ) -> *const libc::c_char;
-}
-extern "C" {
-    pub fn _PDCLIB_filemode(mode: *const libc::c_char) -> libc::c_uint;
-}
-extern "C" {
-    pub fn _PDCLIB_prepread(stream: *mut _PDCLIB_file_t) -> libc::c_int;
-}
-extern "C" {
-    pub fn _PDCLIB_prepwrite(stream: *mut _PDCLIB_file_t) -> libc::c_int;
-}
-extern "C" {
-    pub fn _PDCLIB_closeall();
-}
-extern "C" {
-    pub fn _PDCLIB_is_leap(year_offset: libc::c_int) -> libc::c_int;
-}
-extern "C" {
-    pub fn _PDCLIB_load_lines(
-        stream: *mut _PDCLIB_file_t,
-        lines: _PDCLIB_size_t,
-    ) -> *mut libc::c_char;
-}
-extern "C" {
-    pub fn _PDCLIB_getstream(stream: *mut _PDCLIB_file_t) -> libc::c_int;
-}
-extern "C" {
-    pub fn _PDCLIB_setstream(stream: *mut _PDCLIB_file_t);
-}
-extern "C" {
-    pub fn _PDCLIB_strtok(
-        s1: *mut libc::c_char,
-        s1max: *mut _PDCLIB_size_t,
-        s2: *const libc::c_char,
-        ptr: *mut *mut libc::c_char,
-    ) -> *mut libc::c_char;
-}
-extern "C" {
-    pub fn _PDCLIB_errno_func() -> *mut libc::c_int;
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _PDCLIB_lc_lconv_numeric_t {
-    pub decimal_point: *mut libc::c_char,
-    pub thousands_sep: *mut libc::c_char,
-    pub grouping: *mut libc::c_char,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _PDCLIB_lc_lconv_monetary_t {
-    pub mon_decimal_point: *mut libc::c_char,
-    pub mon_thousands_sep: *mut libc::c_char,
-    pub mon_grouping: *mut libc::c_char,
-    pub positive_sign: *mut libc::c_char,
-    pub negative_sign: *mut libc::c_char,
-    pub currency_symbol: *mut libc::c_char,
-    pub int_curr_symbol: *mut libc::c_char,
-    pub frac_digits: libc::c_char,
-    pub p_cs_precedes: libc::c_char,
-    pub n_cs_precedes: libc::c_char,
-    pub p_sep_by_space: libc::c_char,
-    pub n_sep_by_space: libc::c_char,
-    pub p_sign_posn: libc::c_char,
-    pub n_sign_posn: libc::c_char,
-    pub int_frac_digits: libc::c_char,
-    pub int_p_cs_precedes: libc::c_char,
-    pub int_n_cs_precedes: libc::c_char,
-    pub int_p_sep_by_space: libc::c_char,
-    pub int_n_sep_by_space: libc::c_char,
-    pub int_p_sign_posn: libc::c_char,
-    pub int_n_sign_posn: libc::c_char,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _PDCLIB_lc_numeric_monetary_t {
-    pub lconv: *mut lconv,
-    pub numeric_alloced: libc::c_int,
-    pub monetary_alloced: libc::c_int,
-}
-extern "C" {
-    pub static mut _PDCLIB_lc_numeric_monetary: _PDCLIB_lc_numeric_monetary_t;
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _PDCLIB_lc_collate_t {
-    pub alloced: libc::c_int,
-}
-extern "C" {
-    pub static mut _PDCLIB_lc_collate: _PDCLIB_lc_collate_t;
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _PDCLIB_lc_ctype_entry_t {
-    pub flags: _PDCLIB_uint16_t,
-    pub upper: libc::c_uchar,
-    pub lower: libc::c_uchar,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _PDCLIB_lc_ctype_t {
-    pub alloced: libc::c_int,
-    pub digits_low: libc::c_int,
-    pub digits_high: libc::c_int,
-    pub Xdigits_low: libc::c_int,
-    pub Xdigits_high: libc::c_int,
-    pub xdigits_low: libc::c_int,
-    pub xdigits_high: libc::c_int,
-    pub entry: *mut _PDCLIB_lc_ctype_entry_t,
-}
-extern "C" {
-    pub static mut _PDCLIB_lc_ctype: _PDCLIB_lc_ctype_t;
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _PDCLIB_lc_messages_t {
-    pub alloced: libc::c_int,
-    pub errno_texts: [*mut libc::c_char; 141usize],
-}
-extern "C" {
-    pub static mut _PDCLIB_lc_messages: _PDCLIB_lc_messages_t;
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _PDCLIB_lc_time_t {
-    pub alloced: libc::c_int,
-    pub month_name_abbr: [*mut libc::c_char; 12usize],
-    pub month_name_full: [*mut libc::c_char; 12usize],
-    pub day_name_abbr: [*mut libc::c_char; 7usize],
-    pub day_name_full: [*mut libc::c_char; 7usize],
-    pub date_time_format: *mut libc::c_char,
-    pub time_format_12h: *mut libc::c_char,
-    pub date_format: *mut libc::c_char,
-    pub time_format: *mut libc::c_char,
-    pub am_pm: [*mut libc::c_char; 2usize],
-}
-extern "C" {
-    pub static mut _PDCLIB_lc_time: _PDCLIB_lc_time_t;
-}
-extern "C" {
-    pub fn _PDCLIB_load_lc_numeric(
-        path: *const libc::c_char,
-        locale: *const libc::c_char,
-    ) -> *mut _PDCLIB_lc_lconv_numeric_t;
-}
-extern "C" {
-    pub fn _PDCLIB_load_lc_monetary(
-        path: *const libc::c_char,
-        locale: *const libc::c_char,
-    ) -> *mut _PDCLIB_lc_lconv_monetary_t;
-}
-extern "C" {
-    pub fn _PDCLIB_load_lc_collate(
-        path: *const libc::c_char,
-        locale: *const libc::c_char,
-    ) -> *mut _PDCLIB_lc_collate_t;
-}
-extern "C" {
-    pub fn _PDCLIB_load_lc_ctype(
-        path: *const libc::c_char,
-        locale: *const libc::c_char,
-    ) -> *mut _PDCLIB_lc_ctype_t;
-}
-extern "C" {
-    pub fn _PDCLIB_load_lc_time(
-        path: *const libc::c_char,
-        locale: *const libc::c_char,
-    ) -> *mut _PDCLIB_lc_time_t;
-}
-extern "C" {
-    pub fn _PDCLIB_load_lc_messages(
-        path: *const libc::c_char,
-        locale: *const libc::c_char,
-    ) -> *mut _PDCLIB_lc_messages_t;
-}
-pub const _PDCLIB_assert_568: _bindgen_ty_1 = 1;
-pub type _bindgen_ty_1 = libc::c_int;
-pub const _PDCLIB_assert_569: _bindgen_ty_2 = 1;
-pub type _bindgen_ty_2 = libc::c_int;
-pub const _PDCLIB_assert_570: _bindgen_ty_3 = 1;
-pub type _bindgen_ty_3 = libc::c_int;
-pub const _PDCLIB_assert_571: _bindgen_ty_4 = 1;
-pub type _bindgen_ty_4 = libc::c_int;
-pub const _PDCLIB_assert_574: _bindgen_ty_5 = 1;
-pub type _bindgen_ty_5 = libc::c_int;
-pub const _PDCLIB_assert_577: _bindgen_ty_6 = 1;
-pub type _bindgen_ty_6 = libc::c_int;
-pub const _PDCLIB_assert_580: _bindgen_ty_7 = 1;
-pub type _bindgen_ty_7 = libc::c_int;
-pub const _PDCLIB_assert_586: _bindgen_ty_8 = 1;
-pub type _bindgen_ty_8 = libc::c_int;
-pub const _PDCLIB_assert_589: _bindgen_ty_9 = 1;
-pub type _bindgen_ty_9 = libc::c_int;
 pub type int_least8_t = i8;
 pub type int_least16_t = i16;
 pub type int_least32_t = i32;
@@ -6820,40 +7078,54 @@ pub type uint_fast32_t = _PDCLIB_uint_fast32_t;
 pub type uint_fast64_t = _PDCLIB_uint_fast64_t;
 pub type intmax_t = _PDCLIB_intmax_t;
 pub type uintmax_t = _PDCLIB_uintmax_t;
-extern "C" {
-    pub fn pb_show_front_screen();
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct s_CtxDma {
+    pub ChannelID: DWORD,
+    pub Inst: DWORD,
+    pub Class: DWORD,
+    pub isGr: DWORD,
 }
 extern "C" {
-    pub fn pb_show_debug_screen();
+    pub fn pb_set_dma_address(context: *const s_CtxDma, address: *const libc::c_void, limit: u32);
 }
 extern "C" {
-    pub fn pb_show_depth_screen();
+    pub fn pb_bind_subchannel(subchannel: u32, context: *const s_CtxDma);
 }
 extern "C" {
-    pub fn pb_get_vbl_counter() -> DWORD;
+    pub fn pb_agp_access(fb_memory_pointer: *mut libc::c_void) -> *mut libc::c_void;
 }
 extern "C" {
-    pub fn pb_wait_for_vbl() -> DWORD;
+    pub fn pb_fill(x: libc::c_int, y: libc::c_int, w: libc::c_int, h: libc::c_int, color: DWORD);
 }
 extern "C" {
-    pub fn pb_erase_depth_stencil_buffer(
-        x: libc::c_int,
-        y: libc::c_int,
-        w: libc::c_int,
-        h: libc::c_int,
+    pub fn pb_set_depth_stencil_buffer_region(
+        depth_buffer_format: u32,
+        depth_value: u32,
+        stencil_value: u8,
+        left: u32,
+        top: u32,
+        width: u32,
+        height: u32,
     );
 }
 extern "C" {
-    pub fn pb_reset();
+    pub fn pb_set_color_format(fmt: libc::c_uint, swizzled: bool);
 }
 extern "C" {
-    pub fn pb_finished() -> libc::c_int;
+    pub fn pb_print(format: *const libc::c_char, ...);
 }
 extern "C" {
-    pub fn pb_wait_until_gr_not_busy();
+    pub fn pb_printat(row: libc::c_int, col: libc::c_int, format: *const libc::c_char, ...);
 }
 extern "C" {
-    pub fn pb_wait_until_tiles_not_busy() -> DWORD;
+    pub fn pb_erase_text_screen();
+}
+extern "C" {
+    pub fn pb_draw_text_screen();
+}
+extern "C" {
+    pub fn pb_print_char(c: libc::c_char);
 }
 extern "C" {
     pub fn pb_begin() -> *mut u32;
@@ -6906,6 +7178,49 @@ extern "C" {
     ) -> *mut u32;
 }
 extern "C" {
+    pub fn pb_push1f(p: *mut u32, command: DWORD, param1: f32) -> *mut u32;
+}
+extern "C" {
+    pub fn pb_push2f(p: *mut u32, command: DWORD, param1: f32, param2: f32) -> *mut u32;
+}
+extern "C" {
+    pub fn pb_push3f(
+        p: *mut u32,
+        command: DWORD,
+        param1: f32,
+        param2: f32,
+        param3: f32,
+    ) -> *mut u32;
+}
+extern "C" {
+    pub fn pb_push4f(
+        p: *mut u32,
+        command: DWORD,
+        param1: f32,
+        param2: f32,
+        param3: f32,
+        param4: f32,
+    ) -> *mut u32;
+}
+extern "C" {
+    pub fn pb_push2fv(p: *mut u32, command: DWORD, vector2: *const f32) -> *mut u32;
+}
+extern "C" {
+    pub fn pb_push3fv(p: *mut u32, command: DWORD, vector3: *const f32) -> *mut u32;
+}
+extern "C" {
+    pub fn pb_push4fv(p: *mut u32, command: DWORD, vector4: *const f32) -> *mut u32;
+}
+extern "C" {
+    pub fn pb_push2v(p: *mut u32, command: DWORD, vector2: *const DWORD) -> *mut u32;
+}
+extern "C" {
+    pub fn pb_push3v(p: *mut u32, command: DWORD, vector3: *const DWORD) -> *mut u32;
+}
+extern "C" {
+    pub fn pb_push4v(p: *mut u32, command: DWORD, vector4: *const DWORD) -> *mut u32;
+}
+extern "C" {
     pub fn pb_push(p: *mut u32, command: DWORD, nparam: DWORD);
 }
 extern "C" {
@@ -6934,20 +7249,51 @@ extern "C" {
     ) -> *mut u32;
 }
 extern "C" {
-    pub fn pb_push4f(
-        p: *mut u32,
-        command: DWORD,
-        param1: f32,
-        param2: f32,
-        param3: f32,
-        param4: f32,
-    ) -> *mut u32;
+    pub fn pb_push_transposed_matrix(p: *mut u32, command: DWORD, m: *const f32) -> *mut u32;
 }
 extern "C" {
-    pub fn pb_push_transposed_matrix(p: *mut u32, command: DWORD, m: *mut f32) -> *mut u32;
+    pub fn pb_push_4x3_matrix(p: *mut u32, command: DWORD, m: *const f32) -> *mut u32;
+}
+extern "C" {
+    pub fn pb_push_4x4_matrix(p: *mut u32, command: DWORD, m: *const f32) -> *mut u32;
 }
 extern "C" {
     pub fn pb_end(pEnd: *mut u32);
+}
+extern "C" {
+    pub fn pb_show_front_screen();
+}
+extern "C" {
+    pub fn pb_show_debug_screen();
+}
+extern "C" {
+    pub fn pb_show_depth_screen();
+}
+extern "C" {
+    pub fn pb_get_vbl_counter() -> DWORD;
+}
+extern "C" {
+    pub fn pb_wait_for_vbl() -> DWORD;
+}
+extern "C" {
+    pub fn pb_erase_depth_stencil_buffer(
+        x: libc::c_int,
+        y: libc::c_int,
+        w: libc::c_int,
+        h: libc::c_int,
+    );
+}
+extern "C" {
+    pub fn pb_reset();
+}
+extern "C" {
+    pub fn pb_finished() -> libc::c_int;
+}
+extern "C" {
+    pub fn pb_wait_until_gr_not_busy();
+}
+extern "C" {
+    pub fn pb_wait_until_tiles_not_busy() -> DWORD;
 }
 extern "C" {
     pub fn pb_extra_buffers(n: libc::c_int);
@@ -6956,25 +7302,10 @@ extern "C" {
     pub fn pb_size(size: DWORD);
 }
 extern "C" {
-    pub fn pb_set_color_format(fmt: libc::c_uint, swizzled: bool);
-}
-extern "C" {
     pub fn pb_init() -> libc::c_int;
 }
 extern "C" {
     pub fn pb_kill();
-}
-extern "C" {
-    pub fn pb_print(format: *const libc::c_char, ...);
-}
-extern "C" {
-    pub fn pb_printat(row: libc::c_int, col: libc::c_int, format: *mut libc::c_char, ...);
-}
-extern "C" {
-    pub fn pb_erase_text_screen();
-}
-extern "C" {
-    pub fn pb_draw_text_screen();
 }
 extern "C" {
     pub fn pb_target_extra_buffer(n: libc::c_int);
@@ -6996,9 +7327,6 @@ extern "C" {
 }
 extern "C" {
     pub fn pb_back_buffer_pitch() -> DWORD;
-}
-extern "C" {
-    pub fn pb_fill(x: libc::c_int, y: libc::c_int, w: libc::c_int, h: libc::c_int, color: DWORD);
 }
 extern "C" {
     pub fn pb_set_viewport(
