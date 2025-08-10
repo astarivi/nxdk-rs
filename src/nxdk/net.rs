@@ -116,6 +116,8 @@ pub fn nx_net_init_with(parameters: NetParametersBuilder) -> Result<(), NxNetErr
     Ok(())
 }
 
-pub fn nx_net_shutdown() -> Result<(), NxNetError> {
-    unimplemented!();
+pub fn nx_net_shutdown() {
+    unsafe {
+        nxNetShutdown();
+    }
 }

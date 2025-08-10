@@ -13,7 +13,7 @@ pub fn debug_print_cstr(msg: &CStr) {
 }
 
 /// Prints a message to whatever debug facilities might be available, this is usually the screen
-/// and terminal. Fails silently if the strings fails to encode.
+/// and terminal. Fails silently if the strings fail to encode.
 pub fn debug_print_str(msg: &str) {
     if let Ok(cstr) = CString::new(msg) {
         debug_print_cstr(&cstr);

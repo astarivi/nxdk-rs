@@ -6,6 +6,8 @@ edition = "2021"
 [dependencies]
 nxdk-sys = { path = "nxdk-sys" }
 libc = "0.2.169"
+bitflags = "2.9.1"
+embedded-io = "0.6.1"
 
 [profile.dev]
 panic = "abort"

@@ -2,32 +2,43 @@ use crate::io::traits::{Read, Seek, SeekFrom, Write};
 use crate::winapi::error::{NtStatusError, WinError, WinMixedError};
 use crate::winapi::WindowsPath;
 use core::ffi::c_void;
+use bitflags::bitflags;
 use nxdk_sys::winapi::*;
 
-const INVALID_HANDLE_VALUE: *mut c_void = -1isize as *mut c_void;
+pub const INVALID_HANDLE_VALUE: *mut c_void = -1isize as *mut c_void;
 
-#[derive(Default, Debug, PartialEq, Eq, Clone)]
-pub enum AccessRights {
-    #[default]
-    Read = GENERIC_READ as isize,
-    Write = GENERIC_WRITE as isize,
-    ReadWrite = (GENERIC_READ | GENERIC_WRITE) as isize,
-    /// Opens the file as query only, useful for reading metadata of a busy file
-    None = 0
+bitflags! {
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+    pub struct AccessRights: u32 {
+        const Read = GENERIC_READ;
+        const Write = GENERIC_WRITE;
+        const Execute = GENERIC_EXECUTE;
+        const All = GENERIC_ALL;
+        const None = 0;
+    }
 }
 
-#[derive(Default, Debug, PartialEq, Eq, Clone)]
-pub enum ShareMode {
-    Read = FILE_SHARE_READ as isize,
-    Write = FILE_SHARE_WRITE as isize,
-    Delete = FILE_SHARE_DELETE as isize,
-    ReadWrite = (FILE_SHARE_READ | FILE_SHARE_WRITE) as isize,
-    #[default]
-    ReadDelete = (FILE_SHARE_READ | FILE_SHARE_DELETE) as isize,
-    WriteDelete = (FILE_SHARE_WRITE | FILE_SHARE_DELETE) as isize,
-    ReadWriteDelete = (FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE) as isize,
-    /// Doesn't share the file; exclusive access.
-    None = 0
+impl Default for AccessRights{
+    fn default() -> Self {
+        Self::Read
+    }
+}
+
+bitflags! {
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+    pub struct ShareMode: u32 {
+        const Read = FILE_SHARE_READ;
+        const Write = FILE_SHARE_WRITE;
+        const Delete = FILE_SHARE_DELETE;
+        /// Doesn't share the file; exclusive access.
+        const None = 0;
+    }
+}
+
+impl Default for ShareMode {
+    fn default() -> Self {
+        Self::Read | Self::Write
+    }
 }
 
 #[derive(Default, Debug, PartialEq, Eq, Clone)]
@@ -38,6 +49,32 @@ pub enum CreationDisposition {
     #[default]
     OpenExisting = OPEN_EXISTING as isize,
     TruncateExisting = TRUNCATE_EXISTING as isize,
+}
+
+bitflags! {
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+    pub struct FileFlagsAndAttributes: u32 {
+        const AttributeArchive = FILE_ATTRIBUTE_ARCHIVE;
+        const AttributeHidden = FILE_ATTRIBUTE_HIDDEN;
+        const AttributeNormal = FILE_ATTRIBUTE_NORMAL;
+        const AttributeReadOnly = FILE_ATTRIBUTE_READONLY;
+        const AttributeSystem = FILE_ATTRIBUTE_SYSTEM;
+        const AttributeTemporary = FILE_ATTRIBUTE_TEMPORARY;
+        const FlagBackupSemantics = FILE_FLAG_BACKUP_SEMANTICS;
+        const FlagDeleteOnClose = FILE_FLAG_DELETE_ON_CLOSE;
+        const FlagNoBuffering = FILE_FLAG_NO_BUFFERING;
+        const FlagOverlapped = FILE_FLAG_OVERLAPPED;
+        const FlagPosixSemantics = FILE_FLAG_POSIX_SEMANTICS;
+        const FlagRandomAccess = FILE_FLAG_RANDOM_ACCESS;
+        const FlagSequentialScan = FILE_FLAG_SEQUENTIAL_SCAN;
+        const FlagWriteThrough = FILE_FLAG_WRITE_THROUGH;
+    }
+}
+
+impl Default for FileFlagsAndAttributes {
+    fn default() -> Self {
+        Self::AttributeNormal
+    }
 }
 
 pub struct FileStandardInformation {
@@ -65,15 +102,15 @@ impl WinHandle {
         }
     }
 
-    pub fn open(path: &WindowsPath, access: AccessRights, share: ShareMode, creation: CreationDisposition) -> Result<Self, WinError> {
+    pub fn open(path: &WindowsPath, access: AccessRights, share: ShareMode, creation: CreationDisposition, flags_attributes: FileFlagsAndAttributes) -> Result<Self, WinError> {
         let handle = unsafe {
             CreateFileA(
                 path.as_ptr() as *const i8,
-                access as u32,
-                share as u32,
+                access.bits(),
+                share.bits(),
                 core::ptr::null_mut(),
                 creation as u32,
-                FILE_ATTRIBUTE_NORMAL,
+                flags_attributes.bits(),
                 core::ptr::null_mut()
             )
         };

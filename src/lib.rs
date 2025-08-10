@@ -4,6 +4,9 @@
 extern crate alloc;
 
 pub use nxdk_sys as sys;
+pub use bitflags;
+pub use embedded_io;
+
 pub mod hal;
 pub mod nxdk;
 pub mod utils;

@@ -3,7 +3,7 @@ use nxdk_sys::kernel::{KeQuerySystemTime, LARGE_INTEGER};
 
 pub const WINDOWS_EPOCH: u64 = 116444736000000000;
 
-/// Represents a system clock based Timer.
+/// Represents a system clock-based Timer.
 pub struct Timer {
     start_time: u64,
 }

@@ -5,7 +5,7 @@ use nxdk_sys::nxdk::mount::{nxIsDriveMounted, nxMountDrive, nxUnmountDrive};
 
 /// Mounts the given path to the given drive letter.
 ///
-/// Returns a bool for result status, or PlatformError::PathTooLong if given
+/// Returns a bool for result status, or PlatformError::PathTooLong if a given
 /// path is over 259 characters.
 pub fn nx_mount_drive(drive_letter: char, path: &str) -> Result<bool, PlatformError> {
     let c_path = path_str_to_cstr(path)?;

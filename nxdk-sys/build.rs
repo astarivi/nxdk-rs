@@ -179,11 +179,8 @@ fn main() {
     gen_bindings(&nxdk_dir, "hal", "led");
     gen_bindings(&nxdk_dir, "hal", "video");
     gen_bindings(&nxdk_dir, "hal", "xbox");
-
     gen_bindings(&nxdk_dir, "pbkit", "pbkit");
-
     gen_bindings(&nxdk_dir, "xboxkrnl", "xboxkrnl");
-
     gen_bindings(&nxdk_dir, "pdclib/include", "stdlib");
     gen_bindings(&nxdk_dir, "pdclib/include", "string");
     gen_bindings(&nxdk_dir, "pdclib/include", "stdio");

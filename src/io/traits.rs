@@ -136,10 +136,10 @@ where
 }
 
 /// A wrapper around a Write trait implementer that retries
-/// the write for the given amount of time.
+/// writing for the given amount of time.
 ///
 /// Useful for non-blocking facilities, or for creating
-/// failure resistant structures in failure prone environments.
+/// failure-resistant structures in failure prone environments.
 ///
 /// # Example:
 ///

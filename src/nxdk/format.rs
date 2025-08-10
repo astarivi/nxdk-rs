@@ -5,7 +5,7 @@ use nxdk_sys::nxdk::format::nxFormatVolume;
 /// Formats a volume with FATX.
 /// WARNING: This is a destructive operation, incorrect use can lead to unexpected data loss!
 ///
-/// Returns true on success. When false, additional error information is available from
+/// Returns true on a success. When false, additional error information is available from
 /// GetLastError()
 ///
 /// # Arguments
