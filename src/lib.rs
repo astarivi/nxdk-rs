@@ -6,12 +6,13 @@ extern crate alloc;
 pub use nxdk_sys as sys;
 pub use bitflags;
 pub use embedded_io;
+pub use embedded_io_async;
+pub use futures_lite;
 
 pub mod hal;
 pub mod nxdk;
 pub mod utils;
 pub mod xbox_alloc;
 pub mod lwip;
-pub mod io;
 pub mod winapi;
 pub mod kernel;

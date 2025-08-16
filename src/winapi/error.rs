@@ -27,6 +27,12 @@ impl Display for WinError {
 
 impl Error for WinError {}
 
+impl embedded_io::Error for WinError {
+    fn kind(&self) -> embedded_io::ErrorKind {
+        embedded_io::ErrorKind::Other
+    }
+}
+
 impl From<u32> for WinError {
     fn from(o: u32) -> Self {
         Self::new(o)

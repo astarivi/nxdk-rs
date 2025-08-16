@@ -189,13 +189,23 @@ pub trait NetconnCommon {
 
         Ok(())
     }
-}
 
+    /// Check the non-blocking flag value for this netconn. Note that async operations
+    /// over this netconn will set the flag.
+    ///
+    /// API: `Common`
+    fn is_nonblocking(&self) -> Result<bool, NetconnErr> {
+        unsafe {
+            let inner_con = self.get_inner()?;
+            Ok(((*inner_con).flags & NETCONN_FLAG_NON_BLOCKING as u8) != 0)
+        }
+    }
+}
 
 /// Execute a DNS query, only one IP address is returned
 /// 
-/// Native version of `get_host_by_name`, returns a `ip_addr_t` for
-/// inter-op use cases.
+/// The native version of `get_host_by_name ` returns an
+/// ` ip_addr_t ` for inter-op use cases.
 ///
 /// Note: This method doesn't require a Netconn object, but
 /// `nxdk::net::nx_net_init()` must have been called before

@@ -5,9 +5,12 @@ edition = "2021"
 
 [dependencies]
 nxdk-sys = { path = "nxdk-sys" }
-libc = "0.2.169"
+libc = { version = "0.2.175", default-features = false }
+log = "0.4.27"
 bitflags = "2.9.1"
-embedded-io = "0.6.1"
+futures-lite = { version = "2.6.1", default-features = false, features = ["alloc", "race"] }
+embedded-io = { git = "https://github.com/rust-embedded/embedded-hal.git", package = "embedded-io" }
+embedded-io-async = { git = "https://github.com/rust-embedded/embedded-hal.git", package = "embedded-io-async" }
 
 [profile.dev]
 panic = "abort"

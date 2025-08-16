@@ -1,10 +1,9 @@
-use core::ffi::c_void;
-use core::ptr::null_mut;
-use nxdk_sys::lwip::*;
-use crate::io::traits::{Read, Write};
 use crate::lwip::netconn::error::NetconnErr;
 use crate::lwip::netconn::NetconnCommon;
 use crate::lwip::pbuf::TcpPbuf;
+use core::ffi::c_void;
+use core::ptr::null_mut;
+use nxdk_sys::lwip::*;
 
 #[derive(Default, Debug, PartialEq, Eq, Clone)]
 pub enum NetconnTcpType {
@@ -25,6 +24,7 @@ pub enum NetconnTcpType {
 ///
 /// Remember to call `nxdk::net::nx_net_init()` before using a Netconn.
 /// Failing to do so will result in unexpected behavior.
+#[derive(Debug)]
 pub struct NetconnTcp {
     conn: Option<*mut netconn>,
     conn_type: NetconnTcpType,
@@ -120,9 +120,9 @@ impl NetconnTcp {
     ///
     /// Keep in mind that if an error is returned, it may not always
     /// mean a network error; no data may have been received since
-    /// last call.
+    /// the last call.
     ///
-    /// Receive data (in form of a pbuf) from a TCP netconn
+    /// Receive data (in the form of a pbuf) from a TCP netconn
     ///
     /// API: `TCP`
     pub fn read_no_copy(&mut self) -> Result<TcpPbuf, NetconnErr>{
@@ -144,6 +144,27 @@ impl NetconnTcp {
         }
 
         Ok(TcpPbuf::new(pbuf_ptr))
+    }
+
+    pub async fn read_no_copy_async(&mut self) -> Result<TcpPbuf, NetconnErr> {
+        self.set_nonblocking(true)?;
+
+        loop {
+            return match self.read_no_copy() {
+                Ok(x) => {
+                    Ok(x)
+                }
+                Err(e) => {
+                    if e == NetconnErr::WouldBlock {
+                        futures_lite::future::yield_now().await;
+                        continue;
+                    }
+
+                    Err(e)
+                }
+            }
+        }
+
     }
 
     /// Shut down one or both sides of a TCP netconn (doesn't delete it).
@@ -185,7 +206,7 @@ impl NetconnTcp {
         Ok(())
     }
 
-    /// Close, and delete a TCP connection.
+    /// Close and delete a TCP connection.
     ///
     /// API: `Util`
     pub fn close_and_delete(&mut self) {
@@ -194,17 +215,19 @@ impl NetconnTcp {
     }
 }
 
-impl Write for NetconnTcp {
-    type WriteError = NetconnErr;
+impl embedded_io::ErrorType for NetconnTcp {
+    type Error = NetconnErr;
+}
 
+impl embedded_io::Write for NetconnTcp {
     // FIXME: Box the buffer for calls that aren't blocking.
     /// Send data over a TCP netconn.
     ///
-    /// This implementation uses NETCONN_COPY flag, keep that in mind
+    /// This implementation uses the NETCONN_COPY flag, keep that in mind
     /// when choosing a buffer size.
     /// 
     /// API: `TCP`
-    fn write(&mut self, buf: &[u8]) -> Result<usize, Self::WriteError> {
+    fn write(&mut self, buf: &[u8]) -> Result<usize, Self::Error> {
         let mut bytes_written: usize = 0;
 
         let result = unsafe {
@@ -227,22 +250,90 @@ impl Write for NetconnTcp {
     /// Flushing is not supported. Calling this will result in a panic.
     /// 
     /// API: `Unimplemented`
-    fn flush(&mut self) -> Result<(), Self::WriteError> {
+    fn flush(&mut self) -> Result<(), Self::Error> {
         unimplemented!();
     }
 }
 
-impl Read for NetconnTcp {
-    type ReadError = NetconnErr;
-
+impl embedded_io::Read for NetconnTcp {
     /// This is an unoptimized way of reading that copies data to the given buffer.
-    /// If there's more data available than it fits in given buf, it's discarded.
+    /// If there's more data available than it fits in a given buf, it's discarded.
     ///
     /// ## Use read_no_copy() instead of this method for large transfers
     ///
     /// API: `TCP`
-    fn read(&mut self, buf: &mut [u8]) -> Result<usize, Self::ReadError> {
+    fn read(&mut self, buf: &mut [u8]) -> Result<usize, Self::Error> {
         let mut pbuf = self.read_no_copy()?;
+        let mut total_written: usize = 0;
+
+        while let Some(chunk) = pbuf.next() {
+            let remaining_space = buf.len().saturating_sub(total_written);
+
+            if remaining_space == 0 {
+                pbuf.close();
+                return Ok(total_written);
+            }
+
+            let copy_len = core::cmp::min(chunk.len(), remaining_space);
+            buf[total_written..total_written + copy_len].copy_from_slice(&chunk[..copy_len]);
+            total_written += copy_len;
+        };
+
+        Ok(total_written)
+    }
+}
+
+impl embedded_io_async::Write for NetconnTcp {
+
+    // FIXME: Box the buffer for calls that aren't blocking.
+    /// Send data over a TCP netconn.
+    ///
+    /// This implementation uses the NETCONN_COPY flag, keep that in mind
+    /// when choosing a buffer size.
+    ///
+    /// API: `TCP`
+    async fn write(&mut self, buf: &[u8]) -> Result<usize, Self::Error> {
+        self.set_nonblocking(true)?;
+        let mut bytes_written: usize = 0;
+
+        loop {
+            let result = unsafe {
+                netconn_write_partly(
+                    self.get_inner()?,
+                    buf.as_ptr() as *const c_void,
+                    buf.len(),
+                    NETCONN_COPY as u8,
+                    &mut bytes_written,
+                )
+            };
+
+            let err = NetconnErr::from(result);
+
+            if err == NetconnErr::WouldBlock {
+                futures_lite::future::yield_now().await;
+                continue;
+            }
+
+            if err != NetconnErr::Ok {
+                return Err(err);
+            }
+
+            break;
+        }
+
+        Ok(bytes_written)
+    }
+}
+
+impl embedded_io_async::Read for NetconnTcp {
+    /// This is an unoptimized way of reading that copies data to the given buffer.
+    /// If there's more data available than it fits in a given buf, it's discarded.
+    ///
+    /// ## Use read_no_copy() instead of this method for large transfers
+    ///
+    /// API: `TCP`
+    async fn read(&mut self, buf: &mut [u8]) -> Result<usize, Self::Error> {
+        let mut pbuf = self.read_no_copy_async().await?;
         let mut total_written: usize = 0;
 
         while let Some(chunk) = pbuf.next() {

@@ -75,3 +75,9 @@ impl Display for NetconnErr {
         write!(f, "{:?}", self)
     }
 }
+
+impl embedded_io::Error for NetconnErr {
+    fn kind(&self) -> embedded_io::ErrorKind {
+        embedded_io::ErrorKind::Other
+    }
+}

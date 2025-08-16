@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 use nxdk_sys::clib;
+
 pub struct XboxKernelAlloc {}
 
 unsafe impl core::alloc::GlobalAlloc for XboxKernelAlloc {

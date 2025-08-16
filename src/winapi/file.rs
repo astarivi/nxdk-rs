@@ -1,8 +1,11 @@
-use crate::io::traits::{Read, Seek, SeekFrom, Write};
 use crate::winapi::error::{NtStatusError, WinError, WinMixedError};
+use crate::winapi::handle::{close_handle_native, GenericWinHandle};
 use crate::winapi::WindowsPath;
-use core::ffi::c_void;
 use bitflags::bitflags;
+use core::ffi::c_void;
+use embedded_io::SeekFrom;
+use futures_lite::future::yield_now;
+use log::error;
 use nxdk_sys::winapi::*;
 
 pub const INVALID_HANDLE_VALUE: *mut c_void = -1isize as *mut c_void;
@@ -87,18 +90,110 @@ pub struct FileStandardInformation {
 }
 
 #[derive(Debug)]
-pub struct WinHandle {
-    handle: Option<HANDLE>
+pub struct Overlapped {
+    overlapped: Option<OVERLAPPED>,
+    offset: u64
 }
 
-unsafe impl Send for WinHandle {}
+impl Overlapped {
+    pub fn wrap(overlapped: Option<OVERLAPPED>) -> Self {
+        Self {
+            overlapped,
+            offset: 0
+        }
+    }
 
-impl WinHandle {
+    pub fn new() -> Result<Self, WinError> {
+        let overlapped_handle = unsafe {
+            CreateEventA(
+                core::ptr::null_mut(),
+                true as i32,
+                false as i32,
+                core::ptr::null()
+            )
+        };
+
+        if overlapped_handle.is_null() {
+            return Err(WinError::from_last_error())
+        }
+
+        Ok(Self {
+            overlapped: Some(OVERLAPPED {
+                Internal: 0,
+                InternalHigh: 0,
+                Offset: 0,
+                OffsetHigh: 0,
+                hEvent: overlapped_handle
+            }),
+            offset: 0
+        })
+    }
+
+    pub fn set_offset(&mut self, offset: u64) {
+        self.offset = offset;
+    }
+
+    pub fn advance_offset(&mut self, offset: i64) {
+        let new_offset = self.offset as i64 + offset;
+        self.offset = new_offset.max(0) as u64;
+    }
+
+    pub fn get_inner(&mut self) -> Result<&mut OVERLAPPED, WinError> {
+        self.overlapped.as_mut().ok_or(WinError::from(ERROR_INVALID_HANDLE))
+    }
+
+    pub fn is_closed(&self) -> bool {
+        !self.overlapped.is_some()
+    }
+
+    pub fn reset_overlapped(&mut self) -> Result<(), WinError> {
+        let offset = self.offset;
+        let overlapped = self.get_inner()?;
+
+        let result = unsafe {
+            ResetEvent(overlapped.hEvent)
+        };
+
+        if result == 0 {
+            return Err(WinError::from_last_error())
+        }
+
+        overlapped.Offset = offset as u32;
+        overlapped.OffsetHigh = (offset >> 32) as u32;
+        overlapped.Internal = 0;
+        overlapped.InternalHigh = 0;
+
+        Ok(())
+    }
+
+    pub fn close(&mut self) -> Result<(), WinError> {
+        if let Some(mut overlapped) = self.overlapped.take() {
+            close_handle_native(overlapped.hEvent)?;
+            // Release it just in case
+            overlapped.hEvent = core::ptr::null_mut();
+        }
+
+        Ok(())
+    }
+}
+
+#[derive(Debug)]
+pub struct WinFileHandle {
+    handle: GenericWinHandle,
+    overlapped: Option<Overlapped>
+}
+
+unsafe impl Send for WinFileHandle {}
+
+impl WinFileHandle {
     /// Be careful to never initialize this with a search HANDLE. Doing so
-    /// will result in unexpected panics.
-    pub fn new(handle: HANDLE) -> Self {
-        WinHandle{
-            handle: Some(handle)
+    /// will result in unexpected panic.
+    ///
+    /// Also, if overlapped is given, it must not be null.
+    pub fn new(handle: GenericWinHandle, overlapped: Option<Overlapped>) -> Self {
+        WinFileHandle {
+            handle,
+            overlapped
         }
     }
 
@@ -121,15 +216,42 @@ impl WinHandle {
 
         Ok(
             Self {
-                handle: Some(handle)
+                handle: GenericWinHandle::new(handle),
+                overlapped: if flags_attributes.contains(FileFlagsAndAttributes::FlagOverlapped) {
+                    Some(Overlapped::new()?)
+                } else {
+                    None
+                }
             }
         )
     }
 
     fn get_inner(&self) -> Result<HANDLE, WinError> {
-        self.handle.ok_or(WinError::from(ERROR_INVALID_HANDLE))
+        self.handle.get_inner()
     }
-    
+
+    fn get_overlapped(&mut self) -> Result<&mut Overlapped, WinError> {
+        if let Some(overlapped) = self.overlapped.as_mut() {
+            Ok(overlapped)
+        } else {
+            error!(
+                "Tried to get overlapped from a non-overlapped file handle. Use flag \
+                FileFlagsAndAttributes::FlagOverlapped when opening the file."
+            );
+
+            Err(WinError::from(ERROR_INVALID_HANDLE))
+        }
+
+    }
+
+    pub fn reset_overlapped(&mut self) -> Result<(), WinError> {
+        if let Some(overlapped) = self.overlapped.as_mut() {
+            overlapped.reset_overlapped()?;
+        }
+
+        Ok(())
+    }
+
     /// Query standard handle information. This can be called from
     /// any open handle, regardless of the `AccessRights` mode.
     pub fn query_standard_information(&self) -> Result<FileStandardInformation, WinMixedError> {
@@ -167,30 +289,34 @@ impl WinHandle {
     }
 
     pub fn is_closed(&self) -> bool {
-        !self.handle.is_some()
+        self.handle.is_closed()
     }
 
     pub fn close(&mut self) -> Result<(), WinError> {
-        let result = unsafe {
-            CloseHandle(
-                self.get_inner()?
-            )
-        };
+        self.handle.close()?;
 
-        if result == 0 {
-            return Err(WinError::from_last_error())
+        if let Some(mut overlapped) = self.overlapped.take() {
+            overlapped.close()?;
         }
-
-        self.handle = None;
 
         Ok(())
     }
 }
 
-impl Write for WinHandle {
-    type WriteError = WinError;
+impl Drop for WinFileHandle {
+    fn drop(&mut self) {
+        if let Err(e) = self.handle.close() {
+            error!("Error closing dropped file handle: {}", e);
+        }
+    }
+}
 
-    fn write(&mut self, buf: &[u8]) -> Result<usize, Self::WriteError> {
+impl embedded_io::ErrorType for WinFileHandle {
+    type Error = WinError;
+}
+
+impl embedded_io::Write for WinFileHandle {
+    fn write(&mut self, buf: &[u8]) -> Result<usize, Self::Error> {
         let mut bytes_written: u32 = 0;
         let success = unsafe {
             WriteFile(
@@ -209,15 +335,13 @@ impl Write for WinHandle {
         Ok(bytes_written as usize)
     }
 
-    fn flush(&mut self) -> Result<(), Self::WriteError> {
+    fn flush(&mut self) -> Result<(), Self::Error> {
         panic!("Flushing WinNT file handles causes a deadlock")
     }
 }
 
-impl Read for WinHandle {
-    type ReadError = WinError;
-
-    fn read(&mut self, buf: &mut [u8]) -> Result<usize, Self::ReadError> {
+impl embedded_io::Read for WinFileHandle {
+    fn read(&mut self, buf: &mut [u8]) -> Result<usize, Self::Error> {
         let mut bytes_read: u32 = 0;
         let success = unsafe {
             ReadFile(
@@ -237,10 +361,8 @@ impl Read for WinHandle {
     }
 }
 
-impl Seek for WinHandle {
-    type SeekError = WinError;
-
-    fn seek(&mut self, pos: SeekFrom) -> Result<u64, Self::SeekError> {
+impl embedded_io::Seek for WinFileHandle {
+    fn seek(&mut self, pos: SeekFrom) -> Result<u64, Self::Error> {
         let (offset, move_method) = match pos {
             SeekFrom::Start(offset) => {
                 (offset as i64, FILE_BEGIN)
@@ -269,6 +391,149 @@ impl Seek for WinHandle {
 
         unsafe {
             Ok(new_position.QuadPart as u64)
+        }
+    }
+}
+
+impl embedded_io_async::Write for WinFileHandle {
+    async fn write(&mut self, buf: &[u8]) -> Result<usize, Self::Error> {
+        let handle = self.get_inner()?;
+        self.reset_overlapped()?;
+        let overlapped = self.get_overlapped()?;
+        let inner_overlapped = overlapped.get_inner()?;
+
+        let mut bytes_written: u32 = 0;
+        let success = unsafe {
+            WriteFile(
+                handle,
+                buf.as_ptr() as *const c_void,
+                buf.len() as u32,
+                &mut bytes_written,
+                inner_overlapped,
+            )
+        };
+
+        if success != 0 {
+            overlapped.advance_offset(bytes_written as i64);
+            return Ok(bytes_written as usize)
+        }
+
+        let error = WinError::from_last_error();
+        if u32::from(error) != ERROR_IO_PENDING {
+            return Err(error);
+        }
+
+        let mut overlapped_bytes_written: u32 = 0;
+        loop {
+            let result = unsafe {
+                GetOverlappedResult(
+                    handle,
+                    inner_overlapped,
+                    &mut overlapped_bytes_written,
+                    0
+                )
+            };
+
+            if result != 0 {
+                overlapped.advance_offset(overlapped_bytes_written as i64);
+                return Ok(overlapped_bytes_written as usize);
+            }
+
+            let last_error = WinError::from_last_error();
+
+            if u32::from(last_error) != ERROR_IO_INCOMPLETE {
+                return Err(last_error);
+            }
+
+            yield_now().await;
+        }
+    }
+}
+
+impl embedded_io_async::Read for WinFileHandle {
+    async fn read(&mut self, buf: &mut [u8]) -> Result<usize, Self::Error> {
+        let handle = self.get_inner()?;
+        self.reset_overlapped()?;
+        let overlapped = self.get_overlapped()?;
+        let inner_overlapped = overlapped.get_inner()?;
+
+        let mut bytes_read: u32 = 0;
+
+        let success = unsafe {
+            ReadFile(
+                handle,
+                buf.as_mut_ptr() as *mut c_void,
+                buf.len() as u32,
+                &mut bytes_read,
+                inner_overlapped,
+            )
+        };
+
+        // Done immediately
+        if success == 1 {
+            overlapped.advance_offset(bytes_read as i64);
+            return Ok(bytes_read as usize)
+        }
+
+        let error = WinError::from_last_error();
+        if u32::from(error) != ERROR_IO_PENDING {
+            return Err(error);
+        }
+
+        let mut overlapped_bytes_read: u32 = 0;
+        loop {
+            let result = unsafe {
+                GetOverlappedResult(
+                    handle,
+                    inner_overlapped,
+                    &mut overlapped_bytes_read,
+                    0
+                )
+            };
+
+            if result != 0 {
+                overlapped.advance_offset(overlapped_bytes_read as i64);
+                return Ok(overlapped_bytes_read as usize);
+            }
+
+            let last_error = WinError::from_last_error();
+
+            if u32::from(last_error) != ERROR_IO_INCOMPLETE {
+                return Err(last_error);
+            }
+
+            yield_now().await;
+        }
+    }
+}
+
+impl embedded_io_async::Seek for WinFileHandle {
+    async fn seek(&mut self, pos: SeekFrom) -> Result<u64, Self::Error> {
+        let (offset) = match pos {
+            SeekFrom::Start(offset) => {
+                offset as i64
+            },
+            SeekFrom::Current(offset) => {
+                offset
+            },
+            _ => {
+                error!(
+                    "Seeking from the End is not supported in async file handles"
+                );
+
+                return Err(WinError::from(ERROR_INVALID_PARAMETER))
+            }
+        };
+
+        if let Some(overlapped) = self.overlapped.as_mut() {
+            overlapped.advance_offset(offset);
+            Ok(overlapped.offset)
+        } else {
+            error!(
+                "Tried to seek async on a non-overlapped file handle"
+            );
+
+            Err(WinError::from(ERROR_INVALID_HANDLE))
         }
     }
 }

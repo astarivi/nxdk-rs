@@ -1,5 +1,7 @@
 pub mod error;
 pub mod file;
+pub mod handle;
+pub mod thread;
 
 pub type WindowsPath = [u8; 260];
 
