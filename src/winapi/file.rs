@@ -448,6 +448,10 @@ impl embedded_io_async::Write for WinFileHandle {
             yield_now().await;
         }
     }
+
+    async fn flush(&mut self) -> Result<(), Self::Error> {
+        unimplemented!();
+    }
 }
 
 impl embedded_io_async::Read for WinFileHandle {

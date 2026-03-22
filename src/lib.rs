@@ -8,7 +8,6 @@ pub use bitflags;
 pub use embedded_io;
 pub use embedded_io_async;
 pub use futures_lite;
-
 pub mod hal;
 pub mod nxdk;
 pub mod utils;

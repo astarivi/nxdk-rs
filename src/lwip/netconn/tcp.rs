@@ -323,6 +323,13 @@ impl embedded_io_async::Write for NetconnTcp {
 
         Ok(bytes_written)
     }
+
+    /// Flushing is not supported. Calling this will result in a panic.
+    ///
+    /// API: `Unimplemented`
+    async fn flush(&mut self) -> Result<(), Self::Error> {
+        unimplemented!();
+    }
 }
 
 impl embedded_io_async::Read for NetconnTcp {
