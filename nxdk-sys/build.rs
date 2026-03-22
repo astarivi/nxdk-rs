@@ -134,22 +134,7 @@ fn generate_mod_rs() -> std::io::Result<()> {
 }
 
 fn main() {
-    // TODO: Document this. This is here to prevent the IDE from building this file, as it will fail.
-    let build_bindings = std::env::var("BUILD_BINDINGS").unwrap_or_else(|_| "false".to_string());
-
-    if build_bindings != "true" {
-        return;
-    }
-
-    let nxdk_dir;
-    match std::env::var("NXDK_DIR") {
-        Ok(v) => {
-            nxdk_dir = v;
-        }
-        Err(e) => {
-            panic!("Error reading NXDK_DIR environment variable: {:?}", e);
-        }
-    }
+    let nxdk_dir = std::env::var("NXDK_DIR").expect("NXDK_DIR environment variable is not set");
 
     println!("cargo:rustc-link-search=native={}/lib", nxdk_dir);
     println!("cargo:rustc-link-search=native={}/lib/xboxkrnl", nxdk_dir);
